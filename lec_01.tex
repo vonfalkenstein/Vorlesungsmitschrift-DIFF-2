@@ -1,0 +1,79 @@
+% !TE\( X \) root = ./Vorlesungsmitschrift DIFF 2.te\( X \) 
+\chapter{Metrische Räume}
+\lecture{1}{Mo 20.04. 10:15}{}
+\begin{ziel*}
+    Konvergenz, Stetigkeit \ldots sollten in einem allgmeineren Rahme konzeptualisiert werden.
+\end{ziel*}
+\begin{erinnerung}[Diff 1]
+    Eine Folge \( (a_n)_{n\in \naturals}\susbet \reals \) konvergiert gegen den Grenzwert \( a \)
+    \begin{align*}
+        \iff \forall \varepsilon>0 \quad\e\( X \)ists N\in \naturals\quad\sd\quad \abs{a_n-a}<\varepsilon\quad\forall n \geq N
+    \end{align*}
+    \( \ointerval{a-\varepsilon}{a+\varepsilon} \) wird auch \( \varepsilon \)-Umgebung von a in R genannt. 
+    Somit lautet die obige Definition in Worten: 
+    In jeder noch so kleinen \( \varepsilon \)-Umgebung von a befinden sich alle bis auf enldlich viele Folgenglieder.    
+\end{erinnerung}
+Man benötigt für die Formulierung der Definition also lediglich einen Begriff von \enquote{(kleine) Umgebung}. 
+Diesen Begriff möchten wir nun verallgemeinern.
+    
+\begin{definition}\label{topologie}
+    Sei \( X \) eine Menge. Ein System \( \mathcal{T} \) von Teilmengen von \( X \) heißt Topologie auf \( X \) falls gilt: 
+    \begin{eigenschaftenenumeration}
+        
+        \item\label{topologie:grundmengen} \( \zeroset,X\in \mathcal{T} \).
+        \item\label{topologie:endlicher_schnitt} Sind \( U \) und \( V\in \mathcal{T} \), so gilt \( U\cap V \in \mathcal{T}\).
+        \item\label{topologie:unendliche_vereinigung} Ist \( I \) eine Indexmenge und \( U_i \in \mathcal{T}  \) für alle \( i\in I \), so gilt auch \( \bigcup_{i\in I}U_i\in \mathcal{T} \).
+    \end{eigenschaftenenumeration}
+    
+\end{definition}
+\begin{notation}
+    Ein topologischer Raum ist ein Tupel \( (X,\mathcal{T}) \), wobei \(X\) Menge ist und \( \mathcal{T} \) eine Topologie auf \(X\).
+
+    Eine Teilmenge \( U \subset X \) heißt \emph{offen}, falls gilt \(U \in \mathcal{T}\).
+    Eine Teilmenge \(A \subset X\) heißt \emph{abgeschlossen} falls ihr Komplement \(X \setminus A\) offen ist.
+        
+    
+\end{notation}
+\begin{beispiele}
+    \begin{enumerate}
+        \item \label{klumpentopologie}\( X= \) beliebige Menge. \( \mathcal{T}=\Set{\zeroset, X} \).
+        \begin{proof}
+            \begin{proofdescription}
+                
+                \item[\ref{topologie:grundmengen}] klar
+                \item[\ref{topologie:endlicher_schnitt}] \( \zeroset\cap X=\zeroset\in \mathcal{T} \), \( X\cap X=X\in \mathcal{T} \), \( \zeroset\cap \zeroset=\zeroset\in \mathcal{T} \)
+                \item[\ref{topologie:unendliche_vereinigung }] \( \bigcap_{i\in I}U_i=\begin{cases}
+                    X & \text{falls eins der \( U_i=X \) ist}
+                    \zeroset & \text{falls nicht}
+                \end{cases}
+                    \) 
+            \end{proofdescription}               
+        \end{proof}
+        \enquote{Klumpentopologie}
+        
+        \item \label{standard-topologie}\( X=\reals \)\\
+        \( \mathcal{T}= \) alle Teilmengen \( U\subset \reals \) mit der Eigenschaft:
+        \begin{align*}
+            \forallx\in U\quad\exists\varepsilon>0\quad\sd\quad \ointerval{x-\varepsilon}{x+\varepsilon}\subset U
+        \end{align*}
+        Beweis von \ref{topologie:grundmengen}, \ref{topologie:endlicher_schnitt} und \ref{topologie:unendliche_vereinigung} als HA (etwas allgemeiner).
+        Hier stellen wir fest, dass insbesondere die offenen Intervalle \( \ointerval{a}{b} \) in diesem Sinne offen (also \( \in \mathcal{T} \)) sind, halb-abgeschlossene und abgeschlossene dagegen nicht.
+        \begin{proof}
+            \begin{proofenumerate}[label=\textbf{\arabic*. Beh}]
+                
+                \item Zu \( x\in \interval{a}{b} \) wähle \( \varepsilon=\min\Set{\abs{x-a},\abs{x-b}} \)
+                \item Zu \( x=a\in \rinterval{a}{b} \) kann man kein \( \varepsilon>0 \) finden \sd \( \ointerval{a-\varepsilon}{a+\varepsilon}\subset \rinterval{a}{b} \),
+                denn \( a-\varepsilon/2\in \ointerval{a-\varepsilon}{a+\varepsilon} \) aber \( a-\varepsilon/2<a \), also \( \notin \rinterval{a}{b} \).
+            \end{proofenumerate}
+            
+            
+        \end{proof}
+        Abgeschlossene Intervalle sind in diesem Sinn abgeschlossen, denn \( \reals\setminus \interval{a}{b} \) ist nach Definition von \( \mathcal{T} \) und Eigenschaft \ref{topologie:unendliche_vereinigung} offen.
+
+        Diese Topologie heißt Standard-Topologie auf \( \reals \). 
+        Wird nichts anderes gesagt, sehen wir \reals als mit der Standard-Topologie versehen an.
+    \end{enumerate}
+\end{beispiele}
+\begin{definition}
+    
+\end{definition}
