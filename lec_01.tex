@@ -1,6 +1,6 @@
 % !TEX root = ./Vorlesungsmitschrift DIFF 2.teX
 \chapter{Metrische Räume}
-\lecture{1}{Mo 20.04. 10:15}{}
+\lecture{Mo 20.04. 10:15}{}
 \begin{ziel*}
     Konvergenz, Stetigkeit \ldots sollten in einem allgmeineren Rahme konzeptualisiert werden.
 \end{ziel*}
@@ -206,7 +206,10 @@ für kein \( \delta>0 \) offen.
 \begin{defsatz}
     Seien \( (X, \mathcal{T}_X) \)  und \( (Y,\mathcal{T}_Y) \) topologische Räume. Betrachte das \emph{kartesische Produkt} \( X\times Y=\Set{(x,y)|x\in X, y\in Y} \). Dann nennt man das System
     \begin{align*}
-        T\definedas \Set{U\subset X\times X |\allowbreak U = \text{beliebige Vereinigung von Mengen der Form }V\times W,\allowbreak V\in \mathcal{T}_X,\allowbreak W\in \mathcal{T}_Y}
+        T\definedas \Set{U\subset X\times X | U = \begin{aligned}[t] 
+            \text{beliebige Vereinigung von Mengen der Form }\\
+            V\times W, V\in \mathcal{T}_X, W\in \mathcal{T}_Y
+        \end{aligned}}
     \end{align*}
     \emph{Produkttopologie}. Und dies definiert in der Tat eine Topologie auf \( X\times Y \).
 \end{defsatz}
@@ -330,7 +333,7 @@ Mit \ref{metrik:beispiele:r_n} wird auch der Name der Dreiecksungleichung klar:
             
         \end{proof}
         
-        \item Ein metrischer Raum ist Haussdorfsch. \tto HA. %ChkTeX 13
+        \item \label{metrischer_raum_ist_hausdorffsch} Ein metrischer Raum ist hausdorffsch. \tto HA. %ChkTeX 13
         
     \end{enumerate}
 \end{bemerkungen}
@@ -340,7 +343,7 @@ Wir formulieren nun Konvergenz und Stetigkeit für metrische Räume:
     \begin{enumerate}
         \item {}[\thref{umgebung_in_topologischen_raeumen}]\label{umgebung_in_metrischen_raeumen} \( V\subset X \) heißt Umgebung von \( x\in X \), falls es \( \varepsilon >0 \) gibt \sd \( B_\varepsilon(x)\subset U \).
         \item {}[\thref{konvergenz_in_topologischen_raeumen}]\label{konvergenz_in_metrischen_raeumen} \( (x_n)_n \) konvergiert mit Grenzwert \( x \), falls es zu jedem \( \varepsilon>0 \) ein \( N\in \naturals \) gibt \sd \( x_n\in B_\varepsilon(x)\logicspace\forall n\geq N \).
-        \item {}[\thref{stetigkeit_in_topologischen_raeumen}]\label{stetigkeit_in_metrischen_raeumen} Sei \( (Y,\tilde{d}) \) weiterer metrischer Raum, \( f\maps X to Y \) eine Abbildung. Dann ist \( f \) stetig \( a \) \gdw:
+        \item {}[\thref{stetigkeit_in_topologischen_raeumen}]\label{stetigkeit_in_metrischen_raeumen} Sei \( (Y,\tilde{d}) \) weiterer metrischer Raum, \( f\maps X \to Y \) eine Abbildung. Dann ist \( f \) stetig \( a \) \gdw:
         \begin{align*}
             \forall\varepsilon>0\logicspace\exists \delta>0\logicspace\sd f(B_\delta(a))\subset B_\varepsilon(f(a)).
         \end{align*}
@@ -371,7 +374,7 @@ Wir formulieren nun Konvergenz und Stetigkeit für metrische Räume:
                 \end{aligned}\\
                 \implies &d(x_n,x)=\frac{1}{n}\\
                 \implies &d(x_n,x)<\varepsilon\logicspace\forall n\geq N\text{ mit } N>\frac{1}{\varepsilon}\\
-                \implies x_n \in B_\varepsilon(x) \logicspace\forall n \geq N.
+                \implies &x_n \in B_\varepsilon(x) \logicspace\forall n \geq N.
             \end{align*}            
         \end{proof}
         
@@ -421,7 +424,6 @@ Wir formulieren nun Konvergenz und Stetigkeit für metrische Räume:
             \end{proof}
             
         \end{enumerate}
-        
         \item \( X=\glattefunktionen(\interval{0}{1}) \), \( d(f,g)=\Integrate{\abs{f(x)-g(x)}}{x,0,1} \).
         \begin{enumerate}[label=\textbf{\arabic*. Beh}]
             
