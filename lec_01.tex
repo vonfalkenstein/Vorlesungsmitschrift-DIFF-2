@@ -42,7 +42,7 @@ Diesen Begriff möchten wir nun verallgemeinern.
                 
                 \item[\ref{topologie:grundmengen}] klar
                 \item[\ref{topologie:endlicher_schnitt}] \( \emptyset\cap X=\emptyset\in \mathcal{T} \), \( X\cap X=X\in \mathcal{T} \), \( \emptyset\cap \emptyset=\emptyset\in \mathcal{T} \)
-                \item[\ref{topologie:unendliche_vereinigung}] \( \bigcap_{i\in I}U_i=\begin{cases}
+                \item[\ref{topologie:unendliche_vereinigung}] \( \bigcup_{i\in I}U_i=\begin{cases}
                     X & \text{falls eins der \( U_i=X \) ist}\\
                     \emptyset & \text{falls nicht}
                 \end{cases}
@@ -293,11 +293,12 @@ Mit \ref{metrik:beispiele:r_n} wird auch der Name der Dreiecksungleichung klar:
         
     \end{enumerate}
 \end{beispiele*}
-\begin{satz}
+\begin{satz}\label{metrische_topologie}
     Sei \( (X,d) \) ein metrischer Raum. Dann wird durch
     \begin{align*}
         \mathcal{T}_d\definedas \Set{U\subset X|\forall x\in U\logicspace\exists\varepsilon>0\logicspace\sd\logicspace B_\varepsilon(x)\subset U}
     \end{align*}
+    eine Topologie definiert.
 \end{satz}
 \begin{proof}
     Als Hausaufgabe.    
@@ -378,7 +379,7 @@ Wir formulieren nun Konvergenz und Stetigkeit für metrische Räume:
             \end{align*}            
         \end{proof}
         
-        \item \( X=\glattefunktionen(\interval{a}{b}) \), \( d(f,g)\definedas \supnorm{f-g} \) mit \( \supnorm{f-g}=\sup_{x\in \interval{a}{b}}\abs{f(x)-g(x)} \).
+        \item \( X=\stetigefunktionen(\interval{a}{b}) \), \( d(f,g)\definedas \supnorm{f-g} \) mit \( \supnorm{f-g}=\sup_{x\in \interval{a}{b}}\abs{f(x)-g(x)} \).
         \begin{enumerate}[label=\textbf{\arabic*. Beh}]
             \item \( d \) ist eine Metrik auf \( X \).
             \begin{proof}
@@ -394,7 +395,7 @@ Wir formulieren nun Konvergenz und Stetigkeit für metrische Räume:
                     \item[\ref{metrik:symmetrisch}:]
                     \begin{align*}
                         &\abs{f(x)-g(x)}=\abs{g(x)-f(x)}\logicspace\forall x\\
-                        \implies &d(f,g)=d(g,f)
+                        \implies &d(f,g)=d(g,f).
                     \end{align*} 
                     \item[\ref{metrik:dreiecksungleichung}:]
                      \begin{align*}
@@ -408,7 +409,7 @@ Wir formulieren nun Konvergenz und Stetigkeit für metrische Räume:
                 
             \end{proof}
             
-            \item \( (f_n)_n\subset \glattefunktionen(\interval{0}{1}) \), \( f_n(x)=x^n \), konvergiert nicht (\vgl Diff \Romannum{1}).
+            \item \( (f_n)_n\subset \stetigefunktionen(\interval{0}{1}) \), \( f_n(x)=x^n \), konvergiert nicht (\vgl Diff \Romannum{1}).
             \begin{proof}
                 Wir wissen aus der Diff \Romannum{1}, dass wenn Konvergenz vorliegt, der Grenzwert gleich dem punktweisen Grenzwert ist. Dieser ist
                 \begin{align*}
@@ -424,15 +425,15 @@ Wir formulieren nun Konvergenz und Stetigkeit für metrische Räume:
             \end{proof}
             
         \end{enumerate}
-        \item \( X=\glattefunktionen(\interval{0}{1}) \), \( d(f,g)=\Integrate{\abs{f(x)-g(x)}}{x,0,1} \).
+        \item \( X=\stetigefunktionen(\interval{0}{1}) \), \( d(f,g)=\Integrate{\abs{f(x)-g(x)}}{x,0,1} \).
         \begin{enumerate}[label=\textbf{\arabic*. Beh}]
             
-            \item \( d \) ist eine Metrik auf \( \glattefunktionen(\interval{0}{1}) \).
+            \item \( d \) ist eine Metrik auf \( \stetigefunktionen(\interval{0}{1}) \).
             \begin{proof}
                 HA. % ChkTeX 13 
             \end{proof}
             
-            \item \( (f_n)_n\subset \glattefunktionen(\interval{0}{1}) \), \( f_n(x)=x^n \) konvergiert, und zwar gegen \( f(x)=0\logicspace\forall x \).
+            \item \( (f_n)_n\subset \stetigefunktionen(\interval{0}{1}) \), \( f_n(x)=x^n \) konvergiert, und zwar gegen \( f(x)=0\logicspace\forall x \).
             \begin{proof}
                 \begin{align*}
                     &\Integrate{\abs{f_n(x)-0}}{x,0,1}=\Integrate{x^n}{x,0,1}=\frac{1}{n+1}\evaluatebetween{x^{n+1}}{x}{0}{1}=\frac{1}{n+1}\\ % ChkTeX 29
