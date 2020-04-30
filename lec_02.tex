@@ -142,7 +142,7 @@ Bevor wir uns mit offenen und abgeschlossenen Mengen und sogenannten vollständi
         \item[\ref{rand_ist_geschlossen}:]
         \begin{align*}
             &\randpunkte M=(M\cup \randpunkte M)\setminus (M\setminus \randpunkte M)\\
-            \implies &X\setminus \randpunkte M=\underbrace{X\setminus(\underbrace{M\cup \randpunkte M}_{\text(abgeschl.\ nach \ref{abschluss_ist_geschlossen})})}_{\text{offen}}\cup (\underbrace{M\setminus \randpunkte M}_{offen nach \ref{interior_ist_offen}}).
+            \implies &X\setminus \randpunkte M=\underbrace{X\setminus(\underbrace{M\cup \randpunkte M}_{\text{(abgeschl.\ nach \ref{abschluss_ist_geschlossen})}})}_{\text{offen}}\cup (\underbrace{M\setminus \randpunkte M}_{\text{offen nach \ref{interior_ist_offen}}}).
         \end{align*} 
     \end{proofdescription}
 \end{proof}
@@ -216,9 +216,9 @@ Nach \ref{abgeschlossenheit:folgenkonvergenzkriterium} können wir \( \abschluss
         
         \item \label{r_ist_vollstaendig} \( \reals ,\abs{\cdot} \) ist vollständig (Diff \Romannum{1}).
         \item \label{integral_metrischer_raum_ist_nicht_vollstaendig} \( (\stetigefunktionen(\interval{a}{b} ,\reals), d_{L^1})\) mit \( d_{L^1}(f,g)=\Integrate{\abs{f(t)-g(t)}}{t,a,b}\) (\vgl HA Blatt 1, A1) ist \emph{nicht} vollständig. 
-        \item \( (\stetigefunktionen(D,\reals ), d_{\sup})\), \( D\subset \reals \), mit
+        \item \( (\stetigefunktionen(\interval{a}{b},\reals ), d_{\sup})\), mit
         \begin{align*}
-            d_{\sup}=\supnorm{f-g}=\sup_{t\in D}\abs{f(t)-g(t)},
+            d_{\sup}=\supnorm{f-g}=\sup_{t\in \interval{a}{b}}\abs{f(t)-g(t)},
         \end{align*}
         ist vollständig.
         Den Beweis führen wir später allgemeiner.

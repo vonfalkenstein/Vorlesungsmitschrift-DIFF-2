@@ -1,0 +1,19 @@
+% !TEX root = ./Vorlesungsmitschrift DIFF 2.tex  
+\lecture{Do 30.04. 10:15}{}
+\section*{Äquivalenz von Metriken}
+Wir haben gesehen, dass die Eigenschaften derselben Menge sehr verschieden sein können, je nachdem mit welcher Topologie man sie versieht.
+\begin{beispiel*}
+    \( \reals \) mit der Standardtopologie \( \abs{x-y} \):
+    \begin{itemize}
+        \item \( \linterval{a}{b} \) ist nicht offen, \( \interval{a}{b} \) ist kompakt.
+    \end{itemize}
+    \( \reals \) mit der diskreten Metrik \( d_{\text{disk}} \)
+    \begin{itemize}
+        \item Alle Teilmengen sind offen.
+        \item Nur endliche Teilmengen sind kompakt.
+        \item Konvergiert \( x_n\goesto a \) (bezüglich \( d_{\text{disk}} \)),so muss gelten \( \exists N \) \sd \( x_n=a\quad \forall n\geq N \) (denn \( \Set{a} \) ist Umgebung von \( a \), oder anders gesagt: damit \( d(x_n,a)<\varepsilon<1 \) wird, muss gelten \( x_n=a \)).
+        \item \emph{Alle} Abbildungen \( f\maps (X,d_{\text{disc}})\to (Y,d) \) sind stetig. (Beweis am einfachsten über Folgenstetigkeit).
+    \end{itemize}
+    Andererseits gilt:\\
+    \( U\subset \reals^2 \) ist offen in \( (\reals^2,d_{\text{Eukl}}) \) \tiff \( U \) ist offen in \( (\reals^2, d_{\max}) \).
+\end{beispiel*}
