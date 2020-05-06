@@ -1,6 +1,6 @@
 % !TEX root = ./Vorlesungsmitschrift DIFF 2.tex  
 \lecture{Mo 27.04. 10:15}{}
-\begin{lemma}[Cauchy-Kriterium für gleichmäßige Konvergenz]\label{cauchy_kriterium_gleichmaessige_konvergenz}
+\begin{lemma}[Cauchy-Kriterium für gleichmäßige Konvergenz]\label{cauchy_kriterium_gleichmaessige_konvergenz}\hfill
     \begin{eigenschaftenenumerate}
         \item Sei \( (X,d_x)\) metrischer Raum, sei \( (Y,d_Y)\) ein \emph{vollständiger} metrischer Raum. Sei \( f_n\maps X\to Y\) Folge von Funktionen. Dann konvergiert \( f_n\) gegen \( f\) bezüglich
         \begin{align*}
@@ -92,11 +92,11 @@
     \end{eigenschaftenenumerate}
         
 \end{lemma}
-\begin{folgerung}
+\begin{folgerung*}
     \begin{align*}
         (C(\explain{\text{Stellt man diese Bedingung, ist automatisch garantiert, dass \( d_{\sup}(f_1,f_2)=\sup_{t\in \rinterval{a}{b}}\abs{f_1(t)-f_2(t)}<\infty \)}}{\interval{a}{b}},\reals),d_{\sup})
     \end{align*}, \( D\subset \reals \), ist vollständig.  
-\end{folgerung}
+\end{folgerung*}
 \begin{proof}
     Sei \( (f_n)_n\) Cauchy-Folge in \( C(D,\reals )\) bezüglich \( d_{\sup}\), \dh zu \( \varepsilon>0 \) \texists \( N=N(\varepsilon)\) \sd
     \begin{align*}
@@ -258,9 +258,9 @@
         M\subset U_{i_1}\cup \cdots \cup U_{i_N}.
     \end{align*} 
 
-    \begin{achtung}
+    \begin{achtung*}
         Ein nicht-kompakter raum kann eine endliche Überdeckung \( U_1\cup \cdots \cup U_N\) besitzen. Die Aussage der Definition ist, dass man aus \emph{jeder} offenen Überdeckung endlich viele offene Mengen wählen kann, die \( M\) noch ganz überdecken!
-    \end{achtung}
+    \end{achtung*}
 \end{definition}
 \begin{beispiele}
     \begin{enumerate}
@@ -275,7 +275,7 @@
                 \( \bigcup\limits_{j=1}^{N}U_j\supset \ointerval{a}{b} \), denn \zb \( a+\frac{1}{N+1}\notin \bigcup_{p=1}^{N}U_j \).  
         \end{proof}
         
-        \item Sei \( (x_n)_n\subset X\) gegen \( a\) konvergente Folge. Dann ist \( M=\Set{x_n|n\in \naturals }\cap \Set{a}\) kompakt.
+        \item Sei \( (x_n)_n\subset X\) gegen \( a\) konvergente Folge. Dann ist \( M=\Set{x_n|n\in \naturals }\cup \Set{a}\) kompakt.
         \begin{proof}
             Sei \( (U_j)_j\) eine offene Überdeckung von \( M\)
             \begin{align*}
@@ -326,7 +326,7 @@
     
     \( (X,d_{\text{discrete}})\), \( X\) habe unendlich viele Elemente. Jede Teilmenge ist abgeschlossen (da jede offen ist) und beschränkt (durch \( 1\)), aber nur die \emph{endlichen} sind kompakt.
 \end{bemerkung*}
-\begin{lemma}
+\begin{lemma}\label{abgeschlossene_teilmenge_kompakter_menge_ist_kompakt}
     Ist \( K\subset X\) kompakt und \( A\subset K\) ist abgeschlossen, so ist \( A\) kompakt.
 \end{lemma}
 \begin{proof}
@@ -406,7 +406,7 @@
         \( x\mapsto \dist(x,M) \) ist stetig auf \( \mathfrak{X} \), somit erst recht auf \( K \). \( K \) ist kompakt \( \overset{\ref{funktion_von_kompaktem_metrischen_raum_zu_r_kriegt_min_max}}{\implies} \) \texists \( a\in K \) \sd \( \dist(a,M)=\dist(K,M) \). \( M \) abgeschlossen \timplies \texists \( \varepsilon>0 \) \sd \( B_{\varepsilon}(a)\subset X\setminus K \) \timplies \( \dist(a,M)\geq \varepsilon \).
         
     \end{proof}
-    \begin{achtung}
+    \begin{achtung*}
         \begin{enumerate}
             \item Betrachte
             \begin{align*}
@@ -428,7 +428,7 @@
             \end{figure}
             
         \end{enumerate}
-    \end{achtung}    
+    \end{achtung*}    
 \end{beispiel*}
 \begin{satzdef}
     Seien \( \mathfrak{X},Y \) metrische Räume, \( \mathfrak{X} \) kompakt. Dann ist jede stetig Abbildung \( f\maps \mathfrak{X}\to Y \) sogar \emph{gleichmäßig stetig} \dh im \( \varepsilon \)-\( \delta \)-Kriterium kann \( \delta \) unabhängig von \( x \) gewählt werden:
@@ -453,9 +453,14 @@
         \implies &d_Y(f(x),f(a_j))<\varepsilon \quad d_Y(f(\tilde{x}),f(a_j))<\varepsilon\\
         \implies &d_Y(f(x),f(\tilde{x}))<2\varepsilon \quad \forall x,\tilde{x},\logicspace d_{\mathfrak{X}}(x,\tilde{x})<\delta.
     \end{align*}
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.4\linewidth]{figures/doppel_doppel_ball}
+        \label{fig:doppel_doppel_ball}
+    \end{figure}
     
 \end{proof}
-\begin{satz}[Bolzano + Weierstraß]\label{bolzanoweierstrass}
+\begin{satz}[Bolzano-Weierstraß]\label{bolzanoweierstrass}
     Sei \( (X,d) \) metrischer Raum. Sei \( K\subset X \) kompakt. Dann besitzt jede Folge \( (x_n)_n \) in \( K \) eine Teilfolge \( (x_{n_k})_k \), die gegen einen Punkt \( x\in K \) konvergiert. 
 \end{satz}
 \begin{proof}
