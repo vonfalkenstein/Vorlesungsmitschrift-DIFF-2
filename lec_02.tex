@@ -169,7 +169,7 @@ Nach \ref{abgeschlossenheit:folgenkonvergenzkriterium} können wir \( \abschluss
 \begin{definition}
     Sei \( (X,d) \) ein metrischer Raum. Eine Folge \( (y_n)_n \subset X\) heißt \emph{Cauchy-Folge}, falls gilt
     \begin{align*}
-        \forall \varepsilon>0 \logicspace \exists N\in \naturals \logicspace \sd d(y_n, y_m)<\varepsilon \logicspace \forall n,m\geq N.
+        \forall \varepsilon>0 \logicspace \exists N\in \naturals \logicspace\text{\sd} d(y_n, y_m)<\varepsilon \logicspace \forall n,m\geq N.
     \end{align*} 
 \end{definition}
 \begin{lemma}
@@ -191,11 +191,11 @@ Nach \ref{abgeschlossenheit:folgenkonvergenzkriterium} können wir \( \abschluss
     \begin{checkenvironment*}
         Es gilt für \( n\geq 1 \)
         \begin{align*}
-            \interval{\frac{1}{y_{n+1}}}{y_{n+1}}\subset \interval{\frac{1}{y_n}}{y_n} \label{eq:cauchy_folge_konvergiert_nicht:beispiel:intervallschachtelung}\tag{*}
+            \interval{\frac{1}{y_{n+1}}}{y_{n+1}}\subset \interval{\frac{1}{y_n}}{y_n} \label{eq:cauchy_folge_konvergiert_nicht:beispiel:intervallschachtelung}\tag{\(*\)}
         \end{align*} 
         und für \( l_n\definedas y_n-\frac{1}{y_n} \) 
         \begin{align*}
-            &l_{n+1}\leq\frac{1}{4y_{n+1}}l_n^2\leq \frac{1}{4}l_n^2\tag{**}\label{eq:cauchy_folge_konvergiert_nicht:beispiel:abstand_nullfolge}\\
+            &l_{n+1}\leq\frac{1}{4y_{n+1}}l_n^2\leq \frac{1}{4}l_n^2\tag{\(**\)}\label{eq:cauchy_folge_konvergiert_nicht:beispiel:abstand_nullfolge}\\
             \implies &d(y_n,y_m)=\abs{y_n-y_m} \explain{\substack{\text{\Obda\ }m\geq n\\\implies y_m\in \interval{\frac{1}{y_n}}{y_n} \text{ wg.\ \eqref{eq:cauchy_folge_konvergiert_nicht:beispiel:intervallschachtelung}}}}{\leq}\abs{y_n-\frac{1}{y_n}}=l_n\explain{\text{wg.\ \eqref{eq:cauchy_folge_konvergiert_nicht:beispiel:abstand_nullfolge}}}{\goesto} 0.
         \end{align*}
         \( \rationals \subset \reals  \)  und somit \( (y_n)_n \subset \reals \).

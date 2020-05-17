@@ -7,7 +7,7 @@
 \begin{erinnerung*}[DIFF \Romannum{1}]
     Eine Folge \( (a_n)_{n\in \naturals}\subset \reals \) konvergiert gegen den Grenzwert \( a \)
     \begin{align*}
-        \iff \forall \varepsilon>0 \logicspace\exists N\in \naturals\logicspace\sd\logicspace \abs{a_n-a}<\varepsilon\logicspace\forall n \geq N
+        \iff \forall \varepsilon>0 \logicspace\exists N\in \naturals\logicspace\text{\sd}\logicspace \abs{a_n-a}<\varepsilon\logicspace\forall n \geq N
     \end{align*}
     \( \ointerval{a-\varepsilon}{a+\varepsilon} \) wird auch \( \varepsilon \)-Umgebung von a in R genannt. 
     Somit lautet die obige Definition in Worten: 
@@ -54,7 +54,7 @@ Diesen Begriff möchten wir nun verallgemeinern.
         \item \label{standard-topologie}\( X=\reals \)\\
         \( \mathcal{T}= \) alle Teilmengen \( U\subset \reals \) mit der Eigenschaft:
         \begin{align*}
-            \forall  x\in U\logicspace\exists\varepsilon>0\logicspace\sd\logicspace \ointerval{x-\varepsilon}{x+\varepsilon}\subset U
+            \forall  x\in U\logicspace\exists\varepsilon>0\logicspace\text{\sd}\logicspace \ointerval{x-\varepsilon}{x+\varepsilon}\subset U
         \end{align*}
         Beweis von \ref{topologie:grundmengen}, \ref{topologie:endlicher_schnitt} und \ref{topologie:unendliche_vereinigung} als HA (etwas allgemeiner).
         Hier stellen wir fest, dass insbesondere die offenen Intervalle \( \ointerval{a}{b} \) in diesem Sinne offen (also \( \in \mathcal{T} \)) sind, halb-abgeschlossene und abgeschlossene dagegen nicht.
@@ -296,7 +296,7 @@ Mit \ref{metrik:beispiele:r_n} wird auch der Name der Dreiecksungleichung klar:
 \begin{satz}\label{metrische_topologie}
     Sei \( (X,d) \) ein metrischer Raum. Dann wird durch
     \begin{align*}
-        \mathcal{T}_d\definedas \Set{U\subset X|\forall x\in U\logicspace\exists\varepsilon>0\logicspace\sd\logicspace B_\varepsilon(x)\subset U}
+        \mathcal{T}_d\definedas \Set{U\subset X|\forall x\in U\logicspace\exists\varepsilon>0\logicspace\text{\sd}\logicspace B_\varepsilon(x)\subset U}
     \end{align*}
     eine Topologie definiert.
 \end{satz}
@@ -346,7 +346,7 @@ Wir formulieren nun Konvergenz und Stetigkeit für metrische Räume:
         \item {}[\thref{konvergenz_in_topologischen_raeumen}]\label{konvergenz_in_metrischen_raeumen} \( (x_n)_n \) konvergiert mit Grenzwert \( x \), falls es zu jedem \( \varepsilon>0 \) ein \( N\in \naturals \) gibt \sd \( x_n\in B_\varepsilon(x)\logicspace\forall n\geq N \).
         \item {}[\thref{stetigkeit_in_topologischen_raeumen}]\label{stetigkeit_in_metrischen_raeumen} Sei \( (Y,\tilde{d}) \) weiterer metrischer Raum, \( f\maps X \to Y \) eine Abbildung. Dann ist \( f \) stetig \( a \) \gdw:
         \begin{align*}
-            \forall\varepsilon>0\logicspace\exists \delta>0\logicspace\sd f(B_\delta(a))\subset B_\varepsilon(f(a)).
+            \forall\varepsilon>0\logicspace\exists \delta>0\logicspace\text{\sd} f(B_\delta(a))\subset B_\varepsilon(f(a)).
         \end{align*}
     \end{enumerate}
 \end{bemerkungen}

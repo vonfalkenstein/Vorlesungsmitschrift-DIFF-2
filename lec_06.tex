@@ -1,6 +1,6 @@
 % !TEX root = ./Vorlesungsmitschrift DIFF 2.tex  
-\lecture{Do 07.05. 10:15}{}
 \chapter{Differenzierbarkeit in \texorpdfstring{\( \reals^n \)}{R\^n}}
+\lecture{Do 07.05. 10:15}{}
 \begin{erinnerung*}
     Approximation einer Funktion \( f\maps \reals\to \reals \), die in \( a\in \reals \) differenzierbar ist, durch eine (affin) lineare Funktion
     \begin{align*}
@@ -23,7 +23,7 @@
 \begin{definition}
     Die \emph{Ableitung} einer Funktion \( f\maps U\to \reals^m \), \( U\subset \reals^n \) offen, an der Stelle \( a\in U \), ist, wenn sie existiert, eine Matrix \( Df(a)\in \Mat(m\times n) \), die eine lineare Approximation von \( f \) ergibt:
     \begin{align*}
-        f(x)=f(a)+Df(a)\explain{\text{Matrix-Multiplikation}}{\matrixmult}(x-a)+R_a(x)\tag{*}\label{eq:ableitung:definition}
+        f(x)=f(a)+Df(a)\explain{\text{Matrix-Multiplikation}}{\matrixmult}(x-a)+R_a(x)\tag{\(*\)}\label{eq:ableitung:definition}
     \end{align*}
     Sie existiert genau dann, wenn
     \begin{align*}
@@ -274,7 +274,6 @@ Diff \Romannum{1}: Ableitung beschreibt Rate der Veränderung. Höher-dimensiona
         \end{align*}
     \end{beispiel*}
     \( \partial_1 f(x,y)=\evaluateat{\frac{d}{dt}}{t=0}f(x+t,y) \), \( \partial_2 f(x,y)=\evaluateat{\frac{d}{dt}}{t=0} f(x,y+t) \). Wegen \( f(x,0)=0 \quad \forall x \), \( f(0,y)=0\quad \forall y \), ist \( \partial_1 f(0,0)=0=\partial_2 f(0,0) \). Aber \( f  \) ist in \( 0 \) nicht stetig (betrachte etwa \( (\quot{1}{n},\quot{1}{n}) \)), also nicht differenzierbar.
-    
 \end{achtung*}
 
 
