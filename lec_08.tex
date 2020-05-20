@@ -46,7 +46,7 @@
 \end{proof}
 \begin{bemerkungen*}
   \begin{enumerate}
-    \item Ist \( f,g \) wie in \thref{funktion_ableiten_mit_hoeheren_abbildungen} und \( f \) überall \emph{stetig} differenzierbar. Ist dann \( D_2 f(a,b) \) invertierbar. So gibt es eine Umgebung \( V_1\times V_2 \) von \( (a,b) \) \sd \( D_2f(x,y) \) invertiertbar ist für alle \( (x,y)\in V_1\times V_2 \) (denn \( (x,y)\mapsto \text{\Def}D_2f(x,y) \) ist stetig, da si ein Polynom stetiger Funktionen ist und \( \text{\Def} D_2 f(a,b)\neq 0 \)).
+    \item Ist \( f,g \) wie in \thref{funktion_ableiten_mit_hoeheren_abbildungen} und \( f \) überall \emph{stetig} differenzierbar. Ist dann \( D_2 f(a,b) \) invertierbar. So gibt es eine Umgebung \( V_1\times V_2 \) von \( (a,b) \) \sd \( D_2f(x,y) \) invertiertbar ist für alle \( (x,y)\in V_1\times V_2 \) (denn \( (x,y)\mapsto \Det D_2f(x,y) \) ist stetig, da es ein Polynom stetiger Funktionen ist und \( \Det D_2 f(a,b)\neq 0 \)).
     \item Das Beispiel vom letzten Mal ist genau von diesem Typ.
   \end{enumerate}
 \end{bemerkungen*}
@@ -176,7 +176,7 @@ Umgekehrt kann man eine Funktion \( g \) wie oben durch \enquote{Auflösen der G
     \end{equation*}
   \end{proofenumerate}
 \end{proof}
-\begin{folgerung*}
+\begin{folgerung}
   Sei \( f\maps U\to \reals \), \( U\subset \reals^2 \) offen, stetig differenzierbar und si \( \ointerval{a}{b}\in U \), \( f(a,b)=c \) und \( \grad f(a,b)\neq 0 \). Dann kann man in Stück der Höhenlinie \( N_f(c) \) als Graph einer FUnktion beschreiben. Denn sei \( \partial_2 f(a,b)\neq 0 \), \thref{satz_von_der_impliziten_funktion},  angewandt auf \( \tilde{f(x,y)}=f(x,y)-c \), impliziert:
 
   \texists Intervalle \( I_1,I_2 \), \( a\in I_1 \), \( b\in I_2 \), \( I_1\times I_2\subset U \) und eine stetig differenzierbare Funktion (Bemerkung \ref{implizite_funktion_auf_umgebung_stetig_differenzierbar}) \( g\maps I_1\to \reals \), mit \( g(I_1)\subset I_2 \) und
@@ -187,4 +187,4 @@ Umgekehrt kann man eine Funktion \( g \) wie oben durch \enquote{Auflösen der G
   \begin{equation*}
     N_f(c)\cap I_1\times I_2=\Set{(g(x),x)|x\in I_2}.
   \end{equation*}
-\end{folgerung*}
+\end{folgerung}
