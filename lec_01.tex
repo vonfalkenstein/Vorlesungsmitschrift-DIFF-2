@@ -60,8 +60,7 @@ Diesen Begriff möchten wir nun verallgemeinern.
         Hier stellen wir fest, dass insbesondere die offenen Intervalle \( \ointerval{a}{b} \) in diesem Sinne offen (also \( \in \mathcal{T} \)) sind, halb-abgeschlossene und abgeschlossene dagegen nicht.
         \begin{proof}
             \begin{proofenumerate}[label=\textbf{\arabic*. Beh}]
-                
-                \item Zu \( x\in \interval{a}{b} \) wähle \( \varepsilon=\min\Set{\abs{x-a},\abs{x-b}} \)
+                \item Zu \( x\in \interval{a}{b} \) wähle \( \varepsilon=\Min{\Set{\abs{x-a},\abs{x-b}}} \)
                 \item Zu \( x=a\in \rinterval{a}{b} \) kann man kein \( \varepsilon>0 \) finden \sd \( \ointerval{a-\varepsilon}{a+\varepsilon}\subset \rinterval{a}{b} \),
                 denn \( a-\varepsilon/2\in \ointerval{a-\varepsilon}{a+\varepsilon} \) aber \( a-\varepsilon/2<a \), also \( \notin \rinterval{a}{b} \).
             \end{proofenumerate}
@@ -144,28 +143,28 @@ Diesen Begriff möchten wir nun verallgemeinern.
 \end{figure}
 \begin{satz}\label{stetigkeit_in_topologischen_raeumen:urbildkriterium}
     Sei \( f\maps X\to Y \) Abbildung zwischen topologischen Räumen. 
-    Dann ist \( f \) stetig auf \( X \) \gdw für jede offene Teilmenge \( V\subset Y \) das \emph{Urbild} \( \inv{f}(V) \), also \( \Set{x\in X|f(x)\in V} \) offen in \( X \) ist.
+    Dann ist \( f \) stetig auf \( X \) \gdw für jede offene Teilmenge \( V\subset Y \) das \emph{Urbild} \( \inverse{f}(V) \), also \( \Set{x\in X|f(x)\in V} \) offen in \( X \) ist.
 \end{satz}
 \begin{proof}
     \begin{proofdescription}
         
         \item[\hin] Sei \( f \) stetig vorausgesetzt.
-        Sei \( V \) offen \( Y \). Ist das Urbild \( \inv{f}(V) \) leer, sind wir fertig.
+        Sei \( V \) offen \( Y \). Ist das Urbild \( \inverse{f}(V) \) leer, sind wir fertig.
         
-        Sei also \( a\in \inv{f}(V) \). 
+        Sei also \( a\in \inverse{f}(V) \). 
         Dann gibt es nach Voraussetzung eine Umgebung \( U \) von \( a \) \sd \( f(U)\subset V \). 
-        Also gilt \( U \subset \inv{f}(V)\). 
-        Somit besitzt also jeder Punkt \( a\in \inv{f}(V) \) eine Umgebung \( U \) mit \( U\subset \inv{f}(V) \) und somit ist \( \inv{f}(V) \) selbst Umgebung jedes seiner Elemente \( \overset{\ref{offene_menge_umgebung_aller_elemente}}{\implies} \inv{f}(V)\) ist offen.
+        Also gilt \( U \subset \inverse{f}(V)\). 
+        Somit besitzt also jeder Punkt \( a\in \inverse{f}(V) \) eine Umgebung \( U \) mit \( U\subset \inverse{f}(V) \) und somit ist \( \inverse{f}(V) \) selbst Umgebung jedes seiner Elemente \( \overset{\ref{offene_menge_umgebung_aller_elemente}}{\implies} \inverse{f}(V)\) ist offen.
 
         
-        \item[\rueck] Sei \( a\in X \) beliebig. Sei \( V \) eine Umgebung von \( f(a) \). Dann gibt es \( \tilde{V} \) offen mit \( f(a)\in \tilde{V} \) und \( \tilde{V}\subset V \). Nach Voraussetzung ist das Urbild \( U\definedas \inv{f}(\tilde{V}) \) offen. \( U \) enthält \( a \), ist also Umgebung von \( a \) und es gilt \( f(U)=\tilde{V}\subset V \)\timplies \( f \) ist stetig in \( a \).
+        \item[\rueck] Sei \( a\in X \) beliebig. Sei \( V \) eine Umgebung von \( f(a) \). Dann gibt es \( \tilde{V} \) offen mit \( f(a)\in \tilde{V} \) und \( \tilde{V}\subset V \). Nach Voraussetzung ist das Urbild \( U\definedas \inverse{f}(\tilde{V}) \) offen. \( U \) enthält \( a \), ist also Umgebung von \( a \) und es gilt \( f(U)=\tilde{V}\subset V \)\timplies \( f \) ist stetig in \( a \).
     \end{proofdescription}
     
 \end{proof}
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.8\linewidth]{figures/beispiel_urbild_offener_menge_unter_nicht_stetiger_abbildung_nicht_offen}
-    \caption*{\textcolor{Cyan}{\( \inv{f}(V)=\rinterval{a}{c} \) ist nicht offen in \( \reals \)}}
+    \caption*{\textcolor{Cyan}{\( \inverse{f}(V)=\rinterval{a}{c} \) ist nicht offen in \( \reals \)}}
     \label{fig:beispiel_urbild_offener_menge_unter_nicht_stetiger_abbildung_nicht_offen}
 \end{figure}
 \begin{bemerkung*}
@@ -236,32 +235,32 @@ Wir kommen nun zu einer wichtigen Beispiel-Klasse für Topologien:
     \end{align*}
     mit den Eigenschaften
     \begin{eigenschaftenenumerate}
-        \item \label{metrik:nicht_ausgeartet}\( d(x,y)=0 \) \tiff \( x=y \) \enquote{\( d \) ist nicht ausgeartet.}
-        \item \label{metrik:symmetrisch}\( d(x,y)=d(y,x)\logicspace\forall x,y \in X \) \enquote{\( d \) ist symmetrisch.}
-        \item \label{metrik:dreiecksungleichung} \( d(x,y)\leq d(x,z)+d(z,y) \logicspace\forall x,y,z\in X\) \enquote{Es gilt die Dreiecksungleichung.} 
+        \item \label{metrik:nicht_ausgeartet}\( \distance{x}{y}=0 \) \tiff \( x=y \) \enquote{\( d \) ist nicht ausgeartet.}
+        \item \label{metrik:symmetrisch}\( \distance{x}{y}=\distance{y}{x}\logicspace\forall x,y \in X \) \enquote{\( d \) ist symmetrisch.}
+        \item \label{metrik:dreiecksungleichung} \( \distance{x}{y}\leq \distance{x}{z}+\distance{z}{y} \logicspace\forall x,y,z\in X\) \enquote{Es gilt die Dreiecksungleichung.} 
     \end{eigenschaftenenumerate}
     Ein \emph{metrischer Raum} ist ein Tupel \( (X,d) \), wobei \( X \) eine Menge ist und \( d \) eine Metrik auf \( X \). Mist schreibt man nur \( X \), weil Missverständnisse ausgeschlossen sind.
 \end{definition}
 \begin{bemerkung*}
     Aus den Axiomen folgt auch
     \begin{align*}
-        d(x,y)\geq 0 \logicspace \forall x,y \in X,
+        \distance{x}{y}\geq 0 \logicspace \forall x,y \in X,
     \end{align*}
     denn
     \begin{align*}
-        0\explain{\ref{metrik:nicht_ausgeartet}}{=}d(x,x)\explain{\triangle\text{-\Ungl}}{\leq}d(x,y)+d(y,x)\explain{\text{Symm.}}{=}2d(x,y).
+        0\explain{\ref{metrik:nicht_ausgeartet}}{=}\distance{x}{x}\explain{\triangle\text{-\Ungl}}{\leq}\distance{x}{y}+\distance{y}{x}\explain{\text{Symm.}}{=}2\distance{x}{y}.
     \end{align*}
 \end{bemerkung*}
 \begin{beispiele*}
     \begin{enumerate}[label=\rechtsklammer{\roman*}, ref=\rechtsklammer{\roman*}]
-        \item \label{metrik:beispiele:r}\( \reals \), \( d(x,y)=\abs{x-y} \).
-        \item \label{metrik:beispiele:diskret}\( X \) Menge, \( d(x,y)=\begin{cases}
+        \item \label{metrik:beispiele:r}\( \reals \), \( \distance{x}{y}=\abs{x-y} \).
+        \item \label{metrik:beispiele:diskret}\( X \) Menge, \( \distance{x}{y}=\begin{cases}
             1 & x\neq y\\
             0 & x=y
         \end{cases}
          \), \enquote{triviale} oder \enquote{diskrete Metrik}.
          
-         \item\label{metrik:beispiele:r_n} (aus AGLA \Romannum{1}) \( \reals^n \), \( d(x,y)=\sqrt{\sum_{i=1}^{n} (x_i-y_i)^2} \), \enquote{Euklidische Metrik}.
+         \item\label{metrik:beispiele:r_n} (aus AGLA \Romannum{1}) \( \reals^n \), \( \distance{x}{y}=\sqrt{\sum_{i=1}^{n} (x_i-y_i)^2} \), \enquote{Euklidische Metrik}.
     \end{enumerate}
 \end{beispiele*}
 Eine Metrik misst den \emph{Abstand} zwischen zwei Punkten. 
@@ -276,7 +275,7 @@ Mit \ref{metrik:beispiele:r_n} wird auch der Name der Dreiecksungleichung klar:
 \begin{definition}
     Sei \( (X,d) \) ein metrischer Raum. Seien \( x\in X \), \( \varepsilon>0 \). Dann nennt man
     \begin{align*}
-        B_\epsilon(x)\definedas\Set{y\in X| d(x,y)<\varepsilon}
+        B_\epsilon(x)\definedas\Set{y\in X| \distance{x}{y}<\varepsilon}
     \end{align*}
     den (offenen) \( \varepsilon \)-Ball um \( x \).
 \end{definition}
@@ -306,17 +305,17 @@ Mit \ref{metrik:beispiele:r_n} wird auch der Name der Dreiecksungleichung klar:
 \begin{bemerkungen}
     \begin{enumerate}
         \item \ref{standard-topologie} ist ein Spezialfall dieser Aussage
-        \item Die \enquote{offenen} \( \varepsilon \)-Bälle sind tatsächlich offen: Zu \( y\in B_\varepsilon(x) \) wähl \( \tilde{\varepsilon}\definedas \varepsilon-d(x,y)>0 \).
+        \item Die \enquote{offenen} \( \varepsilon \)-Bälle sind tatsächlich offen: Zu \( y\in B_\varepsilon(x) \) wähl \( \tilde{\varepsilon}\definedas \varepsilon-\distance{x}{y}>0 \).
         \begin{figure}[H]
             \centering
             \includegraphics[width=0.3\linewidth]{figures/offene_baelle_sind_offen}
             \label{fig:offene_baelle_sind_offen}
         \end{figure}
-        Dann ist \( B_{\tilde{\varepsilon}}(y)=\Set{z|d(y,z)<\tilde{\varepsilon}} \subset B_\varepsilon(x)\). Denn für alle \( z\in B_{\tilde{\varepsilon}}(y) \) ist
+        Dann ist \( B_{\tilde{\varepsilon}}(y)=\Set{z|\distance{y}{z}<\tilde{\varepsilon}} \subset B_\varepsilon(x)\). Denn für alle \( z\in B_{\tilde{\varepsilon}}(y) \) ist
         \begin{align*}
-            d(x,z)\begin{aligned}[t] 
-                &\leq d(x,y)+d(y,z)<d(x,y)+\tilde{\varepsilon}\\
-                &=d(x,y)+\varepsilon-d(x,y)=\varepsilon
+            \distance{x}{z}\begin{aligned}[t] 
+                &\leq \distance{x}{y}+\distance{y}{z}<\distance{x}{y}+\tilde{\varepsilon}\\
+                &=\distance{x}{y}+\varepsilon-\distance{x}{y}=\varepsilon
             \end{aligned}
         \end{align*}
         
@@ -325,7 +324,7 @@ Mit \ref{metrik:beispiele:r_n} wird auch der Name der Dreiecksungleichung klar:
         \begin{proof}
             Seien \( x,y\in X \), \( x\neq y \). Angenommen \texists Metrik \( d \).
             \begin{align*}
-                \implies &d(x,y)\neq 0\implies d(x,y)=c>0\\
+                \implies &\distance{x}{y}\neq 0\implies \distance{x}{y}=c>0\\
                 \implies &B_c(x)\text{ ist offen.}\\
                 \underset{\text{\scshape{VOR}}}{\implies} &B_c(x)=\emptyset \text{ oder } =X\\
                 \implies &B_c(x)=X
@@ -368,18 +367,18 @@ Wir formulieren nun Konvergenz und Stetigkeit für metrische Räume:
         \begin{proof}
             Sei \( \varepsilon>0 \). Es gilt
             \begin{align*}
-                &d(x_n,x)^2 \begin{aligned}[t] 
+                &\distance{x_n}{x}^2 \begin{aligned}[t] 
                     &=\sum\limits_{i=1}^{m} (x_n^{(i)}-x^{(i)})^2\\
                     &=\left( \frac{1}{n}\cos(n)-0 \right)^2+\left( \frac{1}{n}\sin(n)-0 \right)^2+(a-a)^2+\cdots +(a-a)^2\\
                     &=\frac{1}{n^2}(\cos(n)^2+\sin(n)^2)=\frac{1}{n^2}
                 \end{aligned}\\
-                \implies &d(x_n,x)=\frac{1}{n}\\
-                \implies &d(x_n,x)<\varepsilon\logicspace\forall n\geq N\text{ mit } N>\frac{1}{\varepsilon}\\
+                \implies &\distance{x_n}{x}=\frac{1}{n}\\
+                \implies &\distance{x_n}{x}<\varepsilon\logicspace\forall n\geq N\text{ mit } N>\frac{1}{\varepsilon}\\
                 \implies &x_n \in B_\varepsilon(x) \logicspace\forall n \geq N.
             \end{align*}            
         \end{proof}
         
-        \item \( X=\stetigefunktionen(\interval{a}{b}) \), \( d(f,g)\definedas \supnorm{f-g} \) mit \( \supnorm{f-g}=\sup_{x\in \interval{a}{b}}\abs{f(x)-g(x)} \).
+        \item \( X=\stetigefunktionen(\interval{a}{b}) \), \( \distance{f}{g}\definedas \supnorm{f-g} \) mit \( \supnorm{f-g}=\sup_{x\in \interval{a}{b}}\abs{f(x)-g(x)} \).
         \begin{enumerate}[label=\textbf{\arabic*. Beh}]
             \item \( d \) ist eine Metrik auf \( X \).
             \begin{proof}
@@ -395,7 +394,7 @@ Wir formulieren nun Konvergenz und Stetigkeit für metrische Räume:
                     \item[\ref{metrik:symmetrisch}:]
                     \begin{align*}
                         &\abs{f(x)-g(x)}=\abs{g(x)-f(x)}\logicspace\forall x\\
-                        \implies &d(f,g)=d(g,f).
+                        \implies &\distance{f}{g}=\distance{g}{f}.
                     \end{align*} 
                     \item[\ref{metrik:dreiecksungleichung}:]
                      \begin{align*}
@@ -425,7 +424,7 @@ Wir formulieren nun Konvergenz und Stetigkeit für metrische Räume:
             \end{proof}
             
         \end{enumerate}
-        \item \( X=\stetigefunktionen(\interval{0}{1}) \), \( d(f,g)=\Integrate{\abs{f(x)-g(x)}}{x,0,1} \).
+        \item \( X=\stetigefunktionen(\interval{0}{1}) \), \( \distance{f}{g}=\Integrate{\abs{f(x)-g(x)}}{x,0,1} \).
         \begin{enumerate}[label=\textbf{\arabic*. Beh}]
             
             \item \( d \) ist eine Metrik auf \( \stetigefunktionen(\interval{0}{1}) \).
@@ -436,10 +435,9 @@ Wir formulieren nun Konvergenz und Stetigkeit für metrische Räume:
             \item \( (f_n)_n\subset \stetigefunktionen(\interval{0}{1}) \), \( f_n(x)=x^n \) konvergiert, und zwar gegen \( f(x)=0\logicspace\forall x \).
             \begin{proof}
                 \begin{align*}
-                    &\Integrate{\abs{f_n(x)-0}}{x,0,1}=\Integrate{x^n}{x,0,1}=\frac{1}{n+1}\evaluatebetween{x^{n+1}}{x}{0}{1}=\frac{1}{n+1}\\ % ChkTeX 29
-                    \implies &d(f_n,f)=\frac{1}{n+1}<\varepsilon\logicspace\forall n\geq N \text{ mit } N \geq \frac{1}{\varepsilon}.
+                    &\Integrate{\abs*{f_n(x)-0}}{x,0,1}%=\Integrate{x^n}{x,0,1}=\frac{1}{n+1}\evaluatebetween{x^{n+1}}{x}{0}{1}=\frac{1}{n+1}\\ 
+                    \implies &\distance{f_n}{f}=\frac{1}{n+1}<\varepsilon\logicspace\forall n\geq N \text{ mit } N \geq \frac{1}{\varepsilon}.
                 \end{align*}
-                
             \end{proof}
             
         \end{enumerate}

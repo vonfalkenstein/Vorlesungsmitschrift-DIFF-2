@@ -21,9 +21,9 @@
     Für Abbildungen \( f\maps \reals^n\to \reals^n \) kann man analog definieren:
 \end{erinnerung*}
 \begin{definition}
-    Die \emph{Ableitung} einer Funktion \( f\maps U\to \reals^m \), \( U\subset \reals^n \) offen, an der Stelle \( a\in U \), ist, wenn sie existiert, eine Matrix \( Df(a)\in \Mat(m\times n) \), die eine lineare Approximation von \( f \) ergibt:
+    Die \emph{Ableitung} einer Funktion \( f\maps U\to \reals^m \), \( U\subset \reals^n \) offen, an der Stelle \( a\in U \), ist, wenn sie existiert, eine Matrix \( \totalderivative-{f}(a)\in \Mat(m\times n) \), die eine lineare Approximation von \( f \) ergibt:
     \begin{align*}
-        f(x)=f(a)+Df(a)\explain{\text{Matrix-Multiplikation}}{\matrixmult}(x-a)+R_a(x)\tag{\(*\)}\label{eq:ableitung:definition}
+        f(x)=f(a)+\totalderivative-{f}(a)\explain{\text{Matrix-Multiplikation}}{\matrixmult}(x-a)+R_a(x)\tag{\(*\)}\label{eq:ableitung:definition}
     \end{align*}
     Sie existiert genau dann, wenn
     \begin{align*}
@@ -38,17 +38,17 @@
         \begin{align*}
             f(x)\begin{aligned}[t]
                 &=f(a)+A\matrixmult(x-a)+\tilde{R}_a(x)\\
-                &=f(a)+Df(a)\matrixmult (x-a)+R_a(x)
+                &=f(a)+\totalderivative-{f}(a)\matrixmult (x-a)+R_a(x)
             \end{aligned}            
         \end{align*}
         Dann folgt:
         \begin{align*}
-            \lim_{x \goesto a}(\underbrace{(A-Df(a))\matrixmult (x-a)\cdot\quot{1}{\norm{x-a}}}_{=\frac{1}{\norm{x-a}}(R_a(x)-\tilde{R}_a(x))})=0.
+            \lim_{x \goesto a}(\underbrace{(A-\totalderivative-{f}(a))\matrixmult (x-a)\cdot\quot{1}{\norm{x-a}}}_{=\frac{1}{\norm{x-a}}(R_a(x)-\tilde{R}_a(x))})=0.
         \end{align*}
-        \timplies \( A-Df(a)=0 \) (Nullmatrix), da wegen der Stetigkeit linearer Abbildungen \( \reals^n\to \reals^m \) der Grenzwert gleich \( (A-Df(a))\matrixmult \lim \quot{(x-a)}{\norm{x-a}} \) ist und \( \norm{\lim \quot{(x-a)}{\norm{x-a}}}=1\neq 0 \).
+        \timplies \( A-\totalderivative-{f}(a)=0 \) (Nullmatrix), da wegen der Stetigkeit linearer Abbildungen \( \reals^n\to \reals^m \) der Grenzwert gleich \( (A-\totalderivative-{f}(a))\matrixmult \lim \quot{(x-a)}{\norm{x-a}} \) ist und \( \norm{\lim \quot{(x-a)}{\norm{x-a}}}=1\neq 0 \).
         \item Wie in der Diff \Romannum{1} ist es oft zweckmäßig \( f \) an der Stelle \( a+h \) mit \( f \) an der Stelle \( a \) zu vergleichen (\( x=a+h \)).
         \begin{align*}
-            f(a+h)=f(a)+Df(a)\matrixmult h+\underline{R}_h(a)
+            f(a+h)=f(a)+\totalderivative-{f}(a)\matrixmult h+\underline{R}_h(a)
         \end{align*}
         mit \( \lim_{h \goesto 0}\quot{(\underline{R}_h(x))}{\norm{h}}=0 \).
     \end{enumerate}
@@ -57,7 +57,7 @@
     \begin{enumerate}
         \item \( f\maps \reals^n\to \reals^n \), \( f(x)=A\matrixmult x+b \), \( A\in \Mat(m\times n, \reals) \), \( b\in \reals^m \).
         \begin{align*}
-            f(a+h)=f(a)+A\matrixmult h\implies Df(a)=A.
+            f(a+h)=f(a)+A\matrixmult h\implies \totalderivative-{f}(a)=A.
         \end{align*}
         Insbesondere verschwindet die Ableitung einer konstanten Funktion.
     \item \( f\maps \reals^n \to \reals\), \( f(x)=\scalarproduct{x}{B\matrixmult x} \), \( \scalarproduct{\cdot}{\cdot} \) euklidisches Skalarprodukt, \( B\in \Mat(n\times n, \reals) \).
@@ -74,8 +74,8 @@
     \end{align*}
     folgt: \( f \) ist in allen \( a\in \reals^n \) differenzierbar und
     \begin{align*}
-        &Df(a)\matrixmult h=\scalarproduct{(B+B^T)\matrixmult a}{h}=(b_1,\dots,b_n)\begin{pNiceMatrix} h_1 \\ \vdots \\ h_n \end{pNiceMatrix}\\
-        \implies &Df(a)=b=((B+B^T)\matrixmult a)^T\in \Mat(1\times n,\reals)\quad \forall h\in \reals^n. 
+        &\totalderivative-{f}(a)\matrixmult h=\scalarproduct{(B+B^T)\matrixmult a}{h}=(b_1,\dots,b_n)\begin{pNiceMatrix} h_1 \\ \vdots \\ h_n \end{pNiceMatrix}\\
+        \implies &\totalderivative-{f}(a)=b=((B+B^T)\matrixmult a)^T\in \Mat(1\times n,\reals)\quad \forall h\in \reals^n. 
     \end{align*}
     \end{enumerate}
 \end{beispiele*}
@@ -86,21 +86,21 @@ Aus der Definition folgt sofort
 \begin{proof}
     \begin{align*}
         \lim_{h \goesto 0}f(a+h)\begin{aligned}[t]
-            &=\lim_{h \goesto 0}(f(a)+Df(a)+\underline{R}_a(h))\\
-            &=f(a)+\explain[Big]{\explain{\text{Norm in \( \reals^m \)}}{\norm{Df(a)\matrixmult h}}\leq \norm{Df(a)}_{\text{op}}\cdot\explain{\text{Norm in \( \reals^n \)}}{\norm{h}}}{0}+\explain{\phantom{\text{Es gilt sogar meeehr!}}\text{Es gilt sogar \(\quot{\underline{R}_a(h)}{\norm{h}}\goesto 0\)}}{0}
+            &=\lim_{h \goesto 0}(f(a)+\totalderivative-{f}(a)+\underline{R}_a(h))\\
+            &=f(a)+\explain[Big]{\explain{\text{Norm in \( \reals^m \)}}{\norm{\totalderivative-{f}(a)\matrixmult h}}\leq \norm{\totalderivative-{f}(a)}_{\text{op}}\cdot\explain{\text{Norm in \( \reals^n \)}}{\norm{h}}}{0}+\explain{\phantom{\text{Es gilt sogar meeehr!}}\text{Es gilt sogar \(\quot{\underline{R}_a(h)}{\norm{h}}\goesto 0\)}}{0}
         \end{aligned}
     \end{align*}
 \end{proof}
 \begin{satz}[Kettenregel]
     Seien \( U\subset \reals^n \), \( V\subset \reals^m \) offen, \( g\maps U\to \reals^m \), \( f\maps V\to \reals^k \), \( g(U)\subset V \). Ist \( g \) in \( a\in U \) differenzierbar und \( f \) in \( b=g(a) \), so ist die Verkettung \( f\circ g\maps U\to \reals^k \) in \( a \) differenzierbar und es gilt
     \begin{align*}
-        D(f\circ g)(a)=\explain{\in \Mat(k\times m,\reals)}{\underbrace{Df(g(a))}}\explain[big]{\in \Mat(m\times n),\reals}{\underbrace{Dg(a)}}.
+        \totalderivative{f\circ g}(a)=\explain{\in \Mat(k\times m,\reals)}{\underbrace{\totalderivative-{f}(g(a))}}\explain[big]{\in \Mat(m\times n),\reals}{\underbrace{\totalderivative-{g}(a)}}.
     \end{align*}
 \end{satz}
 \begin{proof}
     \begin{align*}
-        g(a+u)&=g(a)+A\cdot u+\underline{R}_a^g(u)\quad A=Dg(a)\tag{1}\label{eq:ableitung:kettenregel:g}\\
-        f(b+v)&=f(b)+B\cdot v+\underline{R}_b^f(v)\quad B=Df(b)\tag{2}\label{eq:ableitung:kettenregel:f}
+        g(a+u)&=g(a)+A\cdot u+\underline{R}_a^g(u)\quad A=\totalderivative-{g}(a)\tag{1}\label{eq:ableitung:kettenregel:g}\\
+        f(b+v)&=f(b)+B\cdot v+\underline{R}_b^f(v)\quad B=\totalderivative-{f}(b)\tag{2}\label{eq:ableitung:kettenregel:f}
     \end{align*}
     Setze speziell \( v\definedas g(a+u)-g(a)\overset{\eqref{eq:ableitung:kettenregel:g}}=A\cdot u+\underline{R}_a^g(u) \).
     \begin{align*}
@@ -124,11 +124,11 @@ Aus der Definition folgt sofort
     \begin{enumerate}
         \item \label{produktregel} \( f\cdot g \) ist differenzierbar in \( a \) und es gilt
         \begin{align*}
-            D(f\cdot g)(a)=Df(a)\matrixmult g(a)+f(a)\matrixmult Dg(a).
+            \totalderivative{f\cdot g}(a)=\totalderivative-{f}(a)\matrixmult g(a)+f(a)\matrixmult \totalderivative-{g}(a).
         \end{align*}
         \item \label{quotientenregel} Ist \( g(a)\neq 0 \) so gilt: \( \quot{f}{g} \) ist auf einer Umgebung von \( a \) definiert und differenzierbar in \( a \) und es gilt 
         \begin{align*}
-            D(\quot{f}{g})(a)=Df(a)\cdot\frac{1}{g(a)}-f(a)\cdot\frac{1}{g(a)^2}\cdot Dg(a).
+            \totalderivative{\quot{f}{g}}(a)=\totalderivative-{f}(a)\cdot\frac{1}{g(a)}-f(a)\cdot\frac{1}{g(a)^2}\cdot \totalderivative-{g}(a).
         \end{align*}
     \end{enumerate}
     
@@ -137,13 +137,13 @@ Aus der Definition folgt sofort
     \begin{proofdescription}
         \item[\ref{produktregel}]
         \begin{align*}
-            f(a+h)&=f(a)+Df(a)\matrixmult h+\underline{R}_{a}^f(h)\\
-            g(a+h)&=g(a)+Dg(a)\matrixmult h+\underline{R}_{a}^g(h)\\
+            f(a+h)&=f(a)+\totalderivative-{f}(a)\matrixmult h+\underline{R}_{a}^f(h)\\
+            g(a+h)&=g(a)+\totalderivative-{g}(a)\matrixmult h+\underline{R}_{a}^g(h)\\
             f\cdot g(a+h)&\begin{aligned}[t]
-                &=\left( f(a)+Df(a)\matrixmult h+\underline{R}_{a}^f(h) \right)\left( g(a)+Dg(a)\matrixmult h+\underline{R}_{a}^g(h) \right)\\
+                &=\left( f(a)+\totalderivative-{f}(a)\matrixmult h+\underline{R}_{a}^f(h) \right)\left( g(a)+\totalderivative-{g}(a)\matrixmult h+\underline{R}_{a}^g(h) \right)\\
                 &=\begin{aligned}[t]
-                    &f(a)\cdot g(a)+(\underbrace{Df(a)\matrixmult g(a)}_{\in \Mat(1\times n,\reals)})\matrixmult h+(\underbrace{f(a)\matrixmult Dg(a)}_{\in \Mat(1\times n,\reals)})\matrixmult h\\
-                    &+\underbrace{(Df(a)\matrixmult h+\underline{R}_a^f(h))(Dg(a)\matrixmult h+\underline{R}_a^g(h))}_{\frac{\cdot}{\norm{h}}\goesto 0 \text{ für }h\goesto 0}.
+                    &f(a)\cdot g(a)+(\underbrace{\totalderivative-{f}(a)\matrixmult g(a)}_{\in \Mat(1\times n,\reals)})\matrixmult h+(\underbrace{f(a)\matrixmult \totalderivative-{g}(a)}_{\in \Mat(1\times n,\reals)})\matrixmult h\\
+                    &+\underbrace{(\totalderivative-{f}(a)\matrixmult h+\underline{R}_a^f(h))(\totalderivative-{g}(a)\matrixmult h+\underline{R}_a^g(h))}_{\frac{\cdot}{\norm{h}}\goesto 0 \text{ für }h\goesto 0}.
                 \end{aligned}
             \end{aligned}            
         \end{align*}
@@ -158,7 +158,7 @@ Aus der Definition folgt sofort
         \end{align*}
         und somit nach der Kettenregel
         \begin{align*}
-            D\left( \frac{1}{g} \right)(a)=D \text{Inv}(g(a))\cdot Dg(a)
+            \totalderivative*{\frac{1}{g}}(a)=\totalderivative-{\text{Inv}(g(a))}\cdot \totalderivative-{g}(a)
         \end{align*}
         und \( D \text{Inv}(t)=-\frac{1}{t^2} \) (Diff \Romannum{1}).
     \end{proofdescription}    
@@ -182,13 +182,13 @@ Diff \Romannum{1}: Ableitung beschreibt Rate der Veränderung. Höher-dimensiona
     \end{figure}
     Entlang der Niveauflächen ist \( f \) konstant. Wie wird das in der Ableitung sichtbar?
 
-    Im Beispiel oben ist \( Df(a)=(2a_1,2a_2) \) (check!). Sei \( a=(r\cos \phi, r\sin \phi) \), \( r>0 \). Betrachte \( f(a+h)=f(a)+Df(a)\matrixmult h+\underline{R}_a(h) \). Ist \( h=\textcolor{Blue}{(-\varepsilon \sin \phi, \varepsilon \cos \phi)} \), \( \varepsilon>0 \) (in \enquote{Richtung} der Niveaumenge), so ist \( Df(a)\matrixmult h=0 \).
+    Im Beispiel oben ist \( \totalderivative-{f}(a)=(2a_1,2a_2) \) (check!). Sei \( a=(r\cos \phi, r\sin \phi) \), \( r>0 \). Betrachte \( f(a+h)=f(a)+\totalderivative-{f}(a)\matrixmult h+\underline{R}_a(h) \). Ist \( h=\textcolor{Blue}{(-\varepsilon \sin \phi, \varepsilon \cos \phi)} \), \( \varepsilon>0 \) (in \enquote{Richtung} der Niveaumenge), so ist \( \totalderivative-{f}(a)\matrixmult h=0 \).
     \begin{figure}[H]
         \centering
         \includegraphics[width=0.2\linewidth]{figures/in_richtung_und_orthogonal_der_niveaumenge}
         \label{fig:in_richtung_und_orthogonal_der_niveaumenge}
     \end{figure}
-    Ist dagegen \( h=\textcolor{Green}{(\varepsilon \cos \phi, \varepsilon \sin \phi)} \) (von der Niveaumenge weg), so ist \( Df(a)\matrixmult h=2r\varepsilon>0 \). Das wollen wir im Folgenden systematisch studieren.
+    Ist dagegen \( h=\textcolor{Green}{(\varepsilon \cos \phi, \varepsilon \sin \phi)} \) (von der Niveaumenge weg), so ist \( \totalderivative-{f}(a)\matrixmult h=2r\varepsilon>0 \). Das wollen wir im Folgenden systematisch studieren.
 \end{beispiel*}
 \begin{definition*}
     Sei \( f\maps U\to \reals^m \), \( U\subset \reals^n \) offen, gegeben. Für \( a\in U \) und \( v\in \reals^n \) heißt der Grenzwert (falls er existiert)
@@ -229,9 +229,9 @@ Diff \Romannum{1}: Ableitung beschreibt Rate der Veränderung. Höher-dimensiona
 \begin{satz}
     Sei \( f\maps U\to \reals^m \), \( U\subset \reals^n \) offen, in \( a\in U \) differenzierbar. Dann besitzt \( f \) die Richtungsableitungen
     \begin{align*}
-        \partial_v f(a)=Df(a)\matrixmult v\quad \forall v\in \reals^n
+        \partial_v f(a)=\totalderivative-{f}(a)\matrixmult v\quad \forall v\in \reals^n
     \end{align*}
-    und \( Df(a) \) hat bezüglich der Standardbasis \( e_1,\dotsc, e_n \) die Matrix Darstellung
+    und \( \totalderivative-{f}(a) \) hat bezüglich der Standardbasis \( e_1,\dotsc, e_n \) die Matrix Darstellung
     \begin{align*}
         \begin{pNiceMatrix} \partial_1 f & \Cdots  & \partial_n f \end{pNiceMatrix}=\begin{pNiceMatrix}
             \partial_1 f_1(a) & \Cdots & \partial_n f_1(a) \\
@@ -240,7 +240,7 @@ Diff \Romannum{1}: Ableitung beschreibt Rate der Veränderung. Höher-dimensiona
             \partial_1 f_m(a) & \Cdots & \partial_n f_m(a) 
         \end{pNiceMatrix}\in \Mat(m\times n,\reals),
     \end{align*}
-    \enquote{Jacobi-Matrix}, wobei \( \partial_j f(a)=\partial_{e_j}f(a)=Df(a)\matrixmult e_j=j \)-te Spalte.
+    \enquote{Jacobi-Matrix}, wobei \( \partial_j f(a)=\partial_{e_j}f(a)=\totalderivative-{f}(a)\matrixmult e_j=j \)-te Spalte.
 \end{satz}
 \begin{proof}
     Für \( v=0 \) sind beide Seiten \( 0 \) \checkmark.
@@ -248,19 +248,18 @@ Diff \Romannum{1}: Ableitung beschreibt Rate der Veränderung. Höher-dimensiona
     Für \( v\neq 0 \) betrachte
     \begin{align*}
         \begin{aligned}[t]
-            &\rphantom{=}\norm{\quot{(f(a+tv)-f(a))}{t}-Df(a)\matrixmult v}_{\sim\ (\text{Norm auf \( \reals^m \)})}\\
-            &=\frac{1}{\abs{t}}\norm{f(a+tv)-(f(a)+Df(a)\matrixmult(tv))}_{\sim}\\
-            &\explain{\text{Homogenität }\norm{\cdot}}{=}\frac{1}{\explain{\text{Norm auf \( \reals^n \)}}{\norm{t\cdot v}}}\norm{f(a+tv)-(f(a)+Df(a)\matrixmult(tv))}_{\sim}\cdot\norm{v}.
+            &\rphantom{=}\norm{\quot{(f(a+tv)-f(a))}{t}-\totalderivative-{f}(a)\matrixmult v}_{\sim\ (\text{Norm auf \( \reals^m \)})}\\
+            &=\frac{1}{\abs{t}}\norm{f(a+tv)-(f(a)+\totalderivative-{f}(a)\matrixmult(tv))}_{\sim}\\
+            &\explain{\text{Homogenität }\norm{\cdot}}{=}\frac{1}{\explain{\text{Norm auf \( \reals^n \)}}{\norm{t\cdot v}}}\norm{f(a+tv)-(f(a)+\totalderivative-{f}(a)\matrixmult(tv))}_{\sim}\cdot\norm{v}.
         \end{aligned}
     \end{align*}
     Differenzierbarkeit \timplies strebt gegen \( 0 \) für \( tv\goesto 0 \), also für \( t\goesto 0 \) \timplies Die Richtungsableitungen existieren und 
     \begin{align*}
-        \partial_v f(a)=Df(a)\matrixmult v
+        \partial_v f(a)=\totalderivative-{f}(a)\matrixmult v
     \end{align*}
     und bezüglich der kanonischen Basen gilt
     \begin{align*}
-        \equalto{\begin{pNiceMatrix} @6
-        _j f_1(a) \\ \Vdots \\ \partial_j f_m(a) \end{pNiceMatrix}}{\partial_j f(a)}=Df(a)\matrixmult e_k=j \text{-te Spalte von \( Df(a) \)}.
+        \equalto{\begin{pNiceMatrix} \partial_j f_1(a) \\ \Vdots \\ \partial_j f_m(a) \end{pNiceMatrix}}{\partial_j f(a)}=\totalderivative-{f}(a)\matrixmult e_k=j \text{-te Spalte von \( \totalderivative-{f}(a) \)}.
     \end{align*}
 \end{proof}
 \begin{achtung*}

@@ -4,7 +4,7 @@
   \begin{enumerate}
     \item \( f\maps \reals^3\to \reals^2 \), \( f(x,y,z)=\begin{pNiceMatrix} x^2-y^2+1 \\ x^2-z^2-2 \end{pNiceMatrix} \) ist stetig differenzierbar.
     \begin{equation*}
-      Df(x,y,z)=\begin{pNiceMatrix} 2x & -2y & 0 \\ 2x & 0 & -2z \end{pNiceMatrix}.
+      \totalderivative-{f}(x,y,z)=\begin{pNiceMatrix} 2x & -2y & 0 \\ 2x & 0 & -2z \end{pNiceMatrix}.
     \end{equation*}
     Ist  \( y_0\cdot z_0\neq 0 \) (also beide \( \neq 0 \)), so ist \( -2 \begin{pNiceMatrix} y_0 & 0 \\ 0 & z_0 \end{pNiceMatrix} \) invertierbar.
 
@@ -20,8 +20,8 @@
       \begin{align*}
         \implies &\equalto{\text{(Substitution)}\ \Integrate{u}{u,g_j(x_0),g_j(x)}=\frac{1}{2}(g_j^2(x)-g_j^2(x_0))}{\Integrate{g_j'(t)g_j(t)}{t,x_0,x}}=\frac{x^2}{2}-\frac{x_0^2}{2}\quad j=1,2\\
         \implies \begin{aligned}[t]
-          x^2>x_0^2-y_0^2&\maps g_1(x)=\sgn(y_0)\sqrt{x^2-x_0^2+y_0^2}\\
-          x^2>x_0^2-y_0^2&\maps g_2(x)=\sgn(z_0)\sqrt{x^2-x_0^2+z_0^2}.
+          x^2>x_0^2-y_0^2&\maps g_1(x)=\sgn{y_0}\sqrt{x^2-x_0^2+y_0^2}\\
+          x^2>x_0^2-y_0^2&\maps g_2(x)=\sgn{z_0}\sqrt{x^2-x_0^2+z_0^2}.
         \end{aligned}
       \end{align*}
       \begin{beispiel*}
@@ -52,28 +52,28 @@
 \section*{Der Satz von der Umkehrabbildung}\label{satz_von_der_umkehrabbildung}
 Sei \( f\maps U\to \reals^n \) stetig differenzierbar, \( U\subset \reals^n \). Gibt es einfach zu prüfende Kriterien, die garantieren, dass \( f \) umkehrbar ist mit stetig differenzierbarer Umkehrfunktion \( g\maps f(U)\to \reals^n \)?
 
-Notwendiges Kriterium ist, dass \( Df(x) \) invertierbar ist, da mit der Kettenregel aus \( g\circ f=\Id_u \) folgt \( Dg(f(x))\matrixmult Df(x)=\mathds{1} \). Tatsächlich ist sogar folgendr hinreichend:
+Notwendiges Kriterium ist, dass \( \totalderivative-{f}(x) \) invertierbar ist, da mit der Kettenregel aus \( g\circ f=\Id_u \) folgt \( \totalderivative-{g}(f(x))\matrixmult \totalderivative-{f}(x)=\mathds{1} \). Tatsächlich ist sogar folgendr hinreichend:
 
 \begin{satz}
-  Sei \( U\subset \reals^n \) offen, \( f\maps U\to \reals^n \), stetig differenzierbar. Sei \( a\in U \) \sd \( Df(a) \) invertierbar ist. Dann gibt es eine offene Umgebung \( V\subset U \) von \( a \) und eine offene Umgebung \( W\in \reals^n \) von \( b\definedas f(a) \), \sd \( f\maps V\to \reals^n \), \( V \) bijektiv auf \( W \) abgebildet und die Umkehrabbildung \( g\maps W\to \reals^n \) stetig differenzierbar ist. Es gilt dann
+  Sei \( U\subset \reals^n \) offen, \( f\maps U\to \reals^n \), stetig differenzierbar. Sei \( a\in U \) \sd \( \totalderivative-{f}(a) \) invertierbar ist. Dann gibt es eine offene Umgebung \( V\subset U \) von \( a \) und eine offene Umgebung \( W\in \reals^n \) von \( b\definedas f(a) \), \sd \( f\maps V\to \reals^n \), \( V \) bijektiv auf \( W \) abgebildet und die Umkehrabbildung \( g\maps W\to \reals^n \) stetig differenzierbar ist. Es gilt dann
   \begin{equation*}
-    Dg(f(x))=\inv{Df(x)}\quad \forall x\in V.
+    \totalderivative-{g}(f(x))=\inverse{\totalderivative-{f}(x)}\quad \forall x\in V.
   \end{equation*}
 \end{satz}
 \begin{bemerkung*}
   Die letzte Identität, die wir obn schon bewiesen hatten, leuchtet unmittelbar ein, wenn man sich überlegt, dass die Ableitung eine differenzierbare Funktion linear approximiert, und dass die Umkehrabbildung einer invertierbaren linearen Abbildung die inverse Matrix ist.
 \end{bemerkung*}
 \begin{proof}[Beweis von \ref{satz_von_der_umkehrabbildung}]
-  Betrachte \( F\maps \reals^n\times U\to \reals^n \), \( D(z,x)=z-f(x) \). Dann ist 
+  Betrachte \( F\maps \reals^n\times U\to \reals^n \), \( \distance{z}{x}=z-f(x) \). Dann ist 
   \begin{equation*}
-    Df(z,x)=(\underbrace{\mathds{1}_{n\times n}}_{D_1 F(z,x)}-\underbrace{Df(x)}_{D_2 F(z,x)}).
+    \totalderivative-{f}(z,x)=(\underbrace{\mathds{1}_{n\times n}}_{D_1 F(z,x)}-\underbrace{\totalderivative-{f}(x)}_{D_2 F(z,x)}).
   \end{equation*}
-  Wegen \( F(b,a)=0 \) und \( D_2 F(b,a)=-Df(a) \) invertierbar können wir den Satz von der impliziten Funktion \ref{satz_von_der_impliziten_funktion} auf \( F \) anwenden und \( F \) nach \( x \) auflösen. Es gibt also offene Umgebungen \( V_1\subset \reals^n \) von \( b \) und \( V_2\subset U \) von \( a \) und eine stetig differenzierbare Funktion (\vgl Bemerkung~\ref{implizite_funktion_auf_umgebung_stetig_differenzierbar} nach \ref{satz_von_der_impliziten_funktion}) \( g\maps V_1\to \reals^n \) mit \( g(V_1)\subset V_2 \) und \( F(z,g(z))=0\quad \forall z\in V_1 \), also \( z-f(g(z))=0 \quad \forall z\in V_1 \) und für all \( (z,x)\in V_1\times V_2 \) mit \( F(z,x)=0 \) gilt \( x=g(z) \).
+  Wegen \( F(b,a)=0 \) und \( D_2 F(b,a)=-\totalderivative-{f}(a) \) invertierbar können wir den Satz von der impliziten Funktion \ref{satz_von_der_impliziten_funktion} auf \( F \) anwenden und \( F \) nach \( x \) auflösen. Es gibt also offene Umgebungen \( V_1\subset \reals^n \) von \( b \) und \( V_2\subset U \) von \( a \) und eine stetig differenzierbare Funktion (\vgl Bemerkung~\ref{implizite_funktion_auf_umgebung_stetig_differenzierbar} nach \ref{satz_von_der_impliziten_funktion}) \( g\maps V_1\to \reals^n \) mit \( g(V_1)\subset V_2 \) und \( F(z,g(z))=0\quad \forall z\in V_1 \), also \( z-f(g(z))=0 \quad \forall z\in V_1 \) und für all \( (z,x)\in V_1\times V_2 \) mit \( F(z,x)=0 \) gilt \( x=g(z) \).
 
   Setze nun
   \begin{gather*}
     V \begin{aligned}[t]
-      &\definedas V_2\cap \explain{\text{Urbild von \( V_1 \)}}{\inv{f}(V_1)}\\
+      &\definedas V_2\cap \explain{\text{Urbild von \( V_1 \)}}{\inverse{f}(V_1)}\\
       &=\Set{x\in V_2|f(x)\in V_1}.
     \end{aligned}
   \end{gather*}
@@ -91,12 +91,12 @@ Man sagt, wenn \( f \) wie oben ist: \enquote{\( f \) ist bei \( a \) \emph{loka
       \label{fig:satz_von_der_umkehrungsfunktion_beispiel_ln}
     \end{figure}
     \begin{gather*}
-      g'(\ln x)=\inv{\left( \frac{1}{x} \right)}=x\\
+      g'(\ln x)=\inverse{\left( \frac{1}{x} \right)}=x\\
       g'(z)=g(z)\\
       \underset{(\text{Diff \Romannum{1}})}{\implies} g(z)=C\exp (z),
     \end{gather*}
     und wegen \( g(0)=1 \) folgt \( C=1 \).
-    \item \( f(x)=3x^2-x \), \( f(1)=2 \), \( Df(1)=5\neq 0 \).
+    \item \( f(x)=3x^2-x \), \( f(1)=2 \), \( \totalderivative-{f}(1)=5\neq 0 \).
     \begin{figure}[H]
       \centering
       \includegraphics[width=0.5\linewidth]{figures/satz_von_der_umkehrungsfunktion_beispiel_parabel}
@@ -113,9 +113,9 @@ Man sagt, wenn \( f \) wie oben ist: \enquote{\( f \) ist bei \( a \) \emph{loka
     \end{figure}
     Die Rekursionsformel \( g_0(z)=a \), \( g_{j+1}(z)=a+h(z,g_j(z)) \),
     \begin{equation*}
-      h(z,x)=x-\inv{D_2 F(b,a)}\matrixmult F(z,x)
+      h(z,x)=x-\inverse{D_2 F(b,a)}\matrixmult F(z,x)
     \end{equation*}
-    ist meist nicht sehr nützlich zur Bestimmung von \( g \). Aber die Ableitung von \( g \) können wir sofort bestimmen: \( Dg(z)=\inv{Df(g(z))} \) oder \( Dg(f(x))=\inv{Df(x)} \).
+    ist meist nicht sehr nützlich zur Bestimmung von \( g \). Aber die Ableitung von \( g \) können wir sofort bestimmen: \( \totalderivative-{g}(z)=\inverse{\totalderivative-{f}(g(z))} \) oder \( \totalderivative-{g}(f(x))=\inverse{\totalderivative-{f}(x)} \).
 
     Im Beispiel: \( g'(z)=\frac{1}{6g(z)-1} \) für \( g(z)\neq \quot{1}{6} \). \timplies Ansatz \( g(z)=\alpha+\sqrt{\beta+\gamma z} \)
     \begin{gather*}
@@ -129,17 +129,17 @@ Man sagt, wenn \( f \) wie oben ist: \enquote{\( f \) ist bei \( a \) \emph{loka
     auf \( \ointerval{-\frac{1}{12}}{\infty} \) definiert \timplies es muss \( f>-\frac{1}{12} \) sein, also ist das maximale \( V=\ointerval{\frac{1}{12}}{z} \).
     \item \( f\maps \reals_{>0}\times \reals\to \reals^2 \), \( (r,\phi)\mapsto \transpose{(r\cos \phi, r\sin \phi)} \).
     \begin{gather*}
-      \Det Df(r,\phi)=\begin{pNiceMatrix} \cos \phi & -r\sin \phi \\ \sin \phi
+      \Det \totalderivative-{f}(r,\phi)=\begin{pNiceMatrix} \cos \phi & -r\sin \phi \\ \sin \phi
        & r\cos \phi \end{pNiceMatrix}\\
-       \Det Df(r,\phi)=r>0\quad \forall (r,\phi).
+       \Det \totalderivative-{f}(r,\phi)=r>0\quad \forall (r,\phi).
     \end{gather*}
     \timplies Bei allen \( r,\phi \) ist \( f \) lokal invertierbar. Es gilt
     \begin{equation*}
-      \inv{Df(r,\phi)}=\begin{pNiceMatrix} \cos \phi & \sin \phi \\ -\frac{\sin \phi}{r} & \frac{\cos \phi}{r} \end{pNiceMatrix}.
+      \inverse{\totalderivative-{f}(r,\phi)}=\begin{pNiceMatrix} \cos \phi & \sin \phi \\ -\frac{\sin \phi}{r} & \frac{\cos \phi}{r} \end{pNiceMatrix}.
     \end{equation*}
     Setze \( f(r,\phi)=\begin{pNiceMatrix} x \\ y \end{pNiceMatrix} \) \timplies \( r=\sqrt{x^2+y^2} \), \( \frac{x}{r}=\cos \phi \), \( \frac{y}{r}=\sin \phi \).
     \begin{equation*}
-      \implies \inv{Df(r,\phi)}=Df(\underbrace{f(r,\phi)}_{=\begin{pNiceMatrix} x \\ y \end{pNiceMatrix}})=\begin{pNiceMatrix} \frac{x}{\sqrt{x^2+y^2}} & \frac{y}{\sqrt{x^2+y^2}} \\ \frac{-y}{x^2+y^2} & \frac{x}{x^2+y^2} \end{pNiceMatrix}
+      \implies \inverse{\totalderivative-{f}(r,\phi)}=\totalderivative-{f}(\underbrace{f(r,\phi)}_{=\begin{pNiceMatrix} x \\ y \end{pNiceMatrix}})=\begin{pNiceMatrix} \frac{x}{\sqrt{x^2+y^2}} & \frac{y}{\sqrt{x^2+y^2}} \\ \frac{-y}{x^2+y^2} & \frac{x}{x^2+y^2} \end{pNiceMatrix}
     \end{equation*}
     mit \( g  \) eine lokale Umkehrung.
 
@@ -155,8 +155,7 @@ Man sagt, wenn \( f \) wie oben ist: \enquote{\( f \) ist bei \( a \) \emph{loka
       \end{figure}
       Wie kommt man darauf, dass \( f \) \( V \) auf \( W \) abbildet? \( \phi \) ist entweder \( \neq 0 \), dann ist \( r\sin \phi\in \ointerval{-r}{0}\cup \ointerval{0}{r} \), oder \( \phi=0 \), dann ist \( r\cos \phi=r>0 \).
 
-      \minisec{\( \evaluateat{f}{U} \) ist injektiv:} Ist \( r\cos \phi=r'\cos \phi' \) und \( r\sin \phi=r'\sin \phi' \), so ist \( r^2=r'^2 \) \timplies (da, \( r,r'>0 \)) \( r=r' \) und aus \( \cos \phi=\cos \phi' \) folgt zunächst \( \phi=\pm \phi' \), aber aus \( \sin @f
-      =\sin \phi'=\pm \sin \phi \)folgt \( \phi=+\phi' \).
+      \minisec{\( \evaluateat{f}{U} \) ist injektiv:} Ist \( r\cos \phi=r'\cos \phi' \) und \( r\sin \phi=r'\sin \phi' \), so ist \( r^2=r'^2 \) \timplies (da, \( r,r'>0 \)) \( r=r' \) und aus \( \cos \phi=\cos \phi' \) folgt zunächst \( \phi=\pm \phi' \), aber aus \( \sin \phi=\sin \phi'=\pm \sin \phi \)folgt \( \phi=+\phi' \).
 
       \minisec{\( \evaluateat{f}{U} \) bildet surjektiv auf \( W \) ab:} Sei \( \begin{pNiceMatrix} x \\ y \end{pNiceMatrix} \in W \), \dh es ist \( y\neq 0 \) oder \( x>0 \) \timplies \( r=\set{x^2+y^2}>0 \) \timplies \( \left( \frac{x}{r} \right)^2+\left( \frac{y}{r} \right)^2=1 \) \timplies \( \abs{\quot{x}{r}}\leq 1 \). Es ist \( \quot{x}{r}\neq -1 \), denn sonst wäre \( \quot{y}{r}=0 \), aber \( (-1,0)\notin W \). Somit ist \( y=0 \) \tiff \( \quot{x}{r}=1 \) und wir legen einen Winkel \( \phi \) fest mit \( \cos \phi=\quot{x}{r} \). \( \phi\in \ointerval{-\pi
         }{0} \), falls \( y<0 \), oder \( \ointerval{0}{\pi} \), alls \( y>0 \), oder \( \phi=0 \), falls \( y=0. \)
@@ -166,7 +165,7 @@ Man sagt, wenn \( f \) wie oben ist: \enquote{\( f \) ist bei \( a \) \emph{loka
       \end{behauptung*}
       \begin{proof}
         \begin{equation*}
-          \sin \phi=\sgn(\sin \phi)\sqrt{\sin^2 \phi}=\sgn(y)\sqrt{1-\cos^2 \phi}=\sgn(y)\sqrt{1-\quot{x^2}{r^2}}=\sgn(y)\quot{\abs{y}}{r}=\quot{y}{r}.
+          \sin \phi=\sgn{\sin \phi}\sqrt{\sin^2 \phi}=\sgn{y}\sqrt{1-\cos^2 \phi}=\sgn{y}\sqrt{1-\quot{x^2}{r^2}}=\sgn{y}\quot{\abs{y}}{r}=\quot{y}{r}.
         \end{equation*}
       \end{proof}
       Ist man nicht an einer maximalen Umgebung von \( \ointerval{r_0}{\phi_0}  \) interessiert, kann man so schneller zum Ziel:
@@ -185,7 +184,7 @@ Man sagt, wenn \( f \) wie oben ist: \enquote{\( f \) ist bei \( a \) \emph{loka
 \end{beispiele}
 Es folgen einige etwas tiefsinnigere Folgen aus dem Umkehrsatz.
 \begin{satz}\label{offene_abbildungen_satz}
-  Sei \( f\maps U\to \reals^n \) stetig differenzierbar, \( U\subset \reals^n \) offen. Sei \( V\subset U \) offen. Ist \( Df(x) \) invertierbar für alle \( x\in V \), so ist \( \evaluateat{f}{V} \) eine \emph{offene Abbildung}, \dh offene Teilmengen \( \subset V \) werden auf offene Mengen abgebildet.
+  Sei \( f\maps U\to \reals^n \) stetig differenzierbar, \( U\subset \reals^n \) offen. Sei \( V\subset U \) offen. Ist \( \totalderivative-{f}(x) \) invertierbar für alle \( x\in V \), so ist \( \evaluateat{f}{V} \) eine \emph{offene Abbildung}, \dh offene Teilmengen \( \subset V \) werden auf offene Mengen abgebildet.
 \end{satz}
 \begin{antibeispiel*}
   \( f\maps \ointerval{0}{1}\to \reals \), \( f(x)=1\quad \forall x \). \( f'(x)=0 \) nicht invertierbar. \( \Set{1} \) nicht offen in \( \reals \).
@@ -194,7 +193,7 @@ Es folgen einige etwas tiefsinnigere Folgen aus dem Umkehrsatz.
   Sei \( \tilde{V}\subset U \) offen, dann ist \( \tilde{V}  \) auch offen \( U \). Sei \( b\in f(\tilde{V}) \). Wähle ein \( a\in \tilde{V} \) \sd \( b=f(a) \). Wende den Satz von der lokalen Umkehrfunktion auf \( \evaluateat{f}{\tilde{V}} \) an \timplies \texists  offene Umgebungen \( V_1\subset \tilde{V} \) und \( W\subset \reals^n \) von \( a \) beziehungsweise \( b \) \sd \( \evaluateat{f}{V_1} \) umkehrbar ist mit \( g\maps W\to \reals^n \) und insbesondere \( f \) \( V_1 \) bijektiv auf \( W \) abbildet. Somit gilt \( W=f(V_1)\subset f(\tilde{V}) \) und ist Umgebung von \( b \) \timplies \( f(\tilde{V}) \) ist offen.
 \end{proof}
 \begin{satz}[Minimum- / Maximum-Prinzip]\label{extremumprinzip}
-  Sei \( f\maps U\to \reals^n \), \( U\subset \reals^n \), stetig differenzierbar. Sei \( V\subset U \) offen und sei \( Df(x) \) invertierbar für alle \( x\in V \). Dann gilt für die Funktion
+  Sei \( f\maps U\to \reals^n \), \( U\subset \reals^n \), stetig differenzierbar. Sei \( V\subset U \) offen und sei \( \totalderivative-{f}(x) \) invertierbar für alle \( x\in V \). Dann gilt für die Funktion
   \begin{equation*}
     V\ni x\mapsto \norm{f(x)}
   \end{equation*}
@@ -208,7 +207,7 @@ Es folgen einige etwas tiefsinnigere Folgen aus dem Umkehrsatz.
 \end{beachte*}
 \begin{proof}
   \begin{proofdescription}
-    \item[\ref{extremumprinzip:kein_maximum}] Angenommen \( a \) ist Maximalstelle von \( \norm{f} \). Dann ist \( f(a)\neq 0 \), da sonst \( \norm{f(x)}=0\quad \forall x\in V \) und somit \( \evaluateat{f}{V}=0 \) und \( Df(x)=0\quad \forall x\in V \). \ref{offene_abbildungen_satz} \timplies \texists  \( \varepsilon>0 \) \sd \( B_{\varepsilon}(f(a))\subset f(V) \). Setze \( b\definedas f(a)+\rho f(a) \) mit\( \rho=\quot{\varepsilon}{2\norm{f(a)}} \) 
+    \item[\ref{extremumprinzip:kein_maximum}] Angenommen \( a \) ist Maximalstelle von \( \norm{f} \). Dann ist \( f(a)\neq 0 \), da sonst \( \norm{f(x)}=0\quad \forall x\in V \) und somit \( \evaluateat{f}{V}=0 \) und \( \totalderivative-{f}(x)=0\quad \forall x\in V \). \ref{offene_abbildungen_satz} \timplies \texists  \( \varepsilon>0 \) \sd \( B_{\varepsilon}(f(a))\subset f(V) \). Setze \( b\definedas f(a)+\rho f(a) \) mit\( \rho=\quot{\varepsilon}{2\norm{f(a)}} \) 
     \begin{align*}
       \implies &\norm{b-f(a)}=\rho\norm{f(a)}=\quot{\varepsilon}{2}<\varepsilon\\
       \implies &b\in B_{\varepsilon}\implies \exists x_0\in V  \logicspace \text{\sd}\logicspace b=f(x_0)\\

@@ -3,11 +3,11 @@
 \begin{satz}\label{funktion_ableiten_mit_hoeheren_abbildungen}
   Sei \( f\maps \underrelate{\vertrelation{\supset}}{\reals^k}{B_{r_1}^{\norm{\cdot}}(a)}\times \underrelate{\vertrelation{\supset}}{\reals^m}{B_{r_2}^{\norm{\cdot}}(b)}\to \reals^m \) eine Abbildung mit \( f(a,b)=0 \), die in \( (a,b) \) differenzierbar sei. Sei zudem \( D_2 f(a,b) \), definiert über
   \begin{equation*}
-    Df(a,b)=(\underbrace{\partial_1 f(a,b)\, \cdots\,  \partial_k f(a,b)}_{\defines D_1 f(a,b)\in \Mat(m\times k)}\, \underbrace{\partial_{k+1}f(a,b)\, \cdots\, \partial_{k+m}f(a,b)}_{\defines D_2 f(a,b)\in \Mat(m\times m)}),
+    \totalderivative-{f}(a,b)=(\underbrace{\partial_1 f(a,b)\, \cdots\,  \partial_k f(a,b)}_{\defines D_1 f(a,b)\in \Mat(m\times k)}\, \underbrace{\partial_{k+1}f(a,b)\, \cdots\, \partial_{k+m}f(a,b)}_{\defines D_2 f(a,b)\in \Mat(m\times m)}),
   \end{equation*}
   invertierbar. Sei zudem \( g\maps B_{r_1}(a)\to \reals^m \) stetig und gelte \( g(B_{r_1}(a))\subset B_{r_2}(b) \) und \( g(a)=b \) und \( f(x,g(x))=0 \) \tforall \( x\in B_{r_1}(a) \). Dann ist \( g \) in \( a \) differenzierbar und es gilt
   \begin{equation*}
-    Dg(a)=-\inv{\left( D_2f(a,b) \right)}D_1 f(a,b)\in \Mat(m\times k, \reals).
+    \totalderivative-{g}(a)=-\inverse{\left( D_2f(a,b) \right)}D_1 f(a,b)\in \Mat(m\times k, \reals).
   \end{equation*}
 \end{satz}
 \begin{proof}
@@ -26,8 +26,8 @@
   Also
   \begin{equation*}
     \begin{split}
-      g(a+h_1)=&g(a)-\inv{D_2f(a,b)}\matrixmult D_1 f(a,b)\matrixmult h_1\\
-      &\underbrace{-\inv{D_2f(a,b)}\matrixmult \underline{R}_{(a,b)}(h_1,g(a+h_1)-b)}_{\defines \tilde{R_{a,b}^g(h_1)}}\quad \forall h_1\in B_{r_1}(0).
+      g(a+h_1)=&g(a)-\inverse{D_2f(a,b)}\matrixmult D_1 f(a,b)\matrixmult h_1\\
+      &\underbrace{-\inverse{D_2f(a,b)}\matrixmult \underline{R}_{(a,b)}(h_1,g(a+h_1)-b)}_{\defines \tilde{R_{a,b}^g(h_1)}}\quad \forall h_1\in B_{r_1}(0).
     \end{split}
   \end{equation*}
   Wir sind fertig, wenn wir zeigen können, dass
@@ -58,7 +58,7 @@ Umgekehrt kann man eine Funktion \( g \) wie oben durch \enquote{Auflösen der G
   \begin{enumerate}
     \item \label{implizite_funktion_auf_umgebung_stetig_differenzierbar} Aus \ref{funktion_ableiten_mit_hoeheren_abbildungen} und der folgenden Bemerkung folgt, dass \( g \) in einer eventuell verkleinerten Umgebung \( \tilde{V_1}\subset V_1 \) von \( a \) sogar stetig differenzierbar ist und gilt
     \begin{equation*}
-      Dg(x)=-\inv{D_2 f(x,g(x))}\matrixmult D_1f(x,g(x))\quad \forall x\in \tilde{V_1}
+      \totalderivative-{g}(x)=-\inverse{D_2 f(x,g(x))}\matrixmult D_1f(x,g(x))\quad \forall x\in \tilde{V_1}
     \end{equation*}
     \item Für den Satz ist wichtig, dass \( U_1\times U_2 \) gegebenenfalls verkleinert wird:
     \begin{figure}[H]
@@ -70,19 +70,19 @@ Umgekehrt kann man eine Funktion \( g \) wie oben durch \enquote{Auflösen der G
     Betrachtete man auch den oberenTeil der Kurve,könnte man \( x \) nicht ein eindeutiges \( y \) zuordnen.
     \item Die Einschränkung auf Definitionsbeiche der Form \( U_1\times U_2  \) ist keine, sie vereinfacht nur die Notation. Ist \( f \) auf \( U\subset \reals^{k+m} \) offen, findet man stets \( U_1\subset \reals^k \), \( U_2\subset \reals^m \) \sd \( U_1\times U_2\subset U \).
     \item Die Einschränkung auf \( N_f(0) \) ist keine: Will man etwa die Gleichung \( f(x,y)=c \) auflösen, wendet man des Satz auf \( \tilde{f} \) an mit \( \tilde{f}(x,y)=f(x,y)-c \).
-    \item Durch Umnummerierung kann man auch andere \( m\times m \)-Untermatrizen von \( Df \) betrachten als die letzten \( m \).
+    \item Durch Umnummerierung kann man auch andere \( m\times m \)-Untermatrizen von \( \totalderivative-{f} \) betrachten als die letzten \( m \).
     \item Unter den Voraussetzungen von \ref{satz_von_der_impliziten_funktion} sagt man: \( g \) ist durch \( f(x,y)=0 \) \emph{implizit} gegeben und man \emph{löst} \( f(x,y)=0 \) \emph{nach \( y \) auf}.
   \end{enumerate}
 \end{bemerkungen*}
 \begin{beispiele*}
   \begin{enumerate}
-    \item \( f(x,y)=3y-x^2+1 \) auf \( \reals^2 \). \( Df(a,b)=\begin{pNiceMatrix} -2a & 3 \end{pNiceMatrix} \), \( 3\neq 0 \) ist invertierbar, \ref{satz_von_der_impliziten_funktion} \timplies \texists  \( g\maps I\to \reals \) \sd \( f(x,g(x))=0 \)\tforall \( x\in I \). In diesem Fall sogar \( I=\reals \): \( g(x)=\frac{1}{3}(x^2-1) \).
+    \item \( f(x,y)=3y-x^2+1 \) auf \( \reals^2 \). \( \totalderivative-{f}(a,b)=\begin{pNiceMatrix} -2a & 3 \end{pNiceMatrix} \), \( 3\neq 0 \) ist invertierbar, \ref{satz_von_der_impliziten_funktion} \timplies \texists  \( g\maps I\to \reals \) \sd \( f(x,g(x))=0 \)\tforall \( x\in I \). In diesem Fall sogar \( I=\reals \): \( g(x)=\frac{1}{3}(x^2-1) \).
     \begin{figure}[H]
       \centering
       \includegraphics[width=0.5\linewidth]{figures/implizite_funktion_beispiel_kein_eingeschraenkter_definitionsbereich}
       \label{fig:implizite_funktion_beispiel_kein_eingeschraenkter_definitionsbereich}
     \end{figure}
-    \item \( f(x,y)=3x-y^2+1 \) auf \( \reals^2 \). \( Df(a,b)=\begin{pNiceMatrix} 3 & -2b \end{pNiceMatrix} \). \ref{satz_von_der_impliziten_funktion} \timplies Zu \( b\neq 0 \) gibt es \( g\maps I\to \reals \). \( b>0 \): \( g(x)=+\sqrt{3x+1} \), \( x>-\frac{1}{3} \). \( b<0 \): \( g(x)=-\sqrt{3x+1} \).
+    \item \( f(x,y)=3x-y^2+1 \) auf \( \reals^2 \). \( \totalderivative-{f}(a,b)=\begin{pNiceMatrix} 3 & -2b \end{pNiceMatrix} \). \ref{satz_von_der_impliziten_funktion} \timplies Zu \( b\neq 0 \) gibt es \( g\maps I\to \reals \). \( b>0 \): \( g(x)=+\sqrt{3x+1} \), \( x>-\frac{1}{3} \). \( b<0 \): \( g(x)=-\sqrt{3x+1} \).
     \begin{figure}[H]
       \centering
       \includegraphics[width=0.5\linewidth]{figures/implizite_funktion_beispiel_eingeschraenkter_definitionsbereich}
@@ -95,11 +95,11 @@ Umgekehrt kann man eine Funktion \( g \) wie oben durch \enquote{Auflösen der G
   \begin{proofenumerate}[label=\rechtsklammer{\arabic*}]
     Setze \( B\definedas D_2f(a,b)\) und definiere eine Abbildung \( h\maps U_1\times U_2\to \reals^m \) vermöge
     \begin{equation*}
-      h(x,y)=y-b-\inv{B} f(x,y).
+      h(x,y)=y-b-\inverse{B} f(x,y).
     \end{equation*}
     Dann gilt 
     \begin{equation*}
-      D_2 h(x,y)=\mathds{1}-\inv{B} D_2 f(x,y).
+      D_2 h(x,y)=\mathds{1}-\inverse{B} D_2 f(x,y).
     \end{equation*}
     \timplies \( D_2 h(a,b)=0 \) \timplies (da alle Ableitungen stetig sind) \texists \( W_1\subset U_1 \), \( W_2\subset U_2 \) offene Umgebungen von \( a \) \bzw \( b \) \sd
     \begin{equation*}
@@ -107,7 +107,7 @@ Umgekehrt kann man eine Funktion \( g \) wie oben durch \enquote{Auflösen der G
     \end{equation*}
     Wähle \( r>0 \) \sd \( V_2\definedas B_r^{\norm{\cdot}}(b)\subset W_2 \). Es ist \( h(a,b)=0 \) \timplies (da \( h \) differenzierbar ist und somit auch stetig) \texists offene Umgebung \( V_1\subset W_1 \) von \( a \) \sd 
     \begin{equation*}
-      \varepsilon\definedas \sup_{x\in V_1}\norm{h(x,b)}<\frac{r}{2} \tag{\( ** \)}\label{satz_von_der_impliziten_funktion:beweis:h:norm_bschraenkt}
+      \varepsilon\definedas \sup_{x\in V_1}\norm{h(x,b)}<\frac{r}{2} \tag{\( ** \)}\label{satz_von_der_impliziten_funktion:beweis:h:norm_beschraenkt}
     \end{equation*}
     (auf einem Kompaktum \( \subset W_1 \) um \( a \) ist \( x\mapsto h(x,b) \) beschränkt und wird auf einem hinreichend kleinen Kompaktum beliebig klein. Um \( V_1 \) offen zu erhalten, nehmen wir das Innere eines solchen Kompaktums).
     \item Wir zeigen jetzt: Zu jedem \( x\in V_1 \) gibt es höchstens ein \( y\in V_2 \) \sd \( f(x,y)=0 \) also \sd \( h(x,y)=y-b \).
@@ -129,7 +129,7 @@ Umgekehrt kann man eine Funktion \( g \) wie oben durch \enquote{Auflösen der G
     \begin{proofenumerate}[label=\rechtsklammer{\alph*}]
       \item Es gilt
       \begin{equation*}
-        \norm{g_{j+1}-g_j}_{\infty, V_1}\leq 2^{-j}\explain{\text{aus \eqref{satz_von_der_impliziten_funktion:beweis:h:norm_bschraenkt}}}{\varepsilon}.
+        \norm{g_{j+1}-g_j}_{\infty, V_1}\leq 2^{-j}\explain{\text{aus \eqref{satz_von_der_impliziten_funktion:beweis:h:norm_beschraenkt}}}{\varepsilon}.
       \end{equation*}
       Induktionsanfang: 
       \begin{equation*}
@@ -170,14 +170,14 @@ Umgekehrt kann man eine Funktion \( g \) wie oben durch \enquote{Auflösen der G
     \begin{equation*}
       g(x)=b+h(x,g(x))\quad \forall x\in V_1,
     \end{equation*}
-    also \( g(x)=g(x)-\inv{B}f(x,g(x)) \), also
+    also \( g(x)=g(x)-\inverse{B}f(x,g(x)) \), also
     \begin{equation*}
       f(x,g(x))=0\quad \forall x\in V_1.
     \end{equation*}
   \end{proofenumerate}
 \end{proof}
-\begin{folgerung}
-  Sei \( f\maps U\to \reals \), \( U\subset \reals^2 \) offen, stetig differenzierbar und si \( \ointerval{a}{b}\in U \), \( f(a,b)=c \) und \( \grad f(a,b)\neq 0 \). Dann kann man in Stück der Höhenlinie \( N_f(c) \) als Graph einer FUnktion beschreiben. Denn sei \( \partial_2 f(a,b)\neq 0 \), \thref{satz_von_der_impliziten_funktion},  angewandt auf \( \tilde{f(x,y)}=f(x,y)-c \), impliziert:
+\begin{folgerung}\label{satz_von_der_impliziten_funktion:hoehenlinie_folgerung}
+  Sei \( f\maps U\to \reals \), \( U\subset \reals^2 \) offen, stetig differenzierbar und sei \( \ointerval{a}{b}\in U \), \( f(a,b)=c \) und \( \grad-{f(a,b)}\neq 0 \). Dann kann man ein Stück der Höhenlinie \( N_f(c) \) als Graph einer FUnktion beschreiben. Denn sei \( \partial_2 f(a,b)\neq 0 \), \thref{satz_von_der_impliziten_funktion},  angewandt auf \( \tilde{f(x,y)}=f(x,y)-c \), impliziert:
 
   \texists Intervalle \( I_1,I_2 \), \( a\in I_1 \), \( b\in I_2 \), \( I_1\times I_2\subset U \) und eine stetig differenzierbare Funktion (Bemerkung \ref{implizite_funktion_auf_umgebung_stetig_differenzierbar}) \( g\maps I_1\to \reals \), mit \( g(I_1)\subset I_2 \) und
   \begin{multline*}

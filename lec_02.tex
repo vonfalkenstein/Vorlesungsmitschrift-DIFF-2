@@ -7,16 +7,16 @@ Bevor wir uns mit offenen und abgeschlossenen Mengen und sogenannten vollständi
 
     Eine Folge \( (x_n)_n \) in \( X \) konvergiert in \( X \) gegen \( a\in X \)
     \begin{align*}
-        \iff (d(x_n,a))_n \text{ ist Nullfolge}\logicspace(\text{in } \reals).
+        \iff (\distance{x_n}{a})_n \text{ ist Nullfolge}\logicspace(\text{in } \reals).
     \end{align*}
 \end{lemma}
 \begin{proof}
     \begin{align*}
-        d(x_n,a)=\abs{d(x_n,a)-0}.
+        \distance{x_n}{a}=\abs{\distance{x_n}{a}-0}.
     \end{align*}
     Also ist
     \begin{align*}
-        d(x_n,a)<\varepsilon\iff \abs{d(x_n,a)-0}<\varepsilon.
+        \distance{x_n}{a}<\varepsilon\iff \abs{\distance{x_n}{a}-0}<\varepsilon.
     \end{align*}
     
 \end{proof}
@@ -58,7 +58,7 @@ Bevor wir uns mit offenen und abgeschlossenen Mengen und sogenannten vollständi
                 &\text{also} \logicspace d_y(f(x), f(a)) \geq \varepsilon.
             \end{aligned}
         \end{align*}
-        Insbesondere gäbe es zu \( \delta=\frac{1}{n} \) ein solches \( x \), nennen wir es \( x_n \). Dann gilt für alle \( n \): \( d(x_n,a)<\frac{1}{n} \), aber \( d_y(f(x_n),f(a))\geq \varepsilon \), somit \( x_n\goesto a \) aber \( f(x_n)\cancel{to}f(a) \) (wegen \ref{konvergenz_abstand_ist_nullfolge}).
+        Insbesondere gäbe es zu \( \delta=\frac{1}{n} \) ein solches \( x \), nennen wir es \( x_n \). Dann gilt für alle \( n \): \( \distance{x_n}{a}<\frac{1}{n} \), aber \( d_y(f(x_n),f(a))\geq \varepsilon \), somit \( x_n\goesto a \) aber \( f(x_n)\cancel{to}f(a) \) (wegen \ref{konvergenz_abstand_ist_nullfolge}).
     \end{proofdescription}
     
     
@@ -88,7 +88,7 @@ Bevor wir uns mit offenen und abgeschlossenen Mengen und sogenannten vollständi
          
          Denn angenommen es gibt kein solches \( \varepsilon \). 
          Dann gilt für \emph{alle} \( \varepsilon>0 \):
-         \( B_\varepsilon(b)\cap A\neq \emptyset \), also kann man zu jedem \( k\geq 1 \) ein \( x_k\in A \) finden mit \( d(x_k, b)<\frac{1}{k}=\varepsilon \).
+         \( B_\varepsilon(b)\cap A\neq \emptyset \), also kann man zu jedem \( k\geq 1 \) ein \( x_k\in A \) finden mit \( \distance{x_k}{ b}<\frac{1}{k}=\varepsilon \).
          \begin{align*}
              \implies x_k=b\underset{\text{\textsc{Vor}}}{\implies} b\in A.
          \end{align*}
@@ -169,7 +169,7 @@ Nach \ref{abgeschlossenheit:folgenkonvergenzkriterium} können wir \( \abschluss
 \begin{definition}
     Sei \( (X,d) \) ein metrischer Raum. Eine Folge \( (y_n)_n \subset X\) heißt \emph{Cauchy-Folge}, falls gilt
     \begin{align*}
-        \forall \varepsilon>0 \logicspace \exists N\in \naturals \logicspace\text{\sd} d(y_n, y_m)<\varepsilon \logicspace \forall n,m\geq N.
+        \forall \varepsilon>0 \logicspace \exists N\in \naturals \logicspace\text{\sd} \distance{y_n}{ y_m}<\varepsilon \logicspace \forall n,m\geq N.
     \end{align*} 
 \end{definition}
 \begin{lemma}
@@ -178,9 +178,9 @@ Nach \ref{abgeschlossenheit:folgenkonvergenzkriterium} können wir \( \abschluss
 \begin{proof}
     Sei \( (y_n)_n \)  konvergente Folge mit Grenzwert \( y \) (eindeutig wegen \ref{metrischer_raum_ist_hausdorffsch} und \ref{hausdorff_alle_grenzwerte_eindeutig}). Sei \( \varepsilon>0 \).
 
-    Dann gibt es \( N\in \naturals  \) \sd \( d(y_m, y)<\varepsilon \logicspace  \forall m\geq N\).
+    Dann gibt es \( N\in \naturals  \) \sd \( \distance{y_m}{ y}<\varepsilon \logicspace  \forall m\geq N\).
     \begin{align*}
-        \implies d(y_n,y_m)\underset{\triangle}{\leq}d(y_n,y)+d(y,y_m)<\epsilon \logicspace \forall n,m\leq N.
+        \implies \distance{y_n}{y_m}\underset{\triangle}{\leq}\distance{y_n}{y}+\distance{y}{y_m}<\epsilon \logicspace \forall n,m\leq N.
     \end{align*}   
 \end{proof}
 \begin{bemerkung*}
@@ -196,7 +196,7 @@ Nach \ref{abgeschlossenheit:folgenkonvergenzkriterium} können wir \( \abschluss
         und für \( l_n\definedas y_n-\frac{1}{y_n} \) 
         \begin{align*}
             &l_{n+1}\leq\frac{1}{4y_{n+1}}l_n^2\leq \frac{1}{4}l_n^2\tag{\(**\)}\label{eq:cauchy_folge_konvergiert_nicht:beispiel:abstand_nullfolge}\\
-            \implies &d(y_n,y_m)=\abs{y_n-y_m} \explain{\substack{\text{\Obda\ }m\geq n\\\implies y_m\in \interval{\frac{1}{y_n}}{y_n} \text{ wg.\ \eqref{eq:cauchy_folge_konvergiert_nicht:beispiel:intervallschachtelung}}}}{\leq}\abs{y_n-\frac{1}{y_n}}=l_n\explain{\text{wg.\ \eqref{eq:cauchy_folge_konvergiert_nicht:beispiel:abstand_nullfolge}}}{\goesto} 0.
+            \implies &\distance{y_n}{y_m}=\abs{y_n-y_m} \explain{\substack{\text{\Obda\ }m\geq n\\\implies y_m\in \interval{\frac{1}{y_n}}{y_n} \text{ wg.\ \eqref{eq:cauchy_folge_konvergiert_nicht:beispiel:intervallschachtelung}}}}{\leq}\abs{y_n-\frac{1}{y_n}}=l_n\explain{\text{wg.\ \eqref{eq:cauchy_folge_konvergiert_nicht:beispiel:abstand_nullfolge}}}{\goesto} 0.
         \end{align*}
         \( \rationals \subset \reals  \)  und somit \( (y_n)_n \subset \reals \).
         In \( \reals \) konvergiert jede Cauchy-Folge.
@@ -232,9 +232,9 @@ Zunächst einige
 \begin{definition}
     Sei \( (X,d)\) metrischer Raum, \( M\subset X\),
     \begin{align*}
-        \diam(M)\definedas \sup_{x,y\in M}d(x,y)\logicspace \text{\enquote{Durchmesser} (englisch \enquote{diameter})}.
+        \diameter{M}\definedas \sup_{x,y\in M}\distance{x}{y}\logicspace \text{\enquote{Durchmesser} (englisch \enquote{diameter})}.
     \end{align*}
-    \( M \) heißt \emph{beschränkt}, falls \( \diam(M)<\infty \).
+    \( M \) heißt \emph{beschränkt}, falls \( \diameter{M}<\infty \).
 \end{definition}
 \begin{bemerkung*}
     \( M\) ist beschränkt \tiff \texists \( R\geq 0\)  und \( a\in X\) \sd \( M\subset B_R(a)\) 
@@ -245,27 +245,27 @@ Zunächst einige
     \end{figure}   
 \end{bemerkung*}
 \begin{beispiel*}
-    \( \diam(\rinterval{a}{b})=b-a\)
+    \( \diameter{\rinterval{a}{b}}=b-a\)
 \end{beispiel*}
 \begin{satz}[Schachtelungsprinzip]
     Sei \( (X,d)\) ein \emph{vollständiger} metrischer Raum und sei \( A_0\subset A_1\subset A_2\subset \cdots\).
     Eine Familie nicht-leerer abgeschlossener Teilmengen von \( X\) mit
     \begin{align*}
-        \diam(A_k)\goesto 0 \logicspace (\text{in }\reals)\logicspace \text{für } k\goesto \infty. 
+        \diameter{A_k}\goesto 0 \logicspace (\text{in }\reals)\logicspace \text{für } k\goesto \infty. 
     \end{align*} 
     Dann gibt es genau einen Punkt \( a\in X\) der in \emph{allen} \( A_k\) liegt.
 \end{satz}
 \begin{proof}
     \begin{proofdescription}
-        \item[Eindeutigkeit:] Angenommen \texists \( x\neq y\)  mit \( x\in A_k \logicspace \forall k\)  und \( y\in A_k \logicspace \forall k\). Dann kann \( \diam(A_k)\) keine Nullfolge sein, da \( d(x,y)\neq 0\).
+        \item[Eindeutigkeit:] Angenommen \texists \( x\neq y\)  mit \( x\in A_k \logicspace \forall k\)  und \( y\in A_k \logicspace \forall k\). Dann kann \( \diameter{A_k}\) keine Nullfolge sein, da \( \distance{x}{y}\neq 0\).
         \item[Existenz:] Wähle \( x_n\in A_n\). Dann ist \( (x_n)_n\)  eine Cauchy-Folge, denn
         \begin{align*}
-            d(x_n,x_m)\leq \diam A_N \logicspace \text{für }n,m\geq N 
+            \distance{x_n}{x_m}\leq \diameter-{A_N} \logicspace \text{für }n,m\geq N 
         \end{align*} 
         \begin{figure}[H]
             \centering
             \includegraphics[width=0.5\linewidth]{figures/schachtelungsprinzip}
-            \caption*{\( d(x_n,x_m)\leq \diam A_N\) für \( \)    }
+            \caption*{\( \distance{x_n}{x_m}\leq \diameter-{A_N}\) für \( \)    }
             \label{fig:schachtelungsprinzip}
         \end{figure}
         \begin{align*}
@@ -294,12 +294,12 @@ Ein sehr wichtiger Satz, der viele Anwendungen hat ist der folgende:
     \begin{proofdescription}
         \item[Eindeutigkeit:] Seien \( \Phi(t_*)=t_*\), \( \Phi(\tilde{t}_*)=\tilde{t}_* \). Dann gilt
         \begin{align*}
-            d(t_*,\tilde{t_*} )\begin{aligned}[t]
-                &=d(\Phi(t_*),\Phi(\tilde{t}_*))\\
-                &\leq d(t_*,\tilde{t_*} )
+            \distance{t_*}{\tilde{t_*} }\begin{aligned}[t]
+                &=\distance{\Phi(t_*)}{\Phi(\tilde{t}_*)}\\
+                &\leq \distance{t_*}{\tilde{t_*} }
             \end{aligned}
         \end{align*} 
-        Da \( L>1\) ist, folgt \( d(t_*,\tilde{t_*}=0 )\), also \( t_*=\tilde{t_*} \).
+        Da \( L>1\) ist, folgt \( \distance{t_*}{\tilde{t_*}=0 }\), also \( t_*=\tilde{t_*} \).
         \item[Existenz:] Wir betrachten die Folge \( x_0\in M\) beliebig, \( x_n\definedas \Phi(x_{n-1})\) für \( n\geq 1\).
         \begin{behauptung*}
             \( (x_n)_n\) konvergiert in \( M\)  und zwar gegen de Fixpunkt.
@@ -308,22 +308,22 @@ Ein sehr wichtiger Satz, der viele Anwendungen hat ist der folgende:
             \begin{itemize}
                 \item \( (x_n)_n\) ist Cauchy-Folge:
                 \begin{align*}
-                    d(\equalto{\Phi(x_n)}{x_{n+1}}\equalto[Bigg]{\Phi(x_{n-1})}{x_n})\leq L d(x_n,x_{n-1})\logicspace \forall n\geq 1.
+                    \distance{\equalto{\Phi(x_n)}{x_{n+1}}}{\equalto[Bigg]{\Phi(x_{n-1})}{x_n}}\leq L \distance{x_n}{x_{n-1}}\logicspace \forall n\geq 1.
                 \end{align*}
                 Iteration liefert
                 \begin{align*}
-                    d(x_{n+1},x_n)\leq L^2 d(x_{n-1},x_{n-2})\leq \cdots \leq L^n d(x_1,x_0).
+                    \distance{x_{n+1}}{x_n}\leq L^2 \distance{x_{n-1}}{x_{n-2}}\leq \cdots \leq L^n \distance{x_1}{x_0}.
                 \end{align*}
                 Zudem gilt
                 \begin{align*}
-                    d(x_{n+k},x_n)\begin{aligned}[t]
+                    \distance{x_{n+k}}{x_n}\begin{aligned}[t]
                         &\underset{\triangle}{\leq}\begin{aligned}[t]
-                            &d(x_{n+k},x_{n+k}-1)\\
-                            &+d(x_{n+k-1},x_{n+k-2})\\
+                            &\distance{x_{n+k}}{x_{n+k}-1}\\
+                            &+\distance{x_{n+k-1}}{x_{n+k-2}}\\
                             &\vdots\\
-                            &+d(x_{n+1},x_n)
+                            &+\distance{x_{n+1}}{x_n}
                         \end{aligned}\\
-                        &\leq (\underbrace{L^{n+k-1}+L^{n+k-2}+\cdots+L^n}_{\mathclap{=L^n \sum_{r=0}^{k-1} L^r\leq L^n \sum_{r=0}^{\infty} L^r\explain{\text{geom.\ Reihe (\( L<1\))}}{=}\frac{L^n}{1-L}}})d(x_1,x_0)
+                        &\leq (\underbrace{L^{n+k-1}+L^{n+k-2}+\cdots+L^n}_{\mathclap{=L^n \sum_{r=0}^{k-1} L^r\leq L^n \sum_{r=0}^{\infty} L^r\explain{\text{geom.\ Reihe (\( L<1\))}}{=}\frac{L^n}{1-L}}})\distance{x_1}{x_0}
                     \end{aligned}
                 \end{align*}
                 \timplies (wegen \( L<1\)) \Beh.
@@ -355,7 +355,7 @@ Ein sehr wichtiger Satz, der viele Anwendungen hat ist der folgende:
 \begin{bemerkung*}
     Die Konvergenz ist recht schnell:
     \begin{align*}
-        d(x_n,t_*)\leq \frac{L^n}{1-L}d(x_1,x_0)\logicspace (L<1).
+        \distance{x_n}{t_*}\leq \frac{L^n}{1-L}\distance{x_1}{x_0}\logicspace (L<1).
     \end{align*}
 \end{bemerkung*}
 

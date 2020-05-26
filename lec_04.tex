@@ -11,7 +11,7 @@ Wir haben gesehen, dass die Eigenschaften derselben Menge sehr verschieden sein 
     \begin{itemize}
         \item Alle Teilmengen sind offen.
         \item Nur endliche Teilmengen sind kompakt.
-        \item Konvergiert \( x_n\goesto a \) (bezüglich \( d_{\text{disk}} \)),so muss gelten \( \exists N \) \sd \( x_n=a\quad \forall n\geq N \) (denn \( \Set{a} \) ist Umgebung von \( a \), oder anders gesagt: damit \( d(x_n,a)<\varepsilon<1 \) wird, muss gelten \( x_n=a \)).
+        \item Konvergiert \( x_n\goesto a \) (bezüglich \( d_{\text{disk}} \)),so muss gelten \( \exists N \) \sd \( x_n=a\quad \forall n\geq N \) (denn \( \Set{a} \) ist Umgebung von \( a \), oder anders gesagt: damit \( \distance{x_n}{a}<\varepsilon<1 \) wird, muss gelten \( x_n=a \)).
         \item \emph{Alle} Abbildungen \( f\maps (X,d_{\text{disc}})\to (Y,d) \) sind stetig. (Beweis am einfachsten über Folgenstetigkeit).
     \end{itemize}
     Andererseits gilt:\\
@@ -63,8 +63,8 @@ Wir haben gesehen, dass die Eigenschaften derselben Menge sehr verschieden sein 
             \( f \) stetig \tiff Urbilder offener Mengen sind offen.
             \begin{proofenumerate}
                 \stepcounter{enumi}
-                \item \( U\subset Y \) \timplies \( \inv{f}(U) \) offen bezüglich \( \tilde{d} \) \timplies \( \inv{f}(U) \) offen bezüglich \( d \).
-                \item Sei \( U\subset X \) offen bezüglich \( \tilde{d} \), also auch offen bezüglich \( d \) \timplies \( \inv{f}(U) \) offen in \( Y \).
+                \item \( U\subset Y \) \timplies \( \inverse{f}(U) \) offen bezüglich \( \tilde{d} \) \timplies \( \inverse{f}(U) \) offen bezüglich \( d \).
+                \item Sei \( U\subset X \) offen bezüglich \( \tilde{d} \), also auch offen bezüglich \( d \) \timplies \( \inverse{f}(U) \) offen in \( Y \).
             \end{proofenumerate}
             
         \end{proof}
@@ -100,20 +100,20 @@ Wir haben gesehen, dass die Eigenschaften derselben Menge sehr verschieden sein 
         \begin{align*}
             \norm{x}=\sqrt{\sum_{i=1}^{n}x_i^2}\quad x=(x_{1},\dotsc,x_n).
         \end{align*}
-        \item \( \reals^n \) mit \( \norm{\cdot}_{\infty}=\norm{\cdot}_{\max} \),
+        \item \( \reals^n \) mit \( \supnorm{\cdot}=\explicitnorm{\max}{\cdot} \),
         \begin{align*}
-            \norm{x}_{\infty}=\max\Set{\abs{x_1},\dotsc,\abs{x_n}}.
+            \supnorm{x}=\Max{\Set{\abs{x_1},\dotsc,\abs{x_n}}}.
         \end{align*}
         \item \( \reals^n \) mit \( \norm{\cdot}_p \) \enquote{\( p \)-Norm}, \( p\geq 1 \), \( p\in \reals \).
         \begin{align*}
             \norm{x}_{p}=\left( \sum_{i=1}^{n}\abs{x_i}^p \right)^{1/p}\quad \to\logicspace  \text{Saalübung}.
         \end{align*}
         \item \( \stetigefunktionen(\interval{a}{b}) \) mit \( \norm{f}_{L^1}=\Integrate{\abs{f(t)}}{t,a,b} \). 
-        \item \( \stetigefunktionen(\interval{a}{b}) \) mit \( \norm{f}_{\infty}=\sup_{t\in \interval{a}{b}}\abs{f(t)} \). 
+        \item \( \stetigefunktionen(\interval{a}{b}) \) mit \( \supnorm{f}=\sup_{t\in \interval{a}{b}}\abs{f(t)} \). 
     \end{itemize}
 \end{beispiele*}
 \begin{lemma}
-    Sei \( (V,\norm{\cdot}) \) normierter VR\@. Dann wird durch \( d(x,y)\definedas \norm{x-y} \) eine Metrik auf \( V \) definiert (\enquote{induziert}).
+    Sei \( (V,\norm{\cdot}) \) normierter VR\@. Dann wird durch \( \distance{x}{y}\definedas \norm{x-y} \) eine Metrik auf \( V \) definiert (\enquote{induziert}).
 \end{lemma}
 \begin{proof}
     \ref{norm:positiv_definit} (Norm) \timplies \ref{metrik:nicht_ausgeartet} (Metrik). \ref{metrik:symmetrisch} (Symmetrie der Metrik): folgt aus \( \norm{x-y}=\norm{y-x} \).
@@ -122,7 +122,7 @@ Wir haben gesehen, dass die Eigenschaften derselben Menge sehr verschieden sein 
     Wir schreiben \( (V,\norm{\cdot}) \) für den \emph{metrischen} Raum, dessen Metrik von \( \norm{\cdot} \), dessen Metrik von \( \norm{\cdot} \) induziert wird.
 \end{notation*}
 \begin{bemerkung*}
-    Nicht jede Metrik auf einem Vektorraum wird von einer Norm induziert, denn induzierte Metriken erfüllen \( d(\lambda x,\lambda y)=\abs{\lambda}d(x,y) \). Die diskrete Metrik erfüllt das nicht.
+    Nicht jede Metrik auf einem Vektorraum wird von einer Norm induziert, denn induzierte Metriken erfüllen \( \distance{\lambda x}{\lambda y}=\abs{\lambda}\distance{x}{y} \). Die diskrete Metrik erfüllt das nicht.
 \end{bemerkung*}
 \begin{lemma}\label{normen_staerke_abschaetzung}
     Seien \( d_1 \) und \( d_2 \) auf \( V \) von Normen \( \norm{\cdot}_1 \) und \( \norm{\cdot}_2 \) induziert. Dann ist \( d_2 \) stärker als \( d_1 \) genau dann, wenn es eine positive Zahl \( C>0 \) gibt \sd
@@ -167,37 +167,37 @@ Wir haben gesehen, dass die Eigenschaften derselben Menge sehr verschieden sein 
     Auf \( \reals^n \) sind alle Normen äquivalent.
 \end{satz}
 \begin{proof}
-    Aufgrund der Transitivität genügt es die Äquivalenz einer beliebigen Norm \( \norm{\cdot} \) zu \( \norm{\cdot}_{\infty} \) zu beweisen.
+    Aufgrund der Transitivität genügt es die Äquivalenz einer beliebigen Norm \( \norm{\cdot} \) zu \( \supnorm{\cdot} \) zu beweisen.
     \begin{proofenumerate}
-        \item \( \norm{\cdot}_{\infty} \) ist stärker als \( \norm{\cdot} \):
+        \item \( \supnorm{\cdot} \) ist stärker als \( \norm{\cdot} \):
         Denn sei \( x=\sum_{j=1}^{n}x_j e_j\in \reals^n  \), \( e_j=(0,\dotsc, \underset{j \text{-te}}{1},\dotsc,0) \). Dann ist
         \begin{align*}
-            \norm{x}=\norm{\sum x_j e_j}\explain{\triangle \text{und Homog.}}{\leq}\abs{x_j}\cdot\norm{e_j}\leq \norm{x}_{\infty}\underbrace{\sum_{j=1}^{n}\norm{e_j}}_{=C}
+            \norm{x}=\norm{\sum x_j e_j}\explain{\triangle \text{und Homog.}}{\leq}\abs{x_j}\cdot\norm{e_j}\leq \supnorm{x}\underbrace{\sum_{j=1}^{n}\norm{e_j}}_{=C}
         \end{align*}
-        \item \( \norm{\cdot}_{\infty} \) ist schwächer als \( \norm{\cdot} \):
+        \item \( \supnorm{\cdot} \) ist schwächer als \( \norm{\cdot} \):
         
-        Betrachte \( M\definedas \Set{x\in \reals^n|\norm{x}_{\infty}=1} \) (Einheits\enquote{sphäre} bezüglich \( \norm{\cdot}_{\infty} \), also Rand des Einheitswürfels \includegraphics[height=\baselineskip]{figures/einheitswuerfel_rand}).
+        Betrachte \( M\definedas \Set{x\in \reals^n|\supnorm{x}=1} \) (Einheits\enquote{sphäre} bezüglich \( \supnorm{\cdot} \), also Rand des Einheitswürfels \includegraphics[height=\baselineskip]{figures/einheitswuerfel_rand}).
 
         \begin{behauptung*}
-            \( f\maps M\to \reals \), \( x\mapsto \norm{x} \) ist stetig bezüglich \( \norm{\cdot}_{\infty} \).
+            \( f\maps M\to \reals \), \( x\mapsto \norm{x} \) ist stetig bezüglich \( \supnorm{\cdot} \).
         \end{behauptung*}
         \begin{subproof}
             \begin{align*}
-                \abs{f(x)-f(y)}=\abs{\norm{x}-\norm{y}}\underset{(*)}{\leq}\norm{x-y}\leq C\norm{x-y}_{\infty}
+                \abs{f(x)-f(y)}=\abs{\norm{x}-\norm{y}}\underset{(*)}{\leq}\norm{x-y}\leq C\supnorm{x-y}
             \end{align*}
             \( (*) \) umgekehrte Dreiecksungleichung:
             \begin{align*}
                 \norm{x}-\norm{y}&=\norm{x+y-y}-\norm{y}\overset{\triangle}{\leq}\norm{x+y}\\
                 \norm{y}-\norm{x}&=\norm{y+x-x}-\norm{x}\leq \norm{x+y}.
             \end{align*}
-        \( M \) ist abgeschlossen bezüglich \( \norm{\cdot}_{\infty} \) (denn \( \reals^n\setminus M= \) Urbild der offenen Menge \( \reals\setminus \Set{1} \) unter der stetigen Abbildung \( x\mapsto \norm{\cdot}_{\infty} \)). \( M\subset  \) abgeschlossenen \emph{Quader} und dieser ist \emph{kompakt} in \( (\reals^n,\norm{\cdot}_{\infty}) \) (\thref{quader_ist_kompakt_norm_undendlich}) \timplies \( M \) ist kompakt (\ref{abgeschlossene_teilmenge_kompakter_menge_ist_kompakt}).
+        \( M \) ist abgeschlossen bezüglich \( \supnorm{\cdot} \) (denn \( \reals^n\setminus M= \) Urbild der offenen Menge \( \reals\setminus \Set{1} \) unter der stetigen Abbildung \( x\mapsto \supnorm{\cdot} \)). \( M\subset  \) abgeschlossenen \emph{Quader} und dieser ist \emph{kompakt} in \( (\reals^n,\supnorm{\cdot}) \) (\thref{quader_ist_kompakt_norm_undendlich}) \timplies \( M \) ist kompakt (\ref{abgeschlossene_teilmenge_kompakter_menge_ist_kompakt}).
 
-        Es folgt: \( f \) nimmt sein Minimum \( b \) an und (da \( f>0 \)) somit ist \( b>0 \). Nach Definition ist \( \norm{y}\geq b\quad \forall y\in M \). Für alle \( x\in \reals^n\setminus\Set{0} \) gilt \( \frac{x}{\norm{x}_{\infty}}\in M \), also ist \( \norm{\frac{x}{\norm{x}_{\infty}}}\geq b \), also \( \norm{x}\geq b\norm{x}_{\infty} \) und für \( x=0 \) gilt dies ohnehin.
+        Es folgt: \( f \) nimmt sein Minimum \( b \) an und (da \( f>0 \)) somit ist \( b>0 \). Nach Definition ist \( \norm{y}\geq b\quad \forall y\in M \). Für alle \( x\in \reals^n\setminus\Set{0} \) gilt \( \frac{x}{\supnorm{x}}\in M \), also ist \( \norm{\frac{x}{\supnorm{x}}}\geq b \), also \( \norm{x}\geq b\supnorm{x} \) und für \( x=0 \) gilt dies ohnehin.
         \end{subproof}
     \end{proofenumerate}
 \end{proof}
 \begin{lemma}\label{quader_ist_kompakt_norm_undendlich}
-    Der Quader \( Q=\Set{x=(x_1,\dotsc, x_n)\in \reals^n| a_j\leq x_j\leq b_j} \) ist kompakt in \( \reals^n,\norm{\cdot}_{\infty} \) (\( a_j\leq b_j \)).
+    Der Quader \( Q=\Set{x=(x_1,\dotsc, x_n)\in \reals^n| a_j\leq x_j\leq b_j} \) ist kompakt in \( \reals^n,\supnorm{\cdot} \) (\( a_j\leq b_j \)).
 \end{lemma}
 \begin{proof}
     Sei \( (U_j)_j \) eine offene Überdeckung von \( Q \). Angenommen, \( Q \) kann nicht durch endlich viele \( U_j \)'s überdeckt werden.
@@ -209,9 +209,9 @@ Wir haben gesehen, dass die Eigenschaften derselben Menge sehr verschieden sein 
     mit
     \begin{eigenschaftenenumerate}
         \item \( Q_n \) kann \emph{nicht} durch endlich viele \( U_j \)'s überdeckt werden
-        \item \( \diam Q_m=2^{-m}\diam Q \).
+        \item \( \diameter-{Q_m}=2^{-m}\diameter-{Q} \).
     \end{eigenschaftenenumerate}
-    \minisec{Beachte:} \( \diam Q= \) Länge der länsten Seite bezüglich \( \norm{\cdot}_{\infty} \).
+    \minisec{Beachte:} \( \diameter-{Q}= \) Länge der länsten Seite bezüglich \( \supnorm{\cdot} \).
     \begin{figure}[H]
         \centering
         \includegraphics[width=0.3\linewidth]{figures/diameter_quader_norm_unendlich}
@@ -232,10 +232,10 @@ Wir haben gesehen, dass die Eigenschaften derselben Menge sehr verschieden sein 
     \end{figure}
     Es gibt mindestens einen Quader \( Q_m^{(s_1,\dotsc,s_n)} \), der nicht durch endlich viele \( U_j \)'s überdeckt werden kann. Einen solchen wählen wir als \( Q_{m+1} \). Es gilt per Konstruktion
     \begin{align*}
-        \diam(Q_{m+1})=\frac{1}{2}\diam(Q_m)=\frac{1}{2^{m+1}}\diam(Q).
+        \diameter{Q_{m+1}}=\frac{1}{2}\diameter{Q_m}=\frac{1}{2^{m+1}}\diameter{Q}.
     \end{align*}
     
-    Nach dem Schachtelungsprinzip \texists \( a\in Q_m \) \tforall \( m \). Da \( (U_j)_j \) \( Q \) überdeckt \texists \( U_{j_0} \) \sd \( a\in U_{j_0} \). \( U_{j_0} \) offen \timplies \texists \( \varepsilon>0 \) \sd \( B_{\varepsilon}^{\norm{\cdot}_{\infty}}(a)\subset U_{j_0} \). Wähle \( m \) so groß, dass \( \diam(Q_m)<\varepsilon \). \( a\in Q_m \) \timplies \( Q_m\subset B_{\varepsilon}^{\norm{\cdot}_{\infty}}(a)\subset U_{j_0} \) \contra Widerspruch Konstruktion der \( Q_m \).
+    Nach dem Schachtelungsprinzip \texists \( a\in Q_m \) \tforall \( m \). Da \( (U_j)_j \) \( Q \) überdeckt \texists \( U_{j_0} \) \sd \( a\in U_{j_0} \). \( U_{j_0} \) offen \timplies \texists \( \varepsilon>0 \) \sd \( B_{\varepsilon}^{\supnorm{\cdot}}(a)\subset U_{j_0} \). Wähle \( m \) so groß, dass \( \diameter{Q_m}<\varepsilon \). \( a\in Q_m \) \timplies \( Q_m\subset B_{\varepsilon}^{\supnorm{\cdot}}(a)\subset U_{j_0} \) \contra Widerspruch Konstruktion der \( Q_m \).
 \end{proof}
 \begin{bemerkung}
     Aus \ref{r_alle_normen_aequivalent} folgt: \( Q \) ist bezüglich jeder Norm kompakt. Bolzano-Weierstraß (\ref{bolzanoweierstrass}) \timplies In \( (\reals^n,\norm{\cdot}) \) hat jede beschränkte Folge eine konvergente Teilfolge.
@@ -244,7 +244,7 @@ Wir haben gesehen, dass die Eigenschaften derselben Menge sehr verschieden sein 
     Wir haben bereits gesehen:
     \begin{enumerate}
         \item Auf nicht endlich-dimensionalen Vektor-Räumen sind nicht alle Normen äquivalent:\\
-        \( (\stetigefunktionen(\interval{a}{b}), \norm{\cdot}_{\infty}) \) ist vollständig, \( (\stetigefunktionen(\interval{a}{b}), \norm{\cdot}_{L^1}) \) nicht.
+        \( (\stetigefunktionen(\interval{a}{b}), \supnorm{\cdot}) \) ist vollständig, \( (\stetigefunktionen(\interval{a}{b}), \norm{\cdot}_{L^1}) \) nicht.
         \item Auf dem \( \reals^n \) sind nicht alle Metriken äquivalent: \( d_{\text{disc}} \) ist stärker als jede Norm (und nicht schwächer).
     \end{enumerate}
 \end{bemerkungen}
@@ -255,7 +255,7 @@ Wir haben gesehen, dass die Eigenschaften derselben Menge sehr verschieden sein 
     \begin{proofdescription}
         \item[\hin] Hatten wir letztes Mal (\ref{kompakt:abgeschlossen_beschraenkt}) für Kompakte in metrischen Räumen bewiesen.
         
-        \item[\rueck] It \( A \) beschränkt so ist \( A \) in einem Quader enthalten (denn \( \norm{x-y}_{\infty}\leq  \norm{x-y} \) somit \( \diam_{\norm{\cdot}_{\infty}}(A)\leq C\diam_{\norm{\cdot}}(A)<\infty \)). \( Q \) ist kompakt (bezüglich \( \norm{\cdot}_{\infty} \) somit bezüglich \( \norm{\cdot} \)).\( A \) abgeschlossen \timplies \( A \) kompakt (\ref{abgeschlossene_teilmenge_kompakter_menge_ist_kompakt}).
+        \item[\rueck] It \( A \) beschränkt so ist \( A \) in einem Quader enthalten (denn \( \supnorm{x-y}\leq  \norm{x-y} \) somit \( \normdiameter{\supnorm{\cdot}}{A}\leq C\normdiameter{\norm{\cdot}}{A}<\infty \)). \( Q \) ist kompakt (bezüglich \( \supnorm{\cdot} \) somit bezüglich \( \norm{\cdot} \)).\( A \) abgeschlossen \timplies \( A \) kompakt (\ref{abgeschlossene_teilmenge_kompakter_menge_ist_kompakt}).
     \end{proofdescription}
 \end{proof}
 \begin{bemerkung*}

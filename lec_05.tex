@@ -46,24 +46,24 @@
 \end{proof}
 \begin{beispiele*}
     \begin{enumerate}
-        \item \( (\stetigefunktionen(\interval{a}{b},\reals),\norm{\cdot}_{\infty}) \).
+        \item \( (\stetigefunktionen(\interval{a}{b},\reals),\supnorm{\cdot}) \).
         \begin{align*}
             I\maps \stetigefunktionen(\interval{a}{b})\to \reals,\logicspace I(f)\definedas \Integrate{f(t)}{t,a,b}.
         \end{align*}
         \( I \) ist linear und es gilt
         \begin{align*}
-            \norm{I(f)}\leq (b-a)\norm{f}_{\infty}
+            \norm{I(f)}\leq (b-a)\supnorm{f}
         \end{align*}
         \timplies \( I \) ist stetig.
-        \item \( D\maps (\stetigefunktionen^1(\interval{a}{b}),\norm{\cdot}_{\infty})\to (\stetigefunktionen(\interval{a}{b}),\norm{\cdot}_{\infty}) \), \( D\maps f\mapsto f' \).
+        \item \( \totalderivative-{}\maps (\stetigefunktionen^1(\interval{a}{b}),\supnorm{\cdot})\to (\stetigefunktionen(\interval{a}{b}),\supnorm{\cdot}) \), \( \totalderivative-{}\maps f\mapsto f' \).
         \begin{behauptung*}
-            \( D \) ist nicht stetig.
+            \( \totalderivative-{} \) ist nicht stetig.
         \end{behauptung*}
         \begin{proof}[Denn:]
             \( D \) ist linear \checkmark, aber die Bedingung aus \thref{lineare_abbildung:stetigkeitssatz} ist verletzt: Betrachte \( f_n\in C^1(\interval{0}{2}) \), \( f_n=x^n    \).
-            Dann ist \( \norm{f_n}_{\infty}=1 \), aber \( \norm{Df_n}_{\infty}=n \) \timplies es kann kein \( C>0 \) geben \sd
+            Dann ist \( \supnorm{f_n}=1 \), aber \( \supnorm{\totalderivative-{f_n}}=n \) \timplies es kann kein \( C>0 \) geben \sd
             \begin{align*}
-                n=\norm{Df_n}_{\infty}\leq C\norm{f_n}=C\quad \forall n.
+                n=\supnorm{\totalderivative-{f_n}}\leq C\norm{f_n}=C\quad \forall n.
             \end{align*}
         \end{proof}
     \end{enumerate}
@@ -86,7 +86,7 @@
     \begin{align*}
         A\in \Mat(m\times n,\reals)\simeq \reals^{m\cdot n}.
     \end{align*}
-    Daher ist \( \norm{\cdot}_{\text{op}} \) in diesem Fall äquivalent zu in \( \norm{\cdot}_{\infty} \), \( \norm{A}_{\infty}=\max_{i,j}\abs{A_{ij}}<\infty \), insbesondere also schwächer und somit ist \( A \) stetig.
+    Daher ist \( \norm{\cdot}_{\text{op}} \) in diesem Fall äquivalent zu in \( \supnorm{\cdot} \), \( \supnorm{A}=\max_{i,j}\abs{A_{ij}}<\infty \), insbesondere also schwächer und somit ist \( A \) stetig.
 
     Konkret gilt: Setze \( V=(\reals^n, \norm{\cdot}_{V}) \), \( W=(\reals^n,\norm{\cdot}_W) \).
     Sei \( y=Ax \) \timplies \( y_i=\sum_{j=1}^{n}A_{ij}x_j\) für \( i=1,\dotsc,m \).
@@ -95,9 +95,9 @@
             &\overset{\triangle}{\leq}\sum_{i=1}^{m}\norm{y_i e_i}_{W}\\
             &\stackrel[\mathclap{\text{Hom}}]{\triangle}{\leq}\sum_{i,j}\abs{A_{ij}x_j}\norm{e_i}_{W}\\
             &=\sum_{i,j}\abs{A_{ij}}\cdot\abs{x_k}\cdot\norm{e_i}_{W}\\
-            &\leq \norm{A}_{\infty}\cdot\norm{x}_{\ell^1}\cdot \underbrace{\sum_{i=1}^{m}\norm{e_i}_W}_{=c_W}
+            &\leq \supnorm{A}\cdot\norm{x}_{\ell^1}\cdot \underbrace{\sum_{i=1}^{m}\norm{e_i}_W}_{=c_W}
         \end{aligned}\\
-        \implies &\norm{A}_{\text{op}}=\sup_{x\neq 0}\frac{\norm{Ax}_{W}}{\norm{x}_V}\leq \norm{A}_{\infty}\cdot C_W\cdot\underbrace{\sup_{x\neq 0}\frac{\norm{x}_{\ell^1}}{\norm{x}_V}},        
+        \implies &\norm{A}_{\text{op}}=\sup_{x\neq 0}\frac{\norm{Ax}_{W}}{\norm{x}_V}\leq \supnorm{A}\cdot C_W\cdot\underbrace{\sup_{x\neq 0}\frac{\norm{x}_{\ell^1}}{\norm{x}_V}},        
     \end{align*}
     wobei \( C_V \) eine Konstante ist mit
     \begin{align*}
@@ -113,7 +113,7 @@
         \item \emph{Kurven} \( \gamma\maps I\to \reals^n \), \( I \) Intervall, stetig.
         \begin{beispiele*}
             \item \( \gamma\maps \interval{0}{2\pi}\to \reals^2 \), \( t\mapsto (r \cos t, r \sin t) \), \( r>0 \).
-            Stetigkeit: Wir versehen \( \reals^2 \) mit \( \norm{\cdot}_{\infty} \).
+            Stetigkeit: Wir versehen \( \reals^2 \) mit \( \supnorm{\cdot} \).
             Dann folgt die Stetigkeit von \( \gamma \) aus der Stetigkeit der Komponentenfunktionen \( I\to \reals \).
             \item \( \gamma\maps \reals\to \reals^2 \), \( t\mapsto (t^2-1,t^3-1) \) genauso.
             Spur von \( \gamma=\Set{\gamma(t)|t\in \reals} \)

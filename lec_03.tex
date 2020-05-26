@@ -94,8 +94,8 @@
 \end{lemma}
 \begin{folgerung*}
     \begin{align*}
-        (C(\explain{\text{Stellt man diese Bedingung, ist automatisch garantiert, dass \( d_{\sup}(f_1,f_2)=\sup_{t\in \rinterval{a}{b}}\abs{f_1(t)-f_2(t)}<\infty \)}}{\interval{a}{b}},\reals),d_{\sup})
-    \end{align*}, \( D\subset \reals \), ist vollständig.  
+        (C(\explain{\text{Stellt man diese Bedingung, ist automatisch garantiert, dass \( d_{\sup}(f_1,f_2)=\sup_{t\in \rinterval{a}{b}}\abs{f_1(t)-f_2(t)}<\infty \)}}{\interval{a}{b}},\reals),d_{\sup}),
+    \end{align*} ist vollständig.  
 \end{folgerung*}
 \begin{proof}
     Sei \( (f_n)_n\) Cauchy-Folge in \( C(D,\reals )\) bezüglich \( d_{\sup}\), \dh zu \( \varepsilon>0 \) \texists \( N=N(\varepsilon)\) \sd
@@ -141,7 +141,7 @@
                 \item[\hin] Zu \( \varepsilon>0\) \texists \( N\) \sd \( \max \abs{x_m^i-a_m^i}<\varepsilon\quad \forall m\geq N \).
                 \item[\rueck] Zu \( \varepsilon>0\) \texists \( N_i\) \sd \( \abs{x_m^i-a_m^i}<\varepsilon \quad \forall m\geq N_i\)
                 \begin{align*}
-                    \implies \max_i \abs{x_m^i-a_m^i}<\varepsilon\quad \forall m\geq N=\max\Set{N_1,\ldots, N_n}. 
+                    \implies \max_i \abs{x_m^i-a_m^i}<\varepsilon\quad \forall m\geq N=\Max{\Set{N_1,\ldots, N_n}}. 
                 \end{align*} 
             \end{proofdescription}
             
@@ -164,8 +164,7 @@
 \end{bemerkungen*}
 
 \begin{lemma}\label{d_max:metrischer_raum_zu_r_stetigkeit:komponenten}
-    Sei \( (X,d)\) metrischer Raum. Sei \( @rr
-    ^n\) mit \( d_{\max}\) versehen. Eine Abbildung \( f\maps X\to \reals ^n\), \( f=(f_1,\ldots, f_n)^T\), 
+    Sei \( (X,d)\) metrischer Raum. Sei \( \reals^n\) mit \( d_{\max}\) versehen. Eine Abbildung \( f\maps X\to \reals ^n\), \( f=(f_1,\ldots, f_n)^T\), 
     \begin{align*}
         f(y)=(f_1(y),\ldots, f_n(y))^T\in \reals^n, y\in X.
     \end{align*}   
@@ -187,7 +186,7 @@
         \begin{align*}
             \abs{f_i(y)-f_y(a)}<\varepsilon\quad \forall y\in B_{d_i}(a)\subset X. 
         \end{align*}   
-        Wähle \( d\definedas \min \Set{\delta_1,\ldots,\delta_n}\). Dann ist
+        Wähle \( d\definedas \Min{\Set{\delta_1,\ldots,\delta_n}}\). Dann ist
         \begin{align*}
             \max_{i\in \underline{n}}\abs{f_i(y)-f_i(a)}<\varepsilon\quad \forall y\in B_d(a). 
         \end{align*} 
@@ -208,7 +207,7 @@
         \underset{\text{Bem~\ref{d_max:folgenkonvergenz}}}{\implies} &x_m\goesto x\text{ und }x_m\goesto y\text{ in }\reals \\
         \implies& \lim (x_m+y_m)=x+y\\
         &\lim (x_m\cdot y_m)=x\cdot y\\
-        &\lim (x_m/y_m)=x/y\quad (\text{falls }y_m \neq 0,y\neq 0).
+        &\lim (x_m/y_m)=x/y\quad \text{falls }y_m \neq 0,y\neq 0.
     \end{align*}
     
 \end{proof}
@@ -300,7 +299,7 @@
     \begin{proofdescription}
         \item[Abgeschlossen:] Sei \( a\in X\setminus K\). Setze zu \( n\geq 1\)
         \begin{align*}
-            U_n\definedas \Set{y\in X| d(y,a)>\frac{1}{n}}
+            U_n\definedas \Set{y\in X| \distance{y}{a}>\frac{1}{n}}
         \end{align*}  
         \begin{figure}[H]
             \centering
@@ -308,13 +307,13 @@
             \label{fig:kompakt_abgeschlossen_beweis}
         \end{figure}
         \( U_n\) ist offen (denn \( X\setminus U_n=\overline{B_{1/n}(a)}\)) und \( \bigcup_{n=1}^{\infty}U_n=X\setminus \Set{a}\supset K\).
-        \( K\) kompakt \timplies \texists \( U_{n_1},\ldots, U_{n_L}\) \sd \( K\subset U_{n_1}\cup \cdots \cup U_{n_l}\). Setze \( N\definedas \max\Set{n_1,\ldots,n_l}\). Dann ist \( B_{\frac{1}{N}}(a)\subset X\setminus K\) \timplies \( X\setminus K \) ist offen \timplies \Beh.
+        \( K\) kompakt \timplies \texists \( U_{n_1},\ldots, U_{n_L}\) \sd \( K\subset U_{n_1}\cup \cdots \cup U_{n_l}\). Setze \( N\definedas \Max{\Set{n_1,\ldots,n_l}}\). Dann ist \( B_{\frac{1}{N}}(a)\subset X\setminus K\) \timplies \( X\setminus K \) ist offen \timplies \Beh.
         
         \item[Beschränktheit:] Sei \( a\in X\). Dann ist \( X=\bigcup\limits_{n=1}^{\infty} B_n(a) \) und somit \( (B_n(a))_n\) eine offene Überdeckung von \( K\).
         \begin{align*}
             \implies &\exists n_1,\ldots, n_k\logicspace\text{\sd}\logicspace  K\subset B_{n_1(a)}\cup \cdots B_{n_k}(a)\\
-            \implies &K\subset B_N(a) \text{ für }N=\max\Set{n_1,\ldots,n_k}\\
-            \implies &\diam(K)\leq 2N.
+            \implies &K\subset B_N(a) \text{ für }N=\Max{\Set{n_1,\ldots,n_k}}\\
+            \implies &\diameter{K}\leq 2N.
         \end{align*}     
     \end{proofdescription}    
 \end{proof}
@@ -344,7 +343,7 @@
     Seien \( X,Y\) metrische Räume und \( f\maps X\to Y\) stetig. Ist \( K\subset X\) kompakt, so ist auch \( f(K)\subset Y\) kompakt. 
 \end{satz}
 \begin{proof}
-    Sei \( (U_j)_j\) offene Überdeckung von \( f(K)\). \( f\) stetig \( \underset{\ref{stetigkeit_in_topologischen_raeumen:urbildkriterium}}{\implies}\) Die Urbilder \( V_j \definedas \inv{f}(U_j)\) sind offen.
+    Sei \( (U_j)_j\) offene Überdeckung von \( f(K)\). \( f\) stetig \( \underset{\ref{stetigkeit_in_topologischen_raeumen:urbildkriterium}}{\implies}\) Die Urbilder \( V_j \definedas \inverse{f}(U_j)\) sind offen.
     
     Und nach Definition ist \( K\subset \bigcup_j V_j\).
     \begin{align*}
@@ -377,33 +376,33 @@
 \end{proof}
 
 \begin{beispiel*}
-    Sei \( (\mathfrak{X},d)\) metrischer Raum. \( M\subset \mathfrak{X}\). Sei \( x\in \mathfrak{X}\). Der \emph{Abstand} von \( a\) zu \( M\) ist definiert als
+    Sei \( (\mathfrak{X},d)\) metrischer Raum. \( M\subset \mathfrak{X}\). Sei \( x\in \mathfrak{X}\). Der \emph{Abstand} von \( x\) zu \( M\) ist definiert als
     \begin{align*}
-        \dist(x,M)\definedas \inf\Set{d(x,y)|y\in M}.
+        \distance{x}{M}\definedas \inf\Set{\distance{x}{y}|y\in M}.
     \end{align*} 
     \begin{behauptung*}
-        \( x\mapsto \dist(x,M)\) ist stetig auf \( \mathfrak{X}\). 
+        \( x\mapsto \distance{x}{M}\) ist stetig auf \( \mathfrak{X}\). 
     \end{behauptung*}
     \begin{proof}
         Sei \( \varepsilon>0\). Dann ist
         \begin{align*}
-            \abs{\dist(x,M)-\dist(\tilde{x},M)}\leq d(x,\tilde{x})<\varepsilon \quad \text{falls }d(x,\tilde{x})<\varepsilon, 
+            \abs{\distance{x}{M}-\distance{\tilde{x}}{M}}\leq \distance{x}{\tilde{x}}<\varepsilon \quad \text{falls }\distance{x}{\tilde{x}}<\varepsilon, 
         \end{align*}
         denn
         \begin{align*}
-            \dist(x,M)\underset{\triangle}{\leq}d(x,\tilde{x})+\dist(\tilde{x},M)\quad \forall x,\tilde{x}\in \mathfrak{X}.
+            \distance{x}{M}\underset{\triangle}{\leq}\distance{x}{\tilde{x}}+\distance{\tilde{x}}{M}\quad \forall x,\tilde{x}\in \mathfrak{X}.
         \end{align*}
         
     \end{proof}
     Definiere zu \( K\subset \mathfrak{X} \)
     \begin{align*}
-        \dist(K,M)\definedas \inf\Set{\dist(x,M)|x\in K}.
+        \distance{K}{M}\definedas \inf\Set{\distance{x}{M}|x\in K}.
     \end{align*}
     \begin{behauptung*}
-        Ist \( M \) abgeschlossen, \( K \) kompakt und ist \( M\cap K=\emptyset \), so gilt \( \dist(M,K)>0 \).
+        Ist \( M \) abgeschlossen, \( K \) kompakt und ist \( M\cap K=\emptyset \), so gilt \( \distance{M}{K}>0 \).
     \end{behauptung*}
     \begin{proof}
-        \( x\mapsto \dist(x,M) \) ist stetig auf \( \mathfrak{X} \), somit erst recht auf \( K \). \( K \) ist kompakt \( \overset{\ref{funktion_von_kompaktem_metrischen_raum_zu_r_kriegt_min_max}}{\implies} \) \texists \( a\in K \) \sd \( \dist(a,M)=\dist(K,M) \). \( M \) abgeschlossen \timplies \texists \( \varepsilon>0 \) \sd \( B_{\varepsilon}(a)\subset X\setminus K \) \timplies \( \dist(a,M)\geq \varepsilon \).
+        \( x\mapsto \distance{x}{M} \) ist stetig auf \( \mathfrak{X} \), somit erst recht auf \( K \). \( K \) ist kompakt \( \overset{\ref{funktion_von_kompaktem_metrischen_raum_zu_r_kriegt_min_max}}{\implies} \) \texists \( a\in K \) \sd \( \distance{a}{M}=\distance{K}{M} \). \( M \) abgeschlossen \timplies \texists \( \varepsilon>0 \) \sd \( B_{\varepsilon}(a)\subset X\setminus M \) \timplies \( \distance{a}{M}\geq \varepsilon \).
         
     \end{proof}
     \begin{achtung*}
@@ -411,7 +410,7 @@
             \item Betrachte
             \begin{align*}
                 M=\Set{(x,y)|xy=0}\subset , N=\set{(x,y)|xy=1}\subset \reals^2\\
-                \dist(M,N)=0.
+                \distance{M}{N}=0.
             \end{align*}
             \begin{figure}[H]
                 \centering
@@ -445,7 +444,7 @@
 
     \( \mathfrak{X} \) ist kompakt \timplies \texists \( a_1,\ldots,a_N \) \sd \( X=\bigcup\limits_{j=1}^{N}B_{\delta(a_j)/2} (a_j)\). Setze 
     \begin{align*}
-        \delta\definedas \frac{1}{2}\min\Set{\delta(a_1),\ldots,\delta(a_N)}.
+        \delta\definedas \frac{1}{2}\Min{\Set{\delta(a_1),\ldots,\delta(a_N)}}.
     \end{align*}
 
     Seien jetzt \( x,\tilde{x} \) beliebig aus \( \mathfrak{X} \) mit \( d_{\mathfrak{X}}(x,\tilde{x})<\delta \). Dann gibt es ein \( j\in \Set{1,\ldots, N} \) \sd \( x\in B_{\delta(a_j)/2} \) und somit \( \tilde{x}\in B_{\delta(a_j)}(a_j) \)
