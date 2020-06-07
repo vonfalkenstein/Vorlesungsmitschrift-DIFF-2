@@ -136,14 +136,14 @@
   \end{equation*}
   und schreibt
   \begin{equation*}
-    \boxed{f(a+h)=f(a)+\scalarproduct{\grad f(a)}{h}+\frac{1}{2}\scalarproduct{h}{H_f(a) h}}+R_{z,a}(h)
+    \boxed{f(a+h)=f(a)+\scalarproduct{\grad-{f}(a)}{h}+\frac{1}{2}\scalarproduct{h}{H_f(a) h}}+R_{z,a}(h)
   \end{equation*}
   für \( f\maps U\to \reals \) zweimal stetig differenzierbar und \( h\in B_{\delta}(0) \), \( \delta>0 \) \sd \( B_{\delta}(a)\subset U \).
 \end{description}
 \section*{Lokale Extrema}
-Wir hatten in \ref{extremum_notwendige_bedingung} bereits gesehen: Ist \( a\in U \) lokale Extremstell von \( f\maps U\to \reals \), \( U\subset \reals^n \) offen, differenzierbar, so ist \( \grad f(a)=0 \).
+Wir hatten in \ref{extremum_notwendige_bedingung} bereits gesehen: Ist \( a\in U \) lokale Extremstell von \( f\maps U\to \reals \), \( U\subset \reals^n \) offen, differenzierbar, so ist \( \grad-{f}(a)=0 \).
 \begin{satz}\label{hinreichende_bedingung_isoliertes_extremum}
-  Sei \( f\maps U\to \reals \) zweimal stetig differenzierbar, \( U\subset \reals^n \) offen. Sei \( a\in U \) \sd \( \grad f(a)=0 \). Dann gilt:
+  Sei \( f\maps U\to \reals \) zweimal stetig differenzierbar, \( U\subset \reals^n \) offen. Sei \( a\in U \) \sd \( \grad-{f}(a)=0 \). Dann gilt:
   \begin{eigenschaftenenumerate}
     \item\label{hinreichende_bedingung_isoliertes_minimum} Ist \( H_f(a) \) positiv definit (\dh \( \scalarproduct{h}{H_f(a)h}>0 \) \tforall \( h\in \reals^n \), \( h\neq 0 \)), so hat \( f \) in \( a \) ein lokales (isoliertes) Minimum.
     \item\label{hinreichende_bedingung_isoliertes_maximum} Ist \( H_f(a) \) negativ definit (\dh \( \scalarproduct{h}{H_f(a)}<0 \) \tforall \( h\neq 0 \)), so hat \( f \) in \( a \) ein lokales (isoliertes) Maximum.
@@ -178,7 +178,7 @@ Wir hatten in \ref{extremum_notwendige_bedingung} bereits gesehen: Ist \( a\in U
 \begin{proof}[Beweis von \ref{hinreichende_bedingung_isoliertes_extremum}]
   Setze \( A\definedas H_f(a) \). \texists \( \delta>0 \) \sd \( B_\delta(a)\subset U \). Und somit
   \begin{equation*}
-    f(a+h)=f(a)+\scalarproduct{\underbrace{\grad f(a)}_{=0}}{h}+\frac{1}{2}\scalarproduct{h}{Ah}+R_2(h)\quad \forall h\in B_\delta(0)
+    f(a+h)=f(a)+\scalarproduct{\underbrace{\grad-{f}(a)}_{=0}}{h}+\frac{1}{2}\scalarproduct{h}{Ah}+R_2(h)\quad \forall h\in B_\delta(0)
   \end{equation*}
   mit \( \frac{R_2(h)}{\norm{h}^2}\goesto 0 \) (\( h\goesto 0 \)).
   \begin{equation*}
@@ -235,16 +235,16 @@ Wir hatten in \ref{extremum_notwendige_bedingung} bereits gesehen: Ist \( a\in U
 \end{proof}
 \begin{beispiele*}
   \begin{enumerate}
-    \item \( f\maps \reals^2\to \reals \), \( f(x)=x_1^2+x_2^2+2 \), \(\grad f(a)=(2a_1,2a_2)=0\) nur für \( a=0 \).
+    \item \( f\maps \reals^2\to \reals \), \( f(x)=x_1^2+x_2^2+2 \), \(\grad-{f}(a)=(2a_1,2a_2)=0\) nur für \( a=0 \).
     \begin{equation*}
       H_f(0)=\begin{pNiceMatrix} 2 & 0 \\ 0 & 2 \end{pNiceMatrix}
     \end{equation*} positiv definit \timplies isoliertes Minimum in \( 0 \).  
-    \item \( f\maps \reals^2\to \reals \), \( f(x)=2-x_1^2-x_2^2 \), \( \grad f(a)=-2a=0 \) nur für \( a=0 \). 
+    \item \( f\maps \reals^2\to \reals \), \( f(x)=2-x_1^2-x_2^2 \), \( \grad-{f}(a)=-2a=0 \) nur für \( a=0 \). 
     \begin{equation*}
       H_f(0)=\begin{pNiceMatrix} -2 & 0 \\ 0 & -2 \end{pNiceMatrix}
     \end{equation*}
     negativ definit \timplies isoliertes Maximum in \( 0 \).
-    \item \( f\maps \reals^2\to \reals \), \( f(x)=2+x_1^2-x_2^2 \), \( \grad f(a)=2a_1-2a_2=0 \) nur für \( a=0 \).
+    \item \( f\maps \reals^2\to \reals \), \( f(x)=2+x_1^2-x_2^2 \), \( \grad-{f}(a)=2a_1-2a_2=0 \) nur für \( a=0 \).
     \begin{equation*}
       H_f(0)=\begin{pNiceMatrix} 2 & 0 \\ 0 & -2 \end{pNiceMatrix}
     \end{equation*}

@@ -66,9 +66,9 @@ Notwendiges Kriterium ist, dass \( \totalderivative-{f}(x) \) invertierbar ist, 
 \begin{proof}[Beweis von \ref{satz_von_der_umkehrabbildung}]
   Betrachte \( F\maps \reals^n\times U\to \reals^n \), \( \distance{z}{x}=z-f(x) \). Dann ist 
   \begin{equation*}
-    \totalderivative-{f}(z,x)=(\underbrace{\mathds{1}_{n\times n}}_{D_1 F(z,x)}-\underbrace{\totalderivative-{f}(x)}_{D_2 F(z,x)}).
-  \end{equation*}
-  Wegen \( F(b,a)=0 \) und \( D_2 F(b,a)=-\totalderivative-{f}(a) \) invertierbar können wir den Satz von der impliziten Funktion \ref{satz_von_der_impliziten_funktion} auf \( F \) anwenden und \( F \) nach \( x \) auflösen. Es gibt also offene Umgebungen \( V_1\subset \reals^n \) von \( b \) und \( V_2\subset U \) von \( a \) und eine stetig differenzierbare Funktion (\vgl Bemerkung~\ref{implizite_funktion_auf_umgebung_stetig_differenzierbar} nach \ref{satz_von_der_impliziten_funktion}) \( g\maps V_1\to \reals^n \) mit \( g(V_1)\subset V_2 \) und \( F(z,g(z))=0\quad \forall z\in V_1 \), also \( z-f(g(z))=0 \quad \forall z\in V_1 \) und für all \( (z,x)\in V_1\times V_2 \) mit \( F(z,x)=0 \) gilt \( x=g(z) \).
+    \totalderivative{f}(z,x)=(\underbrace{\mathds{1}_{n\times n}}_{D_1 F(z,x)}-\underbrace{\totalderivative{f}(x)}_{D_2 F(z,x)}).
+  \end{equation*} 
+  Wegen \( F(b,a)=0 \) und \( D_2 F(b,a)=-\totalderivative-{f}(a) \) invertierbar können wir den Satz von der impliziten Funktion \ref{satz_von_der_impliziten_funktion} auf \( F \) anwenden und \( F \) nach \( x \) auflösen. Es gibt also offene Umgebungen \( V_1\subset \reals^n \) von \( b \) und \( V_2\subset U \) von \( a \) und eine stetig differenzierbare Funktion (\vgl Bemerkung~\ref{implizite_funktion_auf_umgebung_stetig_differenzierbar} nach    \ref{satz_von_der_impliziten_funktion}) \( g\maps V_1\to \reals^n \) mit \( g(V_1)\subset V_2 \) und \( F(z,g(z))=0\quad \forall z\in V_1 \), also \( z-f(g(z))=0 \quad \forall z\in V_1 \) und für all \( (z,x)\in V_1\times V_2 \) mit \( F(z,x)=0 \) gilt \( x=g(z) \).
 
   Setze nun
   \begin{gather*}
@@ -184,7 +184,7 @@ Man sagt, wenn \( f \) wie oben ist: \enquote{\( f \) ist bei \( a \) \emph{loka
 \end{beispiele}
 Es folgen einige etwas tiefsinnigere Folgen aus dem Umkehrsatz.
 \begin{satz}\label{offene_abbildungen_satz}
-  Sei \( f\maps U\to \reals^n \) stetig differenzierbar, \( U\subset \reals^n \) offen. Sei \( V\subset U \) offen. Ist \( \totalderivative-{f}(x) \) invertierbar für alle \( x\in V \), so ist \( \evaluateat{f}{V} \) eine \emph{offene Abbildung}, \dh offene Teilmengen \( \subset V \) werden auf offene Mengen abgebildet.
+  Sei \( f\maps U\to \reals^n \) stetig differenzierbar, \( U\subset \reals^n \) offen. Sei \( V\subset U \) offen. Ist \( \totalderivative-{f}(x) \) invertierbar für alle \( x\in V \), so ist \( \evaluateat{f}{V} \) eine \emph{offene Abbildung}, \dh offene Teilmengen \( \subset V \) auf offene Mengen abgebildet.
 \end{satz}
 \begin{antibeispiel*}
   \( f\maps \ointerval{0}{1}\to \reals \), \( f(x)=1\quad \forall x \). \( f'(x)=0 \) nicht invertierbar. \( \Set{1} \) nicht offen in \( \reals \).

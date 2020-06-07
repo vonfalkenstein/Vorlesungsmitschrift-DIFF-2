@@ -6,7 +6,10 @@
 \date{Auf dem Stand vom \today}
 \author{Henry Ruben Fischer}
 
-% \includeonly{lec_11}
+\newcommand{\timestamp}[1]{\marginpar{\textcolor{red}{#1}}}
+\newcommand{\approxtimestamp}[1]{\timestamp{\SI{#1}{\minute}}}
+
+% \includeonly{lec_13}
 
 \begin{document}
 \maketitle
@@ -19,7 +22,7 @@ Nicht von Professor Bahns durchgesehene Mitschrift, keine Garantie auf Richtigke
 
 \newpage
 \tableofcontents
-\newpage
+\listoflectures
 
 % Begin of lectures
 \include{lec_01}
@@ -33,6 +36,8 @@ Nicht von Professor Bahns durchgesehene Mitschrift, keine Garantie auf Richtigke
 \include{lec_09}
 \include{lec_10}
 \include{lec_11}
+\include{lec_12}
+\include{lec_13}
 % End of lectures
 
 \end{document}

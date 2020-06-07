@@ -32,8 +32,8 @@ Dies führt zur sogenannten
     \grad-{f(a)}=\lambda_1 \grad-{h_1(a)}+\dotsb+\lambda_m \grad-{h_m(a)}.
   \end{equation*}
 \end{satz}
-\begin{proof}[]
-  Sei \obda \( U=U_1\times U_2 \) mit \( U_1\subset \reals^{n-m} \), \( U_2\subset \reals^m \), \( a=(a_1,a_2)\in U_1\times U_2 \), (Notation \( (x,y)\in U_1\times U_2 \)) und \( \totalderivative-{h}(x,y)=\begin{pNiceMatrix} D_1h(x,y) & \braceannotate{\in \sqmatrices{m}{\reals}}{D_2 h(x,y)}\end{pNiceMatrix}\vphantom{\underbrace{D_2 h(x,y)}_{\in \sqmatrices{m}{\reals}}} \) mit \( D_2h(a_1,a_2) \) invertierbar.
+\begin{proof}
+  Sei \obda \( U=U_1\times U_2 \) mit \( U_1\subset \reals^{n-m} \), \( U_2\subset \reals^m \), \( a=(a_1,a_2)\in U_1\times U_2 \), (Notation \( (x,y)\in U_1\times U_2 \)) und \( \totalderivative-{h}(x,y)=(D_1h(x,y) \quad  \braceannotate{\mathclap{\in \sqmatrices{m}{\reals}}}{D_2 h(x,y)})\vphantom{\underbrace{D_2 h(x,y)}_{\in \sqmatrices{m}{\reals}}} \) mit \( D_2h(a_1,a_2) \) invertierbar.
     
   \thref{satz_von_der_impliziten_funktion} \timplies \texists  \( V_1 \) offene Umgebung von \( a_1 \), \( V_2 \) offene Umgebung von \( a_2 \), \( g\maps V_1\to \reals^m \) stetig differenzierbar, \( g(V_1)\subset V_2 \), \( \totalderivative-{g}(x)=-\inverse{D_2 h(x,g(x)) }\matrixmult D_1 h(x,g(x))\) und 
   \begin{equation*}
@@ -46,7 +46,7 @@ Dies führt zur sogenannten
   \timplies (Kettenregel und \ref{extremum_notwendige_bedingung})
   \begin{align*}
     &0\begin{aligned}[t]
-      &=D*{f\circ \begin{pNiceMatrix} \Id \\ g \end{pNiceMatrix}}(a_1)\\
+      &=D{f\circ \begin{pNiceMatrix} \Id \\ g \end{pNiceMatrix}}(a_1)\\
       &=\totalderivative-{f}(a_1,g(a_1))\matrixmult \begin{pNiceMatrix} \mathds{1}_{n-m} \\ \totalderivative-{g} \end{pNiceMatrix}(a_1)\\
       &=D_1 f(a_1,a_2)-\braceannotate{(1\times m)\text{ mal }(m\times m)=(1\times m)\defines (\lambda_1,\dotsc,\lambda_m)}{D_2  f(a_1,a_2)\matrixmult \inverse{D_2 h(a_1,a_2)}}\matrixmult D_1 h(a_1,a_2)\vphantom{\underbrace{M}_{M}}
     \end{aligned}\\
