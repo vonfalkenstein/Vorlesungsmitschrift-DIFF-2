@@ -1,6 +1,6 @@
 % !TEX root = ./Vorlesungsmitschrift DIFF 2.tex  
 \chapter{Untermannigfaltigkeiten des \texorpdfstring{\( \reals^n \)}{R\^n}}
-\lecture{Mi 27.05. 10:15}{}
+\lecture{Do  28.05. 10:15}{}
 Ziel (\ua) Geometrische Interpretation der Ableitung.
 \begin{erinnerung*}
   Der Gradient zeigt in die Richtung des stärksten Anstiegs.
@@ -46,7 +46,7 @@ Ziel (\ua) Geometrische Interpretation der Ableitung.
     \item \label{untermannigfaltigkeit:ist_niveaumenge}\( M\cap U=\set{x\in U|f(x)=0} \) und 
     \item \label{untermannigfaltigkeit:maximaler_rang_gibt_dimension} \( \rang-{Df(a)}=n-d \) (maximal).
   \end{eigenschaftenenumerate}
-  Das heißt \( M \) lässt sic lokal als Nullstellengebilde von \( n-d \) \( \reals \)-wertigen \( \stetigefunktionen{1} \) Funktionen \( f_j \) schreiben, deren Gradienten linear unabhängig sind.
+  Das heißt \( M \) lässt sic lokal als Nullstellengebilde von \( n-d \) \( \reals \)-wertigen \( \stetigefunktionen[1] \) Funktionen \( f_j \) schreiben, deren Gradienten linear unabhängig sind.
   \begin{figure}[H]
     \centering
     \includegraphics[width=0.5\linewidth]{untermannigfaltigkeit_intuition}
@@ -221,7 +221,7 @@ Ziel (\ua) Geometrische Interpretation der Ableitung.
   Um di Rückrichtung von \thref{tangentialraum_ist_tangential} beweisen zu können, benötigen wir eine weitere (äquivalente) Charakterisierung differenzierbarer Untermannigfaltigkeiten.
 \end{beispiel*}
 \begin{satz}\label{untermannigfaltigkeit_kriterium}
-  Eine Teilenge \( M\subset \reals^n \) ist genau dann \( d \)-dimensionale differenzierbare Untermannigfaltigkeit des \( \reals^n \), wenn es zu jedem Punkt \( a\in M \) (nach eventueller Umnummerierung) Umgebungen \( V_1\subset \reals^d \) von \( a'=(a_1,\dotsc,a_d) \) un \( V_2\subset \reals^{n-d} \) von \( a''=(a_{d+1},\dotsc,a_n) \) und eine stetig differenzierbare Abbildung \( g\maps V_1\to \reals^{n-d} \), \( g(V_1)\subset V_2 \) gibt, \sd
+  Eine Teilmenge \( M\subset \reals^n \) ist genau dann \( d \)-dimensionale differenzierbare Untermannigfaltigkeit des \( \reals^n \), wenn es zu jedem Punkt \( a\in M \) (nach eventueller Umnummerierung) Umgebungen \( V_1\subset \reals^d \) von \( a'=(a_1,\dotsc,a_d) \) un \( V_2\subset \reals^{n-d} \) von \( a''=(a_{d+1},\dotsc,a_n) \) und eine stetig differenzierbare Abbildung \( g\maps V_1\to \reals^{n-d} \), \( g(V_1)\subset V_2 \) gibt, \sd
   \begin{equation*}
     M\cap (V_1\times V_2)=\Gamma_g = \Set{(x',g(x'))|x'\in V_1}.
   \end{equation*}
@@ -265,7 +265,7 @@ Ziel (\ua) Geometrische Interpretation der Ableitung.
    hat maimalen Rang (\( n-d \)).
 \end{proof}
 \begin{bemerkung*}
-  Man kann also eine \( d \)-dimensionale differenzierbare Untermannigfaltigkeit lokal stets als Graphen einer \( \stetigefunktionen{1} \)-FUnktion schreiben.
+  Man kann also eine \( d \)-dimensionale differenzierbare Untermannigfaltigkeit lokal stets als Graphen einer \( \stetigefunktionen[1] \)-FUnktion schreiben.
 
   Für die Beispiele oben gilt
   \begin{description}
@@ -323,7 +323,7 @@ Wir haben im Beweis auch gesehen:
 \begin{equation*}
   \tangentialraum-{M}=\image-{D\varphi(x_0)},
 \end{equation*}
-wo \( \phi(x)=\transpose{(x,g(x))} \) die Graphenabbildung einer lokalen Auflösung \( g \) ist it \( a=\transpose{(x_0,g(x_0))}=\phi(x_0) \).
+wo \( \phi(x)=\transpose-{(x,g(x))} \) die Graphenabbildung einer lokalen Auflösung \( g \) ist it \( a=\transpose-{(x_0,g(x_0))}=\phi(x_0) \).
 
 Die geometrische Interpretation ist:
 \begin{figure}[H]
@@ -350,7 +350,7 @@ Ableitung
 \end{equation*}
 Es gilt \( \evaluateat{\phi(x_{0,1},x_{0,2}+t)}{t} \) und \( (0,1,\partial_2g(x_0)) \) ist \textcolor{blue}{Tangentialvektor} bei \( a \). Genauso für die Ebene \( \set{x_2=x_{0,2}} \) und die erste Spalte von \( D\phi(x_0) \). Jede \( d\)-dimensionale Untermannigfaltigkeit lässt sich lokal zu einer Teilmenge einer \( d \)-dimensionalen Ebene im \( \reals^n \) \enquote{plätten},
 \begin{satz}\label{mannigfaltigkeit_sieht_lokal_aus_wie_r_n}
-  \( M\subset \reals^n \) ist genau dann \( d \)-dimensionale Untermannigfaltigkeit, wenn es zu jede Punkt \( a\in M \) offene Umgebungen \( U \) von \( a\subset \reals^n \) und \( V \) von \( 0\subset \reals^n \) und einen \emph{Diffeomorphismus} von \( U \) nach \( V \), also eine stetig differenzierbare invertierbare Funktion \( F\maps U\to \reals^n \) mit stetig differenzierbarer Umkehrfunktion \( G\maps V\to \reals^n \) \sd 
+  \( M\subset \reals^n \) ist genau dann \( d \)-dimensionale Untermannigfaltigkeit, wenn es zu jedem Punkt \( a\in M \) offene Umgebungen \( U \) von \( a\subset \reals^n \) und \( V \) von \( 0\subset \reals^n \) und einen \emph{Diffeomorphismus} von \( U \) nach \( V \), also eine stetig differenzierbare invertierbare Funktion \( F\maps U\to \reals^n \) mit stetig differenzierbarer Umkehrfunktion \( G\maps V\to \reals^n \) \sd 
   \begin{equation*}
     F(M\cap U)=\Set{(y',y'')\in \reals^d\times \reals^{n-d}|y''=0}\cap V.
   \end{equation*}

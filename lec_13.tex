@@ -26,7 +26,7 @@ Eine weitere äquivalente lokale Beschreibung mit Hilfe einer Parametisierung:
     \begin{bemerkung*}
       \( 1 \)-dimensional \tto \( I \) kann auch nicht offen gewählt werden, wenn man nur an Differenzierbarkeit interessiert ist. Hier \emph{nicht}.
     \end{bemerkung*}
-    \item \( V=\Set{t\in \reals^2|\euclidiannorm{t}<1} \), \( \varphi(t_1,t_2)=\transpose{(t_1,t_2,\sqrt{1-t_1^2-t_2^2})} \),  
+    \item \( V=\Set{t\in \reals^2|\euclidiannorm{t}<1} \), \( \varphi(t_1,t_2)=\transpose-{(t_1,t_2,\sqrt{1-t_1^2-t_2^2})} \),  
     \begin{equation*}
       D\varphi(t_1,t_2)=\begin{pNiceMatrix} \Block{1-2}{\mathds{1}_{2\times 2}} \\ \frac{-t_1}{\sqrt{\cdots}} & \frac{-t_2}{\sqrt{\cdots}}  \end{pNiceMatrix}\qquad \rang-{}=2\quad \forall t\in V.
     \end{equation*}
@@ -108,7 +108,7 @@ Eine weitere äquivalente lokale Beschreibung mit Hilfe einer Parametisierung:
 \end{beispiel*}
 Tatsächlich gilt:
 \begin{satz}\label{mannigfaltigkeiten_sind_parametisierbar}
-  Eine Teilmenge \( M\subset \rho^n \) ist genau dann eine \( d \)-dimensionale Untermannigfaltigkeit des \( \reals^n \), wenn es zu jedem Punkt \( a\in M \) eine offene Umgebung \( U\subset \reals^n \) von \( a \) gibt und eine offene Teilmenge \( V\subset \reals^d \) und eine Einbettung \( \varphi\maps V\to \reals^n \) mit \( \varphi(V)=M\cap U \).
+  Eine Teilmenge \( M\subset \reals^n \) ist genau dann eine \( d \)-dimensionale Untermannigfaltigkeit des \( \reals^n \), wenn es zu jedem Punkt \( a\in M \) eine offene Umgebung \( U\subset \reals^n \) von \( a \) gibt und eine offene Teilmenge \( V\subset \reals^d \) und eine Einbettung \( \varphi\maps V\to \reals^n \) mit \( \varphi(V)=M\cap U \).
 \end{satz}
 \begin{proof}
   \begin{proofdescription}
@@ -117,7 +117,7 @@ Tatsächlich gilt:
     \begin{equation*}
       M\cap U=\Set{(x',g(x'))|x'\in U_1}.
     \end{equation*}
-    Setze \( V\definedas U_1 \) und \( \varphi\maps V\to \reals^n \), \( \varphi(t)=\transpose{t,g(t)} \). Dann ist \( \varphi \) eine Immersion (denn \( D\varphi(t)=\begin{pNiceMatrix} \mathds{1}_{d\times d} \\ Dg(t) \end{pNiceMatrix} \) hat maximalen Rang) mit \( \varphi(V)=M\cap U \) (da \( g(V)=U_2 \)). \( \varphi \) ist injektiv und die Umkehrfunktion
+    Setze \( V\definedas U_1 \) und \( \varphi\maps V\to \reals^n \), \( \varphi(t)=\transpose-{t,g(t)} \). Dann ist \( \varphi \) eine Immersion (denn \( D\varphi(t)=\begin{pNiceMatrix} \mathds{1}_{d\times d} \\ Dg(t) \end{pNiceMatrix} \) hat maximalen Rang) mit \( \varphi(V)=M\cap U \) (da \( g(V)=U_2 \)). \( \varphi \) ist injektiv und die Umkehrfunktion
       \begin{equation*}
         \inverse{\varphi}\maps \equalto{U_1\times U_2}{\varphi(V)}\to \reals^d,\quad (y',y'')\mapsto y'
       \end{equation*}

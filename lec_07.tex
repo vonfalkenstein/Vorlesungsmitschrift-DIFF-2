@@ -60,7 +60,7 @@ Konkret kann man also so vorgehen: Man bestimmt die partiellen Ableitungen und Ã
         \item Eine weitere Anwendung der Kettenregel. Betrachte die \enquote{Polarkoordinaten}
         \begin{align*}
             g\maps \reals_{>0}\times \reals&\to \reals^2\\
-            g(r,\phi)&=\transpose{(r\cos \phi, r\sin \phi)}
+            g(r,\phi)&=\transpose-{(r\cos \phi, r\sin \phi)}
         \end{align*}
         \begin{figure}[H]
             \centering
@@ -77,7 +77,7 @@ Konkret kann man also so vorgehen: Man bestimmt die partiellen Ableitungen und Ã
         \begin{equation*}
             \begin{split}
                 \totalderivative{f\circ g}(r,\phi)&=\begin{pNiceMatrix} \partial_1 f(g(r,\phi)) & \partial_2 f(g(r,\phi))  \end{pNiceMatrix}\matrixmult \begin{pNiceMatrix} \cos \phi & -r\sin \phi \\ \sin \phi & r\cos \phi \end{pNiceMatrix}\\
-                &=\transpose{\begin{pNiceMatrix} \partial_1 f(g(r,\phi))\cdot \cos \phi+\partial_2(f(g(r,\phi)))\cdot\sin \phi \\
+                &=\transpose-{\begin{pNiceMatrix} \partial_1 f(g(r,\phi))\cdot \cos \phi+\partial_2(f(g(r,\phi)))\cdot\sin \phi \\
                 -\partial_1 f(g(r,\phi))\cdot r\sin \phi+\partial_2 f(g(r,\phi))\cdot r \cos \phi \end{pNiceMatrix}}.
             \end{split}
         \end{equation*}
@@ -111,7 +111,7 @@ Aber oft ist es \emph{viel} Ã¼bersichtlicher, die partiellen Ableitungen \emph{n
     \end{align*}
     Ist speziell \( m=1 \), so definiert man
     \begin{align*}
-        \grad-{f(a)}\definedas \transpose{\totalderivative-{f}(a)}=\begin{pNiceMatrix} \partial_1 f(a) \\ \Vdots \\ \partial_n f(a) \end{pNiceMatrix}\in \reals^n
+        \grad-{f(a)}\definedas \transpose-{\totalderivative-{f}(a)}=\begin{pNiceMatrix} \partial_1 f(a) \\ \Vdots \\ \partial_n f(a) \end{pNiceMatrix}\in \reals^n
     \end{align*}
     \enquote{Gradient von \( f \) in \( a \)}, und schreibt \( \partial_v f(a)=\scalarproduct{\grad-{f(a)}}{v} \).
 
@@ -141,7 +141,7 @@ Aber oft ist es \emph{viel} Ã¼bersichtlicher, die partiellen Ableitungen \emph{n
     \end{figure}
     Ist \( f \) lediglich \emph{partiell differenzierbar}, \dh  die partiellen Ableitungen existieren auf \( U \), so definiert man dennoch
     \begin{equation*}
-        \grad-{f(x)}=\transpose{(\partial_1 f(x),\dotsc, \partial_n f(x))}
+        \grad-{f(x)}=\transpose-{(\partial_1 f(x),\dotsc, \partial_n f(x))}
     \end{equation*}
     als den Vektor der partiellen Ableitungen bei \( x \).
 \end{beispiel*}
