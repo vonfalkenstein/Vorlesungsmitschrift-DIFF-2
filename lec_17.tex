@@ -36,13 +36,13 @@
       u(t_0)=0\implies u(t)=0\quad \forall t
     \end{equation*}
     \contra VOR\@.
-    \item \( \dim-{}{L_H(A)}=n \):\\
-    Sei \( (e_1,\dotsc,e_n) \) die kanonische Einheitsbasis von \( \mathbb{K}^n \). \texists \( u_1,\dotsc,u_n\in \homogenreddglloesungsraum{A} \) mit \( u_j(t_0)=e_j \). Wegen \ref{homogene_dgl_loesungsraum:loesungen_unabhaengig_fuer_einen_wert} \timplies \ref{homogene_dgl_loesungsraum:loesungen_unabhaengig} sind sie linear unabhängig \timplies \( \dim-{}{\homogenreddglloesungsraum{A}}\geq n \). Es kann aber höchstens \( n \) linear unabhängige Vektoren in \( \homogenreddglloesungsraum{A} \) geben: Denn seien \( v_1,\dotsc,v_k \) linear unabhängig, dann ist (wegen \ref{homogene_dgl_loesungsraum:loesungen_unabhaengig} \timplies \ref{homogene_dgl_loesungsraum:loesungen_unabhaengig_fuer_alle_werte}) \( v_1(t_0),\dotsc,, v_k(t_0) \) für ein \( t_0\in I \) linear unabhängig in \( \mathbb{K}^n \) \timplies \( k\leq n \).
+    \item \( \dim-{L_H(A)}=n \):\\
+    Sei \( (e_1,\dotsc,e_n) \) die kanonische Einheitsbasis von \( \mathbb{K}^n \). \texists \( u_1,\dotsc,u_n\in \homogenreddglloesungsraum{A} \) mit \( u_j(t_0)=e_j \). Wegen \ref{homogene_dgl_loesungsraum:loesungen_unabhaengig_fuer_einen_wert} \timplies \ref{homogene_dgl_loesungsraum:loesungen_unabhaengig} sind sie linear unabhängig \timplies \( \dim-{\homogenreddglloesungsraum{A}}\geq n \). Es kann aber höchstens \( n \) linear unabhängige Vektoren in \( \homogenreddglloesungsraum{A} \) geben: Denn seien \( v_1,\dotsc,v_k \) linear unabhängig, dann ist (wegen \ref{homogene_dgl_loesungsraum:loesungen_unabhaengig} \timplies \ref{homogene_dgl_loesungsraum:loesungen_unabhaengig_fuer_alle_werte}) \( v_1(t_0),\dotsc,, v_k(t_0) \) für ein \( t_0\in I \) linear unabhängig in \( \mathbb{K}^n \) \timplies \( k\leq n \).
   \end{itemize}
 \end{proof}
-\begin{definition}
+\begin{definition*}
   Eine Basis von \( \homogenreddglloesungsraum{A} \) nennt man auch \emph{(Lösungs-) Fundamentalsystem} (für \( x'=Ax \)).
-\end{definition}
+\end{definition*}
 \begin{bemerkung*}
   Aus \thref{homogene_dgl_loesungsraum} folgt: Eine Teilmenge \( \Set{u_1,\dotsc,u_n}\subset \homogenreddglloesungsraum{A} \) ist genau dann Fundamentalsystem für \( x'=Ax \), wenn
   \begin{equation*}
@@ -176,7 +176,7 @@ Eine Lösung ist eine \( k \)-fach differenzierbare Funktion \( u\maps I\to \mat
     \( u_1,\dotsc,u_k\in \homogendglloesungsraum-{}{k} \)
      ist genau dann linear unabhängig, wenn für ein \( t_0\in I \) (somit für alle \( t\in I \)) die \emph{Wronski-Determinante}
     \begin{equation*}
-      \wronskideterminant{t_0}=\determinant-{\begin{pNiceMatrix}
+      \wronskideterminant{t_0}=\determinant{\begin{pNiceMatrix}
         u_1(t_0) & u_2(t_0) & \Cdots & u_k(t_0) \\
         u_1'(t_0) & \Vdots &  & u_k'(t_0) \\
         \Vdots &  & & \Vdots\\
@@ -216,7 +216,7 @@ Eine Lösung ist eine \( k \)-fach differenzierbare Funktion \( u\maps I\to \mat
   \begin{gather*}
     0-\frac{1}{2t}1+\frac{1}{2t^2}t=0\logicspace \checkmark\\
     \frac{1}{2}\left( -\frac{1}{2t\sqrt{t}} \right)-\frac{1}{2t}\frac{1}{2\sqrt{t}}+\frac{1}{2t^2}\sqrt{t}=0\logicspace \checkmark.\\[1ex]
-    \wronskideterminant{t}=\determinant-{\begin{pNiceMatrix} u_1(t) & U_2(t) \\ u_1'(t) & u_2'(t) \end{pNiceMatrix}}=\determinant-{\begin{pNiceMatrix} t & \sqrt{t} \\ 1 & \frac{1}{2\sqrt{t}} \end{pNiceMatrix}}=\frac{-\sqrt{t}}{2}\neq 0\quad \forall t>0.
+    \wronskideterminant{t}=\determinant{\begin{pNiceMatrix} u_1(t) & U_2(t) \\ u_1'(t) & u_2'(t) \end{pNiceMatrix}}=\determinant{\begin{pNiceMatrix} t & \sqrt{t} \\ 1 & \frac{1}{2\sqrt{t}} \end{pNiceMatrix}}=\frac{-\sqrt{t}}{2}\neq 0\quad \forall t>0.
   \end{gather*}
   \timplies Die allgemeine Lösung der DGL ist
   \begin{equation*}
@@ -272,7 +272,7 @@ auf \( I=\reals_{>0} \). \( u(t)=t \) und bestimmen \( v \) wie oben:
 \end{align*}
 (Man lässt hier oft die Konstanten einfach weg).
 \end{beispiel*}
-\begin{generalthm}[Besondere DGL'n mit \( k=2 \), \( n=1 \)]
+\begin{generalthm}[Besondere DGL'n mit \( k=2 \), \( n=1 \)]\label{besondere_dlgs}
   (Achtung: andere Notation als bisher!)
 
   Zu \( n\in \naturals_0 \) betrachten wir die 
@@ -294,50 +294,50 @@ auf \( I=\reals_{>0} \). \( u(t)=t \) und bestimmen \( v \) wie oben:
 \begin{lemma}
   Zu \( n\in \naturals_0 \) definiert man
   \begin{align*}
-    \legendrepolynomial{n}{x}&=\frac{1}{2^n \Factorial{n}}\odv[n]{(x^2-1)^n}{x}&&\text{Legendre-Polynom der Ordnung \( n \)}\\
-    \hermitepolynomial{n}{x}&=(-1)^n e^{x^2}\odv[n]{e^{-x^2}}{x}&&\text{Hermite-Polynom der Ordnung \( n \)}\\
-    \laguerrepolynomial{n}{x}&=e^x\odv[n]{x^n e^{-x}}{x}&&\text{Laguerre-Polynom der Ordnung \( n \)}
+    \legendrepolynomial{n}{x}&=\frac{1}{2^n \factorial{n}}\odv*[n]{(x^2-1)^n}{x}&&\text{Legendre-Polynom der Ordnung \( n \)}\\
+    \hermitepolynomial{n}{x}&=(-1)^n e^{x^2}\odv*[n]{e^{-x^2}}{x}&&\text{Hermite-Polynom der Ordnung \( n \)}\\
+    \laguerrepolynomial{n}{x}&=e^x\odv*[n]{x^n e^{-x}}{x}&&\text{Laguerre-Polynom der Ordnung \( n \)}
   \end{align*}
   Bei den angegebene Funktionen handelt es sich tatsächlich um Polynome der Ordnung \( n \). Sie lösen die zugehörigen DGL'n.
 \end{lemma}
 \begin{proof}
   \begin{proofdescription}
-    \item[\ordinalnum{1} \Beh] \( \legendrepolynomial-{n}{} \): \( \odv[n]{}{x} \)(Polynom der Ordnung \( 2n \)) \( = \) Polynom von Ordnung \( \leq n \).
+    \item[\ordinalnum{1} \Beh] \( \legendrepolynomial-{n}{} \): \( \odv*[n]{}{x} \)(Polynom der Ordnung \( 2n \)) \( = \) Polynom von Ordnung \( \leq n \).
     \begin{equation*}
-      \odv[n]{\parens*{(x-1)^n(x+1)^n}}{x}=\sum_{l=0}^{n}\braceannotate{\text{Ordnung}=n-l}{\odv[l]{(x-1)^n}{x}}\braceannotate{\text{Ordnung}=l}{\odv[n-l]{(x+1)^n{x}}{x}}
+      \odv*[n]{\parens*{(x-1)^n(x+1)^n}}{x}=\sum_{l=0}^{n}\braceannotate{\text{Ordnung}=n-l}{\odv*[l]{(x-1)^n}{x}}\braceannotate{\text{Ordnung}=l}{\odv*[n-l]{(x+1)^n{x}}{x}}
     \end{equation*}
     \( \hermitepolynomial-{n}{} \):
     \begin{equation*}
-      \odv[n]{e^{-x^2}}{x}=\odv[n-1]{\parens*{-2xe^{-x^2}}}{x}=\odv[n-2]{\parens*{(-2x)^2e^{-x^2}+\odv{(-2x)}{x}e^{-x^2}}}{x}
+      \odv*[n]{e^{-x^2}}{x}=\odv*[n-1]{\parens*{-2xe^{-x^2}}}{x}=\odv*[n-2]{\parens*{(-2x)^2e^{-x^2}+\odv*{(-2x)}{x}e^{-x^2}}}{x}
     \end{equation*}
     \timplies wenn alle \( n \) Ableitungen auf \( e^{-x^2} \) wirken, erhält man \( (-2x)^n e^{-x^2} \). Die anderen Beiträge sind kleineren Grads multipliziert mit \( e^{-x^2} \).
 
     \( \laguerrepolynomial-{n}{} \): genauso.
-    \item[\ordinalnum{2} \Beh] Nur für die Hermite-Polynome: Setze \( y(x)=e^{x^2}\odv[n]{e^{-x^2}}{x} \). Es gilt \( e^{-x^2}y(x)=\odv[n]{e^{-x^2}}{x} \).
+    \item[\ordinalnum{2} \Beh] Nur für die Hermite-Polynome: Setze \( y(x)=e^{x^2}\odv*[n]{e^{-x^2}}{x} \). Es gilt \( e^{-x^2}y(x)=\odv*[n]{e^{-x^2}}{x} \).
     \begin{equation*}
-      \implies \odv[2]{\parens*{e^{-x^2}y(x)}}=\odv[n+2]{e^{-x^2}}{x}=\odv[n+1]{\parens*{-2xe^{-x^2}}}{x}.
+      \implies \odv*[2]{\parens*{e^{-x^2}y(x)}}=\odv*[n+2]{e^{-x^2}}{x}=\odv*[n+1]{\parens*{-2xe^{-x^2}}}{x}.
     \end{equation*}
     Induktion:
     \begin{equation*}
       (xe^{-x^2})^{(n+1)}=x(e^{-x^2})^{(n+1)}+(n+1)(e^{-x^2})^{(n)}.
     \end{equation*}
-    \begin{subproof}[]
-      IA\@: \( \odv{\parens*{xe^{-x^2}}}{x}=e^{-x^2}+x(e^{-x^2})' \).
+    \begin{subproof}
+      IA\@: \( \odv*{\parens*{xe^{-x^2}}}{x}=e^{-x^2}+x(e^{-x^2})' \).
       \( n\to n+1 \):
       \begin{align*}
         (xe^{-x^2})^{(n+1)}&=\parens*{\parens*{xe^{-x^2}}^{(n)}}'\\
-        &\underset{\text{IV}}{=}\parens*{x\parens{e^{-x^2}}^{(n)}+n\parendiff{e^{-x^2}}{n+1}}'\\
+        &\underset{\text{IV}}{=}\parens*{x\parens{e^{-x^2}}^{(n)}+n\parendiff+{e^{-x^2}}{n+1}}'\\
         &=\parens*{e^{-x^2}}^{(n)}+x\parens*{e^{-x^2}}^{(n+1)}+n\parens{e^{-x^2}}^{(n)}.
       \end{align*}
     \end{subproof}
     \begin{align*}
       \implies (e^{-x^2}y(x))^{(2)}&=-2x\parens*{e^{x^2}}^{(n+1)}-2(n+1)\parens*{e^{-x^2}}^{(n)}\\
-      &=-2x\odv{\parens*{e^{-x^2}y(x)}}{x}-2(n+1)e^{-x^2}y(x)\\
+      &=-2x\odv*{\parens*{e^{-x^2}y(x)}}{x}-2(n+1)e^{-x^2}y(x)\\
       &=e^{-x^2}(4x^2y(x)-2y'(x)-2(n+1)y(x)).
     \end{align*}
     Andererseits:
     \begin{gather*}
-      \parendiff*{e^{-x^2}y(x)}{2}=e^{-x^2}y''(x)+2(e^{-x^2})'y'(x)+\parendiff*{e^{-x^2}}{2}y(x)\\
+      \parendiff+*{e^{-x^2}y(x)}{2}=e^{-x^2}y''(x)+2(e^{-x^2})'y'(x)+\parendiff+*{e^{-x^2}}{2}y(x)\\
       =e^{-x^2}\parens*{y''(x)-4xy'(x)+(4x^2-2)y(x)}\\
       \implies y''(x)-2xy'(x)+2ny(x)=0-
     \end{gather*}

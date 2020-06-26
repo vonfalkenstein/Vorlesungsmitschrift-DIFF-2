@@ -126,7 +126,7 @@ und löst \( u \) das AWP \eqref{eq:awp}, so ist \( u(t_0)=u_0 \). \( u \) ist a
 \begin{bemerkung*}
   Stetige Differenzierbarkeit bezüglich der hinteren \( n \) Variablen bedeutet, dass \( D_2 F \) auch bezüglich der ersten Variablen stetig ist.
 \end{bemerkung*}
-\begin{satz}[Picard-Windelöf]\label{picard-windeloef}
+\begin{satz}[Picard-Lindelöf]\label{picard-lindeloef}
   Sei \( V\subset \reals\times \reals^n  \). Sei \( mF\maps V\to \reals^n \) stetig und erfülle lokal auf \( V \) eine Lipschitz-Bedingung. Dann hat das Anfangswertproblem
   \begin{align*}
     x'&=F(t,x)\\
@@ -184,8 +184,8 @@ und löst \( u \) das AWP \eqref{eq:awp}, so ist \( u(t_0)=u_0 \). \( u \) ist a
      \end{align*}
      \begin{behauptung*}
        \begin{align*}
-         u_{2u}(t)&=\begin{pNiceMatrix} 1-\frac{t^2}{2}+\dotsb+(-1)^n \frac{t^{2n}}{\Factorial{(2n)}} \\ t-\dotsb-(-1)^n\frac{t^{2n-1}}{\Factorial{(2n-1)}} \end{pNiceMatrix}\\
-         u_{2n+1}(t)=\begin{pNiceMatrix} 1-\frac{t^2}{2}+\dotsb+(-1)^n\frac{t^{2n}}{\Factorial{(2n)}} \\ t-\dotsb+(-1)n\frac{t^{2n+1}}{\Factorial{(2n+1)}} \end{pNiceMatrix}.
+         u_{2u}(t)&=\begin{pNiceMatrix} 1-\frac{t^2}{2}+\dotsb+(-1)^n \frac{t^{2n}}{\factorial+{2n}} \\ t-\dotsb-(-1)^n\frac{t^{2n-1}}{\factorial+{2n-1}} \end{pNiceMatrix}\\
+         u_{2n+1}(t)=\begin{pNiceMatrix} 1-\frac{t^2}{2}+\dotsb+(-1)^n\frac{t^{2n}}{\factorial+{2n}} \\ t-\dotsb+(-1)n\frac{t^{2n+1}}{\factorial+{2n+1}} \end{pNiceMatrix}.
        \end{align*}
      \end{behauptung*}
      \begin{proof}
@@ -205,7 +205,7 @@ und löst \( u \) das AWP \eqref{eq:awp}, so ist \( u(t_0)=u_0 \). \( u \) ist a
      \end{gather*}
      Per Induktion beweist man
      \begin{align*}
-       &u_k(t)=x_0\left( 1+t^2+\frac{t^4}{2}+\frac{t^6}{\Factorial{3}}+\dotsb+\frac{t^{2k}}{\Factorial{k}} \right)\\
+       &u_k(t)=x_0\left( 1+t^2+\frac{t^4}{2}+\frac{t^6}{\factorial{3}}+\dotsb+\frac{t^{2k}}{\factorial{k}} \right)\\
        \implies &u(t)=x_0 e^{t^2}.
      \end{align*}
    \end{enumerate}

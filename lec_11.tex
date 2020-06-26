@@ -5,7 +5,7 @@
   Sei \( \alpha\definedas(\alpha_1,\dotsc,\alpha_n)\in \naturals_{0}^n \). Dann definiert man
   \begin{align*}
     \abs{\alpha}&\definedas\alpha_1+\alpha_2+\dotsb+\alpha_n\\
-    \Factorial{\alpha}&\definedas \Factorial{\alpha_1}\Factorial{\alpha_2}\dotsb\Factorial{\alpha_n}.
+    \factorial{\alpha}&\definedas \factorial{\alpha_1}\factorial{\alpha_2}\dotsb\factorial{\alpha_n}.
   \end{align*}
   Ist \( x=\transpose-{(x_1,\dotsc,x_n)}\in \reals^n \), so setzt man 
   \begin{equation*}
@@ -25,7 +25,7 @@
   \end{figure}
   Dann ist die Funktion \( g\maps \interval{0}{1}\to \reals \), \( g(t)=f(a+th) \) \( k \)-mal stetig differenzierbar und es gilt 
   \begin{equation*}
-    g^{(k)}(t)=\sum_{\explain{\text{Summe über alle \( \alpha=(\alpha_1,\dotsc,\alpha_n)\in \naturals_0^h \) mit \( \alpha_1+\alpha_2+\dotsb+\alpha_n=k \)}}{\abs{\alpha}=k}}\frac{\Factorial{k}}{\Factorial{\alpha}}\partial^{\alpha}f(a+th)h^{\alpha}.
+    g^{(k)}(t)=\sum_{\explain{\text{Summe über alle \( \alpha=(\alpha_1,\dotsc,\alpha_n)\in \naturals_0^h \) mit \( \alpha_1+\alpha_2+\dotsb+\alpha_n=k \)}}{\abs{\alpha}=k}}\frac{\factorial{k}}{\factorial{\alpha}}\partial^{\alpha}f(a+th)h^{\alpha}.
   \end{equation*}
 \end{lemma}
 \begin{proof}
@@ -51,7 +51,7 @@
     \end{equation*}
     Es gibt 
     \begin{equation*}
-      \frac{\Factorial{k}}{\Factorial{\alpha_1}\dotsb \Factorial{\alpha_n}}
+      \frac{\factorial{k}}{\factorial{\alpha_1}\dotsb \factorial{\alpha_n}}
     \end{equation*}
     \( k \)-Tupel \( (i_1,\dotsc,i_k) \) von Zahlen \( 1\leq i_j\leq n \), in denen \( 1 \) genau \( \alpha_1 \)-mal, \( 2 \) genau \( \alpha_2 \)-mal, \dots, \( n \) genau \( \alpha_n \)-mal vorkommt (ohne Beweis). \timplies \Beh.
   \end{proofenumerate}
@@ -59,37 +59,37 @@
 \begin{satz}[Taylorsche Formel]
   Sei \( f\maps U\to \reals \), \( U\subset \reals^n \) offen, \( (k+1) \)-mal stetig differenzierbar. Sei \( a\in U \) und \( h\in \reals^n \) \sd \( \set{a+tht|t\in \interval{0}{1}}\subset U \). Dann existiert \( \theta\in \interval{0}{1} \) \sd
   \begin{equation*}
-    f(a+h)=\sum_{\substack{\abs{\alpha}\leq k\\ \alpha\in \naturals_0^n}}\frac{1}{\Factorial{\alpha}} \partial^{\alpha} f(a) h^{\alpha} +\sum_{\substack{\abs{\alpha}=k+1\\ \alpha\in \naturals_0^{n}}} \frac{1}{\Factorial{\alpha}} \partial^{\alpha} f(a+\theta h) h^{\alpha}.
+    f(a+h)=\sum_{\substack{\abs{\alpha}\leq k\\ \alpha\in \naturals_0^n}}\frac{1}{\factorial{\alpha}} \partial^{\alpha} f(a) h^{\alpha} +\sum_{\substack{\abs{\alpha}=k+1\\ \alpha\in \naturals_0^{n}}} \frac{1}{\factorial{\alpha}} \partial^{\alpha} f(a+\theta h) h^{\alpha}.
   \end{equation*}
 \end{satz}
 \begin{proof}
   Setze \( g\maps \interval{0}{1}\to \reals \), \( g(t)\definedas f(a+th) \). Taylorsche Formel aus der \diffcourse{1} \timplies \texists \( \theta\in \interval{0}{1} \) \sd
   \begin{equation*}
-    g(1)=\sum_{j=0}^{k}\equalto{(\ref{funktion_entlang_gerade_ableitung})\logicspace \sum_{\abs{\alpha}=j}\frac{1}{\Factorial{\alpha}}\partial^{\alpha}f(a)h^{\alpha}}{\underbrace{\frac{1}{\Factorial{j}}g^{(j)}(0)}}+\equalto[Big]{\sum_{\abs{\alpha}=k+1}\frac{1}{\Factorial{\alpha}}f(a+\theta h)h^{\alpha}}{\underbrace{\frac{1}{\Factorial{(k+1)}}g^{(k+1)}(\theta)}}.
+    g(1)=\sum_{j=0}^{k}\equalto{(\ref{funktion_entlang_gerade_ableitung})\logicspace \sum_{\abs{\alpha}=j}\frac{1}{\factorial{\alpha}}\partial^{\alpha}f(a)h^{\alpha}}{\underbrace{\frac{1}{\factorial{j}}g^{(j)}(0)}}+\equalto[Big]{\sum_{\abs{\alpha}=k+1}\frac{1}{\factorial{\alpha}}f(a+\theta h)h^{\alpha}}{\underbrace{\frac{1}{\factorial+{k+1}}g^{(k+1)}(\theta)}}.
   \end{equation*}
 \end{proof}
 \begin{folgerung}
   Sei \( f\maps U\to \reals \), \( U\subset \reals^n \) offen, \( k \)-mal stetig differenzierbar. Sei \( a\in U \) und \( \delta>0 \) \sd \( B_{\delta}(a)\subset U \). Dann gilt für alle \( h\in B_{\delta}(0) \):
   \begin{equation*}
-    f(a+h)=\sum_{\alpha\leq k}\frac{1}{\Factorial{\alpha}} \partial^{\alpha} f(a) h^{\alpha}+ R_{k,a}(h)
+    f(a+h)=\sum_{\alpha\leq k}\frac{1}{\factorial{\alpha}} \partial^{\alpha} f(a) h^{\alpha}+ R_{k,a}(h)
   \end{equation*}
   mit \( \frac{R_{k,a}(h)}{\norm{h}^k}\goesto 0 \) für \( h\goesto 0 \). 
 
   Äquivalent:
   \begin{equation*}
-    f(x)=\sum_{\alpha\leq k}\frac{1}{\Factorial{\alpha}} \partial^{\alpha} f(a) (x-a)^{\alpha}+ R_{k,a}(x-a)
+    f(x)=\sum_{\alpha\leq k}\frac{1}{\factorial{\alpha}} \partial^{\alpha} f(a) (x-a)^{\alpha}+ R_{k,a}(x-a)
   \end{equation*}
   für \( x\in B_{\delta}(a)\). \emph{\enquote{Taylor-Entwicklung bis zur Ordnung \( k \) mit Entwicklungspunkt \( a \)}}.
 \end{folgerung}
 \begin{proof}
   \texists \( \theta=\alpha_{a,h}\in \interval{0}{1} \) \sd
   \begin{align*}
-    f(a+h)&=\sum_{\abs{\alpha}\leq k-1}\frac{1}{\Factorial{\alpha}} f(a) h^{\alpha}+\sum_{\abs{\alpha}}\partial^{\alpha} f(a+\theta h)h^{\alpha}\\
-    &=\sum_{\abs{\alpha}\leq k}\frac{1}{\Factorial{\alpha}} \partial^{\alpha}f(a) h^{\alpha}+\sum_{\abs{\alpha}=k}\frac{1}{\Factorial{\alpha}}\parens{\underbrace{\partial^{\alpha}f(a+\theta h)-\partial^{\alpha}f(a)}_{\definedas r_{\alpha,a}(h)}}h^{\alpha}.
+    f(a+h)&=\sum_{\abs{\alpha}\leq k-1}\frac{1}{\factorial{\alpha}} f(a) h^{\alpha}+\sum_{\abs{\alpha}}\partial^{\alpha} f(a+\theta h)h^{\alpha}\\
+    &=\sum_{\abs{\alpha}\leq k}\frac{1}{\factorial{\alpha}} \partial^{\alpha}f(a) h^{\alpha}+\sum_{\abs{\alpha}=k}\frac{1}{\factorial{\alpha}}\parens{\underbrace{\partial^{\alpha}f(a+\theta h)-\partial^{\alpha}f(a)}_{\definedas r_{\alpha,a}(h)}}h^{\alpha}.
   \end{align*}
   \( \partial^{\alpha} f \) ist stetig \timplies \( r_{\alpha,a}(h)\goesto r_{\alpha,a}(0)=0 \) für \( h\goesto 0 \) für \( h\goesto 0 \). Setze 
   \begin{equation*}
-    R_{k,a}(h)\definedas \sum_{\abs{\alpha}=k}\frac{1}{\Factorial{\alpha}} r_{\alpha,a}(h) h^{\alpha},
+    R_{k,a}(h)\definedas \sum_{\abs{\alpha}=k}\frac{1}{\factorial{\alpha}} r_{\alpha,a}(h) h^{\alpha},
   \end{equation*}
   dann gilt \( \frac{R_{k,\alpha}(h)}{\norm{h}^k}\goesto 0 \), denn
   \begin{equation*}
@@ -101,7 +101,7 @@
 
 \begin{notation*}
   \begin{equation*}
-    P_m(h)\definedas P_{m,a}(h)=\sum_{\abs{\alpha}=m}\frac{1}{\Factorial{\alpha}} \partial^{\alpha} f(a) h^{\alpha}
+    P_m(h)\definedas P_{m,a}(h)=\sum_{\abs{\alpha}=m}\frac{1}{\factorial{\alpha}} \partial^{\alpha} f(a) h^{\alpha}
   \end{equation*}
   ist ein homogenes Polynom von Grad \( m \) (in \( h \)), das sogenannte \emph{Taylorpolynom} zu \( f \) zum Entwicklungspunkt \( a \). Es gilt
   \begin{equation*}
