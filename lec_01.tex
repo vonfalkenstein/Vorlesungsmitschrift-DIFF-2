@@ -4,7 +4,7 @@
 \begin{ziel*}
     Konvergenz, Stetigkeit \ldots sollten in einem allgmeineren Rahme konzeptualisiert werden.
 \end{ziel*}
-\begin{erinnerung*}[\diff{1}]
+\begin{erinnerung*}[\diffcourse{1}]
     Eine Folge \( (a_n)_{n\in \naturals}\subset \reals \) konvergiert gegen den Grenzwert \( a \)
     \begin{align*}
         \iff \forall \varepsilon>0 \logicspace\exists N\in \naturals\logicspace\text{\sd}\logicspace \abs{a_n-a}<\varepsilon\logicspace\forall n \geq N
@@ -113,7 +113,7 @@ Diesen Begriff möchten wir nun verallgemeinern.
 \begin{beispiele*}
     \begin{enumerate}
         \item In der Klumpentopologie konvergieren alle Folgen gegen jedes \( x\in X \).
-        \item Mit unseren obigen Überlegungen folgern wir, dass Konvergenz in \( \reals \) im Sinn von \thref{konvergenz_in_topologischen_raeumen} mit Konvergenz, wie wir sie in der \diff{1}
+        \item Mit unseren obigen Überlegungen folgern wir, dass Konvergenz in \( \reals \) im Sinn von \thref{konvergenz_in_topologischen_raeumen} mit Konvergenz, wie wir sie in der \diffcourse{1}
     \end{enumerate}
 \end{beispiele*}
 \begin{lemma}\label{hausdorff_alle_grenzwerte_eindeutig}
@@ -133,7 +133,7 @@ Diesen Begriff möchten wir nun verallgemeinern.
     \( f \) heißt \emph{stetig} (auf \( X \)), falls \( f \) stetig in allen \( a\in X \) ist.
 \end{definition}
 \begin{bemerkung*}
-    Wir werden später sehen, dass diese Definition für \( f\maps \reals\to\reals \) mit unserer Definition aus der \diff{1} übereinstimmt (\( \varepsilon \)-\( \delta \)-Kriterium).
+    Wir werden später sehen, dass diese Definition für \( f\maps \reals\to\reals \) mit unserer Definition aus der \diffcourse{1} übereinstimmt (\( \varepsilon \)-\( \delta \)-Kriterium).
 \end{bemerkung*}
 \begin{figure}[H]
     \centering
@@ -260,7 +260,7 @@ Wir kommen nun zu einer wichtigen Beispiel-Klasse für Topologien:
         \end{cases}
          \), \enquote{triviale} oder \enquote{diskrete Metrik}.
          
-         \item\label{metrik:beispiele:r_n} (aus \agla{1}) \( \reals^n \), \( \distance{x}{y}=\sqrt{\sum_{i=1}^{n} (x_i-y_i)^2} \), \enquote{Euklidische Metrik}.
+         \item\label{metrik:beispiele:r_n} (aus \aglacourse{1}) \( \reals^n \), \( \distance{x}{y}=\sqrt{\sum_{i=1}^{n} (x_i-y_i)^2} \), \enquote{Euklidische Metrik}.
     \end{enumerate}
 \end{beispiele*}
 Eine Metrik misst den \emph{Abstand} zwischen zwei Punkten. 
@@ -408,9 +408,9 @@ Wir formulieren nun Konvergenz und Stetigkeit für metrische Räume:
                 
             \end{proof}
             
-            \item \( (f_n)_n\subset \stetigefunktionen(\interval{0}{1}) \), \( f_n(x)=x^n \), konvergiert nicht (\vgl \diff{1}).
+            \item \( (f_n)_n\subset \stetigefunktionen(\interval{0}{1}) \), \( f_n(x)=x^n \), konvergiert nicht (\vgl \diffcourse{1}).
             \begin{proof}
-                Wir wissen aus der \diff{1}, dass wenn Konvergenz vorliegt, der Grenzwert gleich dem punktweisen Grenzwert ist. Dieser ist
+                Wir wissen aus der \diffcourse{1}, dass wenn Konvergenz vorliegt, der Grenzwert gleich dem punktweisen Grenzwert ist. Dieser ist
                 \begin{align*}
                     f(x)=\begin{cases}
                         1 & x=1\\

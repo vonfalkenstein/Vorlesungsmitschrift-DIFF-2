@@ -39,7 +39,7 @@ Konkret kann man also so vorgehen: Man bestimmt die partiellen Ableitungen und �
         \end{align*}
         \item \( f\maps \reals^n \to \reals\), \( n\geq 2 \), \( f(x)=\norm{x}_{\text{E}}=\sqrt{\sum_{i=1}^{n}x_i^2} \).
         \begin{description}
-            \item[\( a\neq 0 \)] Mittels Kettenregel aus \diff{1}:
+            \item[\( a\neq 0 \)] Mittels Kettenregel aus \diffcourse{1}:
             \begin{align*}
                 \partial_j f(a)=\evaluateat{\frac{1}{2}\frac{1}{\norm{x}_{\text{E}}}\cdot 2x_j}{x=a}=\frac{a_j}{\norm{a}_{\text{E}}}
             \end{align*}
@@ -48,9 +48,9 @@ Konkret kann man also so vorgehen: Man bestimmt die partiellen Ableitungen und �
                 \partial_j f(0)=\D{f(0,\dotsc,\underset{j\text{-te}}{t},\dotsc,0)}{t}
                 =\evaluateat{\frac{\differential}{\differential t}}{t=0}\abs*{t}.
             \end{align*} 
-            \timplies Die partiellen Ableitungen in \( a=0 \) existieren nicht (\diff{1}: Für \( h\in \reals \) ist \( \quot{\abs{h}-0}{h}=\pm 1\not\goesto 0 \) für \( h\goesdownto 0 \) \bzw \( h\goesupto \)). \timplies \( f \) ist \emph{nicht} differenzierbar in \( a=0 \).
+            \timplies Die partiellen Ableitungen in \( a=0 \) existieren nicht (\diffcourse{1}: Für \( h\in \reals \) ist \( \quot{\abs{h}-0}{h}=\pm 1\not\goesto 0 \) für \( h\goesdownto 0 \) \bzw \( h\goesupto \)). \timplies \( f \) ist \emph{nicht} differenzierbar in \( a=0 \).
         \end{description}
-        Für \( a\neq 0 \) gilt jedoch: \( \sqrt{\cdot}\maps \reals_{>0} \to \reals \) ist differenzierbar (\diff{1}) und ebenso die polynomiale Funktion \( x\mapsto \sum_{i=1}^{n}x_i^2 \) \timplies \( f \) ist differenzierbar auf \( \reals^n\setminus \zeroset\).
+        Für \( a\neq 0 \) gilt jedoch: \( \sqrt{\cdot}\maps \reals_{>0} \to \reals \) ist differenzierbar (\diffcourse{1}) und ebenso die polynomiale Funktion \( x\mapsto \sum_{i=1}^{n}x_i^2 \) \timplies \( f \) ist differenzierbar auf \( \reals^n\setminus \zeroset\).
 
         Wir hätten \( \totalderivative-{f}(a) \), \( a\neq 0 \) auch mit der höherdimensionalen Kettenregel bestimmen können:
         \begin{multline*}
@@ -162,7 +162,7 @@ Aber oft ist es \emph{viel} übersichtlicher, die partiellen Ableitungen \emph{n
     \begin{equation*}
         g_i'(0)=\partial_i f(a)\quad (\text{Definition Richtungsableitung})
     \end{equation*}
-    \diff{1} \timplies \( g_i'(0)=0 \) \timplies \Beh.
+    \diffcourse{1} \timplies \( g_i'(0)=0 \) \timplies \Beh.
 \end{proof}
 \begin{beispiele*}
     \begin{enumerate}
@@ -174,7 +174,7 @@ Aber oft ist es \emph{viel} übersichtlicher, die partiellen Ableitungen \emph{n
     \end{enumerate}
 \end{beispiele*}
 \begin{bemerkung*}
-    Hinreichende Kriterien für das Vorliegen lokaler Extremstellen werden wir erst später kennen lernen. Wie in der \diff{1} benötigen wir dafür die 2.\ Ableitung.
+    Hinreichende Kriterien für das Vorliegen lokaler Extremstellen werden wir erst später kennen lernen. Wie in der \diffcourse{1} benötigen wir dafür die 2.\ Ableitung.
 \end{bemerkung*}
 \begin{satz}\label{stetige_partielle_zu_ableitung}
      Sei \( f\maps U\to \reals \), \( U\subset \reals^n \) offen. Existieren alle partiellen Ableitungen \( \partial_j f(x) \) für alle \( x\in U \), \emph{und} sind sie stetig in \( a\in U \), so ist \( f \) in \( a \) differenzierbar.
@@ -184,7 +184,7 @@ Aber oft ist es \emph{viel} übersichtlicher, die partiellen Ableitungen \emph{n
     \begin{equation*}
         x^{(j)}\definedas a+\sum_{i=1}^{j} h_i e_i \in \reals^n\quad j=0,\dotsc,n,
     \end{equation*}
-    also \( x^{(0)}=a \), \( x^{(1)}=(a_1+h_1,a_2,\dotsc, a_n),\dotsc, x^{(n)}=a+h \). Es ist \( x^{(j)}-x^{(j-1)}=(0,\dotsc,0,h_j,0,\dotsc,0) \) \timplies (MWS, \diff{1}) \texists \( \eta_j\in \interval{0}{1} \) \sd 
+    also \( x^{(0)}=a \), \( x^{(1)}=(a_1+h_1,a_2,\dotsc, a_n),\dotsc, x^{(n)}=a+h \). Es ist \( x^{(j)}-x^{(j-1)}=(0,\dotsc,0,h_j,0,\dotsc,0) \) \timplies (MWS, \diffcourse{1}) \texists \( \eta_j\in \interval{0}{1} \) \sd 
     \begin{align*}
         &f(x)=\partial_j f(\underbrace{x_1^{(j-1)},\dotsc,x_{j-1}^{(j-1)},x_j^{(j-1)}+\eta_j h_j,a_{j+1}, \dotsc, a_n}_{x^{j-1}+\eta_j h_j e_j\defines y^{(j)}})\cdot h_j\\
         \implies &f(a+h)-f(a)\begin{aligned}[t]
@@ -228,7 +228,7 @@ Aber oft ist es \emph{viel} übersichtlicher, die partiellen Ableitungen \emph{n
 
     Die Umkehrungen sind im Allgemeinen falsch.
 \end{bemerkung*}
-\begin{bemerkung*}[Erinnerung (\diff{1}) MWS]
+\begin{bemerkung*}[Erinnerung (\diffcourse{1}) MWS]
     \( f\maps I\to \reals \) differenzierbar, \( I \) Intervall, \texists \( \epsilon\in \interval{0}{1} \) \sd
     \begin{equation*}
         f(a+h)-f(a)=f'(a+\eta h)\cdot h.

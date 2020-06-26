@@ -46,7 +46,7 @@
             \lim_{x \goesto a}(\underbrace{(A-\totalderivative-{f}(a))\matrixmult (x-a)\cdot\quot{1}{\norm{x-a}}}_{=\frac{1}{\norm{x-a}}(R_a(x)-\tilde{R}_a(x))})=0.
         \end{align*}
         \timplies \( A-\totalderivative-{f}(a)=0 \) (Nullmatrix), da wegen der Stetigkeit linearer Abbildungen \( \reals^n\to \reals^m \) der Grenzwert gleich \( (A-\totalderivative-{f}(a))\matrixmult \lim \quot{(x-a)}{\norm{x-a}} \) ist und \( \norm{\lim \quot{(x-a)}{\norm{x-a}}}=1\neq 0 \).
-        \item Wie in der \diff{1} ist es oft zweckmäßig \( f \) an der Stelle \( a+h \) mit \( f \) an der Stelle \( a \) zu vergleichen (\( x=a+h \)).
+        \item Wie in der \diffcourse{1} ist es oft zweckmäßig \( f \) an der Stelle \( a+h \) mit \( f \) an der Stelle \( a \) zu vergleichen (\( x=a+h \)).
         \begin{align*}
             f(a+h)=f(a)+\totalderivative-{f}(a)\matrixmult h+\underline{R}_h(a)
         \end{align*}
@@ -147,7 +147,7 @@ Aus der Definition folgt sofort
                 \end{aligned}
             \end{aligned}            
         \end{align*}
-        \item[\ref{quotientenregel}] \( g \) ist in \( a \) stetig \timplies \texists Umgebung von \( a \) \sd \( g(x)\neq 0 \) \tforall \( x\in U \) (wie in der \diff{1}: Sei \obda \( g(a)>0 \). Sei \( \varepsilon\definedas \quot{g(a)}{2} \). Sei \( \norm{\cdot} \) irgendeine Norm auf \( \reals^n \). Dann gibt es ein \( \delta>0 \) \sd
+        \item[\ref{quotientenregel}] \( g \) ist in \( a \) stetig \timplies \texists Umgebung von \( a \) \sd \( g(x)\neq 0 \) \tforall \( x\in U \) (wie in der \diffcourse{1}: Sei \obda \( g(a)>0 \). Sei \( \varepsilon\definedas \quot{g(a)}{2} \). Sei \( \norm{\cdot} \) irgendeine Norm auf \( \reals^n \). Dann gibt es ein \( \delta>0 \) \sd
         \begin{align*}
             &\abs{g(x)-g(a)}<\varepsilon\quad \forall x\in B_{\delta}^{\norm{\cdot}}(a)\\
             \implies &-\frac{g(a)}{2}<g(x)-g(a)<\frac{g(a)}{2}\quad \forall x\in B_{\delta}^{\norm{\cdot}}(a),
@@ -160,11 +160,11 @@ Aus der Definition folgt sofort
         \begin{align*}
             \totalderivative*{\frac{1}{g}}(a)=\totalderivative-{\text{Inv}(g(a))}\cdot \totalderivative-{g}(a)
         \end{align*}
-        und \( D \text{Inv}(t)=-\frac{1}{t^2} \) (\diff{1}).
+        und \( D \text{Inv}(t)=-\frac{1}{t^2} \) (\diffcourse{1}).
     \end{proofdescription}    
 \end{proof}
 \section*{Geometrische Anschauung, partielle Ableitung}
-\diff{1}: Ableitung beschreibt Rate der Veränderung. Höher-dimensional: Sei \( f\maps U\to \reals \), \( U\subset \reals^n \). Betrachte den Graph \( \Gamma_f=\Set{(x,f(x))|x\in U} \) (\vgl die Diskussion bei \ref{stetigkeit:beispiel:gebrochen_rationale_funktionen})
+\diffcourse{1}: Ableitung beschreibt Rate der Veränderung. Höher-dimensional: Sei \( f\maps U\to \reals \), \( U\subset \reals^n \). Betrachte den Graph \( \Gamma_f=\Set{(x,f(x))|x\in U} \) (\vgl die Diskussion bei \ref{stetigkeit:beispiel:gebrochen_rationale_funktionen})
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.8\linewidth]{figures/r2_zu_r_funktion_veranschaulichung}

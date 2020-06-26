@@ -2,7 +2,7 @@
 \lecture{Mo 17.05. 10:15}{}
 \begin{beispiele*}[Weitere zum Satz über implizite Funktionen]
   \begin{enumerate}
-    \item \( f\maps \reals^3\to \reals^2 \), \( f(x,y,z)=\begin{pNiceMatrix} x^2-y^2+1 \\ x^2-z^2-2 \end{pNiceMatrix} \) ist stetig differenzierbar.
+    \item \label{implizite_funktion_beispiel_fuer_dgls}\( f\maps \reals^3\to \reals^2 \), \( f(x,y,z)=\begin{pNiceMatrix} x^2-y^2+1 \\ x^2-z^2-2 \end{pNiceMatrix} \) ist stetig differenzierbar.
     \begin{equation*}
       \totalderivative-{f}(x,y,z)=\begin{pNiceMatrix} 2x & -2y & 0 \\ 2x & 0 & -2z \end{pNiceMatrix}.
     \end{equation*}
@@ -49,12 +49,12 @@
       \item Die Bedingung im Satz über implizite Funktionen ist \emph{nicht} notwendig. \( f(x,y)=y^2 \) erfüllt in \( (1,0) \) die Bedingung \( D_2 f(1,0) \) invertierbar \emph{nicht}, \( f(x,y)=0 \) besitzt aber die Auflösung \( g(x)=0\quad \forall 0 \).
   \end{enumerate}
 \end{beispiele*}
-\section*{Der Satz von der Umkehrabbildung}\label{satz_von_der_umkehrabbildung}
+\section*{Der Satz von der Umkehrabbildung}
 Sei \( f\maps U\to \reals^n \) stetig differenzierbar, \( U\subset \reals^n \). Gibt es einfach zu prüfende Kriterien, die garantieren, dass \( f \) umkehrbar ist mit stetig differenzierbarer Umkehrfunktion \( g\maps f(U)\to \reals^n \)?
 
 Notwendiges Kriterium ist, dass \( \totalderivative-{f}(x) \) invertierbar ist, da mit der Kettenregel aus \( g\circ f=\Id_u \) folgt \( \totalderivative-{g}(f(x))\matrixmult \totalderivative-{f}(x)=\mathds{1} \). Tatsächlich ist sogar folgendr hinreichend:
 
-\begin{satz}
+\begin{satz}\label{satz_von_der_umkehrabbildung}
   Sei \( U\subset \reals^n \) offen, \( f\maps U\to \reals^n \), stetig differenzierbar. Sei \( a\in U \) \sd \( \totalderivative-{f}(a) \) invertierbar ist. Dann gibt es eine offene Umgebung \( V\subset U \) von \( a \) und eine offene Umgebung \( W\in \reals^n \) von \( b\definedas f(a) \), \sd \( f\maps V\to \reals^n \), \( V \) bijektiv auf \( W \) abgebildet und die Umkehrabbildung \( g\maps W\to \reals^n \) stetig differenzierbar ist. Es gilt dann
   \begin{equation*}
     \totalderivative-{g}(f(x))=\inverse{\totalderivative-{f}(x)}\quad \forall x\in V.
@@ -93,7 +93,7 @@ Man sagt, wenn \( f \) wie oben ist: \enquote{\( f \) ist bei \( a \) \emph{loka
     \begin{gather*}
       g'(\ln x)=\inverse{\left( \frac{1}{x} \right)}=x\\
       g'(z)=g(z)\\
-      \underset{(\text{\diff{1}})}{\implies} g(z)=C\exp (z),
+      \underset{(\text{\diffcourse{1}})}{\implies} g(z)=C\exp (z),
     \end{gather*}
     und wegen \( g(0)=1 \) folgt \( C=1 \).
     \item \( f(x)=3x^2-x \), \( f(1)=2 \), \( \totalderivative-{f}(1)=5\neq 0 \).

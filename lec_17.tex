@@ -1,0 +1,356 @@
+% !TEX root = ./Vorlesungsmitschrift DIFF 2.tex  
+\lecture{Do 18.06. 10:15}{}
+\begin{satz}\label{homogene_dgl_loesungsraum}
+  Sei \( I\subset \reals \) Intervall und \( \mathbb{K}=\reals \) oder \( \complexs \). Sei \( A\maps I\to \sqmatrices{n}{K} \) stetig. Berechne \( \homogenreddglloesungsraum{A} \), die MEnge aller Lösungen von \( x'=A(t)\matrixmult x \). Es gilt: \( \homogenreddglloesungsraum-{} \) ist \( n \)-dimensionaler Unterraum über \( \mathbb{K} \).
+
+  Für \( u_1,\ddots,u_k\in \homogenreddglloesungsraum{A} \) sind äquivalent
+  \begin{eigenschaftenenumerate}
+    \item \label{homogene_dgl_loesungsraum:loesungen_unabhaengig}\( u_1,\dotsc,u_k \) sind linear unabhängig über \( \mathbb{K} \).
+    \item \label{homogene_dgl_loesungsraum:loesungen_unabhaengig_fuer_einen_wert} \texists \( t_0\in I \) \sd \( u_1(t_0),\dotsc,u_k(t_0)\in \mathbb{K}^n \) linear unabhängig über \( \mathbb{K} \) sind.
+    \item \label{homogene_dgl_loesungsraum:loesungen_unabhaengig_fuer_alle_werte}\( u_1(t),\dotsc,u_k(t)\in \mathbb{K}^n \) sind linear unabhängig über \( \mathbb{K} \) für alle \( t\in I \).
+  \end{eigenschaftenenumerate}
+\end{satz}
+\begin{proof}
+  \begin{itemize}
+    \item \( \homogenreddglloesungsraum{A} \) ist Vektorraum \( \subset \) VR aller Abbildungen: \( I\to \mathbb{K}^n \).
+    \begin{enumerate}
+      \item \( 0\in \homogenreddglloesungsraum{A} \) \checkmark
+      \item \( u,v\in \homogenreddglloesungsraum{A} \), \( \lambda\in \mathbb{K} \)
+      \begin{align*}
+        \implies (u+\lambda v)'&=u'+(\lambda v)'=A u+\lambda\cdot A v\\
+        &=A(u+\lambda v)\\
+        \implies u+\lambda v&\in \homogenreddglloesungsraum{A}.
+      \end{align*}
+    \end{enumerate}
+    \item \ref{homogene_dgl_loesungsraum:loesungen_unabhaengig_fuer_alle_werte} \timplies \ref{homogene_dgl_loesungsraum:loesungen_unabhaengig_fuer_einen_wert} \timplies \ref{homogene_dgl_loesungsraum:loesungen_unabhaengig}.
+    \minisec{\ref{homogene_dgl_loesungsraum:loesungen_unabhaengig} \timplies \ref{homogene_dgl_loesungsraum:loesungen_unabhaengig_fuer_alle_werte}} Seien \( u_1,\dotsc, u_k \) linear unabhängig. Angenommen, \texists  \( t_0 \) \sd \( u_1(t_0),\dotsc,u_k(t_0)\in \mathbb{K}^n\) linear abhängig sind, \dh \texists  \( \lambda_1,\dotsc,\lambda_k\in \mathbb{K} \) \sd 
+    \begin{equation*}
+      \lambda_1 u_1(t_0)+\dotsb+\lambda_k u_k (t_0)=0.
+    \end{equation*}
+    Aber
+    \begin{equation*}
+      u\definedas \lambda_1 u_1+\dotsb+\lambda_k u_k \in \homogenreddglloesungsraum{A}
+    \end{equation*}
+    und
+    \begin{equation*}
+      u(t_0)=0\implies u(t)=0\quad \forall t
+    \end{equation*}
+    \contra VOR\@.
+    \item \( \dim-{}{L_H(A)}=n \):\\
+    Sei \( (e_1,\dotsc,e_n) \) die kanonische Einheitsbasis von \( \mathbb{K}^n \). \texists \( u_1,\dotsc,u_n\in \homogenreddglloesungsraum{A} \) mit \( u_j(t_0)=e_j \). Wegen \ref{homogene_dgl_loesungsraum:loesungen_unabhaengig_fuer_einen_wert} \timplies \ref{homogene_dgl_loesungsraum:loesungen_unabhaengig} sind sie linear unabhängig \timplies \( \dim-{}{\homogenreddglloesungsraum{A}}\geq n \). Es kann aber höchstens \( n \) linear unabhängige Vektoren in \( \homogenreddglloesungsraum{A} \) geben: Denn seien \( v_1,\dotsc,v_k \) linear unabhängig, dann ist (wegen \ref{homogene_dgl_loesungsraum:loesungen_unabhaengig} \timplies \ref{homogene_dgl_loesungsraum:loesungen_unabhaengig_fuer_alle_werte}) \( v_1(t_0),\dotsc,, v_k(t_0) \) für ein \( t_0\in I \) linear unabhängig in \( \mathbb{K}^n \) \timplies \( k\leq n \).
+  \end{itemize}
+\end{proof}
+\begin{definition}
+  Eine Basis von \( \homogenreddglloesungsraum{A} \) nennt man auch \emph{(Lösungs-) Fundamentalsystem} (für \( x'=Ax \)).
+\end{definition}
+\begin{bemerkung*}
+  Aus \thref{homogene_dgl_loesungsraum} folgt: Eine Teilmenge \( \Set{u_1,\dotsc,u_n}\subset \homogenreddglloesungsraum{A} \) ist genau dann Fundamentalsystem für \( x'=Ax \), wenn
+  \begin{equation*}
+    \det-{\Phi}(t_0)\neq 0\quad \text{für ein }t_0\in I,
+  \end{equation*}
+  wobei
+  \begin{equation*}
+    \Phi=\begin{pNiceMatrix} u_{11} & \Cdots & u_{n1} \\ \Vdots &  & \Vdots \\ u_{1n} & \Cdots & u_{nn} \end{pNiceMatrix}
+  \end{equation*}
+  (\( u_{ij}= \) \( j \)-te Komponentenfunktion der \( i \)-ten Funktion).
+\end{bemerkung*}
+\begin{beispiel*}
+  \( A\maps \reals\to \sqmatrices{2}{\reals} \). \( A(t)=\begin{pNiceMatrix} 0 & -\alpha \\ \alpha & 0 \end{pNiceMatrix}=\Delta \), \( \alpha\in \reals \), \( x'=A\matrixmult x \).
+  \begin{equation*}
+    u_1(t)=\begin{pNiceMatrix} \Cos-{\alpha t} \\ \Sin-{\alpha t} \end{pNiceMatrix}\qquad u_2(t)=\begin{pNiceMatrix} -\Sin-{\alpha t} \\ -\Cos-{\alpha t} \end{pNiceMatrix}
+  \end{equation*}
+  sind Lösungen. Sie bildenein Fundamentalsystem, denn 
+  \begin{equation*}
+    \det \begin{pNiceMatrix} u_1(t) & u_2(t) \end{pNiceMatrix}=1\neq 0\quad \forall t.
+  \end{equation*}
+  Dies bedeutet: \emph{Jede} Lösung der DGL ist eine Linearkombination von \( u_1 \) und \( u_2 \).
+  \begin{beispiel*}
+    Anfangsbedingung \( x(0)=\begin{pNiceMatrix} 1 \\ 2 \end{pNiceMatrix} \).
+    \begin{align*}
+      u(t)&=a_1 u_1(t)+a_2 u_2(t)\\
+      u(0)&=\begin{pNiceMatrix} a_1 \\ a_2 \end{pNiceMatrix}\needed{=}\begin{pNiceMatrix} 1 \\ 2 \end{pNiceMatrix}\\
+      \implies u(t)&=\begin{pNiceMatrix} \Cos-{\alpha t}-2\Sin{\alpha t} \\ \Sin-{\alpha t}+2 \Cos-{\alpha t} \end{pNiceMatrix}.
+    \end{align*}
+  \end{beispiel*}
+\end{beispiel*}
+\begin{satz}\label{inhomogene_dgl_loesungsraum}
+  Sei \( I \) Intervall \( \subset \reals \), \( \mathbb{K}=\complexs \) oder \( \reals \). 
+  \( A\maps I\to \sqmatrices{n}{\mathbb{K}} \)und \( b\maps I\to \mathbb{K}^n \) stetig. 
+  Bezeichne \( \inhomogenreddglloesungsraum{A}{b} \) die Lösungsmenge des inhomogenen
+  Systems \( x'=A(t)\matrixmult x+b(t) \). 
+  Ist dann \( v_0\maps I\to \reals^n \) eine Lösung des inhomogenen Systems, so gilt 
+  \begin{equation*}
+    \inhomogenreddglloesungsraum{A}{b}=v_0+\homogenreddglloesungsraum{A}.
+  \end{equation*}
+\end{satz}
+\begin{bemerkung*}
+  Man erhält also \emph{alle} Lösungen als eine Linearkombination von Lösungen der homogenen Gleichung und Addition irgendeiner Lösung der inhomogenen (\enquote{spezielle Lösung}).
+\end{bemerkung*}
+\begin{proof}
+  \begin{proofdescription}
+    \item[\( \inhomogenreddglloesungsraum{A}{b}\subset v_0+\homogenreddglloesungsraum{A} \)]
+    Sei also \( v\in \inhomogenreddglloesungsraum{A}{b} \). Dann gilt 
+    \begin{equation*}
+      (v-v_0)'=v'-v_0'=(Av+b)-(Av_0+b).
+    \end{equation*}
+    Also ist
+    \begin{equation*}
+      v-v_0\in \homogenreddglloesungsraum{A}\implies v=v_0+(v-v_0)\in v_0+\homogenreddglloesungsraum{A}.
+    \end{equation*}
+    \item[\( \inhomogenreddglloesungsraum{A}{b}\supset v_0+\homogenreddglloesungsraum{A} \)] Sei also \( v=v_0+u \) mit \( u\in \homogenreddglloesungsraum{A} \)
+    \begin{equation*}
+      \implies v'=v_0'+u'=A v_0+b+Au=Av+b.
+    \end{equation*}
+  \end{proofdescription}
+\end{proof}
+\begin{lemma}[Variation der Konstanten]\label{variation_der_konstanten_die_zweite}
+  Sei eine inhomogenene Gleichung wie in \thref{inhomogene_dgl_loesungsraum} gegeben. Es sei \( \Phi=(u_1,\dotsc,u_n) \) eine Fundamentalsystem für \( \homogenreddglloesungsraum{A} \).
+
+  Dann ist \( t\mapsto v(t)=\Phi(t)\matrixmult w_b(t) \) mit
+  \begin{equation*}
+    w_b(t)=\Integrate{\inverse{\Phi(s)}\matrixmult b(s)}{s,t_0,t}+C
+  \end{equation*}
+  eine Lösung der inhomogenen Gleichung. Hier ist \( \matrixmult \) Matrixmultiplikation und \( \inverse{\Phi}(s) \) ist die inverse Matrix.
+\end{lemma}
+\begin{proof}
+  Ansatz \( v=\Phi\matrixmult w \).
+  \begin{align*}
+    v'&=\Phi'\matrixmult w+ \Phi\cdot w'\\
+    &=(u_1',\dotsc,u_n')\matrixmult w+\Phi\matrixmult w'\\
+    &=(\braceannotate{Au_1,\dotsc, Au_n}{=A\matrixmult \Phi})\matrixmult w+\Phi q..
+     w'\\
+    &\needed{=}A\matrixmult \Phi\matrixmult w+b
+  \end{align*}
+  \timplies \Beh (\( w=w_b \)).
+  
+\end{proof}
+\begin{beispiel*}
+  \( x'=\begin{pNiceMatrix} 0 & -1 \\ 1 & 0 \end{pNiceMatrix}x+\begin{pNiceMatrix} 0 \\ t \end{pNiceMatrix} \).
+  \begin{align*}
+    &\Phi(t)=\begin{pNiceMatrix} \Cos-{t} & -\Sin-{t} \\ \Sin-{t} & \Cos-{t} \end{pNiceMatrix}\qquad \inverse{\Phi(t)}=\begin{pNiceMatrix} \Cos-{t} & \Sin-{t} \\ -\Sin-{t} & \Cos-{t} \end{pNiceMatrix}\\
+    \implies &\inverse{\Phi(s)}\matrixmult b(s)=\begin{pNiceMatrix} s\Sin-{s} \\ s\Cos-{s} \end{pNiceMatrix}\\
+    \implies &w_b(t)\begin{aligned}[t]
+      &=\Integrate{\begin{pNiceMatrix} s\Sin-{s} \\ s\Cos-{s} \end{pNiceMatrix}}{s,0,t}+C\\
+      &=\begin{pNiceMatrix} \Sin-{t}-t\Cos-{t} \\ \Cos-{t}+t\Sin-{t} \end{pNiceMatrix}+C
+    \end{aligned}\\
+    \implies &v(t)=\Phi(t)\matrixmult w_b(t)=\begin{pNiceMatrix} -t \\ 1 \end{pNiceMatrix}
+  \end{align*}
+  ist eine Lösung der inhomogenen DGL (wähle \( C=0 \)). Anfangsbedingung \zb \( v(0)=\begin{pNiceMatrix} -1 \\ 1 \end{pNiceMatrix} \). Äquivalente Vorgehensweise: \( v(t) \) wie oben \( +\lambda_1 u_1+\lambda_2 u_2 \) oder \( w_b(t)=\begin{pNiceMatrix} \Sin-{t}\Cdots \\ \Cdots \end{pNiceMatrix} +\begin{pNiceMatrix} C_1 \\ C_2 \end{pNiceMatrix}\). Dann ist \( v(t)=\begin{pNiceMatrix} -t \\ 1 \end{pNiceMatrix}+\braceannotate{C_1u_1+C_2u_2}{\Phi\matrixmult \begin{pNiceMatrix} C_1 \\ C_2 \end{pNiceMatrix}} \).
+  \begin{equation*}
+    v(0)=\begin{pNiceMatrix} 0 \\ 1 \end{pNiceMatrix} +C_1 \begin{pNiceMatrix} 1 \\ 0 \end{pNiceMatrix}+C_2 \begin{pNiceMatrix} 0 \\ 1 \end{pNiceMatrix}\implies C_1=-1.
+  \end{equation*}
+\end{beispiel*}
+\begin{notation*}
+  Man satz \( \begin{pNiceMatrix} -t \\ 1 \end{pNiceMatrix} \) ist eine \emph{spezielle Lösung} des inhomogenen Systems und
+  \begin{equation*}
+    \begin{pNiceMatrix} -t \\ 1 \end{pNiceMatrix}+C_1 \begin{pNiceMatrix} \Cos-{t} \\ \Sin-{t} \end{pNiceMatrix}+C_2 \begin{pNiceMatrix} -\Sin-{t} \\ \Cos-{t} \end{pNiceMatrix}
+  \end{equation*}
+  ist die \emph{allgemeine Lösung}.
+\end{notation*}
+Mit Hilfe des Satzes von der Reduktion der Ordnung übertragen wir nun das eben bewiesene auf Differentialgleichungen höherer Ordnung. 
+
+Sei \( \mathbb{K}=\reals \) oder \( \complexs \). Eine homogene lineare DGL \( k \)-ter Ordnung ist eine Gleichung der Form
+\begin{equation*}
+  x^{(k)}+A_{k-1}(t)\matrixmult x^{(k-1)}+\dotsb+A_1(t)\matrixmult x'+A_0(t)\matrixmult x=0\tag{\( * \)}\label{eq:lineare_homogene_dgl_kter_ordnung}
+\end{equation*}
+mit \( A_j\maps I\to \sqmatrices{n}{\mathbb{K}} \) stetig. Eine inhomogene lineare DGL ist von der Form
+\begin{equation*}
+  x^{(k)}+A_{k-1}(t)\matrixmult x^{(k-1)}+\dotsb+A_1(t)\matrixmult x'+A_0(t)\matrixmult x=b(t)\tag{\( ** \)}\label{eq:lineare_inhomogene_dgl_kter_ordnung}
+\end{equation*}
+mit \( A_j \) wie oben und \( b\maps I\to \mathbb{K}^n \) stetig.
+
+Eine Lösung ist eine \( k \)-fach differenzierbare Funktion \( u\maps I\to \mathbb{K}^n \) mit
+\begin{equation*}
+  u^{(k)}+A_{k-1}(t)\matrixmult u^{(k-1)}+\dotsb+A_1(t)\matrixmult u'+A_0(t)\matrixmult u=0 \text{ \bzw } b(t)\quad \forall t\in I.
+\end{equation*}
+\begin{satz}
+  \begin{enumerate}
+    \item Die Menge aller Lösungen eines homogenen linearen Systems wie in \eqref{eq:lineare_homogene_dgl_kter_ordnung}, \( \inhomogendglloesungsraum{A_0,\dotsc,A_{k-1}}{b}{k} \), ist ein \( n\cdot k \)-dimensionaler Vektorraum.
+    \item Für die Menge aller Lösungen eines homogenen linearen Systems wie in \eqref{eq:lineare_homogene_dgl_kter_ordnung},
+    \begin{equation*}
+      \inhomogendglloesungsraum{A_0,\dotsc,A_{k-1}}{b}{k},
+    \end{equation*}
+    gilt:
+    \( \inhomogendglloesungsraum-{}{}{k}=v_0+\homogendglloesungsraum-{}{k} \) für eine beliebige Lösung \( v_0 \) des inhomogenen Systems.
+    \item Ein \( k \)-Tupel 
+    \( u_1,\dotsc,u_k\in \homogendglloesungsraum-{}{k} \)
+     ist genau dann linear unabhängig, wenn für ein \( t_0\in I \) (somit für alle \( t\in I \)) die \emph{Wronski-Determinante}
+    \begin{equation*}
+      \wronskideterminant{t_0}=\determinant-{\begin{pNiceMatrix}
+        u_1(t_0) & u_2(t_0) & \Cdots & u_k(t_0) \\
+        u_1'(t_0) & \Vdots &  & u_k'(t_0) \\
+        \Vdots &  & & \Vdots\\
+        u_1^{(k-1)}(t_0) & \Cdots & & u_k^{(k-1)}(t_0)
+      \end{pNiceMatrix}}
+    \end{equation*}
+    nicht \( 0 \) ist.
+  \end{enumerate}
+\end{satz}
+\begin{proof}
+  Das System 
+  \begin{align*}
+    x_0'&=x_1\\
+    x_1'&=x_2\\
+    &\vdots\\
+    x_{k-2}'&=x_{k-1}\\
+    x_{k-1}'&=-A_0(t)x_0-\dotsb-A_{k-1}(t)x_{n-1}+b(t)
+  \end{align*}
+  ist nach \thref{reduktion_der_ordnung} äquivalent zu \eqref{eq:lineare_inhomogene_dgl_kter_ordnung} \bzw für \( b(t)=0 \) \eqref{eq:lineare_homogene_dgl_kter_ordnung}. Jeder Lösung \( u\maps I\to \mathbb{K}^n \) von \eqref{eq:lineare_homogene_dgl_kter_ordnung} \bzw \eqref{eq:lineare_inhomogene_dgl_kter_ordnung} entspricht einer Lösung des obigen Systems (mit \( b=\explain{\text{Nullfunktion}}{\underline{0}} \) \bzw \( b\neq \underline{0} \))
+  \begin{equation*}
+    \begin{pNiceMatrix} u \\ u' \\ \Vdots \\ u^{(k-1)} \end{pNiceMatrix}  
+  \end{equation*}
+  und umgekehrt ist \( u_0 \) Lösung von \eqref{eq:lineare_homogene_dgl_kter_ordnung} \bzw \eqref{eq:lineare_inhomogene_dgl_kter_ordnung}, wenn
+  \begin{equation*}
+    \begin{pNiceMatrix} u \\ u' \\ \Vdots \\ u^{(k-1)} \end{pNiceMatrix}  
+  \end{equation*}
+  Lösung des obigen Systems ist (mit \( b=\underline{0} \) \bzw \( b\neq \underline{0} \)). Somit folgt die Behauptung aus \ref{homogene_dgl_loesungsraum} und \ref{inhomogene_dgl_loesungsraum}.
+\end{proof}
+\begin{bemerkung*}
+  Auch \ref{variation_der_konstanten_die_zweite} (Variation der Konstanten) überträgt sich direkt auf \eqref{eq:lineare_inhomogene_dgl_kter_ordnung}.
+\end{bemerkung*}
+\begin{notation*}
+  Eine Basis von \( \homogendglloesungsraum{A_0,\dotsc,A_{k-1}}{k} \) heißt wieder \emph{Fundamentalsystem.}
+\end{notation*}
+\begin{beispiel*}
+  \( x''-\frac{1}{2t}x'+\frac{1}{2t^2}x=0 \) auf \( I=\reals_{>0} \). Wir raten 2 Lösungen \( u_1(t)=t \) und \( u_2(t)=\sqrt{t} \). Probe:
+  \begin{gather*}
+    0-\frac{1}{2t}1+\frac{1}{2t^2}t=0\logicspace \checkmark\\
+    \frac{1}{2}\left( -\frac{1}{2t\sqrt{t}} \right)-\frac{1}{2t}\frac{1}{2\sqrt{t}}+\frac{1}{2t^2}\sqrt{t}=0\logicspace \checkmark.\\[1ex]
+    \wronskideterminant{t}=\determinant-{\begin{pNiceMatrix} u_1(t) & U_2(t) \\ u_1'(t) & u_2'(t) \end{pNiceMatrix}}=\determinant-{\begin{pNiceMatrix} t & \sqrt{t} \\ 1 & \frac{1}{2\sqrt{t}} \end{pNiceMatrix}}=\frac{-\sqrt{t}}{2}\neq 0\quad \forall t>0.
+  \end{gather*}
+  \timplies Die allgemeine Lösung der DGL ist
+  \begin{equation*}
+    u(t)=e_1 t+ c_2 \sqrt{t}
+  \end{equation*}
+  mit \( c_j\in \reals \) (oder \( \complexs \)).
+\end{beispiel*}
+Was tut man, wenn man nur eine Lösung raten kann? Im Fall \( k=2 \) und \( n=1 \) führt folgendes Verfahren auf eine zweite Lösung:
+\begin{lemma}\label{zweier_dgl_zweite_loesung}
+  Sei \( I \) Intervall, \( a_0,a_1\maps I\to \mathbb{K} \) (\( \mathbb{K}=\reals \) oder \( \complexs \)) stetig. Sei \( u\maps I\to \mathbb{K} \) eine Lösung von
+  \begin{equation*}
+    x''+a_1(t)x'+a_0(t)x=0\tag{\( * \)}\label{eq:homogen_dgl_2ter}.
+  \end{equation*}
+  Auf \( J\subset I \) gelte \( u(t)\neq 0 \). Dann ist \( v\maps J\to \mathbb{K} \), \( v=u\cdot w \) Lösung von \eqref{eq:homogen_dgl_2ter}, wenn für \( w gilt \)
+  \begin{equation*}
+    w''(t)+\parens*{2\frac{u'(t)}{u(t)}+a_1(t)}w'(t)=0\tag{\( ** \)}\label{eq:zweier_dgl_zweite_loesung_multiplikator_bedingung}.
+  \end{equation*}
+  Ist \( w \) auf \( J \) nicht konstant, sind \( v \) und \( u \) linear unabhängig.
+\end{lemma}
+\begin{bemerkung*}
+  \( w' \) löst also die DGL \ordinalnum{1} Ordnung
+  \begin{equation*}
+    y'+\parens*{2\frac{u'(t)}{u(t)}+a_1(t)}y=0,
+  \end{equation*}
+  also ist
+  \begin{align*}
+    w'(t)&=C_0 \exponential*{-\Integrate{2\frac{u'(s)}{u(s)}+a_1(s)}{s,t_0,t}}\\
+    &=C\frac{1}{u(t)^2}\exponential*{-\Integrate{a_1(s)}{s,t_0,t}},
+  \end{align*}
+  woraus man ein \( w \) bestimmen kann, dass \eqref{eq:zweier_dgl_zweite_loesung_multiplikator_bedingung} löst.
+\end{bemerkung*}
+\begin{proof}[Beweis von \ref{zweier_dgl_zweite_loesung}]
+  \begin{align*}
+    v'&=u'w+uw'\\
+    v''&=u''w+2u'w'+uw''\\
+    &=-a_1u'w-a_0uw+2u'w'+uw''\\
+    \implies v''+a_1'+a_0v&=2u'w'+a_1uw'+uw''=0,
+  \end{align*}
+  wenn \( w \) \eqref{eq:zweier_dgl_zweite_loesung_multiplikator_bedingung} erfüllt.
+
+  Die \ordinalnum{2} Behauptung ist klar.
+\end{proof}
+\begin{beispiel*}
+  Nochmal
+  \begin{equation*}
+    x''-\frac{1}{2t}x'+\frac{1}{2t^2}x=0
+  \end{equation*}
+auf \( I=\reals_{>0} \). \( u(t)=t \) und bestimmen \( v \) wie oben:
+\begin{align*}
+  w'(t)&=\frac{1}{u(t)^2}\exponential*{-\Integrate{a_1(s)}{s,t_0,t}}\\
+  &=\tilde{C}\frac{1}{t^2}\sqrt{t}=\tilde{C}\frac{1}{t^{\frac{3}{2}}}\\
+  w(t)&=\tilde{C}\frac{1}{\sqrt{t}}+C'\implies v=\sqrt{t}.
+\end{align*}
+(Man lässt hier oft die Konstanten einfach weg).
+\end{beispiel*}
+\begin{generalthm}[Besondere DGL'n mit \( k=2 \), \( n=1 \)]
+  (Achtung: andere Notation als bisher!)
+
+  Zu \( n\in \naturals_0 \) betrachten wir die 
+  \begin{description}
+    \item[Legendresche DGL] für \( -1<x<1 \)
+    \begin{equation*}
+      (1-x^2)y''-2xy'+n(n+1)y=0.
+    \end{equation*}
+    \item[Hermitesche DGL] für \( x\in \reals \)
+    \begin{equation*}
+      y''-2xy'+2ny=0.
+    \end{equation*}
+    \item[Laguerresche DGL] für \( x>0 \)
+    \begin{equation*}
+      xy''+(1-x)y'+ny=0.
+    \end{equation*}
+  \end{description}
+\end{generalthm}
+\begin{lemma}
+  Zu \( n\in \naturals_0 \) definiert man
+  \begin{align*}
+    \legendrepolynomial{n}{x}&=\frac{1}{2^n \Factorial{n}}\odv[n]{(x^2-1)^n}{x}&&\text{Legendre-Polynom der Ordnung \( n \)}\\
+    \hermitepolynomial{n}{x}&=(-1)^n e^{x^2}\odv[n]{e^{-x^2}}{x}&&\text{Hermite-Polynom der Ordnung \( n \)}\\
+    \laguerrepolynomial{n}{x}&=e^x\odv[n]{x^n e^{-x}}{x}&&\text{Laguerre-Polynom der Ordnung \( n \)}
+  \end{align*}
+  Bei den angegebene Funktionen handelt es sich tatsächlich um Polynome der Ordnung \( n \). Sie lösen die zugehörigen DGL'n.
+\end{lemma}
+\begin{proof}
+  \begin{proofdescription}
+    \item[\ordinalnum{1} \Beh] \( \legendrepolynomial-{n}{} \): \( \odv[n]{}{x} \)(Polynom der Ordnung \( 2n \)) \( = \) Polynom von Ordnung \( \leq n \).
+    \begin{equation*}
+      \odv[n]{\parens*{(x-1)^n(x+1)^n}}{x}=\sum_{l=0}^{n}\braceannotate{\text{Ordnung}=n-l}{\odv[l]{(x-1)^n}{x}}\braceannotate{\text{Ordnung}=l}{\odv[n-l]{(x+1)^n{x}}{x}}
+    \end{equation*}
+    \( \hermitepolynomial-{n}{} \):
+    \begin{equation*}
+      \odv[n]{e^{-x^2}}{x}=\odv[n-1]{\parens*{-2xe^{-x^2}}}{x}=\odv[n-2]{\parens*{(-2x)^2e^{-x^2}+\odv{(-2x)}{x}e^{-x^2}}}{x}
+    \end{equation*}
+    \timplies wenn alle \( n \) Ableitungen auf \( e^{-x^2} \) wirken, erhält man \( (-2x)^n e^{-x^2} \). Die anderen Beiträge sind kleineren Grads multipliziert mit \( e^{-x^2} \).
+
+    \( \laguerrepolynomial-{n}{} \): genauso.
+    \item[\ordinalnum{2} \Beh] Nur für die Hermite-Polynome: Setze \( y(x)=e^{x^2}\odv[n]{e^{-x^2}}{x} \). Es gilt \( e^{-x^2}y(x)=\odv[n]{e^{-x^2}}{x} \).
+    \begin{equation*}
+      \implies \odv[2]{\parens*{e^{-x^2}y(x)}}=\odv[n+2]{e^{-x^2}}{x}=\odv[n+1]{\parens*{-2xe^{-x^2}}}{x}.
+    \end{equation*}
+    Induktion:
+    \begin{equation*}
+      (xe^{-x^2})^{(n+1)}=x(e^{-x^2})^{(n+1)}+(n+1)(e^{-x^2})^{(n)}.
+    \end{equation*}
+    \begin{subproof}[]
+      IA\@: \( \odv{\parens*{xe^{-x^2}}}{x}=e^{-x^2}+x(e^{-x^2})' \).
+      \( n\to n+1 \):
+      \begin{align*}
+        (xe^{-x^2})^{(n+1)}&=\parens*{\parens*{xe^{-x^2}}^{(n)}}'\\
+        &\underset{\text{IV}}{=}\parens*{x\parens{e^{-x^2}}^{(n)}+n\parendiff{e^{-x^2}}{n+1}}'\\
+        &=\parens*{e^{-x^2}}^{(n)}+x\parens*{e^{-x^2}}^{(n+1)}+n\parens{e^{-x^2}}^{(n)}.
+      \end{align*}
+    \end{subproof}
+    \begin{align*}
+      \implies (e^{-x^2}y(x))^{(2)}&=-2x\parens*{e^{x^2}}^{(n+1)}-2(n+1)\parens*{e^{-x^2}}^{(n)}\\
+      &=-2x\odv{\parens*{e^{-x^2}y(x)}}{x}-2(n+1)e^{-x^2}y(x)\\
+      &=e^{-x^2}(4x^2y(x)-2y'(x)-2(n+1)y(x)).
+    \end{align*}
+    Andererseits:
+    \begin{gather*}
+      \parendiff*{e^{-x^2}y(x)}{2}=e^{-x^2}y''(x)+2(e^{-x^2})'y'(x)+\parendiff*{e^{-x^2}}{2}y(x)\\
+      =e^{-x^2}\parens*{y''(x)-4xy'(x)+(4x^2-2)y(x)}\\
+      \implies y''(x)-2xy'(x)+2ny(x)=0-
+    \end{gather*}
+    \( \laguerrepolynomial-{n}{},\legendrepolynomial-{n}{} \) ähnlich.
+  \end{proofdescription}  
+\end{proof}
+Ein Fundamentalsystem für diese Gleichungen (zu gegebenen \( n \)) findet man \zb wieder mit \thref{zweier_dgl_zweite_loesung}.
+
+\begin{beispiel*}
+  Für \( n=1 \) und die Legendre-GLeichung
+  \begin{align*}
+    w'(x)&=\exponential*{-\Integrate{\frac{2}{s}}{s}+\Integrate{\frac{2s}{1-s^2}}{s}}\\
+    &=\frac{1}{x^2}\frac{1}{(1-x^2)}\\
+    \implies w(x)&=-\frac{1}{x}+\frac{1}{2}\Ln-{\frac{1+x}{1-x}}.
+  \end{align*}
+\end{beispiel*}

@@ -328,3 +328,34 @@ und nennt \( \laplaceoperator=\partial_1^2+\dotsb+\partial_n^2 \) den \emph{Lapl
     \end{beispiel*}
   \end{enumerate}
 \end{beispiele*}
+\begin{ergaenzung*}
+  \begin{figure}[H]
+    \centering
+    \includegraphics[width=0.9\linewidth]{lagrange_multiplikatoren_intuition}
+    \label{fig:lagrange_multiplikatoren_intuition}
+  \end{figure}
+  Tatsache: \( \grad-{h}(x,y) \) steht senkrecht auf \( h(x,y)=c \). (Der Gradient zeigt in die Richtung des stärksten Anstiegs der Funktion).
+  \begin{figure}[H]
+    \centering
+    \includegraphics[width=0.9\linewidth]{lagrange_multiplikatoren_weitere_intuition}
+    \label{fig:lagrange_multiplikatoren_weitere_intuition}
+  \end{figure}
+  Tatsache 2: Liegt in \( (x_0,y_0)\in \set{(x,y)|g(x,y)=0} \) ein Extremum von \( f \), so \texists \( \lambda\in \reals \) \sd \(\boxed{ \grad-{f}(x_0,y_0)\lambda\grad-{g}(x_0,y_0) }\). Tatsache 1 + 2 gleichbedeutend \( f(x,y)=c \) schmiegt sich in \( (x_0,y_0,) \) tangential an \( \set{g(x,y)=0} \) an.
+
+  Das heißt, wenn wir das Gleichungssystem
+  \begin{equation*}
+    \left.\begin{aligned}
+      \grad-{f}(x,y)-\lambda\grad-{g}(x,y&)=0\\
+      g(x,y)&=0
+    \end{aligned}\right\}\tag{\( * \)}\label{eq:lagrange_multiplikatoren_intuition}
+  \end{equation*}
+  lösen, haben wir Kandidaten für Extremstellen gefunden.
+  \begin{align*}
+    \eqref{eq:lagrange_multiplikatoren_intuition}\therefore \begin{aligned}[t]
+      \partial_x L&=0\\
+      \partial_y L&=0\\
+      \partial_{\lambda} L&=0,
+    \end{aligned}
+  \end{align*}
+  \( L \) Lagrange-Funktion.
+\end{ergaenzung*}
