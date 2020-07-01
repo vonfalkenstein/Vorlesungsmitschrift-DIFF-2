@@ -53,7 +53,7 @@ Dies führt zur sogenannten
     \implies &D_1 f(a)\begin{aligned}[t]
       &=(\lambda_1,\dotsc,\lambda_m )\matrixmult D_1 h(a)\\
       &=(\lambda_1,\dotsc,\lambda_m)\matrixmult \begin{pNiceMatrix} \partial_1 h_1 &  \Cdots  & \partial_{n-m}h_1 \\ \Vdots &  & \Vdots \\ \partial_1 h_m & \Cdots & \partial_{n-m} h_m \end{pNiceMatrix}(a)\\
-      &=\left( \sum_{j=1}^{m}\lambda_j \partial_1 h_j, \sum_{j=1}^{m}\lambda_j \partial_2 h_j,\dotsc,\sum_{j=1}^{mm}\lambda_j \partial_{n-m}h_j \right)\\
+      &=\p*{ \sum_{j=1}^{m}\lambda_j \partial_1 h_j, \sum_{j=1}^{m}\lambda_j \partial_2 h_j,\dotsc,\sum_{j=1}^{mm}\lambda_j \partial_{n-m}h_j }\\
       &=\sum_{j=1}^{m}\lambda_j D_1 h_j(a).
     \end{aligned}
   \end{align*}
@@ -91,7 +91,7 @@ Wir nutzt man diesen Satz zur Lösung von Problemen wie oben?
 \end{bemerkung}
 \begin{beispiele*}
   \begin{enumerate}
-    \item Zunächst \ref{nebenbedingung_extremum:beispiel:geometrie} von oben. \( f\maps \reals_{>0}\times \reals_{>0}\to \reals \), \( f(b,h)=\frac{1}{2}bh \), \( H(b,h)=\frac{1}{4}b^2+h^2-r^2 \). \( a=(b,h) \). \( \totalderivative-{f}(a)=\left( \frac{1}{2}h,\frac{1}{2}b \right) \), \( DH(a)=\left( \frac{1}{2}b, 2h \right) \). \( h>0 \) \timplies die Voraussetzungen des Satzes sind erfüllt.
+    \item Zunächst \ref{nebenbedingung_extremum:beispiel:geometrie} von oben. \( f\maps \reals_{>0}\times \reals_{>0}\to \reals \), \( f(b,h)=\frac{1}{2}bh \), \( H(b,h)=\frac{1}{4}b^2+h^2-r^2 \). \( a=(b,h) \). \( \totalderivative-{f}(a)=\p*{ \frac{1}{2}h,\frac{1}{2}b } \), \( DH(a)=\p*{ \frac{1}{2}b, 2h } \). \( h>0 \) \timplies die Voraussetzungen des Satzes sind erfüllt.
     \begin{align*}
       \tag{\(*\)}&\left.\begin{aligned}
         \partial_1 f(a)+\lambda \partial_1 H(a)=\frac{1}{2}h+\frac{1}{2}b&\needed{=}0\\
@@ -272,12 +272,12 @@ und nennt \( \laplaceoperator=\partial_1^2+\dotsb+\partial_n^2 \) den \emph{Lapl
     \end{equation*}
     und
     \begin{align*}
-      &\partial_i\left(f'(\norm{x}_E)\frac{1}{\norm{x}_E}x_i \right)=f''(\norm{x}_E)\frac{x_i}{\norm{x_i}}\cdot\frac{x_i}{\norm{x}_E}+f'(\norm{x}_E)\left( -\frac{1}{2}\frac{2x_i}{\sqrt{\sum x_j^2}^3}\cdot x_i +\frac{1}{x_E} \right)\\
+      &\partial_i\p*{f'(\norm{x}_E)\frac{1}{\norm{x}_E}x_i }=f''(\norm{x}_E)\frac{x_i}{\norm{x_i}}\cdot\frac{x_i}{\norm{x}_E}+f'(\norm{x}_E)\p*{ -\frac{1}{2}\frac{2x_i}{\sqrt{\sum x_j^2}^3}\cdot x_i +\frac{1}{x_E} }\\
       \implies &\laplaceoperator h(x)=f''(\norm{x}_E)+f'(\norm{x}_E)\frac{1}{\norm{x}_E}(n-1)
     \end{align*}
     \item In Kugelkoordinaten: Sei \( g\maps \reals_{>0}\times \reals\times\reals\to \reals^3 \)
     \begin{equation*}
-      g(r,\tau,\phi)=\begin{pNiceMatrix} r\cos \phi \sin \theta \\ r\sin \phi \sin \theta \\ r\cos \theta \end{pNiceMatrix}.
+      g(r,\tau,\phi)=\begin{pNiceMatrix} r\Cos{\phi} \Sin{\theta}\\ r\Sin{\phi}\Sin{\theta}\\ r\Cos{\theta} \end{pNiceMatrix}.
     \end{equation*}
     \begin{figure}[H]
       \centering
@@ -290,17 +290,17 @@ und nennt \( \laplaceoperator=\partial_1^2+\dotsb+\partial_n^2 \) den \emph{Lapl
     \begin{beispiel*}
       \( f(x,y,z)=xyz \).
       \begin{equation*}
-        f\circ g(r,\theta,\phi)=f(r\cos \phi\sin \theta,r\sin \phi\sin \theta, r\cos \theta)=r^3\sin^2\theta\cos \theta\cos \phi\sin \phi\defines F(r,\theta,\phi).
+        f\circ g(r,\theta,\phi)=f(r\Cos{\phi}\Sin{\theta},r\Sin{\phi}\Sin{\theta}, r\Cos{\theta})=r^3\sin^2\theta\Cos{\theta}\Cos{\phi}\Sin{\phi}\defines F(r,\theta,\phi).
       \end{equation*}
       Sodann:
       \begin{equation*}
         \totalderivative-{g}(r,\theta,\phi)=\begin{pNiceMatrix}
-          \cos \phi\sin \theta & r\cos \phi\cos \theta & -r\in \phi\sin \theta \\
-          \sin \phi\sin \theta & r\sin \phi\cos \theta & r\cos \phi\sin \theta \\
-          \cos \theta & -r\sin \theta & 0
+          \Cos{\phi}\Sin{\theta}& r\Cos{\phi}\Cos{\theta} & -r\in \phi\Sin{\theta}\\
+          \Sin{\phi}\Sin{\theta}& r\Sin{\phi}\Cos{\theta} & r\Cos{\phi}\Sin{\theta}\\
+          \Cos{\theta} & -r\Sin{\theta}& 0
         \end{pNiceMatrix}
       \end{equation*}
-      \( \Det \totalderivative-{g}(r,\theta,\phi)=r^2\sin \theta \) \timplies Ist \( v\neq k\pi \), \( k\in \wholes \), so ist \( g \) lokal umkehrbar mit stetig differenzierbarer Umkehrfunktion \( h\maps W\to V \) und in \( (x,y,z)\in W \) gilt
+      \( \Det \totalderivative-{g}(r,\theta,\phi)=r^2\Sin{\theta}\) \timplies Ist \( v\neq k\pi \), \( k\in \wholes \), so ist \( g \) lokal umkehrbar mit stetig differenzierbarer Umkehrfunktion \( h\maps W\to V \) und in \( (x,y,z)\in W \) gilt
       \begin{align*}
         &f(\underbrace{x,y,z}_{=g(r,\theta,\phi)})=f\circ g\circ h(x,y,z)\defines F\circ h(x,y,z)\\
         \implies &\totalderivative-{f}(x,y,z)=\explain{DF(r,\theta,\phi)}{\text{\( 1\times 3 \)-Matrix}}\matrixmult \overset{\underset{\downarrow}{\text{\( 3\times 3 \)-Matrix}}}{\underbrace{\totalderivative-{h}(x,y,z)}_{=\inverse{\totalderivative-{g}(r,\theta,\phi)}}}\defines \explain{\text{\( 1\times 3 \)-Matrix}}{\tilde{F}(r,\phi,\theta)}=\tilde{F}\circ h(x,y,z)\\
@@ -312,18 +312,18 @@ und nennt \( \laplaceoperator=\partial_1^2+\dotsb+\partial_n^2 \) den \emph{Lapl
       \end{align*}
       Eine etwas längere Rechnung, bei der man \ua \( \totalderivative-{g}(r,\theta,\phi) \) invertieren muss, liefert die explizite Formel für die \( \tilde{F}_j \), etwa
       \begin{equation*}
-        \tilde{F}_1=\begin{pNiceMatrix} \partial_1 F & \partial_2 F & \partial_3 F \end{pNiceMatrix}\matrixmult\explain{\text{1.\ Spalte von \( \inverse{\totalderivative-{g}(r,\theta,\phi)} \)}}{\begin{pNiceMatrix} \cos \phi\sin \theta \\ \frac{1}{r}\cos \phi\sin \theta \\ -\frac{1}{r}\frac{\sin \phi}{\sin \theta} \end{pNiceMatrix}}.
+        \tilde{F}_1=\begin{pNiceMatrix} \partial_1 F & \partial_2 F & \partial_3 F \end{pNiceMatrix}\matrixmult\explain{\text{1.\ Spalte von \( \inverse{\totalderivative-{g}(r,\theta,\phi)} \)}}{\begin{pNiceMatrix} \Cos{\phi}\Sin{\theta}\\ \frac{1}{r}\Cos{\phi}\Sin{\theta}\\ -\frac{1}{r}\frac{\Sin{\phi}}{\Sin{\theta}} \end{pNiceMatrix}}.
       \end{equation*}
       Von diesen berechnet man die jeweilige partielle Ableitung \( \partial_j \tilde{F}_j \) und multipliziert mit \( \frac{1}{\partial_j g_j} \).
 
       \zb
       \begin{align*}
-        \partial_1 \tilde{F}_1&=\partial_1^2 F\cdot\cos \phi\in \theta+\partial_1 \partial_2 \cdot\frac{1}{r}\cos \phi\cos \theta-\partial_2 F\cdot \frac{1}{r^2}\cos \phi\cos \theta-\partial_1 \partial_3 \cdot\frac{1}{r}\frac{\sin \phi}{\sin \theta}+\partial_3 F\frac{1}{r^2}\frac{\sin \phi}{\sin \theta}\\
-        \quot{1}{\partial_1 g_1}&=\frac{1}{\cos \phi\sin \theta}.
+        \partial_1 \tilde{F}_1&=\partial_1^2 F\cdot\Cos{\phi}\in \theta+\partial_1 \partial_2 \cdot\frac{1}{r}\Cos{\phi}\Cos{\theta}-\partial_2 F\cdot \frac{1}{r^2}\Cos{\phi}\Cos{\theta}-\partial_1 \partial_3 \cdot\frac{1}{r}\frac{\Sin{\phi}}{\Sin{\theta}}+\partial_3 F\frac{1}{r^2}\frac{\Sin{\phi}}{\Sin{\theta}}\\
+        \quot{1}{\partial_1 g_1}&=\frac{1}{\Cos{\phi}\Sin{\theta}}.
       \end{align*}
       Das Ergebnis ist
       \begin{equation*}
-        \frac{1}{r^2}\underset{=\partial_1}{\partial_r}(r^2\underset{=\partial_1}{\partial_r}F)+\frac{1}{r^2\sin \theta}\underset{=\partial_2}{\partial_{\theta}}(\sin \theta \underset{=\partial_2}{\partial_{\theta}} F)+\frac{1}{r^2\sin^2\theta}\underset{=\partial_3^2}{\partial_{\phi}^2}F.
+        \frac{1}{r^2}\underset{=\partial_1}{\partial_r}(r^2\underset{=\partial_1}{\partial_r}F)+\frac{1}{r^2\Sin{\theta}}\underset{=\partial_2}{\partial_{\theta}}(\Sin{\theta}\underset{=\partial_2}{\partial_{\theta}} F)+\frac{1}{r^2\sin^2\theta}\underset{=\partial_3^2}{\partial_{\phi}^2}F.
       \end{equation*}
     \end{beispiel*}
   \end{enumerate}

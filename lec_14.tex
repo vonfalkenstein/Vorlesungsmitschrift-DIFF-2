@@ -74,16 +74,16 @@ Es gilt allgemeiner
       a&= \varphi(0)\\
       \implies \tangentialraum-{M}&=\Span-{\Set{\begin{pNiceMatrix} 1 \\ 0 \\ 0 \end{pNiceMatrix},\begin{pNiceMatrix} 0 \\ 1 \\ 0 \end{pNiceMatrix}}}.
     \end{align*}
-    \item \( \varphi\maps \ointerval{0}{\pi}\times\ointerval{0}{2\pi} \to \reals^3\), \( \varphi(\beta,\alpha)=\transpose-{(\Cos-{\beta},\Cos-{\alpha}\Sin-{\beta},\Sin-{\alpha}\Sin-{\beta})} \). \approxtimestamp{15}
+    \item \( \varphi\maps \ointerval{0}{\pi}\times\ointerval{0}{2\pi} \to \reals^3\), \( \varphi(\beta,\alpha)=\transpose-{(\Cos{\beta},\Cos{\alpha}\Sin{\beta},\Sin{\alpha}\Sin{\beta})} \). \approxtimestamp{15}
     \begin{figure}[H]
       \centering
       \includegraphics[width=0.5\linewidth]{winkelparametisierung_kugel}
       \label{fig:winkelparametisierung_kugel}
     \end{figure}
     \begin{align*}
-      \partial_1\varphi(\beta,\alpha)&=\transpose-{(-\Sin-{\beta},\Cos-{\alpha}\Cos-{\beta},\Sin-{\alpha}\Cos-{\beta})}\\
-      \partial_2 \varphi(\beta,\alpha)&=\transpose-{(0,-\Sin-{\alpha}\Sin-{\beta},\Cos-{\alpha}\Sin-{\beta})}\\
-      \varphi\left( \frac{\pi}{2},\frac{\pi}{2} \right)=\transpose-{(0,0,1)}=a\\
+      \partial_1\varphi(\beta,\alpha)&=\transpose-{(-\Sin{\beta},\Cos{\alpha}\Cos{\beta},\Sin{\alpha}\Cos{\beta})}\\
+      \partial_2 \varphi(\beta,\alpha)&=\transpose-{(0,-\Sin{\alpha}\Sin{\beta},\Cos{\alpha}\Sin{\beta})}\\
+      \varphi\p*{ \frac{\pi}{2},\frac{\pi}{2} }=\transpose-{(0,0,1)}=a\\
       \implies \tangentialraum-{M}&=\Span-{\Set{\begin{pNiceMatrix} -1 & 0 & 0 \end{pNiceMatrix},\begin{pNiceMatrix} 0 \\ -1 \\ 0 \end{pNiceMatrix}}}=\Span-{\set{e_1,e_2}}.
     \end{align*}
   \end{eigenschaftenenumerate}
@@ -175,8 +175,8 @@ Es gilt allgemeiner
   ist stetig differenzierbar.
   \emph{Tangentialraum} \( \tangentialraum-{M}= \) Ebene senkrecht \( \varv_a=\grad-{f(a)} \). Parametisierung bei \( a\in \Pi^2 \): Mit geeigneten Intervallen für die Winkel gilt:
   \begin{gather*}
-    a=\varphi(\alpha,\beta)=R\begin{pNiceMatrix} \Cos-{\alpha} \\ \Sin-{\alpha} \\ 0 \end{pNiceMatrix}+r\begin{pNiceMatrix} \Cos-{\alpha}\Cos-{\alpha} \\ \Sin-{\alpha}\Cos-{\beta} \\ \Sin-{\beta} \end{pNiceMatrix}\\
-    X(\phi(\alpha,\beta))=\partial_2 \varphi(\alpha,\beta)=\begin{pNiceMatrix} -r\Cos-{\alpha}\Sin-{\beta} \\ -r\Sin-{\alpha}\Sin-{\beta} \\ \Cos-{\beta} \end{pNiceMatrix}
+    a=\varphi(\alpha,\beta)=R\begin{pNiceMatrix} \Cos{\alpha} \\ \Sin{\alpha} \\ 0 \end{pNiceMatrix}+r\begin{pNiceMatrix} \Cos{\alpha}\Cos{\alpha} \\ \Sin{\alpha}\Cos{\beta} \\ \Sin{\beta} \end{pNiceMatrix}\\
+    X(\phi(\alpha,\beta))=\partial_2 \varphi(\alpha,\beta)=\begin{pNiceMatrix} -r\Cos{\alpha}\Sin{\beta} \\ -r\Sin{\alpha}\Sin{\beta} \\ \Cos{\beta} \end{pNiceMatrix}
   \end{gather*}
   offensichtlich \( \stetigefunktionen[1] \).
   \begin{figure}[H]
@@ -219,11 +219,11 @@ Es gilt allgemeiner
 \begin{beispiel*}
   \( \overline{\mathbb{D}}=\Set{x\in \reals^2| \euclidiannorm{x}\leq 1} \). \( \overline{\partial \mathbb{D}}=\mathbb{S}^1 \). Wähle zu \( a\in \overline{\mathbb{D}} \), \( a\neq \transpose-{(1,0)} \). Sei \( V=\rinterval{0}{1}\times \ointerval{0}{2\pi} \). Dann ist \( V \) offen in \( \Set{x\in \reals^2|x_1\leq 1} \) und \( V\cap \Set{x|x_1=1}=\mathbb{S}^1\setminus \Set{(1,0)} \).
   \begin{equation*}
-    \varphi\maps \braceannotate{=V}{\rinterval{0}{1}\times \ointerval{0}{2\pi}}\to \reals^2\quad \varphi(r,\alpha)=r\transpose-{(\Cos-{\alpha},\Sin-{\alpha})}.
+    \varphi\maps \braceannotate{=V}{\rinterval{0}{1}\times \ointerval{0}{2\pi}}\to \reals^2\quad \varphi(r,\alpha)=r\transpose-{(\Cos{\alpha},\Sin{\alpha})}.
   \end{equation*}
   Analog zu \( a=\transpose-{(1,0)} \).
   \begin{gather*}
-    \varphi\maps \rinterval{0}{1}\times \ointerval{-\pi}{\pi}\to \reals^2\quad \varphi(r,a)=r\transpose-{(\cos \alpha,\sin \alpha)}.
+    \varphi\maps \rinterval{0}{1}\times \ointerval{-\pi}{\pi}\to \reals^2\quad \varphi(r,a)=r\transpose-{(\Cos{\alpha},\Sin{\alpha})}.
   \end{gather*}
 \end{beispiel*}
 \timestamp{Ende Audio Teil 1}
@@ -302,17 +302,17 @@ Es gilt allgemeiner
     Zur ungefähren Berechnung des Flächeninhaltes von \( \varphi(\mathcal{R}) \) berechnen wir also den des Parallelotops \( P(\partial_1 \varphi(t_0)l_1,\partial_2 \varphi(t_0)l_2) \).
     \item Seien \( v,w\in \reals^3 \). Dann ist \( \norm{v\times w} \), \( v\times w=\begin{pNiceMatrix} v_2 w_3-v_3w_2 \\ v_3 w_1 -v_1 w_3 \\ v_1 w_2-v_2 w_1 \end{pNiceMatrix} \), \enquote{\emph{Kreuzprodukt}} der Flächeninhalt des Parallelotops \( P(v,w) \). Den:
     \begin{align*}
-      A&=\norm{v}\cdot\norm{w}\cdot\Sin-{\beta}\\
-      &=\sqrt{\norm{v}^2\norm{w}^2(1-\Cos-{\beta}^2)}\\
+      A&=\norm{v}\cdot\norm{w}\cdot\Sin{\beta}\\
+      &=\sqrt{\norm{v}^2\norm{w}^2(1-\Cos+{\beta}^2)}\\
       &=\sqrt{\norm{c}^2\norm{w}^2-\scalarproduct{v}{w}^2}\\
       &=\sqrt{\norm{v\times w}^2}=\norm{v\times w}
     \end{align*}
     mit \( \times \) wie oben.
     \item Es gilt
     \begin{equation*}
-      \label{eq:flaecheninhalt_durch_determinante_gegeben}\tag{*} \euclidiannorm{\partial_1 \varphi(t_0)\times\partial_2 \varphi(t_0)}=\sqrt{\det g_{\varphi}(t_0)}
+      \label{eq:flaecheninhalt_durch_determinante_gegeben}\tag{*} \euclidiannorm{\partial_1 \varphi(t_0)\times\partial_2 \varphi(t_0)}=\sqrt{\determinant{g_{\varphi}(t_0)}}
     \end{equation*}
-    mit \( \det g_{\varphi}= \) Determinante der Gramschen Matrix. Also ist die GLäche von \( \varphi(R) \) etwa 
+    mit \( \determinant{g_{\varphi}}= \) Determinante der Gramschen Matrix. Also ist die GLäche von \( \varphi(R) \) etwa 
     \begin{equation*}
       \sqrt{g_{\varphi}(t_0)}l_1 l_2=\sqrt{g_{\varphi}(t_0)}\text{Fläche}(\mathcal{R}).
     \end{equation*}
@@ -324,7 +324,7 @@ Es gilt allgemeiner
   \begin{lemma}
     Sei \( \varphi\maps V\to M\cap U \) Parametisierung bei \( a \), \( V\subset \reals^d \), \( M\subset \reals^n \). Die Determinante von \( g_{ij} \) berechnet sich wie folgt:
     \begin{equation*}
-      \det g(t_0)=\sum_{i_1<\dotsb<i_d}\parens*{\det D\begin{pNiceMatrix} \varphi_{i_1} \\ \Vdots \\ \varphi_{i_j} \end{pNiceMatrix}(t_0)}^2
+      \determinant{g(t_0)}=\sum_{i_1<\dotsb<i_d}\parens*{\determinant{D\begin{pNiceMatrix} \varphi_{i_1} \\ \Vdots \\ \varphi_{i_j} \end{pNiceMatrix}(t_0)}}^2
     \end{equation*}
   \end{lemma}
   \begin{proof}
@@ -338,8 +338,8 @@ Es gilt allgemeiner
 \begin{bemerkung*}
   Für \( d=2 \), \( n=3 \) gilt nun
   \begin{align*}
-    \det g_{\varphi}&=\sum_{i<j}\left( \det D\begin{pNiceMatrix} \phi_i \\ \phi_j \end{pNiceMatrix} \right)^2\\
-    &=\det D\begin{pNiceMatrix} \varphi_1 \\ \varphi_2 \end{pNiceMatrix}^2+\det D\begin{pNiceMatrix} \varphi_1 \\ \varphi_3 \end{pNiceMatrix}^2+\det D\begin{pNiceMatrix} \varphi_2 \\ \varphi_3 \end{pNiceMatrix}^2\\
+    \determinant{g_{\varphi}}&=\sum_{i<j}\p*{ \determinant{D\begin{pNiceMatrix} \phi_i \\ \phi_j \end{pNiceMatrix} }}^2\\
+    &=\determinant{D\begin{pNiceMatrix} \varphi_1 \\ \varphi_2 \end{pNiceMatrix}}^2+\determinant{D\begin{pNiceMatrix} \varphi_1 \\ \varphi_3 \end{pNiceMatrix}}^2+\determinant{D\begin{pNiceMatrix} \varphi_2 \\ \varphi_3 \end{pNiceMatrix}}^2\\
     &\explain{\text{Rechnung}}{=}\scalarproduct{\partial_1 \varphi \times \partial_2 \varphi}{\partial_1 \varphi\times \partial_2 \varphi}\implies \text{\Beh \eqref{eq:flaecheninhalt_durch_determinante_gegeben}}.
   \end{align*}
 \end{bemerkung*}

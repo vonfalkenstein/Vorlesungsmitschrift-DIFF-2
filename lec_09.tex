@@ -83,7 +83,7 @@ Notwendiges Kriterium ist, dass \( \totalderivative-{f}(x) \) invertierbar ist, 
 Man sagt, wenn \( f \) wie oben ist: \enquote{\( f \) ist bei \( a \) \emph{lokal} umkehrbar.}
 \begin{beispiele}
   \begin{enumerate}
-    \item \( f(x)=\ln x \), \( x>0 \), \( a=1 \), \( b=0 \), \( f'(1)=1 \).
+    \item \( f(x)= \Ln{x} \), \( x>0 \), \( a=1 \), \( b=0 \), \( f'(1)=1 \).
     \begin{figure}[H]
       \centering
       \includegraphics[width=0.5\linewidth]{figures/satz_von_der_umkehrungsfunktion_beispiel_ln}
@@ -91,7 +91,7 @@ Man sagt, wenn \( f \) wie oben ist: \enquote{\( f \) ist bei \( a \) \emph{loka
       \label{fig:satz_von_der_umkehrungsfunktion_beispiel_ln}
     \end{figure}
     \begin{gather*}
-      g'(\ln x)=\inverse{\left( \frac{1}{x} \right)}=x\\
+      g'(\Ln{x})=\inverse{\p*{ \frac{1}{x} }}=x\\
       g'(z)=g(z)\\
       \underset{(\text{\diffcourse{1}})}{\implies} g(z)=C\exp (z),
     \end{gather*}
@@ -127,17 +127,17 @@ Man sagt, wenn \( f \) wie oben ist: \enquote{\( f \) ist bei \( a \) \emph{loka
     \end{gathered}\implies g(z)=\frac{1}{6}+\frac{1}{6}\sqrt{+1+12z}
     \end{gather*}
     auf \( \ointerval{-\frac{1}{12}}{\infty} \) definiert \timplies es muss \( f>-\frac{1}{12} \) sein, also ist das maximale \( V=\ointerval{\frac{1}{12}}{z} \).
-    \item \( f\maps \reals_{>0}\times \reals\to \reals^2 \), \( (r,\phi)\mapsto \transpose-{(r\cos \phi, r\sin \phi)} \).
+    \item \( f\maps \reals_{>0}\times \reals\to \reals^2 \), \( (r,\phi)\mapsto \transpose-{(r\Cos{\phi}, r\Sin{\phi})} \).
     \begin{gather*}
-      \Det \totalderivative-{f}(r,\phi)=\begin{pNiceMatrix} \cos \phi & -r\sin \phi \\ \sin \phi
-       & r\cos \phi \end{pNiceMatrix}\\
+      \Det \totalderivative-{f}(r,\phi)=\begin{pNiceMatrix} \Cos{\phi} & -r\Sin{\phi}\\ \Sin{\phi}
+       & r\Cos{\phi} \end{pNiceMatrix}\\
        \Det \totalderivative-{f}(r,\phi)=r>0\quad \forall (r,\phi).
     \end{gather*}
     \timplies Bei allen \( r,\phi \) ist \( f \) lokal invertierbar. Es gilt
     \begin{equation*}
-      \inverse{\totalderivative-{f}(r,\phi)}=\begin{pNiceMatrix} \cos \phi & \sin \phi \\ -\frac{\sin \phi}{r} & \frac{\cos \phi}{r} \end{pNiceMatrix}.
+      \inverse{\totalderivative-{f}(r,\phi)}=\begin{pNiceMatrix} \Cos{\phi} & \Sin{\phi}\\ -\frac{\Sin{\phi}}{r} & \frac{\Cos{\phi}}{r} \end{pNiceMatrix}.
     \end{equation*}
-    Setze \( f(r,\phi)=\begin{pNiceMatrix} x \\ y \end{pNiceMatrix} \) \timplies \( r=\sqrt{x^2+y^2} \), \( \frac{x}{r}=\cos \phi \), \( \frac{y}{r}=\sin \phi \).
+    Setze \( f(r,\phi)=\begin{pNiceMatrix} x \\ y \end{pNiceMatrix} \) \timplies \( r=\sqrt{x^2+y^2} \), \( \frac{x}{r}=\Cos{\phi} \), \( \frac{y}{r}=\Sin{\phi}\).
     \begin{equation*}
       \implies \inverse{\totalderivative-{f}(r,\phi)}=\totalderivative-{f}(\underbrace{f(r,\phi)}_{=\begin{pNiceMatrix} x \\ y \end{pNiceMatrix}})=\begin{pNiceMatrix} \frac{x}{\sqrt{x^2+y^2}} & \frac{y}{\sqrt{x^2+y^2}} \\ \frac{-y}{x^2+y^2} & \frac{x}{x^2+y^2} \end{pNiceMatrix}
     \end{equation*}
@@ -153,28 +153,28 @@ Man sagt, wenn \( f \) wie oben ist: \enquote{\( f \) ist bei \( a \) \emph{loka
         \caption*{\enquote{geschlitzte Ebene}}
         \label{fig:geschlitzte_ebene}
       \end{figure}
-      Wie kommt man darauf, dass \( f \) \( V \) auf \( W \) abbildet? \( \phi \) ist entweder \( \neq 0 \), dann ist \( r\sin \phi\in \ointerval{-r}{0}\cup \ointerval{0}{r} \), oder \( \phi=0 \), dann ist \( r\cos \phi=r>0 \).
+      Wie kommt man darauf, dass \( f \) \( V \) auf \( W \) abbildet? \( \phi \) ist entweder \( \neq 0 \), dann ist \( r\Sin{\phi}\in \ointerval{-r}{0}\cup \ointerval{0}{r} \), oder \( \phi=0 \), dann ist \( r\Cos{\phi}=r>0 \).
 
-      \minisec{\( \evaluateat{f}{U} \) ist injektiv:} Ist \( r\cos \phi=r'\cos \phi' \) und \( r\sin \phi=r'\sin \phi' \), so ist \( r^2=r'^2 \) \timplies (da, \( r,r'>0 \)) \( r=r' \) und aus \( \cos \phi=\cos \phi' \) folgt zunächst \( \phi=\pm \phi' \), aber aus \( \sin \phi=\sin \phi'=\pm \sin \phi \)folgt \( \phi=+\phi' \).
+      \minisec{\( \evaluateat{f}{U} \) ist injektiv:} Ist \( r\Cos{\phi}=r'\Cos{\phi}' \) und \( r\Sin{\phi}=r'\Sin{\phi}' \), so ist \( r^2=r'^2 \) \timplies (da, \( r,r'>0 \)) \( r=r' \) und aus \( \Cos{\phi}=\Cos{\phi}' \) folgt zunächst \( \phi=\pm \phi' \), aber aus \( \Sin{\phi}=\Sin{\phi}'=\pm \Sin{\phi}\)folgt \( \phi=+\phi' \).
 
-      \minisec{\( \evaluateat{f}{U} \) bildet surjektiv auf \( W \) ab:} Sei \( \begin{pNiceMatrix} x \\ y \end{pNiceMatrix} \in W \), \dh es ist \( y\neq 0 \) oder \( x>0 \) \timplies \( r=\set{x^2+y^2}>0 \) \timplies \( \left( \frac{x}{r} \right)^2+\left( \frac{y}{r} \right)^2=1 \) \timplies \( \abs{\quot{x}{r}}\leq 1 \). Es ist \( \quot{x}{r}\neq -1 \), denn sonst wäre \( \quot{y}{r}=0 \), aber \( (-1,0)\notin W \). Somit ist \( y=0 \) \tiff \( \quot{x}{r}=1 \) und wir legen einen Winkel \( \phi \) fest mit \( \cos \phi=\quot{x}{r} \). \( \phi\in \ointerval{-\pi
+      \minisec{\( \evaluateat{f}{U} \) bildet surjektiv auf \( W \) ab:} Sei \( \begin{pNiceMatrix} x \\ y \end{pNiceMatrix} \in W \), \dh es ist \( y\neq 0 \) oder \( x>0 \) \timplies \( r=\set{x^2+y^2}>0 \) \timplies \( \p*{ \frac{x}{r} }^2+\p*{ \frac{y}{r} }^2=1 \) \timplies \( \abs{\quot{x}{r}}\leq 1 \). Es ist \( \quot{x}{r}\neq -1 \), denn sonst wäre \( \quot{y}{r}=0 \), aber \( (-1,0)\notin W \). Somit ist \( y=0 \) \tiff \( \quot{x}{r}=1 \) und wir legen einen Winkel \( \phi \) fest mit \( \Cos{\phi}=\quot{x}{r} \). \( \phi\in \ointerval{-\pi
         }{0} \), falls \( y<0 \), oder \( \ointerval{0}{\pi} \), alls \( y>0 \), oder \( \phi=0 \), falls \( y=0. \)
 
       \begin{behauptung*}
-        Für diesen Winkel gilt \( \sin \phi=\quot{y}{r} \).
+        Für diesen Winkel gilt \( \Sin{\phi}=\quot{y}{r} \).
       \end{behauptung*}
       \begin{proof}
         \begin{equation*}
-          \sin \phi=\sgn{\sin \phi}\sqrt{\sin^2 \phi}=\sgn{y}\sqrt{1-\cos^2 \phi}=\sgn{y}\sqrt{1-\quot{x^2}{r^2}}=\sgn{y}\quot{\abs{y}}{r}=\quot{y}{r}.
+          \Sin{\phi}=\sgn{\Sin{\phi}}\sqrt{\sin^2 \phi}=\sgn{y}\sqrt{1-\cos^2 \phi}=\sgn{y}\sqrt{1-\quot{x^2}{r^2}}=\sgn{y}\quot{\abs{y}}{r}=\quot{y}{r}.
         \end{equation*}
       \end{proof}
       Ist man nicht an einer maximalen Umgebung von \( \ointerval{r_0}{\phi_0}  \) interessiert, kann man so schneller zum Ziel:
 
-      Ist beispielsweise \( -\quot{\pi}{2}<\phi_0<\quot{\pi}{2} \) betrachte \( \phi\in \ointerval{-\quot{\pi}{2}}{\quot{\pi}{2}} \),woraus \( x>0 \) folgt, so dass man recht schnell rät, dass \( f \) \( V\definedas \reals_{>0}\times  \ointerval{-\quot{\pi}{2}}{\quot{\pi}{2}} \) bijektiv auf \( W=\reals_{>0}\times \reals \) abbildet, indem man sich überlegt, dass die Umkehrfunktion \( g \) durch \( g(x,y)=\transpose-{(\sqrt{x^2+y^2}, \arctan \quot{y}{x})} \) gegeben ist (wohldefiniert für \( x>0 \)), da 
+      Ist beispielsweise \( -\quot{\pi}{2}<\phi_0<\quot{\pi}{2} \) betrachte \( \phi\in \ointerval{-\quot{\pi}{2}}{\quot{\pi}{2}} \),woraus \( x>0 \) folgt, so dass man recht schnell rät, dass \( f \) \( V\definedas \reals_{>0}\times  \ointerval{-\quot{\pi}{2}}{\quot{\pi}{2}} \) bijektiv auf \( W=\reals_{>0}\times \reals \) abbildet, indem man sich überlegt, dass die Umkehrfunktion \( g \) durch \( g(x,y)=\transpose-{(\sqrt{x^2+y^2}, \ArcTan{\quot{y}{x})}} \) gegeben ist (wohldefiniert für \( x>0 \)), da 
       \begin{equation*}
-        g(r \cos \phi, r\sin \phi)=(r,\underbrace{\arctan \quot{\sin \phi}{\cos \phi}_{=\phi}})
+        g(r \Cos{\phi}, r\Sin{\phi})=(r,\underbrace{\ArcTan{\quot{\Sin{\phi}}{\Cos{\phi}}_{=\phi}}})
       \end{equation*}
-      und es ist klar, dass \( g \) \( W \) bijektiv au \( V \) abbildet, da \( \arctan\maps \reals\to \ointerval{-\quot{\pi}{2}}{\quot{\pi}{2}} \) bijektiv ist, \sd  wenn \( \arctan \quot{x}{y}=\arctan \quot{\tilde{x}}{\tilde{y}} \) gilt \( y=\quot{\tilde{yx}}{x} \) und dann
+      und es ist klar, dass \( g \) \( W \) bijektiv au \( V \) abbildet, da \( \ArcTan;\maps \reals\to \ointerval{-\quot{\pi}{2}}{\quot{\pi}{2}} \) bijektiv ist, \sd  wenn \( \ArcTan{\quot{x}{y}}=\ArcTan{\quot{\tilde{x}}{\tilde{y}}} \) gilt \( y=\quot{\tilde{yx}}{x} \) und dann
       \begin{equation*}
         \sqrt{x^2+y^2}=\sqrt{x^2+\frac{\tilde{y}^2 x^2}{\tilde{x}^2}}=\frac{x}{\tilde{x}}\sqrt{\tilde{x}^2+\tilde{y}^2}
       \end{equation*}

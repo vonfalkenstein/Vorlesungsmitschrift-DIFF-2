@@ -31,11 +31,11 @@ Dann kann man \( G \) als Vektorfeld auf \( U \) ansehen (denn \( \tangentialrau
   \end{figure}
   Hier raten wir:
   \begin{equation*}
-    u(t)=\begin{pNiceMatrix} \Cos-{t} \\ \Sin-{t} \end{pNiceMatrix}\cdot r\quad r>0.
+    u(t)=\begin{pNiceMatrix} \Cos{t} \\ \Sin{t} \end{pNiceMatrix}\cdot r\quad r>0.
   \end{equation*}
   Tatsächlich
   \begin{align*}
-    u'(t)&=\begin{pNiceMatrix} -\Sin-{t} \\ \Cos-{t} \end{pNiceMatrix}\cdot r\quad r>0\\
+    u'(t)&=\begin{pNiceMatrix} -\Sin{t} \\ \Cos{t} \end{pNiceMatrix}\cdot r\quad r>0\\
     &=G(u(r)).
   \end{align*}
   Man kann sich vorstellen, während Zeit \( t \) vergeht, wandert ein Punkt entlang von \( u \) und erfüllt zu jedem Zeitpunkt \( t \), dass seine Geschwindigkeit in Richtung und Größe durch \( G \) vorgegeben ist (und wie wir sehen werden unter gewissen Umständen \( u \) selbst dadurch eindeutig festgelegt wird). 
@@ -192,7 +192,7 @@ und löst \( u \) das AWP \eqref{eq:awp}, so ist \( u(t_0)=u_0 \). \( u \) ist a
       per Induktion       
      \end{proof}
      \begin{equation*}
-       \implies x(t)=\begin{pNiceMatrix} \Cos-{t} \\ \Sin-{t} \end{pNiceMatrix}
+       \implies x(t)=\begin{pNiceMatrix} \Cos{t} \\ \Sin{t} \end{pNiceMatrix}
      \end{equation*}
      \item \( F(t,x)=2tx \), \( F\maps \reals^2\to \reals \), \( x'=2tx \), \( x(0)=x_0 \).
      \begin{gather*}
@@ -200,12 +200,12 @@ und löst \( u \) das AWP \eqref{eq:awp}, so ist \( u(t_0)=u_0 \). \( u \) ist a
        u_0(t)=x_0\implies \begin{aligned}[t]
          u_1(t)&=x_0+x_0t^2\\
          u_2(t)&=x_0+2\Integrate{s(x_0+x_0s^2)}{s,0,t}\\
-         &=x_0\left( 1+t^2+\frac{t^4}{2} \right).
+         &=x_0\p*{ 1+t^2+\frac{t^4}{2} }.
        \end{aligned}
      \end{gather*}
      Per Induktion beweist man
      \begin{align*}
-       &u_k(t)=x_0\left( 1+t^2+\frac{t^4}{2}+\frac{t^6}{\factorial{3}}+\dotsb+\frac{t^{2k}}{\factorial{k}} \right)\\
+       &u_k(t)=x_0\p*{ 1+t^2+\frac{t^4}{2}+\frac{t^6}{\factorial{3}}+\dotsb+\frac{t^{2k}}{\factorial{k}} }\\
        \implies &u(t)=x_0 e^{t^2}.
      \end{align*}
    \end{enumerate}
@@ -264,12 +264,12 @@ und löst \( u \) das AWP \eqref{eq:awp}, so ist \( u(t_0)=u_0 \). \( u \) ist a
   \begin{equation*}
     x''+x=0\tag{\( * \)}\label{eq:zweierdgl_beispiel}
   \end{equation*}
-  Lösungen: \( \Cos-{} \), \( \Sin-{} \). \( F(t,x,x')=-x \). Reduktion der Ordnung:
+  Lösungen: \( \Cos; \), \( \Sin; \). \( F(t,x,x')=-x \). Reduktion der Ordnung:
   \begin{gather*}
     \begin{pNiceMatrix} x_0 \\ x_1 \end{pNiceMatrix}'=\begin{pNiceMatrix} x_1 \\ F(t,x_0,x_1) \end{pNiceMatrix}=\begin{pNiceMatrix} x_1 \\ -x_0 \end{pNiceMatrix}\tag{\( ** \)}\label{eq:reduziertes_zweierdgl_beispiel}\\
-    \begin{pNiceMatrix} \Sin-{} \\ \Cos-{} \end{pNiceMatrix}'(t)=\begin{pNiceMatrix} \Cos-{t} \\ -\Sin-{t} \end{pNiceMatrix},\quad \begin{pNiceMatrix} \Cos-{} \\ -\Sin-{} \end{pNiceMatrix}'(t)=\begin{pNiceMatrix} -\Sin-{t} \\ -\Cos-{t} \end{pNiceMatrix}
+    \begin{pNiceMatrix} \Sin; \\ \Cos; \end{pNiceMatrix}'(t)=\begin{pNiceMatrix} \Cos{t} \\ -\Sin{t} \end{pNiceMatrix},\quad \begin{pNiceMatrix} \Cos; \\ -\Sin; \end{pNiceMatrix}'(t)=\begin{pNiceMatrix} -\Sin{t} \\ -\Cos{t} \end{pNiceMatrix}
   \end{gather*}
-  \timplies \( \Sin-{} \) und \( \Cos-{} \) sind Lösungen von \eqref{eq:reduziertes_zweierdgl_beispiel}.
+  \timplies \( \Sin; \) und \( \Cos; \) sind Lösungen von \eqref{eq:reduziertes_zweierdgl_beispiel}.
 \end{beispiel*}
 \begin{bemerkung*}
   Wie man an der Formulierung des Satzes und des Beispiels sieht, ist es zum \emph{Lösen} einer DGL \( k \)-ter Ordnung in der Regel nicht opportun, die Ordnung zu reduzieren.

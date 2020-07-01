@@ -38,7 +38,7 @@ Eine weitere äquivalente lokale Beschreibung mit Hilfe einer Parametisierung:
     \end{figure}
     \item \label{immersion_beispiel:kugel}\( V=\ointerval{0}{\pi}\times \ointerval{0}{2\pi} \),
     \begin{equation*}
-      \varphi(\beta,\alpha)=(\Cos-{\alpha}\Sin-{\beta},\Sin-{\alpha}\Sin-{\beta},\Cos-{\beta}).
+      \varphi(\beta,\alpha)=(\Cos{\alpha}\Sin{\beta},\Sin{\alpha}\Sin{\beta},\Cos{\beta}).
     \end{equation*}
     \begin{figure}[H]
       \centering
@@ -86,7 +86,7 @@ Eine weitere äquivalente lokale Beschreibung mit Hilfe einer Parametisierung:
   \end{subproof}
   Es folgt auch, dass \( \evaluateat{\varphi}{V_0} \) Einbettung ist:
   
-  Denn \( \left.\tilde{\varphi}\right|_{V_0}  \)
+  Denn \(\evaluateat{\tilde{\varphi}}{V_0}  \)
    ist Diffeomorphismus (auf \( W \)) und somit ist
     \( \evaluateat{\varphi}{V_0} \) 
     injektiv. Wegen 
@@ -133,7 +133,7 @@ Tatsächlich gilt:
     
     Im Beispiel~\ref{immersion_beispiel:kugel} oben, erreicht man daher nicht die ganze \( \mathbb{S}^n \). \( V=\ointerval{0}{\pi}\times \ointerval{0}{2\pi} \),
     \begin{equation*}
-      \varphi(\beta,\alpha)=(\Cos-{\alpha}\Sin-{\beta},\Sin-{\alpha}\Sin-{\beta},\Cos-{\beta}).
+      \varphi(\beta,\alpha)=(\Cos{\alpha}\Sin{\beta},\Sin{\alpha}\Sin{\beta},\Cos{\beta}).
     \end{equation*}
     \begin{figure}[H]
       \centering
@@ -143,7 +143,7 @@ Tatsächlich gilt:
     \end{figure}
     oder (\( V=\reals^2 \)) es liegt kein Homöomorphismus vor.
 
-    Für \( a\in \Set{(\Sin-{\beta},0,\Cos-{\beta})|b\in \ointerval{0}{\pi}} \) wählt man als lokale Parametisierung einfach \( V=\ointerval{0}{\pi}\times \ointerval{-\pi}{\pi} \) (dann fehlt ein anderer Halbkreis).
+    Für \( a\in \Set{(\Sin{\beta},0,\Cos{\beta})|b\in \ointerval{0}{\pi}} \) wählt man als lokale Parametisierung einfach \( V=\ointerval{0}{\pi}\times \ointerval{-\pi}{\pi} \) (dann fehlt ein anderer Halbkreis).
 
     Oder man wählt \( D\ni (y,z)\mapsto (\sqrt{1-y^2-z^2},y,z) \) mit
     \begin{equation*}

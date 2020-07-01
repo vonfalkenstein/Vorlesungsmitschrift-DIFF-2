@@ -105,7 +105,7 @@ Die Forderung an \( F \), lokal einer Lipschitz-Bedingung zu genügen, ist wicht
 \begin{beispiel*}
   Logistisches Wachstum \( x'=\alpha x(1-x) \), \( \alpha>0 \) auf \( \reals\times \ointerval{0}{1} \) (\( G(x)=x(1-x)\neq 0 \quad \forall x\in \ointerval{0}{1}\)). Seperation der Variablen:
   \begin{equation*}
-    \equalto{\evaluatebetween{\ln \abs*{\frac{y}{y-1}}}{x_0}{u(t)}\ \parens*{\text{Partialbruchzerlegung: } \frac{1}{y(1-y)}=\frac{1}{y}-\frac{1}{y-1}}}{\Integrate{\frac{1}{y(1-y)}}{y,x_0,u(t)}}\needed{=}\Integrate{\alpha}{s,t_0,t}=\alpha(t-t_0).
+    \equalto{\evaluatebetween{\Ln{\abs*{\frac{y}{y-1}}}}{x_0}{u(t)}\ \parens*{\text{Partialbruchzerlegung: } \frac{1}{y(1-y)}=\frac{1}{y}-\frac{1}{y-1}}}{\Integrate{\frac{1}{y(1-y)}}{y,x_0,u(t)}}\needed{=}\Integrate{\alpha}{s,t_0,t}=\alpha(t-t_0).
   \end{equation*}
   Also \( \frac{u(t)}{u(t)- 1}=\pm e^{\alpha t+C}  \), \( C \) Konstante.
   \begin{equation*}
@@ -120,7 +120,7 @@ Die Forderung an \( F \), lokal einer Lipschitz-Bedingung zu genügen, ist wicht
   \end{equation}
   Betrachte das DGL
   \begin{equation*}
-    \label{eq:homogene_DGL} x'=f\left( \frac{x}{t} \right)\tag{\( * \)}
+    \label{eq:homogene_DGL} x'=f\p*{ \frac{x}{t} }\tag{\( * \)}
   \end{equation*}
   auf \( V \). Dann gilt \( u\maps I\to \reals \), \( I\subset \fieldwithoutzero{\reals} \) Intervall, ist genau dann Lösung von \eqref{eq:homogene_DGL} zur Anfangsbedingung \( x(t_0)=x_0 \), \( t_0\in I \), \( (t_0,x_0)\in V \), wenn \( v(t)\definedas \frac{u(t)}{t} \) Lösung des AWP
   \begin{align*}
@@ -162,9 +162,9 @@ Die Forderung an \( F \), lokal einer Lipschitz-Bedingung zu genügen, ist wicht
   Trennung der Variablen:
   \begin{gather*}
     \Integrate{\frac{1}{1+z^2}}{z,y_0,v(t)}=\Integrate{\frac{1}{s}}{s,t_0,t}\\
-    \implies\ArcTan-{v(t)}-\ArcTan-{y_0}=\ln \frac{t}{t_0},
+    \implies\ArcTan{v(t)}-\ArcTan{y_0}=\Ln{\frac{t}{t_0}},
   \end{gather*}
-  also \( u(t)=t\cdot \Tan*{\ln \frac{t}{t_0}+a} \) löst die ursprüngliche Gleichung und ist auf einem Intervall \( I \), das \( t_0 \) enthält, definiert.
+  also \( u(t)=t\cdot \Tan+*{\Ln{\frac{t}{t_0}}+a} \) löst die ursprüngliche Gleichung und ist auf einem Intervall \( I \), das \( t_0 \) enthält, definiert.
 \end{beispiel*}
 \begin{bemerkung*}
   Typische DGL aus der klassischen Mechanik (Physik)

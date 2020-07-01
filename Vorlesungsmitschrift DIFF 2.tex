@@ -1,3 +1,5 @@
+% \includeonly{lec_20}
+
 \documentclass[numberwithin=chapter, nomasternumbers=false,empheqoverload]{hrflecture}
     
 \subject{Vorlesungsmitschrift}
@@ -6,10 +8,16 @@
 \date{Auf dem Stand vom \today}
 \author{Henry Ruben Fischer}
 
+\let\funcmin\Min
+\let\funcmax\Max
+\DeclareMathOperatorWithDelimiter+{\diffmax}[1,]{\max}{\lbrace}{\rbrace}{#1}
+\DeclareMathOperatorWithDelimiter+{\diffmin}[1,]{\min}{\lbrace}{\rbrace}{#1}
+\let\Max\diffmax
+\let\Min\diffmin
+
 \newcommand{\timestamp}[1]{\marginpar{\textcolor{red}{#1}}}
 \newcommand{\approxtimestamp}[1]{\timestamp{\SI{#1}{\minute}}}
 
-\includeonly{lec_19}
 
 \begin{document}
 \maketitle
@@ -44,6 +52,7 @@ Nicht von Professor Bahns durchgesehene Mitschrift, keine Garantie auf Richtigke
 \include{lec_17}
 \include{lec_18}
 \include{lec_19}
+\include{lec_20}
 % End of lectures
 
 \end{document}

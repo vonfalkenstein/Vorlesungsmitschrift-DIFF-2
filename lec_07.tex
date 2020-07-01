@@ -60,7 +60,7 @@ Konkret kann man also so vorgehen: Man bestimmt die partiellen Ableitungen und �
         \item Eine weitere Anwendung der Kettenregel. Betrachte die \enquote{Polarkoordinaten}
         \begin{align*}
             g\maps \reals_{>0}\times \reals&\to \reals^2\\
-            g(r,\phi)&=\transpose-{(r\cos \phi, r\sin \phi)}
+            g(r,\phi)&=\transpose-{(r\Cos{\phi}, r\Sin{\phi})}
         \end{align*}
         \begin{figure}[H]
             \centering
@@ -71,20 +71,20 @@ Konkret kann man also so vorgehen: Man bestimmt die partiellen Ableitungen und �
         \begin{align*}
             \totalderivative{f\circ g}(r,\phi)&=\totalderivative-{f}(g(r,\phi))\matrixmult \totalderivative-{g}(r,\phi
             )\\
-            \totalderivative-{g}(r,\phi)&=\begin{pNiceMatrix} \partial_1 g(r,\phi) & \partial_2 g(r,\phi) \end{pNiceMatrix}=\begin{pNiceMatrix} \cos \phi & -r \sin \phi \\ \sin \phi & r\cos \phi \end{pNiceMatrix}.
+            \totalderivative-{g}(r,\phi)&=\begin{pNiceMatrix} \partial_1 g(r,\phi) & \partial_2 g(r,\phi) \end{pNiceMatrix}=\begin{pNiceMatrix} \Cos{\phi} & -r \Sin{\phi}\\ \Sin{\phi}& r\Cos{\phi} \end{pNiceMatrix}.
         \end{align*}
         Somit 
         \begin{equation*}
             \begin{split}
-                \totalderivative{f\circ g}(r,\phi)&=\begin{pNiceMatrix} \partial_1 f(g(r,\phi)) & \partial_2 f(g(r,\phi))  \end{pNiceMatrix}\matrixmult \begin{pNiceMatrix} \cos \phi & -r\sin \phi \\ \sin \phi & r\cos \phi \end{pNiceMatrix}\\
-                &=\transpose-{\begin{pNiceMatrix} \partial_1 f(g(r,\phi))\cdot \cos \phi+\partial_2(f(g(r,\phi)))\cdot\sin \phi \\
-                -\partial_1 f(g(r,\phi))\cdot r\sin \phi+\partial_2 f(g(r,\phi))\cdot r \cos \phi \end{pNiceMatrix}}.
+                \totalderivative{f\circ g}(r,\phi)&=\begin{pNiceMatrix} \partial_1 f(g(r,\phi)) & \partial_2 f(g(r,\phi))  \end{pNiceMatrix}\matrixmult \begin{pNiceMatrix} \Cos{\phi} & -r\Sin{\phi}\\ \Sin{\phi}& r\Cos{\phi} \end{pNiceMatrix}\\
+                &=\transpose-{\begin{pNiceMatrix} \partial_1 f(g(r,\phi))\cdot \Cos{\phi}+\partial_2(f(g(r,\phi)))\cdot\Sin{\phi}\\
+                -\partial_1 f(g(r,\phi))\cdot r\Sin{\phi}+\partial_2 f(g(r,\phi))\cdot r \Cos{\phi} \end{pNiceMatrix}}.
             \end{split}
         \end{equation*}
         Man schreibt dafür manchmal
         \begin{align*}
-            \partial_r&=\cos \phi \partial_x+\sin \phi \partial_y\\
-            \partial_\phi &=-r\sin \phi \partial_x+r\cos \phi\partial_y.
+            \partial_r&=\Cos{\phi} \partial_x+\Sin{\phi}\partial_y\\
+            \partial_\phi &=-r\Sin{\phi}\partial_x+r\Cos{\phi}\partial_y.
         \end{align*}
     \end{enumerate}
 \end{beispiele}
@@ -94,13 +94,13 @@ Aber oft ist es \emph{viel} übersichtlicher, die partiellen Ableitungen \emph{n
     \begin{align*}
         \totalderivative-{f}(x,y)=\begin{pNiceMatrix} \frac{y(y^2)-x^2}{(x^2+y^2)}^2 \\ \frac{x(x^2-y^2)}{(x^2+y^2)} \end{pNiceMatrix}\\
         \totalderivative{f\circ g}(r,\phi)&\begin{aligned}[t]
-            &=\frac{1}{r}(\cos^2 \phi-\sin^2 \phi)\begin{pNiceMatrix} \overbrace{-\sin \phi\cos \phi+\cos \phi \sin \phi}^{=0} \\ \underbrace{r\sin^2 \phi+r\cos^2\phi}_{=r} \end{pNiceMatrix}\\
+            &=\frac{1}{r}(\cos^2 \phi-\sin^2 \phi)\begin{pNiceMatrix} \overbrace{-\Sin{\phi}\Cos{\phi}+\Cos{\phi} \Sin{\phi}}^{=0} \\ \underbrace{r\sin^2 \phi+r\cos^2\phi}_{=r} \end{pNiceMatrix}\\
             &=(0,\cos^2\phi -\sin^2\phi).
         \end{aligned}
     \end{align*}
     In diesem Fall rechnet man allerdings schneller direkt:
     \begin{align*}
-        \totalderivative{f\circ g}(r,\phi)=\totalderivative{\tilde{f}}(r,\phi)=\cos \phi\cdot\sin \phi.
+        \totalderivative{f\circ g}(r,\phi)=\totalderivative{\tilde{f}}(r,\phi)=\Cos{\phi}\cdot\Sin{\phi}.
     \end{align*}
 \end{beispiel*}
 \begin{bemdef}
@@ -117,7 +117,7 @@ Aber oft ist es \emph{viel} übersichtlicher, die partiellen Ableitungen \emph{n
 
     Ist \( \grad-{f(a)}\neq 0 \) und \( \norm{v}_{\text{E}}=1 \), so ist
     \begin{equation*}
-        \scalarproduct{\grad-{f(a)}}{v}=\norm{\grad-{f(a)}}_{\text{E}}\cdot\cos \alpha,
+        \scalarproduct{\grad-{f(a)}}{v}=\norm{\grad-{f(a)}}_{\text{E}}\cdot\Cos{\alpha},
     \end{equation*}
     wobei \( \alpha \) der zwischen \( \grad-{f(a)} \) und \( v \) in \( \reals^n \) eingeschlossene Winkel ist (in der durch die beiden Vektoren aufgespannten Ebene).
 
@@ -246,7 +246,7 @@ Eine analoge Aussage wollen wir nun im \( \reals^n \) beweisen.
     \end{equation*}
     Insbesondere ist das Integral einer matrixwertigen, stetigen Funktion \( A\maps I\to \Mat(m\times n,\reals) \) die Matrix, deren Einträge gleich den Integralen der Komponenten von \( A(t) \) ist, also
     \begin{equation*}
-        \Integrate{A(t)}{t,a,b}=\left( \Integrate{A_{ij}(t)}{t,a,b} \right)_{\substack{1\leq i\leq m\\1\leq j\leq n}}.
+        \Integrate{A(t)}{t,a,b}=\p*{ \Integrate{A_{ij}(t)}{t,a,b} }_{\substack{1\leq i\leq m\\1\leq j\leq n}}.
     \end{equation*}
 \end{definition*}
 \begin{satz}\label{verbindungsstrecke_integral_mws}
@@ -256,7 +256,7 @@ Eine analoge Aussage wollen wir nun im \( \reals^n \) beweisen.
     \end{equation*}
     Dann gilt:
     \begin{equation*}
-        f(a+h)-f(a)=\left( \Integrate{\totalderivative-{f}(a+th)}{t,0,1} \right)\matrixmult h.
+        f(a+h)-f(a)=\p*{ \Integrate{\totalderivative-{f}(a+th)}{t,0,1} }\matrixmult h.
     \end{equation*}
     \begin{figure}[H]
         \centering
@@ -271,7 +271,7 @@ Eine analoge Aussage wollen wir nun im \( \reals^n \) beweisen.
             f_i(a+h)-f_i(a)&=g_i(1)-g_i(0)\\
             &=\Integrate{g_i'(t)}{t,0,1}\\
             &=\Integrate{\totalderivative-{f}_i(a+th)\matrixmult h}{t,0,1}\\
-            &\explain[big]{\int \text{ linear}}{=}\underbrace{\left( \Integrate{\totalderivative-{f}_i(a+th)}{t,0,1} \right)}_{(1\times n)\text{-Matrix}}\matrixmult h\quad 1\leq i \leq m.
+            &\explain[big]{\int \text{ linear}}{=}\underbrace{\p*{ \Integrate{\totalderivative-{f}_i(a+th)}{t,0,1} }}_{(1\times n)\text{-Matrix}}\matrixmult h\quad 1\leq i \leq m.
         \end{split}
     \end{equation*}
     Dies sind die Zeilen der Matrix \( \Integrate{\totalderivative-{f}(a+th)}{t,0,1} \).
@@ -346,7 +346,7 @@ Dann gilt (Kettenregel!) (mit \( \Id(t)=t \)):
 \begin{equation*}
     \begin{split}
         0&=D*{f\circ \begin{pNiceMatrix} \Id \\ g \end{pNiceMatrix}}(t)\\
-         &=\totalderivative-{f}\left( (t,g(t)) \right)\matrixmult \totalderivative-{\begin{pNiceMatrix} \Id \\ g \end{pNiceMatrix}}(t)\\
+         &=\totalderivative-{f}\p*{ (t,g(t)) }\matrixmult \totalderivative-{\begin{pNiceMatrix} \Id \\ g \end{pNiceMatrix}}(t)\\
          &=\begin{pNiceMatrix} \partial_1 f(t,g(t)) & \partial_2 f(t,g(t)) \end{pNiceMatrix}\matrixmult \begin{pNiceMatrix} 1 \\ g'(t) \end{pNiceMatrix}
     \end{split}
 \end{equation*}
@@ -355,13 +355,13 @@ Dann gilt (Kettenregel!) (mit \( \Id(t)=t \)):
     g'(t)=-\frac{\partial_1 f(t,g(t))}{\partial_2 g(t,g(t))}.
 \end{align*}
 \begin{beispiel*}
-    \( g\maps \ointerval{0}{1}\to \reals \), \( g(t)=\arcsin \sqrt{1-t^3} \), also \( \sin(g(t))=\sqrt{1-t^3} \), also \( (\sin(g(t)))^2=1-t^3 \). Also gilt \( f(t,g(t))=0 \) für
+    \( g\maps \ointerval{0}{1}\to \reals \), \( g(t)=\ArcSin{\sqrt{1-t^3}} \), also \( \Sin{g(t)}=\sqrt{1-t^3} \), also \( (\Sin{g(t)})^2=1-t^3 \). Also gilt \( f(t,g(t))=0 \) für
     \begin{align*}
-        f(x,y)&=(\sin y)^2-1+x^3\\
-        \totalderivative-{f}(x,y)&=(3x^2,2\sin y \cos y)\\
+        f(x,y)&=(\Sin{y})^2-1+x^3\\
+        \totalderivative-{f}(x,y)&=(3x^2,2\Sin{y} \Cos{y})\\
         \implies g'(t)&\begin{aligned}[t]
-            &=-\frac{3t^2}{2\sin(g(t))\underbrace{\cos(g(t))}_{>0,}}
-            \intertext{da \( t\in \ointerval{0}{1} \) und \( \sqrt{1-t^3}\in \ointerval{0}{1} \), somit \( g(t)\in \ointerval{0}{\quot{\pi}{2}} \) \timplies \( \cos g(t)=+\sqrt{1-\underbrace{\sin^2 g(t)}_{1-t^3}}=\sqrt{t^3} \)}
+            &=-\frac{3t^2}{2\Sin{g(t)}\underbrace{\Cos+{g(t)}}_{>0,}}
+            \intertext{da \( t\in \ointerval{0}{1} \) und \( \sqrt{1-t^3}\in \ointerval{0}{1} \), somit \( g(t)\in \ointerval{0}{\quot{\pi}{2}} \) \timplies \( \Cos{g(t)}=+\sqrt{1-\underbrace{\sin^2 g(t)}_{1-t^3}}=\sqrt{t^3} \)}
             &=-\frac{3t^2}{2\sqrt{1-t^3}\sqrt{t^3}}.
         \end{aligned}
     \end{align*}

@@ -55,9 +55,9 @@
             \norm{I(f)}\leq (b-a)\supnorm{f}
         \end{align*}
         \timplies \( I \) ist stetig.
-        \item \( \totalderivative-{}\maps (\stetigefunktionen^1(\interval{a}{b}),\supnorm{\cdot})\to (\stetigefunktionen(\interval{a}{b}),\supnorm{\cdot}) \), \( \totalderivative-{}\maps f\mapsto f' \).
+        \item \( \totalderivative;\maps (\stetigefunktionen^1(\interval{a}{b}),\supnorm{\cdot})\to (\stetigefunktionen(\interval{a}{b}),\supnorm{\cdot}) \), \( \totalderivative;\maps f\mapsto f' \).
         \begin{behauptung*}
-            \( \totalderivative-{} \) ist nicht stetig.
+            \( \totalderivative; \) ist nicht stetig.
         \end{behauptung*}
         \begin{proof}[Denn:]
             \( D \) ist linear \checkmark, aber die Bedingung aus \thref{lineare_abbildung:stetigkeitssatz} ist verletzt: Betrachte \( f_n\in C^1(\interval{0}{2}) \), \( f_n=x^n    \).
@@ -112,7 +112,7 @@
     \begin{eigenschaftenenumerate}
         \item \emph{Kurven} \( \gamma\maps I\to \reals^n \), \( I \) Intervall, stetig.
         \begin{beispiele*}
-            \item \( \gamma\maps \interval{0}{2\pi}\to \reals^2 \), \( t\mapsto (r \cos t, r \sin t) \), \( r>0 \).
+            \item \( \gamma\maps \interval{0}{2\pi}\to \reals^2 \), \( t\mapsto (r \Cos{t}, r \Sin{t}) \), \( r>0 \).
             Stetigkeit: Wir versehen \( \reals^2 \) mit \( \supnorm{\cdot} \).
             Dann folgt die Stetigkeit von \( \gamma \) aus der Stetigkeit der Komponentenfunktionen \( I\to \reals \).
             \item \( \gamma\maps \reals\to \reals^2 \), \( t\mapsto (t^2-1,t^3-1) \) genauso.
@@ -151,15 +151,15 @@
                 \end{cases}
             \end{align*}
             \( f \) ist stetig auf \( \reals^2\setminus \zeroset \) (siehe oben).
-            \( f \) ist nicht stetig in \( 0 \): Betrachte etwa \( (x_n,y-n)=\left( \frac{1}{n}, \frac{1}{n^2} \right) \), \( n\geq 1 \).
+            \( f \) ist nicht stetig in \( 0 \): Betrachte etwa \( (x_n,y-n)=\p*{ \frac{1}{n}, \frac{1}{n^2} } \), \( n\geq 1 \).
             Dann gilt
             \begin{align*}
-                f(x_n,y_n)=\frac{1}{n^2n^2}\left( \frac{n^4}{2} \right)=\frac{1}{2}\cancel{\goesto}0.
+                f(x_n,y_n)=\frac{1}{n^2n^2}\p*{ \frac{n^4}{2} }=\frac{1}{2}\cancel{\goesto}0.
             \end{align*}
             \minisec{Achtung:}
-            Es gibt durchaus Folgen \( (x_n,y_n)\goesto 0 \) \sd \( f(x_n,y_n)\goesto 0 \) (für \( n\goesto \infty \)), \zb \( (x_n,y_n)=\left( 0,\frac{1}{n} \right) \), wo \( f\left( 0,\frac{1}{n} \right)=0\quad \forall n \) oder \( (x_n,y_n)=\left( \quot{1}{n},\quot{1}{n} \right) \) wo 
+            Es gibt durchaus Folgen \( (x_n,y_n)\goesto 0 \) \sd \( f(x_n,y_n)\goesto 0 \) (für \( n\goesto \infty \)), \zb \( (x_n,y_n)=\p*{ 0,\frac{1}{n} } \), wo \( f\p*{ 0,\frac{1}{n} }=0\quad \forall n \) oder \( (x_n,y_n)=\p*{ \quot{1}{n},\quot{1}{n} } \) wo 
             \begin{align*}
-                f(x_n,y_n)=\frac{1}{n^2}\left( \frac{n^2}{1+\quot{1}{n^2}} \right)\goesto 0.
+                f(x_n,y_n)=\frac{1}{n^2}\p*{ \frac{n^2}{1+\quot{1}{n^2}} }\goesto 0.
             \end{align*}
 
             Daher muss man, wenn man Stetigkeit zeigen will, in Argument finden, dass für \emph{alle} Folgen funktioniert.
@@ -210,14 +210,14 @@ Eine spezielle Klasse von Normen sind solche, die von einem sogenannten Skalarpr
         \end{figure}
         \( Y \) geht durch Drehstreckung aus \( x\neq 0 \) hervor:
         \begin{align*}
-            y=\norm{y}_{\text{E}} \begin{pNiceMatrix} \cos \alpha & -\sin \alpha \\ \sin \alpha & \cos \alpha \end{pNiceMatrix} \frac{x}{\norm{x}_{\text{E}}}.
+            y=\norm{y}_{\text{E}} \begin{pNiceMatrix} \Cos{\alpha} & -\Sin{\alpha}\\ \Sin{\alpha}& \Cos{\alpha} \end{pNiceMatrix} \frac{x}{\norm{x}_{\text{E}}}.
         \end{align*}
         Dann gilt:
         \begin{align*}
             \scalarproduct{x}{y}\begin{aligned}[t]
-                &=\frac{\norm{y}_{\text{E}}}{\norm{x}_{\text{E}}}\scalarproduct{x}{\begin{pNiceMatrix} \cos \alpha x_1-\sin \alpha x_2 \\ \sin \alpha x_1+\cos \alpha x_2 \end{pNiceMatrix}}\\
-                &=\frac{\norm{y}_{\text{E}}}(x_1^2\cos \alpha-\cancel{x_1 x_2\sin \alpha}+\cancel{x_1 x_2\sin \alpha+x_2^2\cos \alpha})\\
-                &=\norm{y}_{\text{E}}\cdot\norm{x}{\text{E}}\cdot \cos \alpha.
+                &=\frac{\norm{y}_{\text{E}}}{\norm{x}_{\text{E}}}\scalarproduct{x}{\begin{pNiceMatrix} \Cos{\alpha} x_1-\Sin{\alpha}x_2 \\ \Sin{\alpha}x_1+\Cos{\alpha} x_2 \end{pNiceMatrix}}\\
+                &=\frac{\norm{y}_{\text{E}}}(x_1^2\Cos{\alpha}-\cancel{x_1 x_2\Sin{\alpha}}+\cancel{x_1 x_2\Sin{\alpha}+x_2^2\Cos{\alpha}})\\
+                &=\norm{y}_{\text{E}}\cdot\norm{x}{\text{E}}\cdot \Cos{\alpha}.
             \end{aligned}            
         \end{align*}
         Das Skalarprodukt misst die Projektion von \( y \) auf \( x \)

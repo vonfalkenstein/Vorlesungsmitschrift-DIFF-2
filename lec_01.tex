@@ -222,7 +222,7 @@ für kein \( \delta>0 \) offen.
             U\cap V&= \bigcup_{\alpha, \beta} (\underbrace{V_\alpha\cap \tilde{V}_\beta}_{\text{offen in }X})\times(\underbrace{W_\alpha\cap \tilde{W}_\beta}_{\text{offen in }Y}).
         \end{align*}
         \item[\ref{topologie:unendliche_vereinigung}] \begin{align*}
-            \bigcup_\rho \left(\bigcup_\alpha V_\alpha^{(\rho)}\times W_\alpha^{(\rho)}\right)=\bigcup_{\rho,\alpha} V_\alpha^{(\rho)}\times W_{\alpha}^{(\rho)}.
+            \bigcup_\rho \p*{\bigcup_\alpha V_\alpha^{(\rho)}\times W_\alpha^{(\rho)}}=\bigcup_{\rho,\alpha} V_\alpha^{(\rho)}\times W_{\alpha}^{(\rho)}.
         \end{align*}
     \end{proofdescription}    
 \end{proof}
@@ -360,7 +360,7 @@ Wir formulieren nun Konvergenz und Stetigkeit für metrische Räume:
 \begin{beispiele}
     \begin{enumerate}
         \item \( \reals^m \) mit der Euklidischen Metrik. \( (x_n)_{n\geq 1} \) Folge in \( \reals^m \), also \( n\mapsto x_n=(x_n^{(1)},\ldots, x_n^{(m)})\in \reals^m \).
-        \item \( x_n=\left( \frac{1}{n}\cos(n),\frac{1}{n}\sin(n),a,\ldots,a \right) \)
+        \item \( x_n=\p*{ \frac{1}{n}\Cos+{n},\frac{1}{n}\Sin+{n},a,\ldots,a } \)
         \begin{behauptung*}
             \( x_n\goesto (0,0,a,\ldots,a)\defines x \).
         \end{behauptung*}
@@ -369,8 +369,8 @@ Wir formulieren nun Konvergenz und Stetigkeit für metrische Räume:
             \begin{align*}
                 &\distance{x_n}{x}^2 \begin{aligned}[t] 
                     &=\sum\limits_{i=1}^{m} (x_n^{(i)}-x^{(i)})^2\\
-                    &=\left( \frac{1}{n}\cos(n)-0 \right)^2+\left( \frac{1}{n}\sin(n)-0 \right)^2+(a-a)^2+\cdots +(a-a)^2\\
-                    &=\frac{1}{n^2}(\cos(n)^2+\sin(n)^2)=\frac{1}{n^2}
+                    &=\p*{ \frac{1}{n}\Cos+{n}-0 }^2+\p*{ \frac{1}{n}\Sin+{n}-0 }^2+(a-a)^2+\cdots +(a-a)^2\\
+                    &=\frac{1}{n^2}(\Cos+{n}^2+\Sin+{n}^2)=\frac{1}{n^2}
                 \end{aligned}\\
                 \implies &\distance{x_n}{x}=\frac{1}{n}\\
                 \implies &\distance{x_n}{x}<\varepsilon\logicspace\forall n\geq N\text{ mit } N>\frac{1}{\varepsilon}\\
@@ -444,9 +444,3 @@ Wir formulieren nun Konvergenz und Stetigkeit für metrische Räume:
         
     \end{enumerate}
 \end{beispiele}
-
-
-
-
-
-
