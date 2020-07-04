@@ -1,6 +1,7 @@
 % !TEX root = ./Vorlesungsmitschrift DIFF 2.tex  
 \lecture{Mo 29.06. 10:15}{}
-\section*{Etwas Maßtheorie}
+\section{Etwas Maßtheorie}
+\timestamp{4:30}
 \begin{definition}
   Sei \( X \) eine Menge, \( \explain{\text{\enquote{Sigma}}}{\Sigma} \) eine Familie von Teilmengen \( E\subset X \) mit
   \begin{align*}
@@ -12,7 +13,7 @@
   
   Gegeben zwei messbare Räume \( (X,\Sigma_X),(Y,\Sigma_y) \) nennt man \( f\maps X\to Y \), wenn gilt: Ist \( E\subset Y \) messbar (also \( E\in \Sigma_Y \)), so ist \( \inverse{f}(E) \) messbar in \( X \) (also \( \inverse{f}(E)\in \Sigma_X \)). Ein \emph{Maß } auf einer \( \sigma \)-Algebra über \( X \) ist eine Funktion \( \mu\maps \Sigma\to \reals_{\geq 0}\cup \set{+\infty} \), für die gilt \( \mu(\emptyset)=0 \) und die \( \varsigma \)-additiv (sigma-additiv) ist, für die also gilt
   \begin{equation*}
-    \mu\p*{\sum_{k=1}^{\infty}E_k}=\sum\limits_{k=1}^{\infty}\mu(E_k),
+    \mu\p*{\bigcup_{k=1}^{\infty}E_k}=\sum\limits_{k=1}^{\infty}\mu(E_k),
   \end{equation*}
   wenn \( E_k\cap E_l =\emptyset \) für \( k+l \). \( (X,\Sigma,\mu) \)  heißt \emph{Maßraum}.
 \end{definition}
@@ -21,10 +22,10 @@
   \begin{equation*}
     \diracmeasure{x}{E}=\begin{cases}
       1&x\in E\\
-      9 & x\not\in E
+      0 & x\not\in E
     \end{cases}, E\in \Sigma,
   \end{equation*}
-  \enquote{\emph{Dirac-Maß}}. \( f\maps E\to \reals \), \( \enquote{\Integrate{f}{\diracmeasure;{x}}}=\begin{cases}
+  \enquote{\emph{Dirac-Maß}}. \( f\maps E\to \reals \), \( \text{\enquote{\(\Integrate{f}{\diracmeasure;{x}}\)}}=\begin{cases}
     f(x) & x\in E\\
     0 & x\not\in E.
   \end{cases} \)
@@ -36,12 +37,12 @@ Ein Maß heißt \emph{vollständig}, wenn gilt: Ist \( N\in \Sigma \) mit \( \mu
   Aus den Definitionen folgt sofort:
   \begin{itemize}
     \item \( \emptyset\in \Sigma \)
-    \item Gibt es \( E\in \Sigma \) \sd \( \mu(E)>0 \), so ist \( \mu(\phi)=0 \) automatisch erfüllt.
+    \item Gibt es \( E\in \Sigma \) \sd \( \mu(E)>0 \), so ist \( \mu(\emptyset)=0 \) automatisch erfüllt.
     \item Die Komposition zweier messbarer Funktionen ist messbar.
   \end{itemize}
 \end{bemerkung*}
-\begin{satz}
-   Setze \( \mathcal{M}\definedas \Set{E\subset \reals^n|\characteristicfunction;{E}\in \stetigefunktionen[2]} \) und \( \mu(E)\definedas \Integrate{\characteristicfunction;{E}}{x} \).Dann ist \( (\reals^n,\mathcal{M},\mu) \) ein \( \varsigma \)-endlicher, vollständiger Maßraum.
+\begin{satz}\label{massraum_integration}
+   Setze \( \mathcal{M}\definedas \Set{E\subset \reals^n|\characteristicfunction;{E}\in \stufenfunktionen[2]} \) und \( \mu(E)\definedas \Integrate{\characteristicfunction;{E}}{x} \).Dann ist \( (\reals^n,\mathcal{M},\mu) \) ein \( \varsigma \)-endlicher, vollständiger Maßraum.
 \end{satz}
 \begin{proof}
   Das folgt direkt aus dem verallgemeinerten Satz von Beppo-Levi. Details als Hausaufgabe.
@@ -50,13 +51,14 @@ Ein Maß heißt \emph{vollständig}, wenn gilt: Ist \( N\in \Sigma \) mit \( \mu
   \begin{equation*}
     \lebesgueintegrablefunctions\definedas \set{\explain{\text{eigentlich Äquivalenszklassen }\set{g|g=f \text{ \fue}}}{f}\in \stufenfunktionen[2]|\Integrate{f}{x}<\infty}.
   \end{equation*}
-  \enquote{\emph{Lebesgue-intergrierbare Funktionen}}
+  \enquote{\emph{Lebesgue-intergrierbare Funktionen}}. Wohldefiniertheit \ref{nullmengen_funzen_mit_sigma_algebra} (Unabhängigkeit von Repräsentanten!). 
 \end{definition*}
+\approxtimestamp{13}
 \begin{proposition}\label{lebesgue_integrable_funktionen_vektorraum}
   \( \lebesgueintegrablefunctions \) ist ein Vektorraum und \( \int \maps \lebesgueintegrablefunctions\to \reals \), \( f\mapsto \Integrate{f}{x} \) ist lineare und monotone Abbildung.
 \end{proposition}
 \begin{proof}
-  Folgt aus \ref{integral_r2_monotonie}, \ref{summe_r2}, \ref{skalarmultiplikation_r2} (Eigenschaften von \( \stufenfunktionen[2] \)). Unabhängigkeit von Repräsentanten folgt aus \ref{integral_stufen_hoch_gleich_stufenintegral}.
+  Folgt aus \ref{integral_r2_monotonie}, \ref{summe_r2}, \ref{skalarmultiplikation_r2} (Eigenschaften von \( \stufenfunktionen[2] \)). Unabhängigkeit von Repräsentanten folgt aus \ref{integral_aequivalente_stufenfunktionen_gleich}.
   
 \end{proof}
 \begin{bemerkung*}
@@ -78,7 +80,7 @@ Ein Maß heißt \emph{vollständig}, wenn gilt: Ist \( N\in \Sigma \) mit \( \mu
 \begin{folgerung}
   \begin{enumerate}
     \item\label{lebesgue_integrable_funktionen_norm} \( \explicitnorm{\lebesgueintegrablefunctions}{f}\definedas \Integrate{\abs{f}}{x} \) definiert eine Norm auf \( \lebesgueintegrablefunctions \).
-    \item\label{nullmengen_funzen_mit_sigma_algebra} \( N\subset \reals^n \) ist Nullmenge \tiff \( N\in \mathcal{M} \) und  (\s \ref{}) \( \mu(N)=\Integrate{\characteristicfunction;{N}}{x}=0 \).
+    \item\label{nullmengen_funzen_mit_sigma_algebra} \( N\subset \reals^n \) ist Nullmenge \tiff \( N\in \mathcal{M} \) und  (\s \ref{massraum_integration}) \( \mu(N)=\Integrate{\characteristicfunction;{N}}{x}=0 \).
   \end{enumerate}
 \end{folgerung}
 \begin{proof}
@@ -103,8 +105,8 @@ Ein Maß heißt \emph{vollständig}, wenn gilt: Ist \( N\in \Sigma \) mit \( \mu
   \end{proofdescription}
 \end{proof}
 \timestamp{Weitere Erläuterungen \tto 22:15}
-\section*{Weitere Folgerungen}
-\begin{satz}[Faton]
+\section{Weitere Folgerungen}
+\begin{satz}[Fatou]\label{fatou}
   Sei \( (f_k)_k\subset \lebesgueintegrablefunctions \), \( f_k\goesto f \). Ist \( f_k\geq 0\quad \forall k \) und \( \liminf_{k \goesto \infty}\Integrate{f_k}{x}<\infty \), dann ist \( f_k\in \lebesgueintegrablefunctions \) und 
   \begin{equation*}
     \Integrate{f}{x}\leq \liminf \Integrate{f_n}{x}.
@@ -114,27 +116,27 @@ Ein Maß heißt \emph{vollständig}, wenn gilt: Ist \( N\in \Sigma \) mit \( \mu
 \begin{proof}
   Setze \( g_m\definedas \inf\set{f_k|k\geq m} \). Dann gilt \( g_m\goesupto f \) und (wegen \( \liminf \int f_k<\infty \)) \( \sup \Integrate{g_m}{x}<\infty \). Also folgt \( f\in \lebesgueintegrablefunctions \), wenn gezeigt ist, dass \( g_m\in \lebesgueintegrablefunctions \) (aus \ref{beppo-levi-einfach}). Setze zu \( m\in \naturals \), \( l=m,m+1,\dotsc \) 
   \begin{equation*}
-    g_{m,l}\definedas \Min{f_k|m\leq \leq l}\in \lebesgueintegrablefunctions
+    g_{m,l}\definedas \Min{f_k|m\leq k\leq l}\in \lebesgueintegrablefunctions
   \end{equation*}
   (wegen Bemerkung nach \ref{lebesgue_integrable_funktionen_vektorraum}). \( g_{m,l}\goesdownto_l g_m \), \( \Integrate{g_{m,l}}{x}<\infty \quad \forall l\) \timplies \( -g_m\in \lebesgueintegrablefunctions \). Es folgt mit \ref{beppo-levi-einfach} (monotone Konvergenz) und \( g_m\leq f_m \)
   \begin{align*}
     \Integrate{f}{x}&=\lim_m \Integrate{g_m}{x}\\
     &=\lim_m \Integrate{\inf_{k\geq m}}{f_k}{x}\\
-    &\explain{\int{\inf_{k\geq m}{f_k}}\leq \int f_j\quad \forall j\geq m,\logicspace \text{also}\logicspace \Integrate{\inf_{k\geq m}}{f_k}\leq \inf_{j\geq m}\int f_j}{\leq}\lim_m \inf_{k\geq m}\Integrate{f_k}{x}\\
+    &\explain{\int{\inf_{k\geq m}{f_k}}\leq \int f_j\quad \forall j\geq m,\logicspace \text{also}\logicspace \int \inf_{k\geq m}{f_k}\leq \inf_{j\geq m}\int f_j}{\leq}\lim_m \inf_{k\geq m}\Integrate{f_k}{x}\\
     &\leq \liminf_m \Integrate{f_m}{x}.
   \end{align*}
 \end{proof}
 \begin{satz}[Lebesgue, majorisierte Konvergenz]\label{majorisierte_konvergenz}
-  Sei \( \p*{f_k}_k\subset \lebesgueintegrablefunctions \), \( f_k\goesto f \). Gibt es \( g\in \lebesgueintegrablefunctions \), \sd \( \abs{g_k}\leq g \qquad \forall k  \), so ist \( f\in \lebesgueintegrablefunctions \) und \( \Integrate{f_k}{x}\goesto \Integrate{f}{x} \)
+  Sei \( \p*{f_k}_k\subset \lebesgueintegrablefunctions \), \( f_k\goesto f \). Gibt es \( g\in \lebesgueintegrablefunctions \), \sd \( \abs{f_k}\leq g \qquad \forall k  \), so ist \( f\in \lebesgueintegrablefunctions \) und \( \Integrate{f_k}{x}\goesto \Integrate{f}{x} \)
 \end{satz}
 \begin{bemerkung*}
-  Voraussetzung \( \abs{f_k}\leq g \) ist wichtig, wie folgendes Anti-Beispiel zeigt: \( f_k=k \characteristicfunction;{\ointerval{0}{\frac{1}{3}}} \), \( f_k\goesto f=0 \), aber \( \int f_k=1\quad \forall k \).
+  Voraussetzung \( \abs{f_k}\leq g \) ist wichtig, wie folgendes Anti-Beispiel zeigt: \( f_k=k \characteristicfunction;{\ointerval{0}{\frac{1}{k}}} \), \( f_k\goesto f=0 \), aber \( \int f_k=1\quad \forall k \).
 \end{bemerkung*}
 \begin{proof}[\ref{majorisierte_konvergenz}]
-  Wir wenden Faton an au \( \p*{g-f_k}_k \) und \( \p*{g+f_k}_k \) \timplies \( g-f,g+f\in \lebesgueintegrablefunctions \) und 
+  Wir wenden Faton an auf \( \p*{g-f_k}_k \) und \( \p*{g+f_k}_k \) \timplies \( g-f,g+f\in \lebesgueintegrablefunctions \) und 
   \begin{gather*}
     \Integrate{g-f}{x}\leq \liminf \Integrate{g-f_k}{x}=\Integrate{g}{x}-\limsup \Integrate{f_k}{x}\tag{\( * \)} \label{eq:majorisierte_konvergenz:minus}\\
-    \Integrate{g+f}{x}\leq \liminf \Integrate{g+f_k}{x}=\Integrate{g}{x}+\liminf \Integrate{f_k}{x}\tag{\( ** \)} \label{eq:majorisierte_konvergenz:pus}
+    \Integrate{g+f}{x}\leq \liminf \Integrate{g+f_k}{x}=\Integrate{g}{x}+\liminf \Integrate{f_k}{x}\tag{\( ** \)} \label{eq:majorisierte_konvergenz:plus}
   \end{gather*}
   \( f=\frac{1}{2}(g+f)-\frac{1}{2}(g-f)\in \lebesgueintegrablefunctions \)
   \begin{equation*}
@@ -144,7 +146,7 @@ Ein Maß heißt \emph{vollständig}, wenn gilt: Ist \( N\in \Sigma \) mit \( \mu
 \begin{beispiel*}
   Wir berechnen
   \begin{equation*}
-    \lim_{n \goesto \infty}\Integrate{\p*{n\cdot\Sin+{\frac{x}{n}}}^n}{x,\interval{0}{1}},
+    \lim_{n \goesto \infty}\Integrate{\p*{n\cdot\Sin+*{\frac{x}{n}}}^n}{x,\interval{0}{1}},
   \end{equation*}
   also
   \begin{equation*}
@@ -169,33 +171,38 @@ Ein nützliches Kriterium, um zu testen, ob \(f\in \lebesgueintegrablefunctions\
 
 \begin{lemma}
     \label{kriterium_L1}
-    Sei \(f\maps\reals^n\to\reals\cup\Set{\pm\infty}\) Funktion. Gibt es \((\varphi_k)_k\subset\mathcal{R_0}\) mit 
+    Sei \(f\maps\reals^n\to\reals\cup\Set{\pm\infty}\) Funktion. Gibt es \((\varphi_k)_k\subset\stufenfunktionen\) mit 
     \begin{equation*}
         \lebesguenorm{f-\varphi_k}\longto 0\ (k\to\infty),
     \end{equation*}
     so gilt 
     \begin{equation*}
-        \Integrate{ f}{x}=\lim_k\Integrate{ \varphi_k}{x},
+        \Integrate{ f}{x}=\lim_k\Integrate{ \varphi_k}{x}<\infty,
     \end{equation*}
     also \(f\in \lebesgueintegrablefunctions\).
 
-    Umgekehrt, ist \(f\in \lebesgueintegrablefunctions\), so gibt es zu \(\varepsilon>0\) ein \(\varphi\in\mathcal{R_0}\) s.d. \(\lebesguenorm{f-\varphi}<\varepsilon\).
+    Umgekehrt, ist \(f\in \lebesgueintegrablefunctions\), so gibt es zu \(\varepsilon>0\) ein \(\varphi\in\stufenfunktionen\) \sd \(\lebesguenorm{f-\varphi}<\varepsilon\).
 \end{lemma}
 
 \begin{proof}
-    \textbf{1. Beh.} 
+  \begin{proofdescription}
+    \item{1. Beh.} 
     \begin{align*}
-        \abs*{\Integrate{\varphi_k}{x}-\Integrate{\varphi_l}{x}} &<\Integrate{\abs{\varphi_k-\varphi_l}}{x} = \lebesguenorm{\varphi_k-\varphi_l}\\
-        &<\lebesguenorm{\varphi_k-f}+\lebesguenorm{f-\varphi_l}
+        \abs*{\Integrate{\varphi_k}{x}-\Integrate{\varphi_l}{x}} &\leq\Integrate{\abs{\varphi_k-\varphi_l}}{x} = \lebesguenorm{\varphi_k-\varphi_l}\\
+        &\leq \lebesguenorm{\varphi_k-f}+\lebesguenorm{f-\varphi_l}
     \end{align*}
-    \(\implies(\varphi_k)_k\) bilden Cauchy-Folge \(\implies\) Konvergenz in \( \reals \).
+    \(\implies\p*{\Integrate{\varphi_k}{x}}_k\) bilden Cauchy-Folge \(\implies\) Konvergenz in \( \reals \).
+    \begin{equation*}
+      \abs*{\Integrate{f}{x}-\Integrate{\varphi_k}{x}}\leq \lebesguenorm{f-\varphi_k}\implies \Integrate{f}{x}=\lim \Integrate{\varphi_k}{x}.
+    \end{equation*}
 
-    \textbf{2. Beh.} \Obda \(f> 0\).
-    \texists \((\varphi_k)_k\subset\mathcal{R}_0\), \( \varphi_k> 0\), \( \varphi_k\goesupto f\) mit \(\Integrate{\varphi_k}{x}\goesupto\Integrate{f}{x}<\infty\).
+    \item{2. Beh.} \Obda \(f> 0\).
+    \texists \((\varphi_k)_k\subset\stufenfunktionen[0]\), \( \varphi x_k> 0\), \( \varphi_k\goesupto f\) mit \(\Integrate{\varphi_k}{x}\goesupto\Integrate{f}{x}<\infty\).
     \begin{equation*}
         \implies \Integrate{ f}{x}-\Integrate{\varphi_k}{x}=\Integrate{\abs{f-\varphi_k}}{x}=\lebesguenorm{f-\varphi_k}< \varepsilon
     \end{equation*}
     für \(k\) groß genug.
+  \end{proofdescription}
 \end{proof}
 
 \begin{satz}
@@ -204,7 +211,7 @@ Ein nützliches Kriterium, um zu testen, ob \(f\in \lebesgueintegrablefunctions\
 \end{satz}
 
 \begin{proof}
-    Sei \((f_k)_k\subset \lebesgueintegrablefunctions\) Cauchy-Folge bezüglich \(\lebesguenorm{}\).
+    Sei \((f_k)_k\subset \lebesgueintegrablefunctions\) Cauchy-Folge bezüglich \(\lebesguenorm{\cdot}\).
     Betrachte eine Teilfolge \((f_{k_j})_j\) mit 
     \begin{gather*}
         \implies\lebesguenorm{f_{k_{j+1}}-f_{k_j}}<2^{-j}
@@ -220,64 +227,60 @@ Ein nützliches Kriterium, um zu testen, ob \(f\in \lebesgueintegrablefunctions\
         \end{aligned}
         \intertext{Es gilt}
         \begin{aligned}
-            \lebesguenorm{S_K^g(x)} &\le\lebesguenorm{f_{k_1}}+\sum_{j=1}^K\lebesguenorm{f_{k_{j+1}}-f_{k_j}}\\
-            k\to \infty &<\lebesguenorm{f_{k_1}}+\sum_{j=1}^k 2^{-j}
+            \lebesguenorm{S_K^g(x)} &\leq\lebesguenorm{f_{k_1}}+\sum_{j=1}^K\lebesguenorm{f_{k_{j+1}}-f_{k_j}}\\
+            k\to \infty &\leq\lebesguenorm{f_{k_1}}+\sum_{j=1}^k 2^{-j}
         \end{aligned}
     \end{gather*}
-    \begin{itemize}
-        \item \(g\in \lebesgueintegrablefunctions\) (monotone Konvergenz, \ref{theoBeppoLevi2})
-        \item auch die Reihe, die \(f\) definiert, konvergiert punktweise \fue
-        \item \(f\in \lebesgueintegrablefunctions\).
-    \end{itemize}
+    \timplies \(g\in \lebesgueintegrablefunctions\) (monotone Konvergenz, \ref{beppo-levi-einfach})\\
+    \timplies  auch die Reihe, die \(f\) definiert, konvergiert punktweise \fue\\
+    \timplies \(f\in \lebesgueintegrablefunctions\).
+    
     Wir zeigen: \(f_k\to f\) (\bzgl \(\lebesguenorm{}\)).
-    Es gilt (Teleskopsummen-Argument) \(S_{K-1}(x)=f_{k_x}\).
-    \begin{itemize}
-        \item \(f_{k_K}\to f\) punktweise \fue \((K\to\infty\)).
+    Es gilt (Teleskopsummen-Argument) \(S_{K-1}(x)=f_{k_x}\).\\
+    \timplies \(f_{k_K}\to f\) punktweise \fue \((K\to\infty\)).
 
-        Zudem gilt 
-        \begin{align*}
-            \abs{f(x)-S_K(f)(x)}&\overset{\triangle}{\le}\abs{f(x)}+\abs{S_K(f)(x)}\\
-            &\overset{\triangle}{\leq}_2\abs{g(x)} \forall k
-        \end{align*}
-        \item (majorante Konvergenz \ref{theoLebesgueMajKonv})
-        \begin{equation*}
-            \Integrate{\abs{f(x)-S_K(f)(x)}}{x}\to\Integrate{ 0}{x}=0
-        \end{equation*}
-        also \(\lebesguenorm{f-f_{k_K}}\to 0\ (k\to\infty)\), also: \(\forall\varepsilon>0\exists N\) s.d. \(\lebesguenorm{f-f_{k_K}}<\varepsilon\forall k_K> N\).
-        Schließlich: \((f_k)_k\) ist Cauchy-Folge also \(\forall\varepsilon>0\exists M\) s.d. \(\lebesguenorm{f_k-f_l}<\varepsilon\forall k,l> M\)
-        \item \(\lebesguenorm{f_k-f}\le\lebesguenorm{f_k-f_{k_K}}+\lebesguenorm{f_{k_K}-f}<2\varepsilon\) für \(k,k_K>\Max*{N,M}\).
-    \end{itemize}
+    Zudem gilt 
+    \begin{align*}
+        \abs{f(x)-S_K(f)(x)}&\underset{\triangle}{\leq}\abs{f(x)}+\abs{S_K(f)(x)}\\
+        &\underset{\triangle}{\leq}_2\abs{g(x)} \forall k
+    \end{align*}
+    \timplies (majorante Konvergenz \ref{majorisierte_konvergenz})
+    \begin{equation*}
+        \Integrate{\abs{f(x)-S_K(f)(x)}}{x}\to\Integrate{ 0}{x}=0
+    \end{equation*}
+    also \(\lebesguenorm{f-f_{k_K}}\to 0\ (k\to\infty)\), also: \(\forall\varepsilon>0\exists N\) \sd \(\lebesguenorm{f-f_{k_K}}<\varepsilon\forall k_K\geq  N\).
+    Schließlich: \((f_k)_k\) ist Cauchy-Folge also \(\forall\varepsilon>0\exists M\) \sd \(\lebesguenorm{f_k-f_l}<\varepsilon\forall k,l> M\)\\
+    \timplies \(\lebesguenorm{f_k-f}\leq \lebesguenorm{f_k-f_{k_K}}+\lebesguenorm{f_{k_K}-f}<2\varepsilon\) für \(k,k_K\geq \Max*{N,M}\).
 \end{proof}
 
 Mann kann \(\lebesgueintegrablefunctions(\interval{a}{b},\reals)\) auch durch Vervollständigung (\bzgl \(\lebesguenorm{\cdot}\)) von \(\stetigefunktionen(\interval{a}{b},\reals)\) konstruieren.
 
 
-\section*{Messbare Funktionen}
+\section{Messbare  Funktionen}
 
 \begin{lemma}
-    \label{lemmMessbareFkt} % 6.22
-    \(f\maps\reals^n\to\reals\cup\Set*{\pm\infty}\) ist messbar genau dann wenn \(\exists (\varphi_k)_k\subset \mathcal{R_0}\) mit \(\varphi_k\to f\) \fue.
+    \label{grenzwert_von_treppenfunktionen_ist_messbar} % 6.22
+    \(f\maps\reals^n\to\reals\cup\Set{\pm\infty}\) ist messbar genau dann wenn \(\exists (\varphi_k)_k\subset \stufenfunktionen\) mit \(\varphi_k\to f\) \fue.
 \end{lemma}
 
 \begin{proof}
     Hausaufgabe.
 \end{proof}
 
-\begin{lemma}\ 
-    \label{lemmMessbareFkt2}
+\begin{lemma}\label{messbar_eigenschaften}
 
     \begin{enumerate}
-        \item Ist \(f\in\mathcal{R}_2\) so ist \(f\) messbar.
-        \item Ist \(f\) messbar und \(\abs{f}<g,\ g\in \lebesgueintegrablefunctions\), so ist \(f\in \lebesgueintegrablefunctions\).
-        \item Ist \(f\) messbar und \(f> 0\) so ist \(f\in\mathcal{R_2}\).
+        \item \label{r2_messbar}Ist \(f\in\stufenfunktionen[2]\) so ist \(f\) messbar.
+        \item \label{beschraenkte_messbare_ist_lebesgue}Ist \(f\) messbar und \(\abs{f}<g,\ g\in \lebesgueintegrablefunctions\), so ist \(f\in \lebesgueintegrablefunctions\).
+        \item Ist \(f\) messbar und \(f> 0\) so ist \(f\in\stufenfunktionen[2]\).
     \end{enumerate}
 \end{lemma}
 
 \begin{proof}\ 
     
     \begin{enumerate}
-        \item \(f=f_1-f_2,\ f_1,f_2\in\mathcal{R_1}\). Seien \((\varphi_k)_k,(\psi_k)_k\subset \mathcal{R_0}\) mit \(\varphi_k\goesupto f_1,\psi_k\goesupto f_2\).
-        Es gilt \((\varphi_k-\psi_k)_k\subset\mathcal{R_0}\) und \(\varphi_k-\psi_k\to f\).
+        \item \(f=f_1-f_2,\ f_1,f_2\in\stufenfunktionen[1]\). Seien \((\varphi_k)_k,(\psi_k)_k\subset \stufenfunktionen\) mit \(\varphi_k\goesupto f_1,\psi_k\goesupto f_2\).
+        Es gilt \((\varphi_k-\psi_k)_k\subset\stufenfunktionen\) und \(\varphi_k-\psi_k\to f\).
         
         \item Sei \((\varphi_k)_k\) mit \(\varphi_k\to f\). Dann sind \(f_k\definedas \Med{-g}{\varphi_k}{g}\) mit 
         \begin{equation*}
@@ -288,34 +291,34 @@ Mann kann \(\lebesgueintegrablefunctions(\interval{a}{b},\reals)\) auch durch Ve
             \end{cases}
         \end{equation*}
         in \(\lebesgueintegrablefunctions\) (denn ist etwa \(x<z\), so ist \(\Med{x}{y}{z}=\Max{x,\Min{y,z}}\)).
-        Wegen \(\abs{f_k}<g\forall k\) folgt die Behauptung aus \ref{theoLebesgueMajKonv}.
+        Wegen \(\abs{f_k}<g\forall k\) folgt die Behauptung aus \ref{majorisierte_konvergenz}.
         \item Wähle \(A_1\subset A_2\subset\ldots,\ \mu(A_j)<\infty,\ \evaluateat{f}{\reals^n\setminus \bigcup_j A_j}=0\).
-        \(f_k\definedas \Min*{f,k\characteristicfunction;{A_k}}\in \lebesgueintegrablefunctions\) (wegen (ii) \(f_k\goesupto f\). Behauptung folgt mit \ref{theoBeppoLevi}).
+        \(f_k\definedas \Min*{f,k\characteristicfunction;{A_k}}\in \lebesgueintegrablefunctions\) (wegen \ref{beschraenkte_messbare_ist_lebesgue} \(f_k\goesupto f\). \Beh folgt mit \ref{beppo-levi-einfach}).
     \end{enumerate}
 \end{proof}
 
 
-\section*{Zum Verhältnis von Lebesgue- / Riemann-Integral}
+\section{Zum Verhältnis von Lebesgue- / Riemann-Integral}
 
 Es gibt Funktionen, die sind Lebesgue-integrierbar, aber nicht Riemann-integrierbar.
-\begin{beispiel}
+\begin{beispiel*}
     \(\characteristicfunction;{\rationals}\)\\
     Riemann-Integration:\\
         Alle Obersummen sind 1, alle Untersummen 0. Nur Funktionen mit endlich vielen Sprungstellen / Unendlichkeiten sind Riemann-integrierbar.
 
     Lebesgue-Integration:\\
         \( \rationals \) = Nullmenge in \( \reals \)\timplies\(\int\characteristicfunction;{\rationals}=0\). Es sind abzählbar unendlich viele Sprung- / Unendlichkeitsstellen erlaubt.
-\end{beispiel}
+\end{beispiel*}
 
 \begin{erinnerung*}
-  Bei der Riemann-Integration wurden die Ordinate unterteilt in Partitionen.Lebesgue kümmert sich um das Bild von \(f\) (also die Abszisse).
+  Bei der Riemann-Integration wurden die Ordinate unterteilt in Partitionen. Lebesgue kümmert sich um das Bild von \(f\) (also die Abszisse).
 \end{erinnerung*}
 
 \textbf{Achtung:} Uneigentlich Riemann-integrierbare Funktionen müssen nicht Lebesgue-integrierbar sein.
 
-Denn es gilt: Ist \(f\in \lebesgueintegrablefunctions\) so ist \(\abs{f}\in \lebesgueintegrablefunctions\) (\ref{concNormL1} (i) Beweis).
+Denn es gilt: Ist \(f\in \lebesgueintegrablefunctions\) so ist \(\abs{f}\in \lebesgueintegrablefunctions\) (\ref{lebesgue_integrable_funktionen_norm} Beweis).
 
-Ein Fall wie \(g\) = Treppenfunktion und \(\evaluateat{g}{[n-1],n}=(-1)^{n+1}\frac{1}{n},\ n\in\naturals\)
+Ein Fall wie \(g\) = Treppenfunktion und \(\evaluateat{g}{\interval{n-1}{n}}=(-1)^{n+1}\frac{1}{n},\ n\in\naturals\)
 \begin{equation*}
     \lim_{m\to\infty}\Integrate{g(x)}{x,0,m}=\sum(-1)^{n+1}\frac{1}{n}< \infty 
 \end{equation*}
@@ -341,10 +344,10 @@ Wir zeigen stattdessen:
 \begin{proof}
     \(I=\interval{a}{b}\). Für jede Funktion \(h\) auf \(I\) gilt \(\abs{h}<\explicitnorm{\infty,I}{h}\cdot \Id_I\)
     \begin{equation*}
-        0>\explain{\text{als Funktion auf }\reals, \evaluateat{h_I}{\reals\setminus I}=0}{\lebesguenorm{h_i}}
+        \implies\explain{\text{als Funktion auf }\reals,\logicspace \evaluateat{h_I}{\reals\setminus I}=0}{\lebesguenorm{h_i}}
         <\norm{h}_{\infty,I}\cdot \lebesguenorm{\Id_I}=(b-a)\norm{h}_{\infty,I}
     \end{equation*}
-    Sei \(f\) Regelfunktion auf \(I\) und \((\varphi_k)_k\subset\mathcal{R_0}\) mit \(\norm{f-\varphi_k}_{\infty,I}\to 0\ (k\to\infty)\).
+    Sei \(f\) Regelfunktion auf \(I\) und \((\varphi_k)_k\subset\stufenfunktionen\) mit \(\norm{f-\varphi_k}_{\infty,I}\to 0\ (k\to\infty)\).
     Dann folgt 
     \begin{equation*}
         \explain{

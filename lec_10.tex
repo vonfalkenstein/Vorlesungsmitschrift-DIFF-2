@@ -1,6 +1,6 @@
 % !TEX root = ./Vorlesungsmitschrift DIFF 2.tex  
 \lecture{Do 21.05. 10:15}{}
-\section*{Lokale Extrema unter Nebenbedingungen}
+\section{Lokale Extrema unter Nebenbedingungen}
 Wir betrachten folgende Situation:\\
 Wir suchen Extremstellen einer Funktion \( f \) unter gewissen Nebenbedingungen \zb 
 \begin{enumerate}[label=\rechtsklammer{\alph*}]
@@ -130,7 +130,7 @@ Wir nutzt man diesen Satz zur Lösung von Problemen wie oben?
     also ist \( a=\begin{pNiceMatrix} \quot{2}{3} & -\quot{1}{3} & \quot{1}{3} \end{pNiceMatrix} \) der einzige Kandidat für ein Extremum. Da es ein Minimum gibt, muss \( a \) dieses sein.
     \end{enumerate}
 \end{beispiele*}
-\section*{Höhere Ableitungen, Taylorformel}
+\section{Höhere Ableitungen, Taylorformel}
 Ist \( f\maps U\to \reals^m \), \( U\subset \reals^n \) offen, stetig differenzierbar, kann man sich fragen, obe auch die Ableitung \( U\ni x\mapsto \totalderivative-{f}(x) \) als Funktion \( \totalderivative-{f}\maps U\to \matrices{m}{n}{\reals} \) wieder differenzierbar ist (in \( a \), auf ganz \( U \), auf \( V\subset U \) \dots), also ob es eine \emph{lineare} Abbildung \( A\maps \reals^n\to \matrices{m}{n}{\reals} \) gibt, \sd 
 \begin{equation*}
   \totalderivative-{f}(a+h)=\totalderivative-{f}(a)+A(h)*\underline{R}_a^{\totalderivative-{f}}(h)
@@ -258,7 +258,7 @@ Wenn nein, muss man prüfen, ob \( \underline{R}_a^g \) das richtige Verhalten b
     \end{aligned}
   \end{align*}
 \end{antibeispiel*}
-\section*{Der Laplace-Operator}
+\section{Der Laplace-Operator}
 Sei \( f\maps U\to \reals \), \( U\subset \reals^n \) offen, zweimal partiell stetig differenzierbar. Man setzt
 \begin{equation*}
   \laplaceoperator f(x)\definedas \partial_1^2 f(x)+\partial_2^2 f(x)+\dotsb+\partial_n^2 f(x)
