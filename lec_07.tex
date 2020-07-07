@@ -3,7 +3,7 @@
 \section{Beispiele und Erläuterungen}
 Wir hatten letztes Mal gesehen, dass, wenn \( f\maps U\to \reals^m\), \( U\subset \reals^n \) offen, in \( a\in U \) differenzierbar ist, dass dann die Ableitung mit Hilfe der \emph{partiellen Ableitungen}, also der Richtungsableitungen in Richtung der kanonischen Basis geschrieben werden kann,
 \begin{align*}
-    \totalderivative-{f}(a)=\begin{pNiceMatrix}
+    \totalderivative{f}(a)=\begin{pNiceMatrix}
         \partial_1 f_1 & \Cdots & \partial_n f_1 \\
         \Vdots &  & \Vdots \\
         \partial_1 f_m & \Cdots & \partial_n f_m
@@ -52,9 +52,9 @@ Konkret kann man also so vorgehen: Man bestimmt die partiellen Ableitungen und �
         \end{description}
         Für \( a\neq 0 \) gilt jedoch: \( \sqrt{\cdot}\maps \reals_{>0} \to \reals \) ist differenzierbar (\diffcourse{1}) und ebenso die polynomiale Funktion \( x\mapsto \sum_{i=1}^{n}x_i^2 \) \timplies \( f \) ist differenzierbar auf \( \reals^n\setminus \zeroset\).
 
-        Wir hätten \( \totalderivative-{f}(a) \), \( a\neq 0 \) auch mit der höherdimensionalen Kettenregel bestimmen können:
+        Wir hätten \( \totalderivative{f}(a) \), \( a\neq 0 \) auch mit der höherdimensionalen Kettenregel bestimmen können:
         \begin{multline*}
-            \totalderivative-{f}(a)=Dw(p(a))\matrixmult Dp(a)=\frac{1}{2\sqrt{p(a)}}\cdot \begin{pNiceMatrix} 2a_1 & \Cdots & 2a_n \end{pNiceMatrix}\\
+            \totalderivative{f}(a)=Dw(p(a))\matrixmult Dp(a)=\frac{1}{2\sqrt{p(a)}}\cdot \begin{pNiceMatrix} 2a_1 & \Cdots & 2a_n \end{pNiceMatrix}\\
             w\maps \reals_{>0}\to \reals, \logicspace w(t)=\sqrt{t},\logicspace p(a)=\sum_{i=1}^{n}a_i^2. 
         \end{multline*}
         \item Eine weitere Anwendung der Kettenregel. Betrachte die \enquote{Polarkoordinaten}
@@ -69,14 +69,14 @@ Konkret kann man also so vorgehen: Man bestimmt die partiellen Ableitungen und �
         \end{figure}
         und \( f\maps \reals^2\to \reals \).
         \begin{align*}
-            \totalderivative{f\circ g}(r,\phi)&=\totalderivative-{f}(g(r,\phi))\matrixmult \totalderivative-{g}(r,\phi
+            \totalderivative+{f\circ g}(r,\phi)&=\totalderivative{f}(g(r,\phi))\matrixmult \totalderivative{g}(r,\phi
             )\\
-            \totalderivative-{g}(r,\phi)&=\begin{pNiceMatrix} \partial_1 g(r,\phi) & \partial_2 g(r,\phi) \end{pNiceMatrix}=\begin{pNiceMatrix} \Cos{\phi} & -r \Sin{\phi}\\ \Sin{\phi}& r\Cos{\phi} \end{pNiceMatrix}.
+            \totalderivative{g}(r,\phi)&=\begin{pNiceMatrix} \partial_1 g(r,\phi) & \partial_2 g(r,\phi) \end{pNiceMatrix}=\begin{pNiceMatrix} \Cos{\phi} & -r \Sin{\phi}\\ \Sin{\phi}& r\Cos{\phi} \end{pNiceMatrix}.
         \end{align*}
         Somit 
         \begin{equation*}
             \begin{split}
-                \totalderivative{f\circ g}(r,\phi)&=\begin{pNiceMatrix} \partial_1 f(g(r,\phi)) & \partial_2 f(g(r,\phi))  \end{pNiceMatrix}\matrixmult \begin{pNiceMatrix} \Cos{\phi} & -r\Sin{\phi}\\ \Sin{\phi}& r\Cos{\phi} \end{pNiceMatrix}\\
+                \totalderivative+{f\circ g}(r,\phi)&=\begin{pNiceMatrix} \partial_1 f(g(r,\phi)) & \partial_2 f(g(r,\phi))  \end{pNiceMatrix}\matrixmult \begin{pNiceMatrix} \Cos{\phi} & -r\Sin{\phi}\\ \Sin{\phi}& r\Cos{\phi} \end{pNiceMatrix}\\
                 &=\transpose-{\begin{pNiceMatrix} \partial_1 f(g(r,\phi))\cdot \Cos{\phi}+\partial_2(f(g(r,\phi)))\cdot\Sin{\phi}\\
                 -\partial_1 f(g(r,\phi))\cdot r\Sin{\phi}+\partial_2 f(g(r,\phi))\cdot r \Cos{\phi} \end{pNiceMatrix}}.
             \end{split}
@@ -92,26 +92,26 @@ Aber oft ist es \emph{viel} übersichtlicher, die partiellen Ableitungen \emph{n
 \begin{beispiel*}
     \( f(x,y)=\frac{xy}{x^2+y^2} \) auf \( U=\reals^2\setminus \zeroset \).
     \begin{align*}
-        \totalderivative-{f}(x,y)=\begin{pNiceMatrix} \frac{y(y^2)-x^2}{(x^2+y^2)}^2 \\ \frac{x(x^2-y^2)}{(x^2+y^2)} \end{pNiceMatrix}\\
-        \totalderivative{f\circ g}(r,\phi)&\begin{aligned}[t]
+        \totalderivative{f}(x,y)=\begin{pNiceMatrix} \frac{y(y^2)-x^2}{(x^2+y^2)}^2 \\ \frac{x(x^2-y^2)}{(x^2+y^2)} \end{pNiceMatrix}\\
+        \totalderivative+{f\circ g}(r,\phi)&\begin{aligned}[t]
             &=\frac{1}{r}(\cos^2 \phi-\sin^2 \phi)\begin{pNiceMatrix} \overbrace{-\Sin{\phi}\Cos{\phi}+\Cos{\phi} \Sin{\phi}}^{=0} \\ \underbrace{r\sin^2 \phi+r\cos^2\phi}_{=r} \end{pNiceMatrix}\\
             &=(0,\cos^2\phi -\sin^2\phi).
         \end{aligned}
     \end{align*}
     In diesem Fall rechnet man allerdings schneller direkt:
     \begin{align*}
-        \totalderivative{f\circ g}(r,\phi)=\totalderivative{\tilde{f}}(r,\phi)=\Cos{\phi}\cdot\Sin{\phi}.
+        \totalderivative+{f\circ g}(r,\phi)=\totalderivative+{\tilde{f}}(r,\phi)=\Cos{\phi}\cdot\Sin{\phi}.
     \end{align*}
 \end{beispiel*}
 \begin{bemdef}
     Wir hatten allgemeiner gesehen:\\
     Ist \( f\maps U\to \reals^m \), \( U\subset \reals^n \) offen, differenzierbar in \( a \), so gilt
     \begin{align*}
-        \partial_v f(a)\cdot \totalderivative-{f}(a)\matrixmult v\quad \forall v\in \reals^n.
+        \partial_v f(a)\cdot \totalderivative{f}(a)\matrixmult v\quad \forall v\in \reals^n.
     \end{align*}
     Ist speziell \( m=1 \), so definiert man
     \begin{align*}
-        \grad-{f(a)}\definedas \transpose-{\totalderivative-{f}(a)}=\begin{pNiceMatrix} \partial_1 f(a) \\ \Vdots \\ \partial_n f(a) \end{pNiceMatrix}\in \reals^n
+        \grad-{f(a)}\definedas \transpose-{\totalderivative{f}(a)}=\begin{pNiceMatrix} \partial_1 f(a) \\ \Vdots \\ \partial_n f(a) \end{pNiceMatrix}\in \reals^n
     \end{align*}
     \enquote{Gradient von \( f \) in \( a \)}, und schreibt \( \partial_v f(a)=\scalarproduct{\grad-{f(a)}}{v} \).
 
@@ -205,7 +205,7 @@ Aber oft ist es \emph{viel} übersichtlicher, die partiellen Ableitungen \emph{n
 \end{proof}
 \begin{bemerkungen}
     \begin{enumerate}
-        \item \label{stetig_differenzierbar} Man sieht: Sind die \( \partial_j  \) auf \( U \) stetig, so ist auch die Ableitung \( x\mapsto \totalderivative-{f}(x) \) eine stetige Abbildung \( U\to \Mat(m\times n, \reals) \). Man sagt in dem Fall: \( f \) ist \emph{stetig differenzierbar}.
+        \item \label{stetig_differenzierbar} Man sieht: Sind die \( \partial_j  \) auf \( U \) stetig, so ist auch die Ableitung \( x\mapsto \totalderivative{f}(x) \) eine stetige Abbildung \( U\to \Mat(m\times n, \reals) \). Man sagt in dem Fall: \( f \) ist \emph{stetig differenzierbar}.
         \item \label{stetige_partielle_zu_ableitung:nicht_nur_reell} Die Einschränkung auf reellwertige Funktionen ist keine, denn: \( f\maps U\to \reals^m \) ist genau dann in \( a\in U\subset \reals^n \) differenzierbar, wenn alle Komponentenfunktionen \( f_j\maps U\to \reals \) differenzierbar sind (\( j=1,\dotsc, m \))-
     \end{enumerate}
 \end{bemerkungen}
@@ -256,7 +256,7 @@ Eine analoge Aussage wollen wir nun im \( \reals^n \) beweisen.
     \end{equation*}
     Dann gilt:
     \begin{equation*}
-        f(a+h)-f(a)=\p*{ \Integrate{\totalderivative-{f}(a+th)}{t,0,1} }\matrixmult h.
+        f(a+h)-f(a)=\p*{ \Integrate{\totalderivative{f}(a+th)}{t,0,1} }\matrixmult h.
     \end{equation*}
     \begin{figure}[H]
         \centering
@@ -265,21 +265,21 @@ Eine analoge Aussage wollen wir nun im \( \reals^n \) beweisen.
     \end{figure}
 \end{satz}
 \begin{proof}
-    Wir arbeiten zeilenweise, betrachten also die Komponentenfunktionen. Setze \( g_i(t)\definedas f_i(a+th) \). Dann ist \( g_i \) stetig differenzierbar, denn mit der Kettenregel gilt \( g_i'(t)=\totalderivative-{f}_i(a+th)\matrixmult h \).
+    Wir arbeiten zeilenweise, betrachten also die Komponentenfunktionen. Setze \( g_i(t)\definedas f_i(a+th) \). Dann ist \( g_i \) stetig differenzierbar, denn mit der Kettenregel gilt \( g_i'(t)=\totalderivative{f}_i(a+th)\matrixmult h \).
     \begin{equation*}
         \begin{split}
             f_i(a+h)-f_i(a)&=g_i(1)-g_i(0)\\
             &=\Integrate{g_i'(t)}{t,0,1}\\
-            &=\Integrate{\totalderivative-{f}_i(a+th)\matrixmult h}{t,0,1}\\
-            &\explain[big]{\int \text{ linear}}{=}\underbrace{\p*{ \Integrate{\totalderivative-{f}_i(a+th)}{t,0,1} }}_{(1\times n)\text{-Matrix}}\matrixmult h\quad 1\leq i \leq m.
+            &=\Integrate{\totalderivative{f}_i(a+th)\matrixmult h}{t,0,1}\\
+            &\explain[big]{\int \text{ linear}}{=}\underbrace{\p*{ \Integrate{\totalderivative{f}_i(a+th)}{t,0,1} }}_{(1\times n)\text{-Matrix}}\matrixmult h\quad 1\leq i \leq m.
         \end{split}
     \end{equation*}
-    Dies sind die Zeilen der Matrix \( \Integrate{\totalderivative-{f}(a+th)}{t,0,1} \).
+    Dies sind die Zeilen der Matrix \( \Integrate{\totalderivative{f}(a+th)}{t,0,1} \).
 \end{proof}
 \begin{folgerung}\label{differenz_abschaetzung_ableitung_verbindungsstrecke}
     Unter den Voraussetzungen von \ref{verbindungsstrecke_integral_mws} gilt \( \norm{f(x+h)-f(x)}_{\text{E}}\leq C\norm{h} \) mit
     \begin{equation*}
-        C=\sup_{t\in \interval{0}{1}}\norm{\totalderivative-{f}(x+th)}_{\text{op}}.
+        C=\sup_{t\in \interval{0}{1}}\norm{\totalderivative{f}(x+th)}_{\text{op}}.
     \end{equation*}
 \end{folgerung}
 Der Beweis benötigt noch ein Lemma:
@@ -330,11 +330,11 @@ Der Beweis benötigt noch ein Lemma:
 \begin{proof}[Beweis von \thref{differenz_abschaetzung_ableitung_verbindungsstrecke}]
     \begin{equation*}
         \begin{split}
-            \norm{f(x+h)-f(x)}_{\text{E}}&\leq \Integrate{\norm{\totalderivative-{f}(x+th)\matrixmult h}_{\text{E}}}{t,0,1}\\
-            &\leq \Integrate{\norm{\totalderivative-{f}(x+th)}_{\text{op}}\matrixmult \norm{h}_{\text{E}}}{t,0,1}.
+            \norm{f(x+h)-f(x)}_{\text{E}}&\leq \Integrate{\norm{\totalderivative{f}(x+th)\matrixmult h}_{\text{E}}}{t,0,1}\\
+            &\leq \Integrate{\norm{\totalderivative{f}(x+th)}_{\text{op}}\matrixmult \norm{h}_{\text{E}}}{t,0,1}.
         \end{split}
     \end{equation*}
-    Das Supremum wird angenommen, da \( t\mapsto \norm{\totalderivative-{f}(x+th)}_{\text{op}} \) stetig ist und \( \interval{0}{1} \) kompakt.
+    Das Supremum wird angenommen, da \( t\mapsto \norm{\totalderivative{f}(x+th)}_{\text{op}} \) stetig ist und \( \interval{0}{1} \) kompakt.
 \end{proof}
 \section{Implizite Funktionen} Eine Anwendung der Kettenregel
 
@@ -346,7 +346,7 @@ Dann gilt (Kettenregel!) (mit \( \Id(t)=t \)):
 \begin{equation*}
     \begin{split}
         0&=D*{f\circ \begin{pNiceMatrix} \Id \\ g \end{pNiceMatrix}}(t)\\
-         &=\totalderivative-{f}\p*{ (t,g(t)) }\matrixmult \totalderivative-{\begin{pNiceMatrix} \Id \\ g \end{pNiceMatrix}}(t)\\
+         &=\totalderivative{f}\p*{ (t,g(t)) }\matrixmult \totalderivative{\begin{pNiceMatrix} \Id \\ g \end{pNiceMatrix}}(t)\\
          &=\begin{pNiceMatrix} \partial_1 f(t,g(t)) & \partial_2 f(t,g(t)) \end{pNiceMatrix}\matrixmult \begin{pNiceMatrix} 1 \\ g'(t) \end{pNiceMatrix}
     \end{split}
 \end{equation*}
@@ -358,7 +358,7 @@ Dann gilt (Kettenregel!) (mit \( \Id(t)=t \)):
     \( g\maps \ointerval{0}{1}\to \reals \), \( g(t)=\ArcSin{\sqrt{1-t^3}} \), also \( \Sin{g(t)}=\sqrt{1-t^3} \), also \( (\Sin{g(t)})^2=1-t^3 \). Also gilt \( f(t,g(t))=0 \) für
     \begin{align*}
         f(x,y)&=(\Sin{y})^2-1+x^3\\
-        \totalderivative-{f}(x,y)&=(3x^2,2\Sin{y} \Cos{y})\\
+        \totalderivative{f}(x,y)&=(3x^2,2\Sin{y} \Cos{y})\\
         \implies g'(t)&\begin{aligned}[t]
             &=-\frac{3t^2}{2\Sin{g(t)}\underbrace{\Cos+{g(t)}}_{>0,}}
             \intertext{da \( t\in \ointerval{0}{1} \) und \( \sqrt{1-t^3}\in \ointerval{0}{1} \), somit \( g(t)\in \ointerval{0}{\quot{\pi}{2}} \) \timplies \( \Cos{g(t)}=+\sqrt{1-\underbrace{\sin^2 g(t)}_{1-t^3}}=\sqrt{t^3} \)}

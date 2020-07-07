@@ -1,0 +1,196 @@
+% !TEX root = ./Vorlesungsmitschrift DIFF 2.tex  
+\lecture{Mo 06.07. 10:15}{}
+\section{Der Transformationssatz}
+\begin{ziel*}
+  Eine Verallgemeinerung der Substitutionsregel
+  \begin{equation*}
+    \Integrate{f(y)}{y,g(a),g(b)}=\Integrate{f(g(x))g'(x)}{x,a,b}
+  \end{equation*}
+  für \( f\maps U\to \reals \), \( U\subset \reals^n \).
+\end{ziel*}
+\begin{satz}[Transformationssatz]\label{transformationssatz}
+  Seien \( U,V\subset \reals^n \) offen und \( \Psi\maps U\to \reals^n \) eine Diffeomorphismus auf \( \Phi(U)=V \) (\dh \( \Phi \) ist \( \stetigefunktionen[1] \), invertierbar mit \( \inverse{\Phi}\in \stetigefunktionen[1] \)). Sei \( f\in \lebesgueintegrablefunctions[1](\reals^n) \). Dann gilt
+  \begin{enumerate}
+    \item \( U\ni x\mapsto (f\circ \Phi)(x)\abs{\determinant{-{\totalderivative{\Phi(x)}}}}\in \lebesgueintegrablefunctions{\reals^n} \) (fortgesetzt mit \( 0 \) auf \( \reals^n\setminus U \)).
+    \item \item \( \Integrate{f(y)}{y,V}=\Integrate{(f\circ \Phi)(v)\abs{\determinant{\totalderivative{\Phi(x)}}}}{x,U} \).
+  \end{enumerate}
+\end{satz}
+\begin{proof}[Beweis (angelehn an Diendonné, Grundzüge der modernen Analysis)]
+  Wir gehen vor wie im Satz von Fubini und beweisen die Aussage erst für \( f\in \stufenfunktionen[0] \), dann \( f\in \stufenfunktionen[1]\cap \lebesgueintegrablefunctions \), dann \( f\in \stufenfunktionen[2]\cap \lebesgueintegrablefunctions=\lebesgueintegrablefunctions \).
+  
+  Zunächst benötigen wir zwei Lemmata:
+  \begin{lemma}\label{lipschitz_stetige_funktion_bild_von_nullmenge_ist_nullmenge}
+    Sei \( N\subset \reals^n \) Nullmenge und \( \Phi\maps N\to \reals^n \) eine lokal Lipschitz-stetige Funktion, also gelte
+    \begin{equation*}
+      \limsup_{\substack{y\in N\\ y\goesto x}}\frac{\norm{\Phi(x)-\Phi(y)}}{\norm{x-y}}<\infty\quad \forall x\in N.
+    \end{equation*}
+    Dann ist \( \Phi(N) \) Nullmenge in \( \reals^n \).
+  \end{lemma}
+  \begin{subproof}
+    Wähle \( \norm{\cdot}=\maxnorm{\cdot} \). Dann ist \( B_r(x) \) der in \( x \) zentrierte Würfel der Kantenlänge \( 2r \). Zu \( k, m\in \naturals \) setze
+    \begin{equation*}
+      F_{k,n}\definedas \Set{x\in N|\frac{\norm{\Phi(x)-\Phi(y)}}{\norm{x-y}}\leq k\quad \forall <\in B_{\frac{1}{m}}(x)\cap N}.
+    \end{equation*}
+    Sei \( \varphi>0 \). Überdecke \( N \) mit offenen Kugeln \( B_j=U_{r_j}(x_j) \) mit \( x_j\in F_{k,m} \) und \( r_j<\frac{1}{m} \) und \( \sum_{j}\volume{B_j}<\varepsilon \). Dann ist für \( x\in I_{k,m}\cap B_j \).
+    \begin{align*}
+      &\norm{x-x_j}<r_j<\frac{1}{m}\quad \forall x_j\in I_{k,m}\\
+      \implies &\norm{\Phi(x)-\Phi(x-j)}\leq k\norm{x-x_j}<k r_j\\
+      \implies &\Phi\p*{F_{k,m}\cap B_j}\subset U_{k,r_j}(\Phi(x_j))\\
+      \implies &\Phi(I_{k,m})\subset \bigcup U_{k,r_j} B(\Phi(x_j))\\
+      \implies &\volume-{\Phi\p*{\bigcup_{k,m}F_{k,m}}}\leq \sum_{j}\volume*{U_{k,r_j}(\Phi(x_j))}=k^n \sum_{j}\volume{B_j}<k^n \varepsilon\\
+      \implies &N=\bigcup_{k,m}F_{km}\implies \text{\Beh}
+    \end{align*}
+    
+  \end{subproof}
+  \begin{lemma}\label{affin_lineare_funzt_mit_borelmenge}
+    \( \Phi\maps \reals^n\to \reals^n \), \( \Phi(x)=Ax+b \) (affin linear). Dann gilt für jede Borelmenge \( E \)
+    \begin{equation*}
+      \volume{\Phi(E)}=\abs{\determinant{A}}\volume{E}.
+    \end{equation*}
+  \end{lemma}
+  \begin{subproof}
+    Unabhängigkeit von \( b \): Folgt aus der Definition, denn das Volumen eines Quaders ändert sich nicht durch Verschiebung. \Obda nehmen wir an, \( E \) ist ein Quader \( Q \), dessen eine Ecke im Ursprung liegt. Somit \obda \( Q=\Set{x|0\leq x_j\leq c_j}\) mit \( c_j>0 \).
+
+    Jede Seitenfläche von \( Q \) ist Nullmenge (kann als Graph einer Funktion geschrieben werden). Nach \thref{lipschitz_stetige_funktion_bild_von_nullmenge_ist_nullmenge} ist das Bild einer Seitenfläche unter einer linearen Abbildung wieder Nullmenge.
+
+    Sind \( \Phi_1 \) und \( \Phi_2 \) lineare Abbildungen und gilt die Aussage für \( \Phi_1 \) und \( \Phi_2 \), dann auch für die Verknüpfung.
+
+    Jede lineare Abbildung ist Komposition von Abbildungen der folgenden Typen:
+    \begin{eigenschaftenenumerate}
+      \item \label{lineare_abbildungen_dekomposition:permutation}Permutationsmatrizen,
+      \item \label{lineare_abbildungen_dekomposition:diagonal}\( \diagonalmatrix{\alpha,1,1,\dotsc,1}\quad \alpha\in \reals \),
+      \item \label{lineare_abbildungen_dekomposition:modifizierte_einheits}\( \begin{pNiceMatrix} 1 & 0 & \Block{2-3}<\Large>{0} &  \\ 1 & 1 &  \\  \Block{3-2}<\Large>{0} &  & 1\\
+      &&&\Ddots\\
+    &&&&1 \end{pNiceMatrix} \).
+    \end{eigenschaftenenumerate}
+    \begin{description}
+      \item[\ref{lineare_abbildungen_dekomposition:permutation}] ändert das Volumen nicht. \( \determinant;=\pm 1 \), also stimmt die Aussage für Permutation.
+      \item[\ref{lineare_abbildungen_dekomposition:diagonal}] streckt das Intervall in Eins-Richtung um einen Faktor \( \alpha \). Das neue Volumen unterscheidet sich vom alten durch den Faktor \( \abs{\alpha} \). Also stimm auch hier die Aussage des Satzes.
+      \item[\ref{lineare_abbildungen_dekomposition:modifizierte_einheits}] wegen \ref{lineare_abbildungen_dekomposition:permutation} und \ref{lineare_abbildungen_dekomposition:diagonal} \obda \( c_1=c_2=\dotsb=c_n=1 \). \( \Phi \) vom Typ \ref{lineare_abbildungen_dekomposition:modifizierte_einheits}: 
+      \begin{equation*}
+        \Phi(Q)=\Set{x|x_1\leq x_2\leq x_1+1\quad 0\leq x_j\leq 1\logicspace j\neq 2}.
+      \end{equation*}
+      Setze \( F_1\definedas \Set{x\in \Phi(Q)|x_2\leq 1} \), \( F_2\definedas \Phi(Q)\setminus F_1 \).
+      \begin{align*}
+        \implies \volume{\Phi(Q)}&=\volume{F_1}+\volume{F_2}\\
+        &=\volume{F_1}+\volume{F_2-\explain{\text{kanonischer Einheitsektor}}{e_2}}\\
+        &\explain{Q=F_1\cup (F_2-e_2)}{=}\volume{Q}.
+      \end{align*}
+      Wegen \( \determinant{\begin{pNiceMatrix} 1 & 0 & \Block{2-3}<\Large>{0} &  \\ 1 & 1 &  \\  \Block{3-2}<\Large>{0} &  & 1\\
+        &&&\Ddots\\
+      &&&&1 \end{pNiceMatrix}}=1 \) folgt auch hier die \Beh.
+    \end{description}
+  \end{subproof}
+  Zurück zum Beweis der Transformationsformel \ref{transformationssatz}.\\
+  Kürze ab \( J(x)=\abs{\determinant{\totalderivative{\Phi}(x)}} \) (\( J \) für Jacobi). Wie im Beweis des Satzes von Fubini (\ref{fubini}) zeigen wir die Aussage zunächst für Stufenfunktionen, folgern dann, dass es auch für \( f\in \stufenfunktionen[1] \) und auch \( \stufenfunktionen[2] \) gilt, somit erst recht für \( f\in \lebesgueintegrablefunctions \).
+
+  Wir stellen zunächst fest: Ist \( N \) Nullmenge, so \( \inverse{\Phi}(N) \) auch Nullmenge (\ref{lipschitz_stetige_funktion_bild_von_nullmenge_ist_nullmenge}) und somit ist
+  \begin{equation*}
+    \Integrate{\characteristicfunction{N}{y}}{y,V}=0=\Integrate{\braceannotate{=\characteristicfunction;{N}\circ \Phi}{\characteristicfunction;{\inverse{\Phi}(N)}}{x}J(x)}{x,Z}.
+  \end{equation*}
+  Zudem: Die Vorschriften (\( E \) Borelmenge)
+  \begin{align*}
+    E&\mapsto \Integrate{\characteristicfunction{E}{y}}{y,V}\\
+    E&\mapsto \Integrate{(\characteristicfunction;{E}\circ \Phi)(x)}{I(x),x}=\Integrate{\characteristicfunction{\inverse{\Phi}(E)}{x}I(x)}{x,U}
+  \end{align*}
+  definieren Maße.
+
+  Wir betrachten nun eine Treppenfunktion \( f\in \stufenfunktionen[0] \). Wegen der Linearität genügt es \( \characteristicfunction;{Q}\in \stufenfunktionen[0] \), \( Q \) Quader, zu betrachten.
+
+  \begin{enumerate}[label=\rechtsklammer{\arabic*.}]
+    \item \label{substitution:affinl_linear}Die Behauptung stimmt für \( \Phi(x)=A\matrixmult x+b \) (affin linear):
+    \begin{align*}
+      \Integrate{\characteristicfunction;{Q}}{y,V}&=\mu(Q\cap )\\
+      &=E\definedas \inverse{\Phi(Q\cap V)}=\mu(A(E)+x_0)\\
+      &\underset{\text{\ref{affin_lineare_funzt_mit_borelmenge}}}{=}\Integrate{\characteristicfunction;{\inverse{\Phi}(Q\cap V)}\abs{\determinant-{A}}}{x}.
+    \end{align*}
+    \begin{equation*}
+      x\in \inneres{\Phi}(Q\cap V)\iff \Phi(x)\in Q\cap V\iff \Phi(x)\in Q\logicspace \text{und}\logicspace x\in U.
+    \end{equation*}
+    \item \label{substitution:eindimensional_char_funktion}Die Behauptung stimmt, wenn \( n=1 \) ist: Dann ist \( U=\bigcup_{k=1}^{\infty}I_k \), \( I_k \) Intervall,\( I_k\cap I_j=\emptyset \), \( k\neq j \). Betrachte also \obda \( U=\interval{a}{b} \). \( \determinant{\totalderivative{\Phi}} \) hat auf \( U \) konstantes Vorzeichen. \Obda \( \determinant{\totalderivative{\Phi}}>0 \) (also \( \Phi \) monoton wachsend). Dann ist für \( (c,d)\subset  \): \( \inverse{\Phi}(\ointerval{c}{\cdot})=\ointerval{\inverse{\Phi}(c)}{\inverse{\Phi}(d)} \), also
+    \begin{equation*}
+      \Integrate{\characteristicfunction{Q}{y}}{y,V}=\Integrate{1}{y,c,d}=d-c=\Integrate{\Phi'(x)}{x,\inverse{\Phi}(c),\inverse{\Phi}(d)}=\Integrate{(\braceannotate{=\characteristicfunction;{\inverse{\Phi}(Q)}}{\characteristicfunction;{Q}\circ \Phi}){x}\abs{\Phi'(x)}}{x}.
+    \end{equation*}
+    \item \label{substitution:parametisierung_letzte_variable}Die Behauptung stimmt für \( \Phi \) von der Form
+    \begin{equation*}
+      \Phi(x)=\transpose{(x_1,\dotsc,x_{n-1},\phi(x_1,\dotsc,x_n))}
+    \end{equation*}
+    mit \( \varphi\in \stetigefunktionen[1] \) und
+    \begin{equation*}
+      \determinant{D\Phi(x)}=\determinant{\begin{pNiceMatrix} \Block{3-2}<\Large>{\mathds{1}_{n-1}} &  & 0 \\  &  & \Vdots \\  &  & 0\\\partial_1 \varphi & \Cdots &\partial_n \varphi \end{pNiceMatrix}}=\partial_n \varphi(x)\neq 0.
+    \end{equation*}
+    Ist \( \tilde{x}\in \reals^{n-1} \), \sd
+    \begin{equation*}
+      U_{\tilde{x}}\definedas \Set{x_n\in \reals|(\tilde{x},x_n)\in U}\neq \emptyset,
+    \end{equation*}
+    so ist \( \Phi_n \maps x-n\mapsto \varphi(\tilde{x},x_n) \) eine Abbildung auf eine offene Teilmenge \( \subset \reals \).
+
+    Mit \ref{substitution:eindimensional_char_funktion} folgt daher
+    \begin{equation*}
+      \Integrate{\characteristicfunction{Q}(\tilde{x},x_n)}{x_n,\Phi_n(U_{\tilde{x}})}=\Integrate{(\characteristicfunction;{Q}\circ \Phi)(\tilde{x},x_n)\braceannotate{=\abs{\determinant{\totalderivative{\Phi}}(\tilde{x},x_n)}}{\abs*{\odv*{\Phi_n}{x_n}(\tilde{x},x_n)}}}{x_n,U_{\tilde{x}}}.
+    \end{equation*}
+    Fubini \timplies
+    \begin{align*}
+      \Integrate{\characteristicfunction;{Q}}{x,V}&=\Integrate{\p*{\Integrate{\characteristicfunction{Q}(\tilde{x},x_n)}{x_n,\Phi_n(U_{\tilde{x}})}}}{\tilde{x}}\\
+      &=\Integrate{\Integrate{(\characteristicfunction;{Q}(\tilde{x},x_n))(\tilde{x},x_n)\explain{\abs{\determinant{\totalderivative{\Phi}(\tilde{x},x_n)}}}{J(\tilde{x},x_n)}}{x_n,U_{\tilde{x}}}}{\tilde{x}}\\
+      &=\Integrate{(\characteristicfunction;{Q}\circ \Phi)(x)J(x)}{x,U}.
+    \end{align*}
+    \item Die Behauptung ist bewiesen, wenn wir zeigen, dass zu jedem \( x_0\in  \) \texists   offene Umgebung \( U_0 \), \sd \( \evaluateat{\Phi}{U_0} \) eine Komposition endlich vieler Abbildungen wie in \ref{substitution:affinl_linear} und \ref{substitution:parametisierung_letzte_variable} ist. \Obda \( x_0=0 \) (sonst komponiere \( \Phi \) mit Translation). Ersetze \( \Phi \) durch \( \inverse{\totalderivative{\Phi}(0)}\matrixmult \Phi \) (Matrixmultiplikation \bzw Komposition mit einer konstanten linearen Abbildung).
+
+    Dann gilt \( \totalderivative-{\Phi}(0)=\mathds{1} \). Definiere
+    \begin{equation*}
+      u_j\maps U\to \reals^n,\quad u_j(x)=\begin{pNiceMatrix} \Phi_1(x) \\ \Vdots \\ \Phi_j(x)\\x_{j+1}\\\Vdots\\x_n \end{pNiceMatrix}.
+    \end{equation*}
+    Satz von der Umkehrabbildung \timplies \texists \( U0 \) Umgebung von \( 0\), \sd \( \evaluateat{u_j}{u_0} \) Diffeomorphismus auf sein Bild ist.
+  \end{enumerate}
+  Es gilt zudem auf \( U_0 \)
+  \begin{equation*}
+    \Phi=u_n=(u_n\circ \inverse{u_{n-1}})\circ (u_{n-1}\circ \inverse{u_{n-2}})\circ\dotsb\circ (u_2\circ \inverse{u_1})\circ u_1
+  \end{equation*}
+  und
+  \begin{equation*}
+    u_j\circ \inverse{u_{j-1}}=(x_1,\dotsc,x_{j-1},\Phi_j(x),x_{j+1},\dotsc,x_n).
+  \end{equation*}
+  Durch Permutation geht diese Abbildung in eine der Form aus \ref{substitution:parametisierung_letzte_variable} über.
+
+  Für \( f\in \stufenfunktionen[1] \) betrachte \( \p*{\varphi_k}_k\subset \stufenfunktionen[0] \), \( \varphi_k\goesupto f \). Dann gilt die Identität wegen Beppo-Levi auch für \( f \). Für \( f=f_1-f_2\in \stufenfunktionen[2] \) gilt sie getrennt für \( f_1 \) und \( f_2 \) und somit für \( f \).
+
+  
+\end{proof}
+Vergleich mit der Substitutionsformel:\\
+Hier tritt der Betrag der Ableitung auf! Warum? Sei \zb \( \Phi(x)=-x \), \( U=\ointerval{a}{b} \),
+\begin{align*}
+  \Integrate{f(y)}{y,\Phi(u)}&=\Integrate{f(y)}{y,\ointerval{-b}{-a}}\\
+  &=\Integrate{f(y)}{y,-a,-b}\\
+  &\explain[Big]{\text{übgliche Substitutionsregel, \enquote{\( \Integrate{f(-x)(-1)}{x,a,b} \)}}}{=}\Integrate{f(-x)}{x,a,b}\\
+  &=\Integrate{f(-x)\cdot 1}{x,\ointerval{a}{b}}.
+\end{align*}
+\begin{beispiel*}[Polarkoordinaten]
+  Sei \( f\in\stufenfunktionen[2](\reals^2) \), sei \( R\in \reals_{>0}\cup \set{+\infty} \),
+  \begin{equation*}
+    D_R\definedas \Set{(x,y)\in \reals^2|x^2+y^2<R^2}.
+  \end{equation*}
+  Wir wollen \( \Integrate{f(x,y)}{{(x,y)},D_R} \). Dieses ist gleich dem über \( V\definedas D_R\setminus \Set{(x,0)|x\geq 0} \) (denn \( \set{(x,0)|x\geq 0} \) ist als Graph der stetigen Funktion \( \reals_{\geq 0}\ni x\mapsto 0 \)).
+  \begin{equation*}
+    \Phi\maps \braceannotate{U}{\ointerval{0}{R}\times \ointerval{0}{2\pi}}\to V,\quad \Phi(r,a)=(r,\Cos{\alpha},r\Sin{\alpha})
+  \end{equation*}
+  ist Diffeomorphismus.
+  \begin{align*}
+    \totalderivative{\Phi}(r,\alpha)=\begin{pNiceMatrix} \Cos{\alpha} & -r\Sin{\alpha} \\ \Sin{\alpha} & r\Cos{\alpha} \end{pNiceMatrix}\\
+    \determinant{\totalderivative{\Phi}(r,a)}=r>0\quad \forall (r,\alpha)\in U\\
+    \Integrate{f(y)}{y,D_R}&=\Integrate{f(y)}{y,V}=\Integrate{\Integrate{f(r\Cos{\alpha},r\Sin{\alpha})r}{\alpha,0,2\pi}}{r,0,R}.
+  \end{align*}
+\end{beispiel*}
+\begin{beispiel*}[Kugelkoordinaten]
+  Sei \( R\in \reals_{>0}\cup \set{+\infty} \), \( B_r=U_R(0) \).
+  \begin{gather*}
+    \Phi\maps \ointerval{0}{R}\times \ointerval{0}{2\pi}\times \ointerval{-\frac{\pi}{2}}{\frac{\pi}{2}}\to \reals^3\setminus \Set{\begin{pNiceMatrix} x \\ 0 \\ t \end{pNiceMatrix}|x\geq 0}\\
+    \Phi(r,\varphi,\theta)=\begin{pNiceMatrix} r\Cos{\varphi}\Cos{\theta} \\ r\Sin{\varphi}\Cos{\theta} \\ r\Sin{\theta} \end{pNiceMatrix}
+  \end{gather*}
+  ist Diffeomorphismus.
+  \begin{gather*}
+    \determinant{\totalderivative{\Phi}(r,\varphi,\theta)}=r^2\Cos{\theta}>0\\
+    \Integrate{f(x_1,x_2,x_3)}{x,B_R}=\Integrate{\Integrate{\Integrate{f(r\Cos{\varphi}\Cos{\theta},\dotsc,\dotsc)r^2}{\theta,-\frac{\pi}{2},\frac{\pi}{2}}}{\varphi,0,2\pi}}{r,0,R}.
+  \end{gather*}
+  
+\end{beispiel*}

@@ -9,9 +9,9 @@
     E&\in \Sigma\implies X\setminus E \in \Sigma\\
     E_k&\in \Sigma,\quad k\in I \text{ abzählbar}\implies\bigcup_{k\in I}E_k\in \Sigma.
   \end{align*}
-  \( \Sigma \) heißt dann \emph{\( \varsigma \)-Algebra} (\enquote{Sigma-Algebra}) über \( X \) und \( (X,\Sigma) \) \emph{Borel-Raum} oder messbarer Raum und \( E\in \Sigma \) nennt man \emph{messbar}.
+  \( \Sigma \) heißt dann \emph{\( \sigma \)-Algebra} (\enquote{Sigma-Algebra}) über \( X \) und \( (X,\Sigma) \) \emph{Borel-Raum} oder messbarer Raum und \( E\in \Sigma \) nennt man \emph{messbar}.
   
-  Gegeben zwei messbare Räume \( (X,\Sigma_X),(Y,\Sigma_y) \) nennt man \( f\maps X\to Y \), wenn gilt: Ist \( E\subset Y \) messbar (also \( E\in \Sigma_Y \)), so ist \( \inverse{f}(E) \) messbar in \( X \) (also \( \inverse{f}(E)\in \Sigma_X \)). Ein \emph{Maß } auf einer \( \sigma \)-Algebra über \( X \) ist eine Funktion \( \mu\maps \Sigma\to \reals_{\geq 0}\cup \set{+\infty} \), für die gilt \( \mu(\emptyset)=0 \) und die \( \varsigma \)-additiv (sigma-additiv) ist, für die also gilt
+  Gegeben zwei messbare Räume \( (X,\Sigma_X),(Y,\Sigma_y) \) nennt man \( f\maps X\to Y \), wenn gilt: Ist \( E\subset Y \) messbar (also \( E\in \Sigma_Y \)), so ist \( \inverse{f}(E) \) messbar in \( X \) (also \( \inverse{f}(E)\in \Sigma_X \)). Ein \emph{Maß } auf einer \( \sigma \)-Algebra über \( X \) ist eine Funktion \( \mu\maps \Sigma\to \reals_{\geq 0}\cup \set{+\infty} \), für die gilt \( \mu(\emptyset)=0 \) und die \( \sigma \)-additiv (sigma-additiv) ist, für die also gilt
   \begin{equation*}
     \mu\p*{\bigcup_{k=1}^{\infty}E_k}=\sum\limits_{k=1}^{\infty}\mu(E_k),
   \end{equation*}
@@ -30,7 +30,7 @@
     0 & x\not\in E.
   \end{cases} \)
 \end{beispiel*}
-Ein Maß heißt \emph{\( \varsigma \)-endlich}, wenn es zu jedem \( E\in \Sigma \) eine abzählbare Überdeckung \( E\subset \bigcup_{k=1}^\infty E_k \), \( E_k\in \Sigma \), gibt \sd alle \( E_k \) endliches Maß haben, also \( \mu(E_k)<\infty \) gilt für alle \( k \).
+Ein Maß heißt \emph{\( \sigma \)-endlich}, wenn es zu jedem \( E\in \Sigma \) eine abzählbare Überdeckung \( E\subset \bigcup_{k=1}^\infty E_k \), \( E_k\in \Sigma \), gibt \sd alle \( E_k \) endliches Maß haben, also \( \mu(E_k)<\infty \) gilt für alle \( k \).
 
 Ein Maß heißt \emph{vollständig}, wenn gilt: Ist \( N\in \Sigma \) mit \( \mu(N)=0 \) und \( M\subset N \), so ist \( M\in \Sigma \).
 \begin{bemerkung*}
@@ -42,7 +42,7 @@ Ein Maß heißt \emph{vollständig}, wenn gilt: Ist \( N\in \Sigma \) mit \( \mu
   \end{itemize}
 \end{bemerkung*}
 \begin{satz}\label{massraum_integration}
-   Setze \( \mathcal{M}\definedas \Set{E\subset \reals^n|\characteristicfunction;{E}\in \stufenfunktionen[2]} \) und \( \mu(E)\definedas \Integrate{\characteristicfunction;{E}}{x} \).Dann ist \( (\reals^n,\mathcal{M},\mu) \) ein \( \varsigma \)-endlicher, vollständiger Maßraum.
+   Setze \( \mathcal{M}\definedas \Set{E\subset \reals^n|\characteristicfunction;{E}\in \stufenfunktionen[2]} \) und \( \mu(E)\definedas \Integrate{\characteristicfunction;{E}}{x} \).Dann ist \( (\reals^n,\mathcal{M},\mu) \) ein \( \sigma \)-endlicher, vollständiger Maßraum.
 \end{satz}
 \begin{proof}
   Das folgt direkt aus dem verallgemeinerten Satz von Beppo-Levi. Details als Hausaufgabe.

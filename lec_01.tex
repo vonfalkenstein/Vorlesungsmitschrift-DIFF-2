@@ -9,7 +9,7 @@
     \begin{align*}
         \iff \forall \varepsilon>0 \logicspace\exists N\in \naturals\logicspace\text{\sd}\logicspace \abs{a_n-a}<\varepsilon\logicspace\forall n \geq N
     \end{align*}
-    \( \ointerval{a-\varepsilon}{a+\varepsilon} \) wird auch \( \varepsilon \)-Umgebung von a in R genannt. 
+    \( \ointerval{a-\varepsilon}{a+\varepsilon} \) wird auch \( \varepsilon \)-Umgebung von \( a \) in \( \reals \) genannt. 
     Somit lautet die obige Definition in Worten: 
     In jeder noch so kleinen \( \varepsilon \)-Umgebung von a befinden sich alle bis auf endlich viele Folgenglieder.    
 \end{erinnerung*}
@@ -87,7 +87,7 @@ Diesen Begriff möchten wir nun verallgemeinern.
             \label{fig:umgebung_beispiel_halboffenes_intervall}
         \end{figure}
         
-        \item \( \ointerval{a-\varepsilon}{a+\varepsilon} \),  \( \varepsilon>0 \), ist eine Umgebung von \( x \).         
+        \item \( \ointerval{a-\varepsilon}{a+\varepsilon} \),  \( \varepsilon>0 \), ist eine Umgebung von \( a \).         
     \end{enumerate}
 \end{beispiele*}
 \begin{lemma}\label{offene_menge_umgebung_aller_elemente}
@@ -113,7 +113,7 @@ Diesen Begriff möchten wir nun verallgemeinern.
 \begin{beispiele*}
     \begin{enumerate}
         \item In der Klumpentopologie konvergieren alle Folgen gegen jedes \( x\in X \).
-        \item Mit unseren obigen Überlegungen folgern wir, dass Konvergenz in \( \reals \) im Sinn von \thref{konvergenz_in_topologischen_raeumen} mit Konvergenz, wie wir sie in der \diffcourse{1}
+        \item Mit unseren obigen Überlegungen folgern wir, dass Konvergenz in \( \reals \) im Sinn von \thref{konvergenz_in_topologischen_raeumen} mit Konvergenz, wie wir sie in der \diffcourse{1} kennengelernt haben.
     \end{enumerate}
 \end{beispiele*}
 \begin{lemma}\label{hausdorff_alle_grenzwerte_eindeutig}
@@ -239,7 +239,7 @@ Wir kommen nun zu einer wichtigen Beispiel-Klasse für Topologien:
         \item \label{metrik:symmetrisch}\( \distance{x}{y}=\distance{y}{x}\logicspace\forall x,y \in X \) \enquote{\( d \) ist symmetrisch.}
         \item \label{metrik:dreiecksungleichung} \( \distance{x}{y}\leq \distance{x}{z}+\distance{z}{y} \logicspace\forall x,y,z\in X\) \enquote{Es gilt die Dreiecksungleichung.} 
     \end{eigenschaftenenumerate}
-    Ein \emph{metrischer Raum} ist ein Tupel \( (X,d) \), wobei \( X \) eine Menge ist und \( d \) eine Metrik auf \( X \). Mist schreibt man nur \( X \), weil Missverständnisse ausgeschlossen sind.
+    Ein \emph{metrischer Raum} ist ein Tupel \( (X,d) \), wobei \( X \) eine Menge ist und \( d \) eine Metrik auf \( X \). Meist schreibt man nur \( X \), weil Missverständnisse ausgeschlossen sind.
 \end{definition}
 \begin{bemerkung*}
     Aus den Axiomen folgt auch
@@ -444,3 +444,4 @@ Wir formulieren nun Konvergenz und Stetigkeit für metrische Räume:
         
     \end{enumerate}
 \end{beispiele}
+ sie

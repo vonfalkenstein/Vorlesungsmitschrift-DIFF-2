@@ -55,15 +55,15 @@
             \norm{I(f)}\leq (b-a)\supnorm{f}
         \end{align*}
         \timplies \( I \) ist stetig.
-        \item \( \totalderivative;\maps (\stetigefunktionen^1(\interval{a}{b}),\supnorm{\cdot})\to (\stetigefunktionen(\interval{a}{b}),\supnorm{\cdot}) \), \( \totalderivative;\maps f\mapsto f' \).
+        \item \( \totalderivative+;\maps (\stetigefunktionen^1(\interval{a}{b}),\supnorm{\cdot})\to (\stetigefunktionen(\interval{a}{b}),\supnorm{\cdot}) \), \( \totalderivative+;\maps f\mapsto f' \).
         \begin{behauptung*}
-            \( \totalderivative; \) ist nicht stetig.
+            \( \totalderivative+; \) ist nicht stetig.
         \end{behauptung*}
         \begin{proof}[Denn:]
             \( D \) ist linear \checkmark, aber die Bedingung aus \thref{lineare_abbildung:stetigkeitssatz} ist verletzt: Betrachte \( f_n\in C^1(\interval{0}{2}) \), \( f_n=x^n    \).
-            Dann ist \( \supnorm{f_n}=1 \), aber \( \supnorm{\totalderivative-{f_n}}=n \) \timplies es kann kein \( C>0 \) geben \sd
+            Dann ist \( \supnorm{f_n}=1 \), aber \( \supnorm{\totalderivative{f_n}}=n \) \timplies es kann kein \( C>0 \) geben \sd
             \begin{align*}
-                n=\supnorm{\totalderivative-{f_n}}\leq C\norm{f_n}=C\quad \forall n.
+                n=\supnorm{\totalderivative{f_n}}\leq C\norm{f_n}=C\quad \forall n.
             \end{align*}
         \end{proof}
     \end{enumerate}
