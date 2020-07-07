@@ -16,7 +16,7 @@
 Man benötigt für die Formulierung der Definition also lediglich einen Begriff von \enquote{(kleine) Umgebung}. 
 Diesen Begriff möchten wir nun verallgemeinern.
     
-\begin{definition}\label{topologie}
+\begin{definition}\label{topologie}\index{Topologie}
     Sei \( X \) eine Menge. Ein System \( \mathcal{T} \) von Teilmengen von \( X \) heißt Topologie auf \( X \) falls gilt: 
     \begin{eigenschaftenenumerate}
         
@@ -73,7 +73,7 @@ Diesen Begriff möchten wir nun verallgemeinern.
         Wird nichts anderes gesagt, sehen wir \(\reals \) als mit der Standard-Topologie versehen an.
     \end{enumerate}
 \end{beispiele}
-\begin{definition}\label{umgebung_in_topologischen_raeumen}
+\begin{definition}\label{umgebung_in_topologischen_raeumen}\index{Umgebung}
     Sei \( (X, \mathcal{T}) \) topologischer Raum. 
     Sei \( x\in X \). 
     Eine Teilmenge \( V\subset X \) heißt \emph{Umgebung von \( x \)}, falls es eine offenen Menge \( U\subset X \) gibt mit \( x\in U \) und \( U\subset V \).
@@ -103,7 +103,7 @@ Diesen Begriff möchten wir nun verallgemeinern.
     
     
 \end{proof}
-\begin{definition}[Konvergenz in topologischen Räumen] \label{konvergenz_in_topologischen_raeumen}
+\begin{definition}[Konvergenz in topologischen Räumen] \label{konvergenz_in_topologischen_raeumen}\index{Konvergenz}
     Sei \( (X, \mathcal{T}) \) topologischer Raum.
     Sei \( (x_n)_{n\in \naturals} \) eine Folge in \( X \).
     Dann ist \( (x_n)_{n} \) \emph{konvergent mit Grenzwert \( x \)}, \( x_n\goesto x \) in \( (X, \mathcal{T}) \), falls es in jeder Umgebung \( V \) von \( x  \) ein \( N\in \naturals \) gibt, \sd \( x_n\in V\logicspace\forall n\geq N \).
@@ -126,7 +126,7 @@ Diesen Begriff möchten wir nun verallgemeinern.
     Dann gibt es (wegen der Konvergenz) \( N \in \naturals \) \sd \( x_n \in U \logicspace\forall n \geq N \) und \( M\in \naturals \) \sd \( x_n \in V \logicspace \forall n \geq M \). 
     Wiederspruch zu \( U\cap V = \emptyset \). 
 \end{proof}
-\begin{definition}\label{stetigkeit_in_topologischen_raeumen}
+\begin{definition}\label{stetigkeit_in_topologischen_raeumen}\index{Stetigkeit}
     Seien \( (X, \mathcal{T}) \) und \( (Y,\tilde{\mathcal{T}}) \) topologische Räume. 
     Sei \( f\maps X\to Y \) eine Abbildung. 
     Dann heißt \( f \) \emph{stetig in \( a\in X \)}, falls es zu jeder Umgebung \( V \) von \( f(a)\in Y \) eine Umgebung \( U \) von \( a \) gibt, \sd \( f(U)\subset V \). 
@@ -228,7 +228,7 @@ für kein \( \delta>0 \) offen.
 \end{proof}
 
 Wir kommen nun zu einer wichtigen Beispiel-Klasse für Topologien:
-\begin{definition}
+\begin{definition}\index{Metrik}
     Sei \( X \) eine Menge. Eine \emph{Metrik} auf \( X \) ist eine Abbildung
     \begin{align*}
         d\maps X\times X \to \reals
@@ -272,7 +272,7 @@ Mit \ref{metrik:beispiele:r_n} wird auch der Name der Dreiecksungleichung klar:
     \includegraphics[width=0.8\linewidth]{figures/dreiecksungleichung_visualisierung}
     \label{fig:dreiecksungleichung_visualisierung}
 \end{figure}
-\begin{definition}
+\begin{definition}\index{$\varepsilon$-Ball}
     Sei \( (X,d) \) ein metrischer Raum. Seien \( x\in X \), \( \varepsilon>0 \). Dann nennt man
     \begin{align*}
         B_\epsilon(x)\definedas\Set{y\in X| \distance{x}{y}<\varepsilon}

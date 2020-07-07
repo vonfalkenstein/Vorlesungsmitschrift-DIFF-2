@@ -54,7 +54,7 @@ Sei \( f\maps U\to \reals^n \) stetig differenzierbar, \( U\subset \reals^n \). 
 
 Notwendiges Kriterium ist, dass \( \totalderivative{f}(x) \) invertierbar ist, da mit der Kettenregel aus \( g\circ f=\Id_u \) folgt \( \totalderivative{g}(f(x))\matrixmult \totalderivative{f}(x)=\mathds{1} \). Tatsächlich ist sogar folgendr hinreichend:
 
-\begin{satz}\label{satz_von_der_umkehrabbildung}
+\begin{satz}\label{satz_von_der_umkehrabbildung}\index{Satz von der Umkehrabbildung}
   Sei \( U\subset \reals^n \) offen, \( f\maps U\to \reals^n \), stetig differenzierbar. Sei \( a\in U \) \sd \( \totalderivative{f}(a) \) invertierbar ist. Dann gibt es eine offene Umgebung \( V\subset U \) von \( a \) und eine offene Umgebung \( W\in \reals^n \) von \( b\definedas f(a) \), \sd \( f\maps V\to \reals^n \), \( V \) bijektiv auf \( W \) abgebildet und die Umkehrabbildung \( g\maps W\to \reals^n \) stetig differenzierbar ist. Es gilt dann
   \begin{equation*}
     \totalderivative{g}(f(x))=\inverse{\totalderivative{f}(x)}\quad \forall x\in V.
@@ -192,7 +192,7 @@ Es folgen einige etwas tiefsinnigere Folgen aus dem Umkehrsatz.
 \begin{proof}[Beweis von \ref{offene_abbildungen_satz}]
   Sei \( \tilde{V}\subset U \) offen, dann ist \( \tilde{V}  \) auch offen \( U \). Sei \( b\in f(\tilde{V}) \). Wähle ein \( a\in \tilde{V} \) \sd \( b=f(a) \). Wende den Satz von der lokalen Umkehrfunktion auf \( \evaluateat{f}{\tilde{V}} \) an \timplies \texists  offene Umgebungen \( V_1\subset \tilde{V} \) und \( W\subset \reals^n \) von \( a \) beziehungsweise \( b \) \sd \( \evaluateat{f}{V_1} \) umkehrbar ist mit \( g\maps W\to \reals^n \) und insbesondere \( f \) \( V_1 \) bijektiv auf \( W \) abbildet. Somit gilt \( W=f(V_1)\subset f(\tilde{V}) \) und ist Umgebung von \( b \) \timplies \( f(\tilde{V}) \) ist offen.
 \end{proof}
-\begin{satz}[Minimum- / Maximum-Prinzip]\label{extremumprinzip}
+\begin{satz}[Minimum- / Maximum-Prinzip]\label{extremumprinzip}\index{Minimum- / Maximum-Prinzip}
   Sei \( f\maps U\to \reals^n \), \( U\subset \reals^n \), stetig differenzierbar. Sei \( V\subset U \) offen und sei \( \totalderivative{f}(x) \) invertierbar für alle \( x\in V \). Dann gilt für die Funktion
   \begin{equation*}
     V\ni x\mapsto \norm{f(x)}

@@ -88,7 +88,7 @@ Es gilt allgemeiner
     \end{align*}
   \end{eigenschaftenenumerate}
 \end{beispiel*}
-\begin{definition*}
+\begin{definition*}\index{Normalenvektor}
   Sei \( M\subset \reals^n \) \( d \)-dimensionale Untermannigfaltigkeit. \( \varv\in \reals^n \) heißt \emph{Normalenvektor} ab \( M \) im Punkt \( a\in M \), falls \( \scalarproduct{\varv}{v}=0\) \tforall \( v\in \tangentialraum-{M} \), also \( \varv\in \perpspace{\tangentialraum-{M}}\defines \normalenraum-{M} \) \enquote{\emph{Normalen-Raum}}.
 \end{definition*}
 \begin{bemerkungen*}
@@ -127,7 +127,7 @@ Es gilt allgemeiner
   \end{eigenschaftenenumerate}
 \end{beispiel*}
 \approxtimestamp{25}
-\begin{definition}
+\begin{definition}\index{Stetig differenzierbare Abbildung von Untermannigfaltigkeiten}
   Sei \( M \) \( d \)-dimensionale Untermannigfaltigkeit des \( \reals^m \), sei \( N \) \( d' \)-dimensionale Untermannigfaltigkeit des \( \reals^n \). Eine Abbildung \( f\maps M\to N \) heißt \emph{stetig differenzierbar}, falls für alle \( a\in M \) gilt: Wenn \( \varphi\maps M\cap U \) eine lokale Parametisierung bei \( a \) ist, so ist \( f\circ \varphi\maps\reals^d\supset V\to \reals^n \) stetig differenzierbar.
 \end{definition}
 \begin{bemerkungen*}
@@ -143,7 +143,7 @@ Es gilt allgemeiner
     \label{fig:uebertragung_stetige_diffbarkeit_auf_andere_parametisierung}
   \end{figure}
 \end{bemerkungen*}
-\begin{definition}
+\begin{definition}\index{Vektorfeld}
   Sei \( M \) \( d \)-dimensionale Untermannigfaltigkeit des \( \reals^n \). Ein \emph{Vektorfeld} auf \( M \) ist eine stetig differenzierbare Abbildung 
   \begin{equation*}
     X\maps M\to \reals^n \logicspace \text{\sd}\logicspace  X(a)\in \tangentialraum-{M}\quad \forall a\in M.
@@ -199,14 +199,14 @@ Es gilt allgemeiner
   Langer Streifen Papier, einmal verdrehen, zusammenkleben. Mittellinie einzeichnen. Normalenvektor auf einem Punkt der Mittellinie bestimmen, auf \( 1 \) normieren (\( \euclidiannorm{\varv}=1 \)). Führt man diesen stetig entlang der Mittellinie und verändert dabei seine Länge nicht, sieht man, dass es kein stetiges normiertes Normalenfeld auf dem Möbius-Band geben kann. Eine solche Fläche nennt man nicht orientierbar. 
   \end{enumerate}
 \end{beispiele*}
-\begin{definition}
+\begin{definition}\index{Integralkurve}
   Sei \( X\maps M\to \reals^n  \) ein Vektorfeld (\( M \) \( d \)-dimensionale Untermannigfaltigkeit). Eine \emph{Integralkurve} von \( X \) ist eine stetig differenzierbare Kurve \( \gamma\maps I\to M \) \sd
   \begin{equation*}
     \gamma'(t)=X(\gamma(t))
   \end{equation*}
   Im nächsten Kapitel (Differenzialgleichungen) wird es um Existenz und Eindeutigkeit solcher Kurven gehen (aber nur im \( \reals^n \)).
 \end{definition}
-\begin{definition}
+\begin{definition}\index{Untermannigfaltigkeit mit Rand}
   \( M\subset \reals^n \) ist eine \( d \)-dimensionale \emph{Untermannigfaltigkeit mit Rand} falls es zu jedem \( a\in M \) eine lokale Parametisierung gibt \( \varphi\maps V\to \varphi(V)\subset M \) mit \( V\subset \reals^d_{-} \), \( \reals^d_{-}=\Set{x\in \reals^d|x_1\leq 0} \) (\( V \) offen in \( \reals^d_{-} \), falls \texists  \( U \) offen in \( \reals^d \) \sd \( V=\reals^d_{-}\cap U \) (Teilraumtopologie), also \zb ist \( \ointerval{\infty}{0}\times \ointerval{0}{1}^{d-1} \) offen in \( \reals^{d}_{-} \)). \( p \) heißt \emph{Randpunkt von \( M \)}, falls \( p=\varphi(t) \) mit \( t\in V\cap \partial \reals^d_{-} \), wobei
   \begin{equation*}
     \partial \reals^d_{-}=\Set{(0,x_2,\dotsc,x_{d})\in \reals^d_{-}}.
@@ -228,7 +228,7 @@ Es gilt allgemeiner
 \end{beispiel*}
 \timestamp{Ende Audio Teil 1}
 \section{Flächenbemessung auf Untermannigfaltigkeiten}
-\begin{definition*}
+\begin{definition*}\index{Erste Fundamentalform}
   \begin{gather*}
     I_a\definedas \scalarproduct{\cdot}{\cdot}_a\maps \tangentialraum-{M}\times\tangentialraum-{M}\to \reals\\
     I_a(v,w)=\scalarproduct{v}{w}_{a}=\scalarproduct{v}{w}_{\text{E}}\quad \forall v,w\in \tangentialraum-{M}

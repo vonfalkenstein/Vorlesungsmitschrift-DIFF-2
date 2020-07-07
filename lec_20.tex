@@ -2,7 +2,7 @@
 \lecture{Mo 29.06. 10:15}{}
 \section{Etwas Maßtheorie}
 \timestamp{4:30}
-\begin{definition}
+\begin{definition}\index{$\sigma$-Algebra} \index{Borel-Raum} \index{Maß}
   Sei \( X \) eine Menge, \( \explain{\text{\enquote{Sigma}}}{\Sigma} \) eine Familie von Teilmengen \( E\subset X \) mit
   \begin{align*}
     X&\in \Sigma\\
@@ -47,7 +47,7 @@ Ein Maß heißt \emph{vollständig}, wenn gilt: Ist \( N\in \Sigma \) mit \( \mu
 \begin{proof}
   Das folgt direkt aus dem verallgemeinerten Satz von Beppo-Levi. Details als Hausaufgabe.
 \end{proof}
-\begin{definition*}
+\begin{definition*}\index{Lebesgue-integrierbare Funktion}
   \begin{equation*}
     \lebesgueintegrablefunctions\definedas \set{\explain{\text{eigentlich Äquivalenszklassen }\set{g|g=f \text{ \fue}}}{f}\in \stufenfunktionen[2]|\Integrate{f}{x}<\infty}.
   \end{equation*}
@@ -68,7 +68,7 @@ Ein Maß heißt \emph{vollständig}, wenn gilt: Ist \( N\in \Sigma \) mit \( \mu
   \end{equation*}
   \( \funcmax; \) analog.
 \end{bemerkung*}
-\begin{satz}[Beppo-Levi, Satz über monotone Konvergenz]\label{beppo-levi-einfach}
+\begin{satz}[Beppo-Levi, Satz über monotone Konvergenz]\label{beppo-levi-einfach}\index{Satz über monotone Konvergenz (Beppo Levi)}
   Sei \( (f_k)_k\subset \lebesgueintegrablefunctions \), \( f_k\goesupto f \), \( \sup \Integrate{f_k}{x}<\infty \). Dann ist \( f\in \lebesgueintegrablefunctions \) und 
   \begin{equation*}
     \Integrate{f_k}{x}\goesupto \Integrate{f}{x}.
@@ -106,7 +106,7 @@ Ein Maß heißt \emph{vollständig}, wenn gilt: Ist \( N\in \Sigma \) mit \( \mu
 \end{proof}
 \timestamp{Weitere Erläuterungen \tto 22:15}
 \section{Weitere Folgerungen}
-\begin{satz}[Fatou]\label{fatou}
+\begin{satz}[Fatou]\label{fatou}\index{Satz von Fatou}
   Sei \( (f_k)_k\subset \lebesgueintegrablefunctions \), \( f_k\goesto f \). Ist \( f_k\geq 0\quad \forall k \) und \( \liminf_{k \goesto \infty}\Integrate{f_k}{x}<\infty \), dann ist \( f_k\in \lebesgueintegrablefunctions \) und 
   \begin{equation*}
     \Integrate{f}{x}\leq \liminf \Integrate{f_n}{x}.
@@ -126,7 +126,7 @@ Ein Maß heißt \emph{vollständig}, wenn gilt: Ist \( N\in \Sigma \) mit \( \mu
     &\leq \liminf_m \Integrate{f_m}{x}.
   \end{align*}
 \end{proof}
-\begin{satz}[Lebesgue, majorisierte Konvergenz]\label{majorisierte_konvergenz}
+\begin{satz}[Lebesgue, majorisierte Konvergenz]\label{majorisierte_konvergenz}\index{Satz von der majorisierten Konvergenz (Lebesgue)}
   Sei \( \p*{f_k}_k\subset \lebesgueintegrablefunctions \), \( f_k\goesto f \). Gibt es \( g\in \lebesgueintegrablefunctions \), \sd \( \abs{f_k}\leq g \qquad \forall k  \), so ist \( f\in \lebesgueintegrablefunctions \) und \( \Integrate{f_k}{x}\goesto \Integrate{f}{x} \)
 \end{satz}
 \begin{bemerkung*}

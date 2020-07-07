@@ -98,7 +98,7 @@ Bevor wir uns mit offenen und abgeschlossenen Mengen und sogenannten vollständi
     \end{proofenumerate}
     
 \end{proof}
-\begin{definition}
+\begin{definition}\index{Randpunkt}
     Sei \( (X,d) \) metrischer Raum, \( M\subset X \). Ein Punkt \( y\in X \) heißt \emph{Randpunkt} von \( M \), falls in jeder Umgebung von \( y \) sowohl Punkte von \( M \) als auch \( X\setminus M \) liegen.
 \end{definition}
 \begin{notation*}
@@ -166,7 +166,7 @@ Nach \ref{abgeschlossenheit:folgenkonvergenzkriterium} können wir \( \abschluss
     
 \end{bemerkung*}
 \section{Vollständigkeit}
-\begin{definition}
+\begin{definition}\index{Cauchy-Folge}
     Sei \( (X,d) \) ein metrischer Raum. Eine Folge \( (y_n)_n \subset X\) heißt \emph{Cauchy-Folge}, falls gilt
     \begin{align*}
         \forall \varepsilon>0 \logicspace \exists N\in \naturals \logicspace\text{\sd} \distance{y_n}{ y_m}<\varepsilon \logicspace \forall n,m\geq N.
@@ -208,7 +208,7 @@ Nach \ref{abgeschlossenheit:folgenkonvergenzkriterium} können wir \( \abschluss
     \end{checkenvironment*}
     
 \end{bemerkung*}
-\begin{definition}
+\begin{definition}\index{Vollständiger metrischer Raum}
     Ein metrischer Raum, in dem jede Cauchy-Folge konvergiert heißt \emph{vollständig}.
 \end{definition}
 \begin{beispiele}
@@ -229,7 +229,7 @@ Nach \ref{abgeschlossenheit:folgenkonvergenzkriterium} können wir \( \abschluss
 Zunächst einige 
 \section{Betrachtungen in vollständigen metrischen Räumen}
 
-\begin{definition}
+\begin{definition}\index{Beschränktheit}
     Sei \( (X,d)\) metrischer Raum, \( M\subset X\),
     \begin{align*}
         \diameter{M}\definedas \sup_{x,y\in M}\distance{x}{y}\logicspace \text{\enquote{Durchmesser} (englisch \enquote{diameter})}.
@@ -247,7 +247,7 @@ Zunächst einige
 \begin{beispiel*}
     \( \diameter{\rinterval{a}{b}}=b-a\)
 \end{beispiel*}
-\begin{satz}[Schachtelungsprinzip]
+\begin{satz}[Schachtelungsprinzip]\index{Schachtelungsprinzip}
     Sei \( (X,d)\) ein \emph{vollständiger} metrischer Raum und sei \( A_0\subset A_1\subset A_2\subset \cdots\).
     Eine Familie nicht-leerer abgeschlossener Teilmengen von \( X\) mit
     \begin{align*}
@@ -275,7 +275,7 @@ Zunächst einige
     \end{proofdescription}
 \end{proof}
 Ein sehr wichtiger Satz, der viele Anwendungen hat ist der folgende:
-\begin{satz}[Banach'scher Fixpunktsatz]
+\begin{satz}[Banach'scher Fixpunktsatz]\index{Banach'scher Fixpunktsatz}
     Sei \( (X,d_X)\) ein \emph{vollständiger} metrischer Raum. Sei \( M\subset X\) eine \emph{abgeschlossene} Teilmenge und \( \Phi\maps M\to X\) eine Abbildung mit \( \Phi(M\subset M)\) und es gebe \( 0\leq L<1\) \sd
     \begin{align*}
         d_X(\Phi(X),\Phi(Y))\leq L d_X(x,y)\forall x,y\in M\logicspace (\text{\enquote{\( \Phi\) ist Kontraktion}}).

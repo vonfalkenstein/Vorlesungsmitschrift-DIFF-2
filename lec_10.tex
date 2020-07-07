@@ -14,7 +14,7 @@ Wir suchen Extremstellen einer Funktion \( f \) unter gewissen Nebenbedingungen 
   \item Berücksichtige, dass eine Bewegung eingeschränkt ist, \zb auf dem Innenrand einer Kugelschale (Nebenbedingung: \( x^2+y^2+z^2=r^2 \)).
 \end{enumerate}
 Mathematisch geht es um folgendes Problem:
-\begin{definition}\label{nebenbedingung_extremum}
+\begin{definition}\label{nebenbedingung_extremum}\index{Lokales Extremum unter Nebenbedingung}
   Sei \( U\subset \reals^n \) offen, \( f\maps U\to \reals \), sei \( h\maps U\to \reals^m \). Dann sagen wir \( f \) hat in \( a\in U \) ein \emph{lokales Maximum \bzw Minimum} (Extremum) \emph{unter der Nebenbedingung} \( h(x)=0 \), wenn: \( a\in N_h(0) \) und es eine Umgebung \( U_0 \) von \( a \) gibt \sd \( f(a)\geq f(x) \) \bzw \( f(a)\leq f(x) \) \tforall \( x\in U_0 \cap N_h(0) \).
 \end{definition}
 In einfachen Fällen kann man die Nebenbedingung direkt auflösen und die (\ref{satz_von_der_impliziten_funktion:hoehenlinie_folgerung}) Funktion einsetzen, \zb in \ref{nebenbedingung_extremum:beispiel:mikro}
@@ -174,7 +174,7 @@ Oder man überprüft, ob die partiellen Ableitungen stetig sind. Wenn ja, folgt 
 
 Wenn nein, muss man prüfen, ob \( \underline{R}_a^g \) das richtige Verhalten bei \( 0 \) hat. Wir werden allerdings bei den sogenannten höheren Ableitungen (wie der 2.\ Ableitung oben) meist stetig differenzierbare Funktionen betrachten.
 
-\begin{definition}
+\begin{definition}\index{$k$-fache partielle Differenzierbarkeit}
   \( f\maps U\to \reals \), \( U\subset \reals^n \) offen, heißt in \( a \) \emph{\( k \)-fach partiell differenzierbar}, wenn alle partiellen Ableitungen
   \begin{equation*}
     \partial_{j_1} f(a), \partial_{j_1} \partial_{j_2} f(a),\dotsc, \partial_{j_1}\partial_{j_2}\dotsb\partial_{j_k} f(a)
@@ -192,7 +192,7 @@ Wenn nein, muss man prüfen, ob \( \underline{R}_a^g \) das richtige Verhalten b
   \end{equation*}
   Dass die beiden letzt genannten Ableitungen gleich sind, ist kein Zufall:
 \end{beispiel*}
-\begin{satz}[Satz von Schwarz]\label{schwarzscher_satz}
+\begin{satz}[Satz von Schwarz]\label{schwarzscher_satz}\index{Satz von Schwarz}
   Sei \( f\maps U\to \reals \), \( U\subset \reals^n \), zweimal stetig partiell differenzierbar. Dann gilt für alle \( a\in U \) und alle \( i,j\in \Set{1,\dotsc,n} \)
   \begin{equation*}
     \partial_j \partial_i f(a)=\partial_i \partial_j f(a).

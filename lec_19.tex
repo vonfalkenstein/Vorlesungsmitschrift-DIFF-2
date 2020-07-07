@@ -3,7 +3,7 @@
 \lecture{Do 25.10. 10:15}{}
 Integralbegriff, \sd \( \Integrate{f_n}{x} \) \tto \( \Integrate{f}{x} \), wenn \( f_n\to f \) punktweise \( \rightsquigarrow \) Lebesgue-Integral. Unterschiedliche Zugänge. Hier: \emph{Riesz} (\href{https://arxiv.org/abs/1805.07289}{Vilmos Komornik, arXiv: 1805.07289}) \vgl auch Otto Forster, Analysis 3, Springer Vieweg, \emph{vor 2010}.
 
-\begin{definition}\label{nullmenge}
+\begin{definition}\label{nullmenge}\index{Nullmenge}
   Eine Teilmenge \( N\subset \reals^n \) heißt \emph{Nullmenge}, wenn es zu jedem \( \varepsilon>0 \) eine abzählbare Überdeckung von \( N \) durch offene Quader gibt mit Gesamtvolumen \( <\varepsilon \) (\( \volume{I_1\times \dotsb \times I_n}=\abs{I_1}\dotsm \abs{I_n} \)). Man sagt eine Eigenschaft träge \emph{fast überall} (\fue) zu, wenn sie außerhalb einer Nullmenge zutrifft.
 \end{definition}
 \begin{beispiele*}
@@ -22,7 +22,7 @@ Im Folgenden wollen wir Funktionen, die \fue gleich sind, miteinander identifizi
 \begin{notation*}
   Wir schreiben dennoch \( f \) (nicht \( \equivclass{f} \)) und \( f=g \), \( \subseteq g \), \( f_n\to f \), \dots, wenn dies nur \fue gilt.
 \end{notation*}
-\begin{definition}\label{stufen_mit_integral}
+\begin{definition}\label{stufen_mit_integral}\index{Stufenfunktion}\index{Charakteristische Funktion}
   Eine Stufenfunktion ist eine Funktion der Form
   \begin{equation*}
     \varphi=\sum_{j=1}^{n}c_j \characteristicfunction;{Q},
@@ -95,7 +95,7 @@ Im Folgenden wollen wir Funktionen, die \fue gleich sind, miteinander identifizi
   \end{proofdescription}
   
 \end{proof}
-\begin{definition}\label{integral_stufen_hoch}
+\begin{definition}\label{integral_stufen_hoch}\index{$R_1$}
   \begin{equation*}
     \stufenfunktionen[1]\definedas \Set{f\maps \reals^n\to \compactification{\reals}=\reals\cup \set{\pm \infty}|\exists \p*{\varphi_k}_k\subset \stufenfunktionen,\quad \varphi_k(x)\goesupto f(x)}
   \end{equation*}
@@ -181,6 +181,7 @@ und für jedes feste \( k \) gilt
 \begin{bemdef}
   Wir erweitern den Integralbegriff noch weiter: Ist \( f\in \stufenfunktionen[1] \), definiert man \( \Integrate{-f}{x}\definedas -\Integrate{f}{x} \).
 
+  \index{$R_2$}
   Allgemein: Sind \( f_1,f_2\in \stufenfunktionen[1] \) und \( \Integrate{f_1}{x}-\Integrate{f_2}{x} \) ist definiert (\dh mindestens eines der Integrale ist endlich), dann ist \( f\definedas f_1-f_2 \) wohldefiniert (denn nach \ref{stufenfunktionen_zu_funktion_integral_endlich_funktion_endlich} ist dann eine der Funktionen \fue endlich). Die Menge all dieser Funktionen \( f \) nennen wir \( \stufenfunktionen[2] \) und setzen für \( f=f_1-f_2\in \stufenfunktionen[2] \), \( f_i\in \stufenfunktionen[1] \):
   \begin{equation*}
     \Integrate{f}{x}\definedas \Integrate{f_1}{x}-\Integrate{f_2}{x}.
@@ -238,7 +239,7 @@ und für jedes feste \( k \) gilt
   \end{proofdescription}
   
 \end{proof}
-\begin{satz}[Verallgemeinerter Satz von Beppo-Levi] \label{beppo-levi}
+\begin{satz}[Verallgemeinerter Satz von Beppo-Levi] \label{beppo-levi}\index{Verallgemeinerter Satz von Beppo Levi}
   Sei \( \p*{f_k}_k\subset \stufenfunktionen[2] \), \( f_k\goesupto f \). Ist \( \Integrate{f_k}{x}>-\infty \) für ein \( k \), so ist \( f\in \stufenfunktionen[2] \) und 
   \begin{equation*}
     \label{eq:beppo-levi} \Integrate{f_k}{x}\goesupto \Integrate{f}{x}\tag{\( * \)}.
