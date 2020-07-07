@@ -205,7 +205,7 @@ Oft sind DGL'n auch \emph{implizit} gegeben, also von der Form
 \begin{equation*}
   f(t,x)+h(t,x)x'=0.
 \end{equation*}
-\begin{satz}[Exakte Differentialgleichungen]\label{exakte_dgl}
+\begin{satz}[Exakte Differentialgleichungen]\label{exakte_dgl}\index{Exakte Differentialgleichungen}
   Sei \( f(t,x)+h(t,x)x'=0 \) gegeben, \( f \) und \( h\maps V\to \reals \) \( \stetigefunktionen[1] \), \( V=J_1\times J_2 \) mit \( J_1,J_2 \) Intervalle. Es gelte \( \partial_1 h=\partial_2 f \) auf \( V \). Dann gibt es eine zweimal stetig differenzierbare Funktion \( F\maps V\to \reals \) mit \( h=\partial_2 F \) und \( f=\partial_1 F \).
 
   Ist \( u\maps I\to \reals \) mit \( \Gamma_u\subset V \) eine Lösung der DGL, so gilt \( F(t,u(t)) =C\) (\( C \) durch Anfangsbedingung festgelegt). 
@@ -279,7 +279,7 @@ Oft sind DGL'n auch \emph{implizit} gegeben, also von der Form
   \end{itemize}
 \end{beispiele*}
 \section{Lineare Differentialgleichungen}
-\begin{definition}\label{homogenes_lineares_dgl_system}
+\begin{definition}\label{homogenes_lineares_dgl_system}\index{Homogenes lineares DGL-System}
   Sei \( I\subset \reals \) ein Intervall und 
   \begin{equation*}
     A=\begin{pNiceMatrix} a_{11} & \Cdots & a_{1n} \\ \Vdots &  & \Vdots \\ a_{n1} & \Cdots & a_{nn} \end{pNiceMatrix}\maps I\to \sqmatrices{n}{\reals}

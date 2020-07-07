@@ -248,10 +248,10 @@
     Wir werden später sehen, dass die Aussage in \ref{d_max:operationen_stetig} auch gilt, wenn man den \( \reals ^2\) \zb mit dem Euklidischen Abstand versieht.
 \end{bemerkung}
 \section{Kompaktheit}
-\begin{definition}
+\begin{definition}\index{Offene Überdeckung}
     Sei \( (X,d)\) metrischer Raum, \( M\subset X\). Eine \emph{offene Überdeckung von \( M\)} ist eine Familie \( (U_i)_{i\in I}\) von offenen Teilmengen \( U_i\subset X\) mit \( M\subset \bigcup\limits_{i\in I}U_i\) (\( I\) eine beliebige Indexmenge).   
 \end{definition}
-\begin{definition}
+\begin{definition}\index{Kompaktheit}
     \( M\subset X\) heißt \emph{kompakt}, falls es zu \emph{jeder} offenen Überdeckung von \( \bigcup_{i\in I} U_i \) von \( M\) \emph{endlich} viele Indizes \( i_1,\ldots, i_N\) gibt \sd
     \begin{align*}
         M\subset U_{i_1}\cup \cdots \cup U_{i_N}.
@@ -459,7 +459,7 @@
     \end{figure}
     
 \end{proof}
-\begin{satz}[Bolzano-Weierstraß]\label{bolzanoweierstrass}
+\begin{satz}[Bolzano-Weierstraß]\label{bolzanoweierstrass}\index{Satz von Bolzano-Weierstraß}
     Sei \( (X,d) \) metrischer Raum. Sei \( K\subset X \) kompakt. Dann besitzt jede Folge \( (x_n)_n \) in \( K \) eine Teilfolge \( (x_{n_k})_k \), die gegen einen Punkt \( x\in K \) konvergiert. 
 \end{satz}
 \begin{proof}

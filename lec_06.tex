@@ -20,7 +20,7 @@
     \end{figure}
     Für Abbildungen \( f\maps \reals^n\to \reals^n \) kann man analog definieren:
 \end{erinnerung*}
-\begin{definition}
+\begin{definition}\index{Ableitung}
     Die \emph{Ableitung} einer Funktion \( f\maps U\to \reals^m \), \( U\subset \reals^n \) offen, an der Stelle \( a\in U \), ist, wenn sie existiert, eine Matrix \( \totalderivative{f}(a)\in \Mat(m\times n) \), die eine lineare Approximation von \( f \) ergibt:
     \begin{align*}
         f(x)=f(a)+\totalderivative{f}(a)\explain{\text{Matrix-Multiplikation}}{\matrixmult}(x-a)+R_a(x)\tag{\(*\)}\label{eq:ableitung:definition}
@@ -91,7 +91,7 @@ Aus der Definition folgt sofort
         \end{aligned}
     \end{align*}
 \end{proof}
-\begin{satz}[Kettenregel]
+\begin{satz}[Kettenregel]\index{Kettenregel}
     Seien \( U\subset \reals^n \), \( V\subset \reals^m \) offen, \( g\maps U\to \reals^m \), \( f\maps V\to \reals^k \), \( g(U)\subset V \). Ist \( g \) in \( a\in U \) differenzierbar und \( f \) in \( b=g(a) \), so ist die Verkettung \( f\circ g\maps U\to \reals^k \) in \( a \) differenzierbar und es gilt
     \begin{align*}
         \totalderivative+{f\circ g}(a)=\explain{\in \Mat(k\times m,\reals)}{\underbrace{\totalderivative{f}(g(a))}}\explain[big]{\in \Mat(m\times n),\reals}{\underbrace{\totalderivative{g}(a)}}.
@@ -119,7 +119,7 @@ Aus der Definition folgt sofort
         \implies &\frac{\underline{R}_b^f(A\matrixmult u+\underline{R}_a^g(u))}{\norm{u}}\goesto 0\quad (u\goesto 0).
     \end{align*}
 \end{proof}
-\begin{satz}[Produktregel, Quotientenregel]
+\begin{satz}[Produktregel, Quotientenregel]\index{Produktregel}\index{Quotientenregel}
     Seien \( f,g\maps U\to \reals \), \( U\subset \reals^n \) offen, differenzierbar in \( a\in U \). Dann gilt
     \begin{enumerate}
         \item \label{produktregel} \( f\cdot g \) ist differenzierbar in \( a \) und es gilt
@@ -170,7 +170,7 @@ Aus der Definition folgt sofort
     \includegraphics[width=0.8\linewidth]{figures/r2_zu_r_funktion_veranschaulichung}
     \label{fig:r2_zu_r_funktion_veranschaulichung}
 \end{figure}
-\begin{definition*}[Niveau-Mengen]
+\begin{definition*}[Niveau-Mengen]\index{Niveau-Menge}
     Zu \( c\in \reals \) setze \( N_f(c)\definedas \Set{x\in U|f(x)=c} \).
 \end{definition*}
 \begin{beispiel*}
@@ -190,7 +190,7 @@ Aus der Definition folgt sofort
     \end{figure}
     Ist dagegen \( h=\textcolor{Green}{(\varepsilon \Cos{\phi}, \varepsilon \Sin{\phi})} \) (von der Niveaumenge weg), so ist \( \totalderivative{f}(a)\matrixmult h=2r\varepsilon>0 \). Das wollen wir im Folgenden systematisch studieren.
 \end{beispiel*}
-\begin{definition*}
+\begin{definition*}\index{Richtungsableitung}
     Sei \( f\maps U\to \reals^m \), \( U\subset \reals^n \) offen, gegeben. Für \( a\in U \) und \( v\in \reals^n \) heißt der Grenzwert (falls er existiert)
     \begin{align*}
         \partial_v f(a)\definedas \explain{\text{in \( \reals^m \)}}{\lim_{t \goesto 0}}\frac{f(a+tv)-f(a)}{t}
