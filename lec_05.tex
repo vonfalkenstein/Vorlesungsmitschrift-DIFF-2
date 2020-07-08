@@ -60,10 +60,10 @@
             \( \totalderivative+; \) ist nicht stetig.
         \end{behauptung*}
         \begin{proof}[Denn:]
-            \( D \) ist linear \checkmark, aber die Bedingung aus \thref{lineare_abbildung:stetigkeitssatz} ist verletzt: Betrachte \( f_n\in C^1(\interval{0}{2}) \), \( f_n=x^n    \).
+            \( D \) ist linear \checkmark, aber die Bedingung aus \thref{lineare_abbildung:stetigkeitssatz} ist verletzt: Betrachte \( f_n\in C^1(\interval{0}{1}) \), \( f_n=x^n    \).
             Dann ist \( \supnorm{f_n}=1 \), aber \( \supnorm{\totalderivative{f_n}}=n \) \timplies es kann kein \( C>0 \) geben \sd
             \begin{align*}
-                n=\supnorm{\totalderivative{f_n}}\leq C\norm{f_n}=C\quad \forall n.
+                n=\supnorm{\totalderivative{f_n}}\leq C\supnorm{f_n}=C\quad \forall n.
             \end{align*}
         \end{proof}
     \end{enumerate}
@@ -73,7 +73,7 @@
     Sei \( A\maps V\to W \) lineare stetige Abbildung.
     Die \emph{Operatornorm} von \( A \) ist definiert als
     \begin{align*}
-        \norm{A}_{\text{op}}\definedas \sup_{\substack{x\in V\\ x\neq 0}}\frac{\norm{Ax}_{w}}{\norm{x}_{V}}.
+        \norm{A}_{\text{op}}\definedas \sup_{\substack{x\in V\\ x\neq 0}}\frac{\norm{Ax}_{W}}{\norm{x}_{V}}.
     \end{align*}
 \end{definition*}
     Auf dem VR der stetigen linearen Funktionen \( V\to W \) ist \( \norm{\cdot}_{\text{op}} \) eine Norm.
@@ -128,7 +128,7 @@
             \item \( f\maps \reals^2\to \reals \).
             \begin{align*}
                 f(x,y)=\begin{cases}
-                    \frac{x^2y}{x^2+^2}&(x,y)\neq (0,0)\\
+                    \frac{x^2y}{x^2+y^2}&(x,y)\neq (0,0)\\
                     0&(x,y)=(0,0).
                 \end{cases}                
             \end{align*}
@@ -216,8 +216,8 @@ Eine spezielle Klasse von Normen sind solche, die von einem sogenannten Skalarpr
         \begin{align*}
             \scalarproduct{x}{y}\begin{aligned}[t]
                 &=\frac{\norm{y}_{\text{E}}}{\norm{x}_{\text{E}}}\scalarproduct{x}{\begin{pNiceMatrix} \Cos{\alpha} x_1-\Sin{\alpha}x_2 \\ \Sin{\alpha}x_1+\Cos{\alpha} x_2 \end{pNiceMatrix}}\\
-                &=\frac{\norm{y}_{\text{E}}}(x_1^2\Cos{\alpha}-\cancel{x_1 x_2\Sin{\alpha}}+\cancel{x_1 x_2\Sin{\alpha}+x_2^2\Cos{\alpha}})\\
-                &=\norm{y}_{\text{E}}\cdot\norm{x}{\text{E}}\cdot \Cos{\alpha}.
+                &=\frac{\norm{y}_{\text{E}}}{\norm{x}_{\text{E}}}(x_1^2\Cos{\alpha}-\cancel{x_1 x_2\Sin{\alpha}}+\cancel{x_1 x_2\Sin{\alpha}+x_2^2\Cos{\alpha}})\\
+                &=\norm{y}_{\text{E}}\cdot\norm{x}_{\text{E}}\cdot \Cos{\alpha}.
             \end{aligned}            
         \end{align*}
         Das Skalarprodukt misst die Projektion von \( y \) auf \( x \)
@@ -237,7 +237,7 @@ Eine spezielle Klasse von Normen sind solche, die von einem sogenannten Skalarpr
         \item \emph{Kein} Skalarprodukt ist das Minkowski-Produkt: \( \reals^{n+1} \) mit \( ((x,y))\definedas x_0y_0-\sum_{i=1}^{n}x_i y_i \).
 
         Denn \( ((x,x))=0\iff x_0=\pm \norm{\underline{x}}_{\text{E}} \), \( x=(x_1,\dotsc,x_n) \).
-        \item \( \stetigefunktionen(\interval{a}{b}) \) mit \( \scalarproduct{f}{g}=\Integrate{f(t)g(t)}{d,a,b} \).
+        \item \( \stetigefunktionen(\interval{a}{b}) \) mit \( \scalarproduct{f}{g}=\Integrate{f(t)g(t)}{t,a,b} \).
     \end{itemize}
 \end{beispiele*}
 \begin{lemma}
@@ -320,9 +320,9 @@ Nicht jede Norm wird von einem Skalarprodukt induziert. Es gilt
                                 \text{linke Seite}\begin{aligned}[t]
                                     &=\frac{1}{4}(\begin{aligned}[t]
                                         &\norm{x+u+y}^2-\norm{x+u-y}^2\\
-                                        &+\norm{x-u+y}^2-\norm{x-u-y}^2
+                                        &+\norm{x-u+y}^2-\norm{x-u-y}^2)
                                     \end{aligned}
-                                    )\\
+                                    \\
                                     &\explain{\text{Parallelogramm-Gleichung}}{=}\frac{1}{2}(\norm{x+y}^2+\norm{u}^2-\norm{x-y}^2-\norm{u}^2)\\
                                     &=\frac{1}{2}(\scalarproduct{x+y}{x+y}-\scalarproduct{x-y}{x-y})\\
                                     &=2\scalarproduct{x}{y}.
