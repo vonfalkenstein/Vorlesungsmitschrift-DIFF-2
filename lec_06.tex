@@ -68,7 +68,7 @@
             &\explain{\text{CHECK!}}{=}\scalarproduct{a}{B\matrixmult a}+\scalarproduct{(B+B^T)\matrixmult a}{h}+\scalarproduct{h}{Bh}. 
         \end{aligned}                
     \end{align*}
-    Wegen (wähle \( \norm{\cdot}=\norm{\cdot}_{\text{E}} \))
+    Wegen (wähle \( \norm{\cdot}=\euclidiannorm{\cdot} \))
     \begin{align*}
         \frac{\scalarproduct{a}{Bh}}{\norm{h}}\underset{\text{C-S}}{\leq}\frac{\norm{h}\cdot\norm{Bh}}{\norm{h}}\leq \norm{B}_{\text{op}}\cdot\norm{h}\goesto 0  \text{ für }h\goesto 0
     \end{align*}
