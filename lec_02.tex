@@ -1,6 +1,7 @@
 % !TEX root = ./Vorlesungsmitschrift DIFF 2.tex  
-\lecture{Do 23.04. 10:15}{}
-Bevor wir uns mit offenen und abgeschlossenen Mengen und sogenannten vollständigen metrischen Räumen näher befassen, beweisen wir noch zwei nützliche Lemmata zu Konvergenz und Stetigkeit:
+\lecture{Do 23.04. 10:15}{} Bevor wir uns mit offenen und abgeschlossenen Mengen und
+sogenannten vollständigen metrischen Räumen näher befassen, beweisen wir noch zwei
+nützliche Lemmata zu Konvergenz und Stetigkeit:
 
 \begin{lemma}\label{konvergenz_abstand_ist_nullfolge}
     \( (X,d) \) sei metrischer Raum.
@@ -130,8 +131,8 @@ Bevor wir uns mit offenen und abgeschlossenen Mengen und sogenannten vollständi
         \item[\ref{interior_ist_offen}:] \( a\in M\setminus \randpunkte M \) \timplies \texists \( \varepsilon>0 \) \sd \( B_\varepsilon(a)\cap X\setminus M = \emptyset \). Für dieses gilt auch \( B_\varepsilon\cap \randpunkte M=\emptyset\) (denn angenommen \texists \( y\in B_\varepsilon(a)\cap \randpunkte M \),  dann wäre (da \( y\in \randpunkte M \) und \( B_\varepsilon(a) \) eine Umgebung von \( y \)) \( B_\varepsilon(a)\cap (X\setminus M)\neq \emptyset \) \contra \textsc{VOR}).
         
         Also gilt \( B_\varepsilon(a)\subset M\setminus \randpunkte M \) \timplies \Beh.
-        \item[\ref{abschluss_ist_geschlossen}:] Es gilt \( \randpunkte M=\randpunkte (X\setminus M) \) (nach Definition), \( (X\setminus M)\setminus \randpunkte(X\setminus M) \) ist offen nach \ref{interior_ist_offen} \timplies \begin{align*}
-            X\setminus ((X\setminus M)\setminus \randpunkte(X\setminus M))\explain{\text{Manipulation mit Mengen}}{=}(X\setminus(X\setminus M))\cup \randpunkte (X\setminus M)=M\cup \randpunkte M
+        \item[\ref{abschluss_ist_geschlossen}:] Es gilt \( \randpunkte M=\randpunkte{X\setminus M} \) (nach Definition), \( (X\setminus M)\setminus \randpunkte{X\setminus M} \) ist offen nach \ref{interior_ist_offen} \timplies \begin{align*}
+            X\setminus ((X\setminus M)\setminus \randpunkte{X\setminus M})\explain{\text{Manipulation mit Mengen}}{=}(X\setminus(X\setminus M))\cup \randpunkte {X\setminus M}=M\cup \randpunkte M
         \end{align*}
         ist offen.
         \begin{figure}[H]
@@ -169,7 +170,7 @@ Nach \ref{abgeschlossenheit:folgenkonvergenzkriterium} können wir \( \abschluss
 \begin{definition}\index{Cauchy-Folge}
     Sei \( (X,d) \) ein metrischer Raum. Eine Folge \( (y_n)_n \subset X\) heißt \emph{Cauchy-Folge}, falls gilt
     \begin{align*}
-        \forall \varepsilon>0 \logicspace \exists N\in \naturals \logicspace\text{\sd} \distance{y_n}{ y_m}<\varepsilon \logicspace \forall n,m\geq N.
+        \forall \varepsilon>0 \logicspace \exists N\in \naturals \logicspace\text{\sd}\logicspace \distance{y_n}{ y_m}<\varepsilon \logicspace \forall n,m\geq N.
     \end{align*} 
 \end{definition}
 \begin{lemma}
@@ -276,9 +277,9 @@ Zunächst einige
 \end{proof}
 Ein sehr wichtiger Satz, der viele Anwendungen hat ist der folgende:
 \begin{satz}[Banach'scher Fixpunktsatz]\index{Banach'scher Fixpunktsatz}
-    Sei \( (X,d_X)\) ein \emph{vollständiger} metrischer Raum. Sei \( M\subset X\) eine \emph{abgeschlossene} Teilmenge und \( \Phi\maps M\to X\) eine Abbildung mit \( \Phi(M\subset M)\) und es gebe \( 0\leq L<1\) \sd
+    Sei \( (X,d_X)\) ein \emph{vollständiger} metrischer Raum. Sei \( M\subset X\) eine \emph{abgeschlossene} Teilmenge und \( \Phi\maps M\to X\) eine Abbildung mit \( \Phi(M)\subset M\) und es gebe \( 0\leq L<1\) \sd
     \begin{align*}
-        d_X(\Phi(X),\Phi(Y))\leq L d_X(x,y)\forall x,y\in M\logicspace (\text{\enquote{\( \Phi\) ist Kontraktion}}).
+        d_X(\Phi(x),\Phi(y))\leq L d_X(x,y)\logicspace\forall x,y\in M\logicspace (\text{\enquote{\( \Phi\) ist Kontraktion}}).
     \end{align*}
     Dann gibt es genau ein \( t_*\) \sd \( \Phi(t_*)=t_*\). Ein solches \( t_*\) heißt \emph{Fixpunkt} von \( \Phi\). 
 \end{satz}
@@ -299,7 +300,7 @@ Ein sehr wichtiger Satz, der viele Anwendungen hat ist der folgende:
                 &\leq \distance{t_*}{\tilde{t_*} }
             \end{aligned}
         \end{align*} 
-        Da \( L>1\) ist, folgt \( \distance{t_*}{\tilde{t_*}=0 }\), also \( t_*=\tilde{t_*} \).
+        Da \( L<1\) ist, folgt \( \distance{t_*}{\tilde{t_*}=0 }\), also \( t_*=\tilde{t_*} \).
         \item[Existenz:] Wir betrachten die Folge \( x_0\in M\) beliebig, \( x_n\definedas \Phi(x_{n-1})\) für \( n\geq 1\).
         \begin{behauptung*}
             \( (x_n)_n\) konvergiert in \( M\)  und zwar gegen de Fixpunkt.
