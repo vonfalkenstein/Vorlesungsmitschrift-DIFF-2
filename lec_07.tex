@@ -331,7 +331,7 @@ Der Beweis benötigt noch ein Lemma:
     \begin{equation*}
         \begin{split}
             \norm{f(x+h)-f(x)}_{\text{E}}&\leq \Integrate{\norm{\totalderivative{f}(x+th)\matrixmult h}_{\text{E}}}{t,0,1}\\
-            &\leq \Integrate{\norm{\totalderivative{f}(x+th)}_{\text{op}}\matrixmult \norm{h}_{\text{E}}}{t,0,1}.
+            &\leq \Integrate{\norm{\totalderivative{f}(x+th)}_{\text{op}}\cdot \norm{h}_{\text{E}}}{t,0,1}.
         \end{split}
     \end{equation*}
     Das Supremum wird angenommen, da \( t\mapsto \norm{\totalderivative{f}(x+th)}_{\text{op}} \) stetig ist und \( \interval{0}{1} \) kompakt.
