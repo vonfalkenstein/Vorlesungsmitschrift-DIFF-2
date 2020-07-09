@@ -111,17 +111,17 @@ Aber oft ist es \emph{viel} übersichtlicher, die partiellen Ableitungen \emph{n
     \end{align*}
     Ist speziell \( m=1 \), so definiert man
     \begin{align*}
-        \grad-{f(a)}\definedas \transpose-{\totalderivative{f}(a)}=\begin{pNiceMatrix} \partial_1 f(a) \\ \Vdots \\ \partial_n f(a) \end{pNiceMatrix}\in \reals^n
+        \grad{f(a)}\definedas \transpose-{\totalderivative{f}(a)}=\begin{pNiceMatrix} \partial_1 f(a) \\ \Vdots \\ \partial_n f(a) \end{pNiceMatrix}\in \reals^n
     \end{align*}
-    \enquote{Gradient von \( f \) in \( a \)}, und schreibt \( \partial_v f(a)=\scalarproduct{\grad-{f(a)}}{v} \).
+    \enquote{Gradient von \( f \) in \( a \)}, und schreibt \( \partial_v f(a)=\scalarproduct{\grad{f(a)}}{v} \).
 
-    Ist \( \grad-{f(a)}\neq 0 \) und \( \euclidiannorm{v}=1 \), so ist
+    Ist \( \grad{f(a)}\neq 0 \) und \( \euclidiannorm{v}=1 \), so ist
     \begin{equation*}
-        \scalarproduct{\grad-{f(a)}}{v}=\euclidiannorm{\grad-{f(a)}}\cdot\Cos{\alpha},
+        \scalarproduct{\grad{f(a)}}{v}=\euclidiannorm{\grad{f(a)}}\cdot\Cos{\alpha},
     \end{equation*}
-    wobei \( \alpha \) der zwischen \( \grad-{f(a)} \) und \( v \) in \( \reals^n \) eingeschlossene Winkel ist (in der durch die beiden Vektoren aufgespannten Ebene).
+    wobei \( \alpha \) der zwischen \( \grad{f(a)} \) und \( v \) in \( \reals^n \) eingeschlossene Winkel ist (in der durch die beiden Vektoren aufgespannten Ebene).
 
-    Es folgt: \( \partial_v f(a) \) ist dann am größten, wenn \( v \) in die selbe Richtung zeigt wei \( \grad-{f(a)} \) \timplies der Gradient gibt die Richtung stärksten Anstiegs von \( f \) in \( a \) an.
+    Es folgt: \( \partial_v f(a) \) ist dann am größten, wenn \( v \) in die selbe Richtung zeigt wei \( \grad{f(a)} \) \timplies der Gradient gibt die Richtung stärksten Anstiegs von \( f \) in \( a \) an.
 \end{bemdef}
 \begin{beispiel*}
     \( f(x)=x_1^2+x_2^2+2 \).
@@ -136,19 +136,18 @@ Aber oft ist es \emph{viel} übersichtlicher, die partiellen Ableitungen \emph{n
     \begin{figure}[H]
         \centering
         \includegraphics[width=0.4\linewidth]{figures/gradient_beispiel_parabel_2d}
-        \caption*{}
         \label{fig:gradient_beispiel_parabel_2d}
     \end{figure}
     Ist \( f \) lediglich \emph{partiell differenzierbar}, \dh  die partiellen Ableitungen existieren auf \( U \), so definiert man dennoch
     \begin{equation*}
-        \grad-{f(x)}=\transpose-{(\partial_1 f(x),\dotsc, \partial_n f(x))}
+        \grad{f(x)}=\transpose-{(\partial_1 f(x),\dotsc, \partial_n f(x))}
     \end{equation*}
     als den Vektor der partiellen Ableitungen bei \( x \).
 \end{beispiel*}
 \begin{satz}\label{extremum_notwendige_bedingung}
     Sei \( f\maps U\to \reals \), \( U\subset \reals^n \) offen, \emph{partiell differenzierbar} auf \( U \). Sei \( a\in U \) ein \emph{lokales Maximum} (oder Minimum) von \( f \), \dh  \texists Umgebung \( V \) von \( a \) \sd \( f(x)\leq (a) \) (oder \( f(x)\geq f(a) \) für alle \( x\in V \)). Dann gilt
     \begin{equation*}
-        \boxed{\grad-{f(a)}=0}.
+        \boxed{\grad{f(a)}=0}.
     \end{equation*} 
 \end{satz}
 \begin{proof}

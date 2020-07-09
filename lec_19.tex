@@ -247,10 +247,10 @@ und für jedes feste \( k \) gilt
 \end{satz}
 \begin{bemerkung*}
   Die Voraussetzung ist wichtig:\\
-  Betrachte \( f_k=-\characteristicfunction.{\ointerval{-\infty}{0}}{}+\characteristicfunction.{\ointerval{0}{k}}{} \). Dann ist \( f=\sgn;\not\in \stufenfunktionen[2] \), \( \sgn{x}=\begin{cases}
+  Betrachte \( f_k=-\characteristicfunction;{\ointerval{-\infty}{0}}+\characteristicfunction;{\ointerval{0}{k}} \). Dann ist \( f=\sgn;\not\in \stufenfunktionen[2] \), \( \sgn{x}=\begin{cases}
     1&x>0\\ 0&x=0\\ -1&x<0.
   \end{cases} \)
-  Betrachte \( f_k=-\characteristicfunction-{\ointerval{k}{\infty}}{} \). Dann ist \( f=0\in \stufenfunktionen[2] \) aber \eqref{eq:beppo-levi} trifft nicht zu.
+  Betrachte \( f_k=-\characteristicfunction;{\ointerval{k}{\infty}} \). Dann ist \( f=0\in \stufenfunktionen[2] \) aber \eqref{eq:beppo-levi} trifft nicht zu.
 \end{bemerkung*}
 \begin{proof}[Beweis von \ref{beppo-levi}]
   Für \( k\geq k_0 \) gilt \( \int f_k>-\infty \) (wegen der Monotonie). Sei \( k\geq k_0 \). Schreibe \( f_k=g_k-h_k \), \( g_k,h_k\in \stufenfunktionen[1] \). Dann ist \( \int h_k<\infty \) \timplies \texists \( \varphi_k\in \stufenfunktionen[0] \) \sd \( \varphi_k\leq h_k \) und \( \Integrate{h_k-\varphi_k}{x}<2^{-k} \)

@@ -103,36 +103,36 @@ nützliche Lemmata zu Konvergenz und Stetigkeit:
     Sei \( (X,d) \) metrischer Raum, \( M\subset X \). Ein Punkt \( y\in X \) heißt \emph{Randpunkt} von \( M \), falls in jeder Umgebung von \( y \) sowohl Punkte von \( M \) als auch \( X\setminus M \) liegen.
 \end{definition}
 \begin{notation*}
-    \( \randpunkte M=\Set{\text{Randpunkte von \( M \)}} \)
+    \( \randpunkte{M}=\Set{\text{Randpunkte von \( M \)}} \)
 \end{notation*}
 \begin{beispiel*}[\( \reals^n \), \( d_{\text{Eukl.}} \)]
    Kugel im \( \reals^m \):
    \begin{align*}
        K^n&\definedas \Set{x\in \reals^n| \norm{x-0}_\text{E}\leq R}\subset \reals^n\\
        \intertext{Sphäre:}
-       \randpunkte K^n &=\Set{x\in \reals^n|\norm{x}_\text{E}= R}=S^{n-1}
+       \randpunkte{K^n} &=\Set{x\in \reals^n|\norm{x}_\text{E}= R}=S^{n-1}
    \end{align*} 
 \end{beispiel*}
 
 \begin{beispiel*}
-    \( \rationals\subset \reals \). \( \randpunkte \rationals =\reals\).
+    \( \rationals\subset \reals \). \( \randpunkte{\rationals} =\reals\).
 \end{beispiel*}
 \begin{satz}
     Sei \( (X,d) \) metrischer Raum. Sei \( M\subset X \). Dann gilt
     \begin{enumerate}
-        \item \label{interior_ist_offen}\( M\setminus \randpunkte M \) ist offen.
-        \item \label{abschluss_ist_geschlossen}\( M\cup \randpunkte M \) ist abgeschlossen.
-        \item \label{rand_ist_geschlossen}\( \randpunkte M \) ist abgeschlossen.
+        \item \label{interior_ist_offen}\( M\setminus \randpunkte{M} \) ist offen.
+        \item \label{abschluss_ist_geschlossen}\( M\cup \randpunkte{M} \) ist abgeschlossen.
+        \item \label{rand_ist_geschlossen}\( \randpunkte{M} \) ist abgeschlossen.
     \end{enumerate}
 \end{satz}
 \begin{proof}
     \begin{proofdescription}
         
-        \item[\ref{interior_ist_offen}:] \( a\in M\setminus \randpunkte M \) \timplies \texists \( \varepsilon>0 \) \sd \( B_\varepsilon(a)\cap X\setminus M = \emptyset \). Für dieses gilt auch \( B_\varepsilon\cap \randpunkte M=\emptyset\) (denn angenommen \texists \( y\in B_\varepsilon(a)\cap \randpunkte M \),  dann wäre (da \( y\in \randpunkte M \) und \( B_\varepsilon(a) \) eine Umgebung von \( y \)) \( B_\varepsilon(a)\cap (X\setminus M)\neq \emptyset \) \contra \textsc{VOR}).
+        \item[\ref{interior_ist_offen}:] \( a\in M\setminus \randpunkte{M} \) \timplies \texists \( \varepsilon>0 \) \sd \( B_\varepsilon(a)\cap X\setminus M = \emptyset \). Für dieses gilt auch \( B_\varepsilon\cap \randpunkte{M}=\emptyset\) (denn angenommen \texists \( y\in B_\varepsilon(a)\cap \randpunkte{M} \),  dann wäre (da \( y\in \randpunkte{M} \) und \( B_\varepsilon(a) \) eine Umgebung von \( y \)) \( B_\varepsilon(a)\cap (X\setminus M)\neq \emptyset \) \contra \textsc{VOR}).
         
-        Also gilt \( B_\varepsilon(a)\subset M\setminus \randpunkte M \) \timplies \Beh.
-        \item[\ref{abschluss_ist_geschlossen}:] Es gilt \( \randpunkte M=\randpunkte{X\setminus M} \) (nach Definition), \( (X\setminus M)\setminus \randpunkte{X\setminus M} \) ist offen nach \ref{interior_ist_offen} \timplies \begin{align*}
-            X\setminus ((X\setminus M)\setminus \randpunkte{X\setminus M})\explain{\text{Manipulation mit Mengen}}{=}(X\setminus(X\setminus M))\cup \randpunkte {X\setminus M}=M\cup \randpunkte M
+        Also gilt \( B_\varepsilon(a)\subset M\setminus \randpunkte{M} \) \timplies \Beh.
+        \item[\ref{abschluss_ist_geschlossen}:] Es gilt \( \randpunkte{M}=\randpunkte{X\setminus M} \) (nach Definition), \( (X\setminus M)\setminus \randpunkte{X\setminus M} \) ist offen nach \ref{interior_ist_offen} \timplies \begin{align*}
+            X\setminus ((X\setminus M)\setminus \randpunkte{X\setminus M})\explain{\text{Manipulation mit Mengen}}{=}(X\setminus(X\setminus M))\cup \randpunkte{X\setminus M}=M\cup \randpunkte{M}
         \end{align*}
         ist offen.
         \begin{figure}[H]
@@ -142,8 +142,8 @@ nützliche Lemmata zu Konvergenz und Stetigkeit:
         \end{figure}
         \item[\ref{rand_ist_geschlossen}:]
         \begin{align*}
-            &\randpunkte M=(M\cup \randpunkte M)\setminus (M\setminus \randpunkte M)\\
-            \implies &X\setminus \randpunkte M=\underbrace{X\setminus(\underbrace{M\cup \randpunkte M}_{\text{(abgeschl.\ nach \ref{abschluss_ist_geschlossen})}})}_{\text{offen}}\cup (\underbrace{M\setminus \randpunkte M}_{\text{offen nach \ref{interior_ist_offen}}}).
+            &\randpunkte{M}=(M\cup \randpunkte{M})\setminus (M\setminus \randpunkte{M})\\
+            \implies &X\setminus \randpunkte{M}=\underbrace{X\setminus(\underbrace{M\cup \randpunkte{M}}_{\text{(abgeschl.\ nach \ref{abschluss_ist_geschlossen})}})}_{\text{offen}}\cup (\underbrace{M\setminus \randpunkte{M}}_{\text{offen nach \ref{interior_ist_offen}}}).
         \end{align*} 
     \end{proofdescription}
 \end{proof}
@@ -151,8 +151,8 @@ nützliche Lemmata zu Konvergenz und Stetigkeit:
 \begin{notation*}
     Sei \( M\subset X \).
     \begin{align*}
-        \inneres{M}&\definedas M\setminus \randpunkte M\text{ heißt das \emph{Innere} von \( M \).}\\
-        \abschluss{M}&\definedas M\cup \randpunkte M\text{ heißt der \emph{Abschluss} von \( M \).}
+        \inneres{M}&\definedas M\setminus \randpunkte{M}\text{ heißt das \emph{Innere} von \( M \).}\\
+        \abschluss{M}&\definedas M\cup \randpunkte{M}\text{ heißt der \emph{Abschluss} von \( M \).}
     \end{align*}
 \end{notation*}
 Nach \ref{abgeschlossenheit:folgenkonvergenzkriterium} können wir \( \abschluss{M} \) konstruieren, indem wir zu \( M \) noch alle Grenzwerte von Folgen \( (x_n)_n \), \( x_n\in M \), die in in \( X \) konvergieren, hinzunehmen.
@@ -161,8 +161,8 @@ Nach \ref{abgeschlossenheit:folgenkonvergenzkriterium} können wir \( \abschluss
 \end{beispiel*}
 \begin{bemerkung*}[als Hausaufgabe]
     \begin{align*}
-        M&\subset X \text{ offen} \iff M\cap \randpunkte M=\emptyset.\\
-        M&\subset X \text{ abgeschlossen} \iff \randpunkte M \subset M.
+        M&\subset X \text{ offen} \iff M\cap \randpunkte{M}=\emptyset.\\
+        M&\subset X \text{ abgeschlossen} \iff \randpunkte{M} \subset M.
     \end{align*}
     
 \end{bemerkung*}

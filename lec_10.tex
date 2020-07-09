@@ -29,7 +29,7 @@ Dies führt zur sogenannten
 
   Es besitze \( f \) in \( a \) unter der Nebenbedingung \( h(x)=0 \) ein lokales Extremum. Dann gibt es \( \lambda_1,\dotsc,\lambda_m\in \reals \) (\emph{Lagrange-Multiplikatoren}), \sd 
   \begin{equation*}
-    \grad-{f(a)}=\lambda_1 \grad-{h_1(a)}+\dotsb+\lambda_m \grad-{h_m(a)}.
+    \grad{f(a)}=\lambda_1 \grad{h_1(a)}+\dotsb+\lambda_m \grad{h_m(a)}.
   \end{equation*}
 \end{satz}
 \begin{proof}
@@ -104,7 +104,6 @@ Wir nutzt man diesen Satz zur Lösung von Problemen wie oben?
     \begin{figure}[H]
       \centering
       \includegraphics[width=0.5\linewidth]{figures/dreiecksmaximierung_antwort}
-      \caption*{}
       \label{fig:dreiecksmaximierung_antwort}
     \end{figure}
     Der Flächeninhalt wird maximal \( \quot{1}{2}r^2 \), denn für \( b\goesto 0 \) (spitzerwerdendes Dreieck), strebt \( f\goesto 0 \), ebenso für \( h\goesto 0 \) (breiterwerdendes Dreieck).
@@ -268,7 +267,7 @@ und nennt \( \laplaceoperator=\partial_1^2+\dotsb+\partial_n^2 \) den \emph{Lapl
   \begin{enumerate}
     \item \( h\maps \reals^n\setminus\zeroset\to \reals \), \( h(x)=f(\norm{x}_E) \) mit einer auf \( \reals\setminus \zeroset \) zweimal stetig partiell differenzierbaren Funktion \( f \).
     \begin{equation*}
-      \grad-{f(\norm{x}_E)}=f'(\norm{x}_E)\frac{1}{\norm{x}_E}x
+      \grad{f(\norm{x}_E)}=f'(\norm{x}_E)\frac{1}{\norm{x}_E}x
     \end{equation*}
     und
     \begin{align*}
@@ -334,18 +333,18 @@ und nennt \( \laplaceoperator=\partial_1^2+\dotsb+\partial_n^2 \) den \emph{Lapl
     \includegraphics[width=0.9\linewidth]{lagrange_multiplikatoren_intuition}
     \label{fig:lagrange_multiplikatoren_intuition}
   \end{figure}
-  Tatsache: \( \grad-{h}(x,y) \) steht senkrecht auf \( h(x,y)=c \). (Der Gradient zeigt in die Richtung des stärksten Anstiegs der Funktion).
+  Tatsache: \( \grad{h}(x,y) \) steht senkrecht auf \( h(x,y)=c \). (Der Gradient zeigt in die Richtung des stärksten Anstiegs der Funktion).
   \begin{figure}[H]
     \centering
     \includegraphics[width=0.9\linewidth]{lagrange_multiplikatoren_weitere_intuition}
     \label{fig:lagrange_multiplikatoren_weitere_intuition}
   \end{figure}
-  Tatsache 2: Liegt in \( (x_0,y_0)\in \set{(x,y)|g(x,y)=0} \) ein Extremum von \( f \), so \texists \( \lambda\in \reals \) \sd \(\boxed{ \grad-{f}(x_0,y_0)\lambda\grad-{g}(x_0,y_0) }\). Tatsache 1 + 2 gleichbedeutend \( f(x,y)=c \) schmiegt sich in \( (x_0,y_0,) \) tangential an \( \set{g(x,y)=0} \) an.
+  Tatsache 2: Liegt in \( (x_0,y_0)\in \set{(x,y)|g(x,y)=0} \) ein Extremum von \( f \), so \texists \( \lambda\in \reals \) \sd \(\boxed{ \grad{f}(x_0,y_0)\lambda\grad{g}(x_0,y_0) }\). Tatsache 1 + 2 gleichbedeutend \( f(x,y)=c \) schmiegt sich in \( (x_0,y_0,) \) tangential an \( \set{g(x,y)=0} \) an.
 
   Das heißt, wenn wir das Gleichungssystem
   \begin{equation*}
     \left.\begin{aligned}
-      \grad-{f}(x,y)-\lambda\grad-{g}(x,y&)=0\\
+      \grad{f}(x,y)-\lambda\grad{g}(x,y&)=0\\
       g(x,y)&=0
     \end{aligned}\right\}\tag{\( * \)}\label{eq:lagrange_multiplikatoren_intuition}
   \end{equation*}
