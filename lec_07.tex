@@ -18,7 +18,7 @@ Konkret kann man also so vorgehen: Man bestimmt die partiellen Ableitungen und �
     \begin{multline*}
         g_{a_i e_j}(t)=f(a+t e_j)=f(a_1\dotsc, a_j+t, \dotsc,a_n)\quad t\in \ointerval{-\varv}{\varepsilon} \\\text{\sd} \logicspace  a+te_{j} \ \text{noch im Definitionsbereich von \( f \) liegt.}
     \end{multline*}
-    \timplies Um \( \partial_j f(a) \) zu berechnen, kann man die gewöhnlichen Ableitungen bezüglich der \( j \)-ten Koordinate bestimmen (und steht stellt sich die Übrigen als Konstanten vor).
+    \timplies Um \( \partial_j f(a) \) zu berechnen, kann man die gewöhnlichen Ableitungen bezüglich der \( j \)-ten Koordinate bestimmen (und stellt sich die Übrigen als Konstanten vor).
 \end{bemerkung}
 \begin{beispiele}
     \begin{enumerate}
@@ -48,7 +48,7 @@ Konkret kann man also so vorgehen: Man bestimmt die partiellen Ableitungen und �
                 \partial_j f(0)=\D{f(0,\dotsc,\underset{j\text{-te}}{t},\dotsc,0)}{t}
                 =\evaluateat{\frac{\differential}{\differential t}}{t=0}\abs*{t}.
             \end{align*} 
-            \timplies Die partiellen Ableitungen in \( a=0 \) existieren nicht (\diffcourse{1}: Für \( h\in \reals \) ist \( \quot{\abs{h}-0}{h}=\pm 1\not\goesto 0 \) für \( h\goesdownto 0 \) \bzw \( h\goesupto \)). \timplies \( f \) ist \emph{nicht} differenzierbar in \( a=0 \).
+            \timplies Die partiellen Ableitungen in \( a=0 \) existieren nicht (\diffcourse{1}: Für \( h\in \reals \) ist \( \quot{\abs{h}-0}{h}=\pm 1\not\goesto 0 \) für \( h\goesdownto 0 \) \bzw \( h\goesupto 0 \)). \timplies \( f \) ist \emph{nicht} differenzierbar in \( a=0 \).
         \end{description}
         Für \( a\neq 0 \) gilt jedoch: \( \sqrt{\cdot}\maps \reals_{>0} \to \reals \) ist differenzierbar (\diffcourse{1}) und ebenso die polynomiale Funktion \( x\mapsto \sum_{i=1}^{n}x_i^2 \) \timplies \( f \) ist differenzierbar auf \( \reals^n\setminus \zeroset\).
 
@@ -92,22 +92,22 @@ Aber oft ist es \emph{viel} übersichtlicher, die partiellen Ableitungen \emph{n
 \begin{beispiel*}
     \( f(x,y)=\frac{xy}{x^2+y^2} \) auf \( U=\reals^2\setminus \zeroset \).
     \begin{align*}
-        \totalderivative{f}(x,y)=\begin{pNiceMatrix} \frac{y(y^2)-x^2}{(x^2+y^2)}^2 \\ \frac{x(x^2-y^2)}{(x^2+y^2)} \end{pNiceMatrix}\\
+        \totalderivative{f}(x,y)&=\begin{pNiceMatrix} \frac{y(y^2-x^2)}{(x^2+y^2)^2} && \frac{x(x^2-y^2)}{(x^2+y^2)^2} \end{pNiceMatrix}\\
         \totalderivative+{f\circ g}(r,\phi)&\begin{aligned}[t]
-            &=\frac{1}{r}(\cos^2 \phi-\sin^2 \phi)\begin{pNiceMatrix} \overbrace{-\Sin{\phi}\Cos{\phi}+\Cos{\phi} \Sin{\phi}}^{=0} \\ \underbrace{r\sin^2 \phi+r\cos^2\phi}_{=r} \end{pNiceMatrix}\\
+            &=\frac{1}{r}(\cos^2 \phi-\sin^2 \phi)\transpose-{\begin{pNiceMatrix} \overbrace{-\Sin{\phi}\Cos{\phi}+\Cos{\phi} \Sin{\phi}}^{=0} \\ \underbrace{r\sin^2 \phi+r\cos^2\phi}_{=r} \end{pNiceMatrix}}\\
             &=(0,\cos^2\phi -\sin^2\phi).
         \end{aligned}
     \end{align*}
     In diesem Fall rechnet man allerdings schneller direkt:
     \begin{align*}
-        \totalderivative+{f\circ g}(r,\phi)=\totalderivative+{\tilde{f}}(r,\phi)=\Cos{\phi}\cdot\Sin{\phi}.
+        \totalderivative+{f\circ g}(r,\phi)=\totalderivative+{\tilde{f}}(r,\phi),\logicspace\tilde{f}(r,\phi)= \Cos{\phi}\cdot\Sin{\phi}.
     \end{align*}
 \end{beispiel*}
 \begin{bemdef}
     Wir hatten allgemeiner gesehen:\\
     Ist \( f\maps U\to \reals^m \), \( U\subset \reals^n \) offen, differenzierbar in \( a \), so gilt
     \begin{align*}
-        \partial_v f(a)\cdot \totalderivative{f}(a)\matrixmult v\quad \forall v\in \reals^n.
+        \partial_v f(a)= \totalderivative{f}(a)\matrixmult v\quad \forall v\in \reals^n.
     \end{align*}
     Ist speziell \( m=1 \), so definiert man
     \begin{align*}
@@ -121,7 +121,7 @@ Aber oft ist es \emph{viel} übersichtlicher, die partiellen Ableitungen \emph{n
     \end{equation*}
     wobei \( \alpha \) der zwischen \( \grad{f(a)} \) und \( v \) in \( \reals^n \) eingeschlossene Winkel ist (in der durch die beiden Vektoren aufgespannten Ebene).
 
-    Es folgt: \( \partial_v f(a) \) ist dann am größten, wenn \( v \) in die selbe Richtung zeigt wei \( \grad{f(a)} \) \timplies der Gradient gibt die Richtung stärksten Anstiegs von \( f \) in \( a \) an.
+    Es folgt: \( \partial_v f(a) \) ist dann am größten, wenn \( v \) in die selbe Richtung zeigt wie \( \grad{f(a)} \) \timplies der Gradient gibt die Richtung stärksten Anstiegs von \( f \) in \( a \) an.
 \end{bemdef}
 \begin{beispiel*}
     \( f(x)=x_1^2+x_2^2+2 \).
@@ -145,7 +145,7 @@ Aber oft ist es \emph{viel} übersichtlicher, die partiellen Ableitungen \emph{n
     als den Vektor der partiellen Ableitungen bei \( x \).
 \end{beispiel*}
 \begin{satz}\label{extremum_notwendige_bedingung}
-    Sei \( f\maps U\to \reals \), \( U\subset \reals^n \) offen, \emph{partiell differenzierbar} auf \( U \). Sei \( a\in U \) ein \emph{lokales Maximum} (oder Minimum) von \( f \), \dh  \texists Umgebung \( V \) von \( a \) \sd \( f(x)\leq (a) \) (oder \( f(x)\geq f(a) \) für alle \( x\in V \)). Dann gilt
+    Sei \( f\maps U\to \reals \), \( U\subset \reals^n \) offen, \emph{partiell differenzierbar} auf \( U \). Sei \( a\in U \) ein \emph{lokales Maximum} (oder Minimum) von \( f \), \dh  \texists Umgebung \( V \) von \( a \) \sd \( f(x)\leq f(a) \) (oder \( f(x)\geq f(a) \) für alle \( x\in V \)). Dann gilt
     \begin{equation*}
         \boxed{\grad{f(a)}=0}.
     \end{equation*} 
@@ -169,7 +169,7 @@ Aber oft ist es \emph{viel} übersichtlicher, die partiellen Ableitungen \emph{n
         \item \( f(x,y)=\begin{cases}
             \frac{xy}{x^2+y^2}&(x,y)\neq (0,0)\\
             0 &(x,y)=(0,0).
-        \end{cases} \). \( \partial_1 f(0)=0=\partial_2 f(0) \), also könnte \( 0 \) ein Extremum sein. Ist es aber nicht, da für \( x=y=\varepsilon>0 \) gilt \( f(\varepsilon,\varepsilon)=\frac{1}{2}>0 \) und für \( -x=y=\varepsilon>0 \). \( f(-\varepsilon,\varepsilon)=-\frac{1}{2}<0 \).
+        \end{cases} \). \\\( \partial_1 f(0)=0=\partial_2 f(0) \), also könnte \( 0 \) ein Extremum sein. Ist es aber nicht, da für \( x=y=\varepsilon>0 \) gilt \( f(\varepsilon,\varepsilon)=\frac{1}{2}>0 \) und für \( -x=y=\varepsilon>0 \). \( f(-\varepsilon,\varepsilon)=-\frac{1}{2}<0 \).
     \end{enumerate}
 \end{beispiele*}
 \begin{bemerkung*}
@@ -228,7 +228,7 @@ Aber oft ist es \emph{viel} übersichtlicher, die partiellen Ableitungen \emph{n
     Die Umkehrungen sind im Allgemeinen falsch.
 \end{bemerkung*}
 \begin{bemerkung*}[Erinnerung (\diffcourse{1}) MWS]
-    \( f\maps I\to \reals \) differenzierbar, \( I \) Intervall, \texists \( \epsilon\in \interval{0}{1} \) \sd
+    \( f\maps I\to \reals \) differenzierbar, \( I \) Intervall, \texists \( \eta\in \interval{0}{1} \) \sd
     \begin{equation*}
         f(a+h)-f(a)=f'(a+\eta h)\cdot h.
     \end{equation*}
@@ -330,7 +330,7 @@ Der Beweis benötigt noch ein Lemma:
     \begin{equation*}
         \begin{split}
             \euclidiannorm{f(x+h)-f(x)}&\leq \Integrate{\euclidiannorm{\totalderivative{f}(x+th)\matrixmult h}}{t,0,1}\\
-            &\leq \Integrate{\norm{\totalderivative{f}(x+th)}_{\text{op}}\matrixmult \euclidiannorm{h}}{t,0,1}.
+            &\leq \Integrate{\operatornorm{\totalderivative{f}(x+th)}\cdot \euclidiannorm{h}}{t,0,1}.
         \end{split}
     \end{equation*}
     Das Supremum wird angenommen, da \( t\mapsto \norm{\totalderivative{f}(x+th)}_{\text{op}} \) stetig ist und \( \interval{0}{1} \) kompakt.
@@ -343,11 +343,11 @@ Manchmal ist es einfacher, eine \( 1 \)-dimensionale Ableitung über eine Ableit
 \end{equation*}
 Dann gilt (Kettenregel!) (mit \( \Id(t)=t \)):
 \begin{equation*}
-    \begin{split}
-        0&=D*{f\circ \begin{pNiceMatrix} \Id \\ g \end{pNiceMatrix}}(t)\\
-         &=\totalderivative{f}\p*{ (t,g(t)) }\matrixmult \totalderivative{\begin{pNiceMatrix} \Id \\ g \end{pNiceMatrix}}(t)\\
-         &=\begin{pNiceMatrix} \partial_1 f(t,g(t)) & \partial_2 f(t,g(t)) \end{pNiceMatrix}\matrixmult \begin{pNiceMatrix} 1 \\ g'(t) \end{pNiceMatrix}
-    \end{split}
+    \begin{split}  
+      0&=D(f\circ \begin{pNiceMatrix} \Id \\ g \end{pNiceMatrix})(t)\\
+       &=\totalderivative{f}\p*{ (t,g(t)) }\matrixmult \totalderivative{\begin{pNiceMatrix} \Id \\ g \end{pNiceMatrix}}(t)\\
+       &=\begin{pNiceMatrix} \partial_1 f(t,g(t)) & \partial_2 f(t,g(t)) \end{pNiceMatrix}\matrixmult \begin{pNiceMatrix} 1 \\ g'(t) \end{pNiceMatrix}
+  \end{split}
 \end{equation*}
 \timplies Ist \(  \partial_2 f(t,g(t))\neq 0 \), so gilt
 \begin{align*}
@@ -359,7 +359,7 @@ Dann gilt (Kettenregel!) (mit \( \Id(t)=t \)):
         f(x,y)&=(\Sin{y})^2-1+x^3\\
         \totalderivative{f}(x,y)&=(3x^2,2\Sin{y} \Cos{y})\\
         \implies g'(t)&\begin{aligned}[t]
-            &=-\frac{3t^2}{2\Sin{g(t)}\underbrace{\Cos+{g(t)}}_{>0,}}
+            &=-\frac{3t^2}{2\underbrace{\Sin+{g(t)}}_{>0}\underbrace{\Cos+{g(t)}}_{>0,}}
             \intertext{da \( t\in \ointerval{0}{1} \) und \( \sqrt{1-t^3}\in \ointerval{0}{1} \), somit \( g(t)\in \ointerval{0}{\quot{\pi}{2}} \) \timplies \( \Cos{g(t)}=+\sqrt{1-\underbrace{\sin^2 g(t)}_{1-t^3}}=\sqrt{t^3} \)}
             &=-\frac{3t^2}{2\sqrt{1-t^3}\sqrt{t^3}}.
         \end{aligned}

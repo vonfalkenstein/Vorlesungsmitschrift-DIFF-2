@@ -39,13 +39,13 @@
 \end{proof}
 
 \section{Produkt-Maße}
-Seien \( (X,\Sigma_X,\mu) \), \( (Y,\Sigma_Y,\varv) \) Maßräume. Dann ist \( \Sigma_X@ \Sigma_Y \) eine \( \sigma \)-Algebra in \( X\times Y \) und \( (\mu\times \varv)(E\times A)\definedas \mu(E)\cdot \mu(A) \) definiert ein Maß auf \( X\times Y \).
+Seien \( (X,\Sigma_X,\mu) \), \( (Y,\Sigma_Y,\varv) \) Maßräume. Dann ist \( \Sigma_X \times \Sigma_Y \) eine \( \sigma \)-Algebra in \( X\times Y \) und \( (\mu\times \varv)(E\times A)\definedas \mu(E)\cdot \mu(A) \) definiert ein Maß auf \( X\times Y \).
 
 Wir zeigen nun den sehr wichtigen Satz von Fubini + Tonelli in einer sehr allgemeinen Version.
 \begin{satz}[Fubini]\label{fubini}
   Sei \( f\in \stufenfunktionen[2](X\times Y) \). Es gilt:
   \begin{equation*}
-    \Integrate{f(x,y)}{{(x,y)},{X\times Y}}=\Integrate{\p*{\Integrate{f(x,y)}{y,>}}}{x,X}.
+    \Integrate{f(x,y)}{{(x,y)},{X\times Y}}=\Integrate{\p*{\Integrate{f(x,y)}{y,Y}}}{x,X}.
   \end{equation*}
 \end{satz}
 \begin{bemerkung*}
@@ -112,7 +112,7 @@ Zum Beweis von \ref{fubini} benötigen wir ein Lemma.
   \begin{equation*}
     N_Y(x)\definedas \Set{y\in Y|(x,y)\in N}
   \end{equation*}
-  (zu \( x \) fest gewählt). Nullmenge in \( Y \) für \emph{fast alle} \( x \) (fast alle: gemessen in \( X \)).
+  (zu \( x \) fest gewählt) Nullmenge in \( Y \) für \emph{fast alle} \( x \) (fast alle: gemessen in \( X \)).
 \end{lemma}
 \begin{beispiel*}
   \( N=\Set{\p*{x,\frac{x}{2}}\in \reals^2} \) (siehe \ref{geringere_dimensionen_sind_nullmengen}) ist Nullmenge \( \subset \reals^2 \).

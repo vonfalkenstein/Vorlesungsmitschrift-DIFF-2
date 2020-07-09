@@ -9,13 +9,13 @@
   für \( f\maps U\to \reals \), \( U\subset \reals^n \).
 \end{ziel*}
 \begin{satz}[Transformationssatz]\label{transformationssatz}\index{Transformationssatz}
-  Seien \( U,V\subset \reals^n \) offen und \( \Psi\maps U\to \reals^n \) eine Diffeomorphismus auf \( \Phi(U)=V \) (\dh \( \Phi \) ist \( \stetigefunktionen[1] \), invertierbar mit \( \inverse{\Phi}\in \stetigefunktionen[1] \)). Sei \( f\in \lebesgueintegrablefunctions[1](\reals^n) \). Dann gilt
+  Seien \( U,V\subset \reals^n \) offen und \( \Phi\maps U\to \reals^n \) ein Diffeomorphismus auf \( \Phi(U)=V \) (\dh \( \Phi \) ist \( \stetigefunktionen[1] \), invertierbar mit \( \inverse{\Phi}\in \stetigefunktionen[1] \)). Sei \( f\in \lebesgueintegrablefunctions[1](\reals^n) \). Dann gilt
   \begin{enumerate}
-    \item \( U\ni x\mapsto (f\circ \Phi)(x)\abs{\determinant{-{\totalderivative{\Phi(x)}}}}\in \lebesgueintegrablefunctions{\reals^n} \) (fortgesetzt mit \( 0 \) auf \( \reals^n\setminus U \)).
-    \item \item \( \Integrate{f(y)}{y,V}=\Integrate{(f\circ \Phi)(v)\abs{\determinant{\totalderivative{\Phi(x)}}}}{x,U} \).
+    \item \( U\ni x\mapsto (f\circ \Phi)(x)\abs{\determinant{{\totalderivative{\Phi(x)}}}}\in \lebesgueintegrablefunctions(\reals^n) \) (fortgesetzt mit \( 0 \) auf \( \reals^n\setminus U \)).
+    \item \( \Integrate{f(y)}{y,V}=\Integrate{(f\circ \Phi)(v)\abs{\determinant{\totalderivative{\Phi(x)}}}}{x,U} \).
   \end{enumerate}
 \end{satz}
-\begin{proof}[Beweis (angelehn an Diendonné, Grundzüge der modernen Analysis)]
+\begin{proof}[Beweis (angelehnt an Diendonné, Grundzüge der modernen Analysis)]
   Wir gehen vor wie im Satz von Fubini und beweisen die Aussage erst für \( f\in \stufenfunktionen[0] \), dann \( f\in \stufenfunktionen[1]\cap \lebesgueintegrablefunctions \), dann \( f\in \stufenfunktionen[2]\cap \lebesgueintegrablefunctions=\lebesgueintegrablefunctions \).
   
   Zunächst benötigen wir zwei Lemmata:
