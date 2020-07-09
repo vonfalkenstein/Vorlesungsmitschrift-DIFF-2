@@ -137,7 +137,7 @@ Ist \( f\maps U\to \reals^m \), \( U\subset \reals^n \) offen, stetig differenzi
 \end{equation*}
 mit \( \frac{\underline{R}_a^{\totalderivative{f}}(h)}{\norm{h}}\goesto 0 \) wenn \( h\goesto 0 \). Hier ist \( \underline{R}_a^{\totalderivative{f}}\maps B_{\delta}(0)\to \matrices{m}{n}{\reals} \). 
 
-Benennt man \( \totalderivative{f}\defines g \) sieht man schnell, dass alle Sätze über differenzierbare Abbildungen natürlich auf für \( g \) gelten, insbesondere die Eindeutigkeit der Abbildung, wenn sie existiert, Kettenregel \etc. Nur kann man, wenn man nicht den Raum \( \matrices{m}{n}{\reals} \) mit \( \reals^{m\cdot n} \), die Ausdrücke im Allgem  einen mehr so leicht hinschreiben, etwa \( A(h) \) als Produkt einer Matrix mit dem Vektor \( h \).
+Benennt man \( \totalderivative{f}\defines g \) sieht man schnell, dass alle Sätze über differenzierbare Abbildungen natürlich auf für \( g \) gelten, insbesondere die Eindeutigkeit der Abbildung, wenn sie existiert, Kettenregel \etc. Nur kann man, wenn man nicht den Raum \( \matrices{m}{n}{\reals} \) mit \( \reals^{m\cdot n} \), die Ausdrücke im Allgemeinen nicht mehr so leicht hinschreiben, etwa \( A(h) \) als Produkt einer Matrix mit dem Vektor \( h \).
 
 Ist \( m=1 \) oder betrachtet man nur die Komponentenfunktionen einer \( \reals^m \)-wertigen Funktion, sieht man jedoch:
 \begin{equation*}
@@ -295,7 +295,7 @@ und nennt \( \laplaceoperator=\partial_1^2+\dotsb+\partial_n^2 \) den \emph{Lapl
       Sodann:
       \begin{equation*}
         \totalderivative{g}(r,\theta,\phi)=\begin{pNiceMatrix}
-          \Cos{\phi}\Sin{\theta}& r\Cos{\phi}\Cos{\theta} & -r\in \phi\Sin{\theta}\\
+          \Cos{\phi}\Sin{\theta}& r\Cos{\phi}\Cos{\theta} & -r\Sin \phi\Sin{\theta}\\
           \Sin{\phi}\Sin{\theta}& r\Sin{\phi}\Cos{\theta} & r\Cos{\phi}\Sin{\theta}\\
           \Cos{\theta} & -r\Sin{\theta}& 0
         \end{pNiceMatrix}

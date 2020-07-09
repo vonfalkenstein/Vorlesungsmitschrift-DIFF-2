@@ -52,21 +52,21 @@
 \section{Der Satz von der Umkehrabbildung}
 Sei \( f\maps U\to \reals^n \) stetig differenzierbar, \( U\subset \reals^n \). Gibt es einfach zu prüfende Kriterien, die garantieren, dass \( f \) umkehrbar ist mit stetig differenzierbarer Umkehrfunktion \( g\maps f(U)\to \reals^n \)?
 
-Notwendiges Kriterium ist, dass \( \totalderivative{f}(x) \) invertierbar ist, da mit der Kettenregel aus \( g\circ f=\Id_u \) folgt \( \totalderivative{g}(f(x))\matrixmult \totalderivative{f}(x)=\mathds{1} \). Tatsächlich ist sogar folgendr hinreichend:
+Notwendiges Kriterium ist, dass \( \totalderivative{f}(x) \) invertierbar ist, da mit der Kettenregel aus \( g\circ f=\Id_u \) folgt \( \totalderivative{g}(f(x))\matrixmult \totalderivative{f}(x)=\mathds{1} \). Tatsächlich ist sogar folgendes hinreichend:
 
 \begin{satz}\label{satz_von_der_umkehrabbildung}\index{Satz von der Umkehrabbildung}
-  Sei \( U\subset \reals^n \) offen, \( f\maps U\to \reals^n \), stetig differenzierbar. Sei \( a\in U \) \sd \( \totalderivative{f}(a) \) invertierbar ist. Dann gibt es eine offene Umgebung \( V\subset U \) von \( a \) und eine offene Umgebung \( W\in \reals^n \) von \( b\definedas f(a) \), \sd \( f\maps V\to \reals^n \), \( V \) bijektiv auf \( W \) abgebildet und die Umkehrabbildung \( g\maps W\to \reals^n \) stetig differenzierbar ist. Es gilt dann
+  Sei \( U\subset \reals^n \) offen, \( f\maps U\to \reals^n \), stetig differenzierbar. Sei \( a\in U \) \sd \( \totalderivative{f}(a) \) invertierbar ist. Dann gibt es eine offene Umgebung \( V\subset U \) von \( a \) und eine offene Umgebung \( W\in \reals^n \) von \( b\definedas f(a) \), \sd \( f\maps V\to \reals^n \), \( V \) bijektiv auf \( W \) abbildet und die Umkehrabbildung \( g\maps W\to \reals^n \) stetig differenzierbar ist. Es gilt dann
   \begin{equation*}
     \totalderivative{g}(f(x))=\inverse{\totalderivative{f}(x)}\quad \forall x\in V.
   \end{equation*}
 \end{satz}
 \begin{bemerkung*}
-  Die letzte Identität, die wir obn schon bewiesen hatten, leuchtet unmittelbar ein, wenn man sich überlegt, dass die Ableitung eine differenzierbare Funktion linear approximiert, und dass die Umkehrabbildung einer invertierbaren linearen Abbildung die inverse Matrix ist.
+  Die letzte Identität, die wir oben schon bewiesen hatten, leuchtet unmittelbar ein, wenn man sich überlegt, dass die Ableitung eine differenzierbare Funktion linear approximiert, und dass die Umkehrabbildung einer invertierbaren linearen Abbildung die inverse Matrix ist.
 \end{bemerkung*}
 \begin{proof}[Beweis von \ref{satz_von_der_umkehrabbildung}]
-  Betrachte \( F\maps \reals^n\times U\to \reals^n \), \( \distance{z}{x}=z-f(x) \). Dann ist 
+  Betrachte \( F\maps \reals^n\times U\to \reals^n \), \( F(z,x)=z-f(x) \). Dann ist 
   \begin{equation*}
-    \totalderivative{f}(z,x)=(\underbrace{\mathds{1}_{n\times n}}_{D_1 F(z,x)}-\underbrace{\totalderivative{f}(x)}_{D_2 F(z,x)}).
+    \totalderivative{F}(z,x) = (\underbrace{\mathds{1}_{n\times n}}_{D_1 F(z,x)}\, -\underbrace{\totalderivative{f}(x)}_{D_2 F(z,x)}).
   \end{equation*} 
   Wegen \( F(b,a)=0 \) und \( D_2 F(b,a)=-\totalderivative{f}(a) \) invertierbar können wir den Satz von der impliziten Funktion \ref{satz_von_der_impliziten_funktion} auf \( F \) anwenden und \( F \) nach \( x \) auflösen. Es gibt also offene Umgebungen \( V_1\subset \reals^n \) von \( b \) und \( V_2\subset U \) von \( a \) und eine stetig differenzierbare Funktion (\vgl Bemerkung~\ref{implizite_funktion_auf_umgebung_stetig_differenzierbar} nach    \ref{satz_von_der_impliziten_funktion}) \( g\maps V_1\to \reals^n \) mit \( g(V_1)\subset V_2 \) und \( F(z,g(z))=0\quad \forall z\in V_1 \), also \( z-f(g(z))=0 \quad \forall z\in V_1 \) und für all \( (z,x)\in V_1\times V_2 \) mit \( F(z,x)=0 \) gilt \( x=g(z) \).
 
