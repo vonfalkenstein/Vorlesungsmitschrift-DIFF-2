@@ -45,7 +45,7 @@ Ziel (\ua) Geometrische Interpretation der Ableitung.
     \item \label{untermannigfaltigkeit:ist_niveaumenge}\( M\cap U=\set{x\in U|f(x)=0} \) und 
     \item \label{untermannigfaltigkeit:maximaler_rang_gibt_dimension} \( \rang-{Df(a)}=n-d \) (maximal).
   \end{eigenschaftenenumerate}
-  Das heißt \( M \) lässt sic lokal als Nullstellengebilde von \( n-d \) \( \reals \)-wertigen \( \stetigefunktionen[1] \) Funktionen \( f_j \) schreiben, deren Gradienten linear unabhängig sind.
+  Das heißt \( M \) lässt sich lokal als Nullstellengebilde von \( n-d \) \( \reals \)-wertigen \( \stetigefunktionen[1] \) Funktionen \( f_j \) schreiben, deren Gradienten linear unabhängig sind.
   \begin{figure}[H]
     \centering
     \includegraphics[width=0.5\linewidth]{untermannigfaltigkeit_intuition}
@@ -72,7 +72,7 @@ Ziel (\ua) Geometrische Interpretation der Ableitung.
     Zu \( a\in E \) wähle \( U=\reals^4 \) und setze
     \begin{align*}
       f_1&\maps U\to \reals & f_1(x)&=\scalarproduct{x-p}{e_3}=x_3-p_3\\
-      f_1&\maps U\to \reals & f_1(x)&=\scalarproduct{x-p}{e_4}=x_4-p_4.
+      f_2&\maps U\to \reals & f_2(x)&=\scalarproduct{x-p}{e_4}=x_4-p_4.
     \end{align*}
     Es gilt \( x\in E \) \tiff \( f(x)=\begin{pNiceMatrix} f_1(x) \\ f_2(x) \end{pNiceMatrix}=0 \) und \( Df(a)=\begin{pNiceMatrix}
       0 & 0 & 1 & 0 \\ 0 & 0 & 0 & 1
@@ -146,7 +146,7 @@ Ziel (\ua) Geometrische Interpretation der Ableitung.
     \begin{equation*}
       \tangentialraum{M}=\Set{v\in \reals^4|v=v_1e_2+v_2e_2},
     \end{equation*}
-    denn jedes \( \gamma\maps \ointerval{-\varepsilon}{\varepsilon}\to M \) mit \( \gamma(0) \) ist von der FOrm
+    denn jedes \( \gamma\maps \ointerval{-\varepsilon}{\varepsilon}\to M \) mit \( \gamma(0) \) ist von der Form
     \begin{equation*}
       \gamma(t)=a+(\tilde{\gamma}_1(t),\tilde{\gamma}_2(t),0,0).
     \end{equation*}
@@ -217,7 +217,7 @@ Ziel (\ua) Geometrische Interpretation der Ableitung.
     \includegraphics[width=0.5\linewidth]{tangentialraum_an_sphaere_ist_tangential}
     \label{fig:tangentialraum_an_sphaere_ist_tangential}
   \end{figure}
-  Um di Rückrichtung von \thref{tangentialraum_ist_tangential} beweisen zu können, benötigen wir eine weitere (äquivalente) Charakterisierung differenzierbarer Untermannigfaltigkeiten.
+  Um die Rückrichtung von \thref{tangentialraum_ist_tangential} beweisen zu können, benötigen wir eine weitere (äquivalente) Charakterisierung differenzierbarer Untermannigfaltigkeiten.
 \end{beispiel*}
 \begin{satz}\label{untermannigfaltigkeit_kriterium}
   Eine Teilmenge \( M\subset \reals^n \) ist genau dann \( d \)-dimensionale differenzierbare Untermannigfaltigkeit des \( \reals^n \), wenn es zu jedem Punkt \( a\in M \) (nach eventueller Umnummerierung) Umgebungen \( V_1\subset \reals^d \) von \( a'=(a_1,\dotsc,a_d) \) un \( V_2\subset \reals^{n-d} \) von \( a''=(a_{d+1},\dotsc,a_n) \) und eine stetig differenzierbare Abbildung \( g\maps V_1\to \reals^{n-d} \), \( g(V_1)\subset V_2 \) gibt, \sd
