@@ -1,0 +1,34 @@
+% !TEX root = ./Vorlesungsmitschrift DIFF 2.tex  
+\lecture{Mo 13.07. 10:15}{}
+Letztes Mal: Satz von Gauß
+\begin{bemerkungen*}
+  \begin{enumerate}[label=\rechtsklammer{\arabic*}, ref=Bemerkung \rechtsklammer{\arabic*}]
+    \item \label{komponentenweiser_satz_von_gauss}Tatsächlich gilt die Gleichung sogar komponentenweise, also für \( f\in \stetigefunktionen[1](G,\reals) \) gilt
+    \begin{equation*}
+      \Integrate{\partial_i f(x)}{x,G}=\Integrate{f(x) \varv_i(x)}{S(x),\randpunkte{G}}.
+    \end{equation*}
+    \item Der Satz gilt immer noch, wenn \( \randpunkte{G} \) höchstens \( (n-2) \)-dimensionale \enquote{Kanten} und \enquote{Ecken} hat, in denen glatte Stücke von \( randpunkte{G} \) zusammentreffen, also insbesondere auch für Quader.
+    \item Aus \ref{komponentenweiser_satz_von_gauss} folgt sofort: Ist \( \supp X\subset \inneres{G} \) so ist \( \Integrate{\div X}{x,C}=0 \).
+  \end{enumerate}
+\end{bemerkungen*}
+Physikalische Interpretation \tto Vorlesung 23: Quellstärke im Inneren \teq Fluss durch die Oberfläche. Physikalische und mathematische Anwendung:
+\begin{beispiele}
+  \begin{enumerate}
+    \item Elektrodynamik: \( \Integrate{\div E(x)}{x,G} =\Integrate{\scalarproduct{E}{\varv}}{S(x),\randpunkte{G}} \), \( \divergence{\explain[Big]{\text{elektrisches Feld}}{E(x)}}=\frac{1}{\explain{\text{konstant}}{\varepsilon_0}}\rho(x) \) (Maxwell-Gesetz), \( \rho \) Ladungsdichte (\( \rho(x) =\quotient{\text{Ladung}}{\text{Volumen}}\) an der Stelle \( x \)) \timplies \( \frac{Q}{\varepsilon_0}=\Integrate{\scalarproduct{E}{\varv}}{S(x),\randpunkte{G}} \), \( Q \) \teq Gesamtladung in \( G \). Aus dieser Gleichung kann man in vielen Fällen \( E \) berechnen.
+    \item \begin{align*}
+      \operatorname{vol}_{n-1}(\sphere{n-1})&=\Integrate{1}{S(x),\sphere{n-1}}\\
+      &\explain[big]{\text{für \( X(x)=x \) (denn \( \varv(x)=x \) und \( \euclidiannorm{x}^2=1 \))}}{=}\Integrate{\scalarproduct{X(x)}{\varv(x)}}{S(x),\sphere{n-1}}\\
+      &\explain[big]{\text{Gauß}}{=}\Integrate{\braceannotate{=n}{\divergence{X(x)}}}{x,\ball{1}{0}}.
+    \end{align*}
+    \( \sphere{n-1} \) \( (n-1) \)-dimensionale Einheitssphäre \tsubset \( \reals^n \), \( \ball{1}{0} \) Vollkugel von Radius \( 1 \) \tsubset \( \reals^n \).
+  \end{enumerate}
+\end{beispiele}
+\begin{proof}[Beweis des Satzes (\vgl Forster. Analysis 3, Vieweg)]
+  Wir beweisen die Behauptung aus \ref{komponentenweiser_satz_von_gauss}, aus der der Satz folgt.
+
+  Sei \( U\subset \reals^n \) offen mit \( G \). Wähle zu \( x\in G \) eine offene Umgebung \( U_x\subset U \). Ist \( x\in \randpunkte{G} \) wähle \( U_x=\braceannotate{\mathclap{\text{\( (n-1) \)-dimensionaler Qauder}}}{U_x'}\times \overbrace{U_x''}^{\mathclap{\text{Intervall}}} \) \sd \texists \( \varphi\maps U_x'\to U_x'' \) \( \stetigefunktionen[1] \) (als Abbildung nach \( \reals \)) mit 
+  \begin{align*}
+    G\cap (U_x'\times U_x'')&=\Set{y\in U_x|y_n<\varphi(y')}\\
+    \randpunkte{G}\cap (U_x'\times U_x'')&=\Set{y\in U_x|y_n=\varphi(y')}.
+  \end{align*}
+\end{proof}
