@@ -42,11 +42,11 @@ nützliche Lemmata zu Konvergenz und Stetigkeit:
         \item[\hin] Sei das \( \varepsilon \)-\( \delta \)-Kriterium erfüllt (\ref{stetigkeit_in_metrischen_raeumen}).
         Sei \( (x_n)_n \) Folge in \( X \) mit \( x_n\goesto a \) in \( X \). Sei \( \varepsilon>0 \). Dann \texists \( \delta>0 \) \sd
         \begin{align*}
-            d_Y(f(x),f(a))<\varepsilon\logicspace\forall x\in B_\delta(a)\subset X.
+            d_Y(f(x),f(a))<\varepsilon\logicspace\forall x\in \ball{\delta}{a}\subset X.
         \end{align*} 
         Wegen der Konvergenz \texists \( N=N(\delta) \) \sd
         \begin{align*}
-            &x_n\in B_\delta(a) \logicspace\forall n\geq N\\
+            &x_n\in \ball{\delta}{a} \logicspace\forall n\geq N\\
             \implies &f(x_n)\in B_\varepsilon(f(a))\subset Y \logicspace \forall n\geq N.
         \end{align*}
         Also gilt \( f(x_n)\goesto f(a) \).
@@ -54,7 +54,7 @@ nützliche Lemmata zu Konvergenz und Stetigkeit:
         
         Angenommen, das \( \varepsilon \)-\( \delta \)-Kriterium wäre verletzt. Dann gäbe es \( \varepsilon>0 \) \sd für \emph{alle} \( \delta>0 \) ein \( x\in X \) existierte \sd
         \begin{align*}
-            x\in B_\delta(a)\logicspace \begin{aligned}[t] 
+            x\in \ball{\delta}{a}\logicspace \begin{aligned}[t] 
                 &\text{aber} \logicspace f(x)\notin B_\varepsilon(f(a))\\
                 &\text{also} \logicspace d_y(f(x), f(a)) \geq \varepsilon.
             \end{aligned}
@@ -85,11 +85,11 @@ nützliche Lemmata zu Konvergenz und Stetigkeit:
          \contra zu \( a_n\in A \).
          
          \item[\rueck] Wir zeigen, dass \( X\setminus A \) offen ist.
-         Sei also \( b\in X \setminus A \). Es gibt \( \varepsilon>0 \) \sd \( B_\varepsilon(b)\cap A=\emptyset \), also \( B_\varepsilon(b)\subset X\setminus A \). 
+         Sei also \( b\in X \setminus A \). Es gibt \( \varepsilon>0 \) \sd \( \ball{\varepsilon}{b}\cap A=\emptyset \), also \( \ball{\varepsilon}{b}\subset X\setminus A \). 
          
          Denn angenommen es gibt kein solches \( \varepsilon \). 
          Dann gilt für \emph{alle} \( \varepsilon>0 \):
-         \( B_\varepsilon(b)\cap A\neq \emptyset \), also kann man zu jedem \( k\geq 1 \) ein \( x_k\in A \) finden mit \( \distance{x_k}{ b}<\frac{1}{k}=\varepsilon \).
+         \( \ball{\varepsilon}{b}\cap A\neq \emptyset \), also kann man zu jedem \( k\geq 1 \) ein \( x_k\in A \) finden mit \( \distance{x_k}{ b}<\frac{1}{k}=\varepsilon \).
          \begin{align*}
              \implies x_k=b\underset{\text{\textsc{Vor}}}{\implies} b\in A.
          \end{align*}
@@ -127,10 +127,9 @@ nützliche Lemmata zu Konvergenz und Stetigkeit:
 \end{satz}
 \begin{proof}
     \begin{proofdescription}
+        \item[\ref{interior_ist_offen}:] \( a\in M\setminus \randpunkte{M} \) \timplies \texists \( \varepsilon>0 \) \sd \( \ball{\varepsilon}{a}\cap X\setminus M = \emptyset \). Für dieses gilt auch \( \ball;{\varepsilon}\cap \randpunkte{M}=\emptyset\) (denn angenommen \texists \( y\in \ball{\varepsilon}{a} \cap \randpunkte{M} \),  dann wäre (da \( y\in \randpunkte{M} \) und \( \ball{\varepsilon}{a} \) eine Umgebung von \( y \)) \( \ball{\varepsilon}{a}\cap (X\setminus M)\neq \emptyset \) \contra \textsc{VOR}).
         
-        \item[\ref{interior_ist_offen}:] \( a\in M\setminus \randpunkte{M} \) \timplies \texists \( \varepsilon>0 \) \sd \( B_\varepsilon(a)\cap X\setminus M = \emptyset \). Für dieses gilt auch \( B_\varepsilon\cap \randpunkte{M}=\emptyset\) (denn angenommen \texists \( y\in B_\varepsilon(a)\cap \randpunkte{M} \),  dann wäre (da \( y\in \randpunkte{M} \) und \( B_\varepsilon(a) \) eine Umgebung von \( y \)) \( B_\varepsilon(a)\cap (X\setminus M)\neq \emptyset \) \contra \textsc{VOR}).
-        
-        Also gilt \( B_\varepsilon(a)\subset M\setminus \randpunkte{M} \) \timplies \Beh.
+        Also gilt \( \ball{\varepsilon}{a}\subset M\setminus \randpunkte{M} \) \timplies \Beh.
         \item[\ref{abschluss_ist_geschlossen}:] Es gilt \( \randpunkte{M}=\randpunkte{X\setminus M} \) (nach Definition), \( (X\setminus M)\setminus \randpunkte{X\setminus M} \) ist offen nach \ref{interior_ist_offen} \timplies \begin{align*}
             X\setminus ((X\setminus M)\setminus \randpunkte{X\setminus M})\explain{\text{Manipulation mit Mengen}}{=}(X\setminus(X\setminus M))\cup \randpunkte{X\setminus M}=M\cup \randpunkte{M}
         \end{align*}
@@ -238,7 +237,7 @@ Zunächst einige
     \( M \) heißt \emph{beschränkt}, falls \( \diameter{M}<\infty \).
 \end{definition}
 \begin{bemerkung*}
-    \( M\) ist beschränkt \tiff \texists \( R\geq 0\)  und \( a\in X\) \sd \( M\subset B_R(a)\) 
+    \( M\) ist beschränkt \tiff \texists \( R\geq 0\)  und \( a\in X\) \sd \( M\subset \ball{R}{a}\) 
     \begin{figure}[H]
         \centering
         \includegraphics[width=0.5\linewidth]{figures/beschraenkte_menge_in_ball}

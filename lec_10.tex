@@ -134,7 +134,7 @@ Ist \( f\maps U\to \reals^m \), \( U\subset \reals^n \) offen, stetig differenzi
 \begin{equation*}
   \totalderivative{f}(a+h)=\totalderivative{f}(a)+A(h)*\underline{R}_a^{\totalderivative{f}}(h)
 \end{equation*}
-mit \( \frac{\underline{R}_a^{\totalderivative{f}}(h)}{\norm{h}}\goesto 0 \) wenn \( h\goesto 0 \). Hier ist \( \underline{R}_a^{\totalderivative{f}}\maps B_{\delta}(0)\to \matrices{m}{n}{\reals} \). 
+mit \( \frac{\underline{R}_a^{\totalderivative{f}}(h)}{\norm{h}}\goesto 0 \) wenn \( h\goesto 0 \). Hier ist \( \underline{R}_a^{\totalderivative{f}}\maps \ball{\delta}{0}\to \matrices{m}{n}{\reals} \). 
 
 Benennt man \( \totalderivative{f}\defines g \) sieht man schnell, dass alle Sätze über differenzierbare Abbildungen natürlich auf für \( g \) gelten, insbesondere die Eindeutigkeit der Abbildung, wenn sie existiert, Kettenregel \etc. Nur kann man, wenn man nicht den Raum \( \matrices{m}{n}{\reals} \) mit \( \reals^{m\cdot n} \), die Ausdrücke im Allgemeinen nicht mehr so leicht hinschreiben, etwa \( A(h) \) als Produkt einer Matrix mit dem Vektor \( h \).
 
@@ -198,15 +198,15 @@ Wenn nein, muss man prüfen, ob \( \underline{R}_a^g \) das richtige Verhalten b
   \end{equation*}
 \end{satz}
 \begin{proof}
-  Sei \obda \( n=2 \), \( a=(a_1,a_2) \). \texists \( \delta>0 \) \sd \( B_{\delta}(a_1)\times \explain{\text{Intervall!}}{B_{\delta}(a_2)}\subset U \). Setze zu \( y\in B_\delta(a_2) \)
+  Sei \obda \( n=2 \), \( a=(a_1,a_2) \). \texists \( \delta>0 \) \sd \( \ball{\delta}{a_1}\times \explain{\text{Intervall!}}{\ball{\delta}{a_2}}\subset U \). Setze zu \( y\in \ball{\delta}{a_2} \)
   \begin{equation*}
-    F_y\maps B_\delta(a_1)\to \reals\qquad F_y(x)=f(x,y)-f(x,a_2).
+    F_y\maps \ball{\delta}{a_1}\to \reals\qquad F_y(x)=f(x,y)-f(x,a_2).
   \end{equation*}
-  MWS \timplies \texists  \( \zeta\in B_\delta(a_1)=\ointerval{a_1-\delta}{a_1+\delta} \) und zwar zwischen \( a_1 \) und \( x \) \sd 
+  MWS \timplies \texists  \( \zeta\in \ball{\delta}{a_1}=\ointerval{a_1-\delta}{a_1+\delta} \) und zwar zwischen \( a_1 \) und \( x \) \sd 
   \begin{equation*}
     F_y(x)-F_y(a_1)=F_y'(\zeta)(x-a_1).
   \end{equation*}
-  Es ist \( F_y'(\zeta)=\partial_1 f(\zeta,y)-\partial_1 f(\zeta,a_2) \). Betrachte die Funktion \( B_\delta(a_2)\ni y\mapsto \partial_1 f(\zeta,y) \). MWS \timplies \texists \( \eta\in B_\delta(a_2)=\ointerval{a_2-\delta}{a_2+\delta} \) und zwar zwischen \( a_2 \) und \( y \) \sd
+  Es ist \( F_y'(\zeta)=\partial_1 f(\zeta,y)-\partial_1 f(\zeta,a_2) \). Betrachte die Funktion \( \ball{\delta}{a_2}\ni y\mapsto \partial_1 f(\zeta,y) \). MWS \timplies \texists \( \eta\in \ball{\delta}{a_2}=\ointerval{a_2-\delta}{a_2+\delta} \) und zwar zwischen \( a_2 \) und \( y \) \sd
   \begin{equation*}
     \partial_1 f(\zeta,y)-\partial_1 f(\zeta,a_2)=\partial_2 (\partial_1 f)(\zeta,\eta)(y-a_2).
   \end{equation*}
@@ -214,7 +214,7 @@ Wenn nein, muss man prüfen, ob \( \underline{R}_a^g \) das richtige Verhalten b
   \begin{equation*}
     f(x,y)-f(x,a_2)-f(a_1,y)+f(a)=\partial_2\partial_1 f(\zeta,\eta)(y-a_2)\matrixmult(x-a_1)\tag{\(*\)}.\label{eq:schwarzscher_satz:beweis:mws_1}
   \end{equation*}
-  Dieselbe Konstruktion nehmen wir nun zu festen \( x\in B_\delta(a_1) \) für \( G_x(y)=f(x,y)-f(a_1,y) \) vor.
+  Dieselbe Konstruktion nehmen wir nun zu festen \( x\in \ball{\delta}{a_1} \) für \( G_x(y)=f(x,y)-f(a_1,y) \) vor.
 
   \minisec{MWS:}
   \texists \( \tilde{\eta}\in \ointerval{a_2-\delta}{a_2+\delta} \) zwischen \( a_2 \) und \( y \) \sd \( G_x(y)-G_x(a_2)=G'x(\eta)(y-a_2) \). Es ist \( G_x'(\tilde{\eta})=\partial_2 f(x,\tilde{\eta})-\partial_2 f(a_1,\tilde{\eta}) \).

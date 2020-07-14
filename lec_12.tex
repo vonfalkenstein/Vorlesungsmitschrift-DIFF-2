@@ -95,11 +95,11 @@ Ziel (\ua) Geometrische Interpretation der Ableitung.
       \caption*{\( N_f(0)=E \), Gradient steht senkrecht.}
       \label{fig:normalenvektor_auf_langweiliger_ebene_als_niveaumengen}
     \end{figure}
-    \item \label{untermannigfaltigkeit:beispiele:sphaere}\( \mathbb{S}^{n-1}\definedas \Set{x\in \reals^n|\euclidiannorm{x}=1} \). Einheits-Sphäre. Zu \( a\in \mathbb{S}^{n-1} \) wähle \( U=\reals^n \) und \( f(x)=\euclidiannorm{x}^2-1 \). 
+    \item \label{untermannigfaltigkeit:beispiele:sphaere}\( \sphere{n-1}\definedas \Set{x\in \reals^n|\euclidiannorm{x}=1} \). Einheits-Sphäre. Zu \( a\in \sphere{n-1} \) wähle \( U=\reals^n \) und \( f(x)=\euclidiannorm{x}^2-1 \). 
     \begin{equation*}
       Df(a)=(2a_1,\dotsc,2a_n)\neq 0.,
     \end{equation*}
-    also \( \rang;=1 \forall a\in \mathbb{S}^{n-1}\).
+    also \( \rang;=1 \forall a\in \sphere{n-1}\).
     \item Eine \( 1 \)-dimensionale differenzierbare Untermannigfaltigkeit wird auch unparametisierte differenzierbare Kurve genannt. 
     \begin{beispiel*}
       \( f\maps \reals^3\to \reals^2 \).
@@ -177,15 +177,15 @@ Ziel (\ua) Geometrische Interpretation der Ableitung.
 \end{satz}
 \begin{proof}
   \begin{proofdescription}
-    \item[\enquote{\( \subset \)}] Sei \( \gamma\maps \ointerval{-\varepsilon}{\varepsilon}\to M\cap U \) mit \( \gamma(0)=a \), \( \gamma'(0)=v \). Dann ist 
+    \item[\sethin] Sei \( \gamma\maps \ointerval{-\varepsilon}{\varepsilon}\to M\cap U \) mit \( \gamma(0)=a \), \( \gamma'(0)=v \). Dann ist 
     \begin{equation*}
       0=\evaluateat{\frac{\differential}{\differential t} f\circ \gamma(t)}{t=0}=Df(\gamma(0))\matrixmult \gamma'(0)=Df(a)\matrixmult v\implies v\in \ker-{Df(a)}.
     \end{equation*}
-    \item[\enquote{\( \supset \)}] Beweisen wir später mit Hilfe des folgenden Satzes~\ref{untermannigfaltigkeit_kriterium}.
+    \item[\setrueck] Beweisen wir später mit Hilfe des folgenden Satzes~\ref{untermannigfaltigkeit_kriterium}.
   \end{proofdescription}  
 \end{proof}
 \begin{interpretation*}[für \( n-d=1 \)]
-  Der Gradient zeigt in die Richtung des stärksten Anstiegs von \( f \). Eine Kurve \( \gamma \) wi in \ref{tangentialraum} (und \ref{tangentialraum_ist_tangential}) verläuft in einer Niveaumenge von \( f \) (und zwar hier zu \( c=0 \)). In Richtung \( v=\gamma'(0) \) ändert sich \( f \) also nicht und die Richtungsableitung in Richtung \( v \) ist \( 0 \):
+  Der Gradient zeigt in die Richtung des stärksten Anstiegs von \( f \). Eine Kurve \( \gamma \) wie in \ref{tangentialraum} (und \ref{tangentialraum_ist_tangential}) verläuft in einer Niveaumenge von \( f \) (und zwar hier zu \( c=0 \)). In Richtung \( v=\gamma'(0) \) ändert sich \( f \) also nicht und die Richtungsableitung in Richtung \( v \) ist \( 0 \):
   \begin{equation*}
     \partial_v f(a)=\scalarproduct{v}{\grad{f}(a)}=Df(a)\matrixmult v=0\qquad (\text{\thref{tangentialraum_ist_tangential}}),
   \end{equation*}
@@ -340,7 +340,7 @@ Die Spalten von \( D\phi(x_0) \)
 \begin{figure}[H]
   \centering
   \includegraphics[width=0.5\linewidth]{interpretation_bild_ableitung_implizite_funktion}
-  \caption*{\textcolor{green}{Ebene parallel zur \( 2 \)-\( 3 \)-Ebene durch \( a \)\( =\set{x_1=x_{0,1} \text{ konstant}} \)}. \includegraphics[height=\baselineskip]{little_line}\( =\Set{(x_{0,1},x_{0,2}+t,g(x_{0,1},x_{0,2}+t))|t\in I\subset \reals} \) ist Kurve in \( M \).}
+  \caption*{\textcolor{green}{Ebene parallel zur \( 2 \)-\( 3 \)-Ebene durch \( a \)\teq \(\set{x_1=x_{0,1} \text{ konstant}} \)}. \includegraphics[height=\baselineskip]{little_line}\teq \(\Set{(x_{0,1},x_{0,2}+t,g(x_{0,1},x_{0,2}+t))|t\in I\subset \reals} \) ist Kurve in \( M \).}
   \label{fig:interpretation_bild_ableitung_implizite_funktion}
 \end{figure}
 Ableitung
@@ -404,7 +404,7 @@ Es gilt \( \evaluateat{\phi(x_{0,1},x_{0,2}+t)}{t} \) und \( (0,1,\partial_2g(x_
   
 \end{proof}
 \begin{beispiel*}
-  \( \mathbb{S}^{n-1} \), \( a\in \mathbb{S}^{n-1} \), \( a_n>0 \). \( g\maps D\to \reals  \) mit \( D=\set{x\in \reals^{n-1}|\euclidiannorm{x}<1} \),
+  \( \sphere{n-1} \), \( a\in \sphere{n-1} \), \( a_n>0 \). \( g\maps D\to \reals  \) mit \( D=\set{x\in \reals^{n-1}|\euclidiannorm{x}<1} \),
   \begin{equation*}
     g(x_1,\dotsc,x_{n-1})=\sqrt{1-\sum_{i=1}^{n-1}x_i^2}.
   \end{equation*}
@@ -412,7 +412,7 @@ Es gilt \( \evaluateat{\phi(x_{0,1},x_{0,2}+t)}{t} \) und \( (0,1,\partial_2g(x_
   \begin{equation*}
     F(x,t)=\parens*{x,t-\sqrt{1-\sum_{i=1}^{m_1}x_i^2}}.
   \end{equation*}
-  \( \mathbb{S}^{n-1}\cap D\times \ointerval{0}{\infty}=\includegraphics[height=\baselineskip]{kleine_offene_halbsphaere} \) (ohne den Rand \includegraphics[height=\baselineskip]{kleiner_fehlender_rand}) und % ChkTeX 25
+  \( \sphere{n-1}\cap D\times \ointerval{0}{\infty}=\includegraphics[height=\baselineskip]{kleine_offene_halbsphaere} \) (ohne den Rand \includegraphics[height=\baselineskip]{kleiner_fehlender_rand}) und % ChkTeX 25
   \begin{equation*}
     F(M\cap D\times \ointerval{0}{\infty})=\includegraphics[height=\baselineskip]{kleine_geplaettete_offene_halbkugel}=D. % ChkTeX 25
   \end{equation*}

@@ -46,7 +46,7 @@ Eine weitere äquivalente lokale Beschreibung mit Hilfe einer Parametisierung:
       \caption*{Spur von \( \varphi \)}
       \label{fig:immersion_kugel}
     \end{figure}
-    \( V=\reals^2 \), \( \varphi \) wie oben: \( \varphi \) schneidet sich \( \infty \) oft, da \( \varphi(\beta+2\pi \wholes,\alpha+2\pi\wholes)=\phi(\beta,\alpha ) \) gilt. \( \varphi(\reals^2)=\mathbb{S}^2 \).
+    \( V=\reals^2 \), \( \varphi \) wie oben: \( \varphi \) schneidet sich \( \infty \) oft, da \( \varphi(\beta+2\pi \wholes,\alpha+2\pi\wholes)=\phi(\beta,\alpha ) \) gilt. \( \varphi(\reals^2)=\sphere{2} \).
   \end{enumerate}
 \end{beispiele*}
 \begin{satz}\label{immersion_ist_lokal_einbettung_und_mannigfaltigkeit}
@@ -75,8 +75,8 @@ Eine weitere äquivalente lokale Beschreibung mit Hilfe einer Parametisierung:
     \end{equation*}
     Dann ist \( G(V_0\times\reals^{n-d})=W\times\reals^{n-d} \), denn
     \begin{proofdescription}
-      \item[\enquote{\( \subset \)}] ist klar, da \( \tilde{\varphi}\maps V_0\to W \) Diffeomorphismus ist.
-      \item[\enquote{\( \supset  \)}] Sei \( (y,y'')\in W\times\reals^{n-d} \). Setze \( t'=\inverse{\tilde{\varphi}}(y') \) (\( \tilde{\varphi}\maps V_0\to W \) Diffeomorphismus), \( t''=y''-\tilde{\tilde{\varphi}}(t') \). Dann gilt \( G(t',t'')=\begin{pNiceMatrix} y' \\ y'' \end{pNiceMatrix} \).
+      \item[\sethin] ist klar, da \( \tilde{\varphi}\maps V_0\to W \) Diffeomorphismus ist.
+      \item[\setrueck] Sei \( (y,y'')\in W\times\reals^{n-d} \). Setze \( t'=\inverse{\tilde{\varphi}}(y') \) (\( \tilde{\varphi}\maps V_0\to W \) Diffeomorphismus), \( t''=y''-\tilde{\tilde{\varphi}}(t') \). Dann gilt \( G(t',t'')=\begin{pNiceMatrix} y' \\ y'' \end{pNiceMatrix} \).
     \end{proofdescription}
     Man sieht:  \( G\maps V_0\times\reals^{n-d}\to W\times\reals^{n-d} \) ist bijektiv. Man sieht auch sofort: \( G \) ist Diffeomorphismus, da \( \tilde{\varphi} \) Diffeomorphismus ist und \( \tilde{\tilde{\varphi}} \) stetig differenzierbar und somit auch die Umkehrfunktion
     \begin{equation*}
@@ -129,9 +129,9 @@ Tatsächlich gilt:
   \item Man nennt \( \varphi \) wie oben eine \emph{lokale Parametrisierung} von \( M \) bei \( a \). \( V \) heißt \emph{Parameterbereich} und \( M\cap U \) \emph{Koordinatenumgebung von \( a \)}.
   \item Globale Parametisierungen \( \varphi\maps V\to\reals^n \) mit \( \varphi\maps V\to M \). Homöomorphismus existieren \ia nicht.
   \begin{beispiel*}
-    \( M=\mathbb{S}^{n-1}\subset \reals^n \). Es kann keine stetige Abbildung \( \inv{\varphi}\maps \mathbb{S}^{n-1}\to V \) gebe, da \( \inv{\varphi}(\mathbb{S}^{n-1}) \) kompakt wäre, aber \( V \) ist offen.
+    \( M=\sphere{n-1}\subset \reals^n \). Es kann keine stetige Abbildung \( \inv{\varphi}\maps \sphere{n-1}\to V \) gebe, da \( \inv{\varphi}(\sphere{n-1}) \) kompakt wäre, aber \( V \) ist offen.
     
-    Im Beispiel~\ref{immersion_beispiel:kugel} oben, erreicht man daher nicht die ganze \( \mathbb{S}^n \). \( V=\ointerval{0}{\pi}\times \ointerval{0}{2\pi} \),
+    Im Beispiel~\ref{immersion_beispiel:kugel} oben, erreicht man daher nicht die ganze \( \sphere{n} \). \( V=\ointerval{0}{\pi}\times \ointerval{0}{2\pi} \),
     \begin{equation*}
       \varphi(\beta,\alpha)=(\Cos{\alpha}\Sin{\beta},\Sin{\alpha}\Sin{\beta},\Cos{\beta}).
     \end{equation*}

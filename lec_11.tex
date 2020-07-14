@@ -69,7 +69,7 @@
   \end{equation*}
 \end{proof}
 \begin{folgerung}
-  Sei \( f\maps U\to \reals \), \( U\subset \reals^n \) offen, \( k \)-mal stetig differenzierbar. Sei \( a\in U \) und \( \delta>0 \) \sd \( B_{\delta}(a)\subset U \). Dann gilt für alle \( h\in B_{\delta}(0) \):
+  Sei \( f\maps U\to \reals \), \( U\subset \reals^n \) offen, \( k \)-mal stetig differenzierbar. Sei \( a\in U \) und \( \delta>0 \) \sd \( \ball{\delta}{a}\subset U \). Dann gilt für alle \( h\in \ball{\delta}{0} \):
   \begin{equation*}
     f(a+h)=\sum_{\alpha\leq k}\frac{1}{\factorial{\alpha}} \partial^{\alpha} f(a) h^{\alpha}+ R_{k,a}(h)
   \end{equation*}
@@ -79,7 +79,7 @@
   \begin{equation*}
     f(x)=\sum_{\alpha\leq k}\frac{1}{\factorial{\alpha}} \partial^{\alpha} f(a) (x-a)^{\alpha}+ R_{k,a}(x-a)
   \end{equation*}
-  für \( x\in B_{\delta}(a)\). \emph{\enquote{Taylor-Entwicklung bis zur Ordnung \( k \) mit Entwicklungspunkt \( a \)}}.
+  für \( x\in \ball{\delta}{a}\). \emph{\enquote{Taylor-Entwicklung bis zur Ordnung \( k \) mit Entwicklungspunkt \( a \)}}.
 \end{folgerung}
 \begin{proof}
   \texists \( \theta=\alpha_{a,h}\in \interval{0}{1} \) \sd
@@ -138,7 +138,7 @@
   \begin{equation*}
     \boxed{f(a+h)=f(a)+\scalarproduct{\grad{f}(a)}{h}+\frac{1}{2}\scalarproduct{h}{H_f(a) h}}+R_{z,a}(h)
   \end{equation*}
-  für \( f\maps U\to \reals \) zweimal stetig differenzierbar und \( h\in B_{\delta}(0) \), \( \delta>0 \) \sd \( B_{\delta}(a)\subset U \).
+  für \( f\maps U\to \reals \) zweimal stetig differenzierbar und \( h\in \ball{\delta}{0} \), \( \delta>0 \) \sd \( \ball{\delta}{a}\subset U \).
 \end{description}
 \section{Lokale Extrema}
 Wir hatten in \ref{extremum_notwendige_bedingung} bereits gesehen: Ist \( a\in U \) lokale Extremstelle von \( f\maps U\to \reals \), \( U\subset \reals^n \) offen, differenzierbar, so ist \( \grad{f}(a)=0 \).
@@ -154,7 +154,7 @@ Wir hatten in \ref{extremum_notwendige_bedingung} bereits gesehen: Ist \( a\in U
   Ist \( H_f(a) \) positiv oder negativ \emph{semi}definit \sd \tforall \( h\neq 0 \) ist \( \scalarproduct{h}{H_f(a)h}\geq 0 \) (\bzw \( \leq 0 \)), so ist keine allgemeine Aussage möglich.
 \end{bemerkung*}
 \begin{beispiel*}
-  \( f_1(x,y)=x^2+y^4 \), \( f_2(x,y)=x^2 \), \( f_3(x,y)=x^2+y^3 \), \( H_{f_j}(0)=\begin{pNiceMatrix} 2 & 0 \\ 0 & 0 \end{pNiceMatrix} \) \tforall \( j \) ist positiv semidefinit (\( \scalarproduct{h}{H_{f_j}(0)h}=2h_1^2\geq 0 \), \( =0 \) für \( h_1=0 \)).
+  \( f_1(x,y)=x^2+y^4 \), \( f_2(x,y)=x^2 \), \( f_3(x,y)=x^2+y^3 \), \( H_{f_j}(0)=\begin{pNiceMatrix} 2 & 0 \\ 0 & 0 \end{pNiceMatrix} \) \tforall \( j \) ist positiv semidefinit (\( \scalarproduct{h}{H_{f_j}(0)h}=2h_1^2\geq 0 \), \teq \(0 \) für \( h_1=0 \)).
   \begin{figure}[H]
     \centering
     \begin{subfigure}[b]{0.3\textwidth}
@@ -176,16 +176,16 @@ Wir hatten in \ref{extremum_notwendige_bedingung} bereits gesehen: Ist \( a\in U
   \end{figure}
 \end{beispiel*}
 \begin{proof}[Beweis von \ref{hinreichende_bedingung_isoliertes_extremum}]
-  Setze \( A\definedas H_f(a) \). \texists \( \delta>0 \) \sd \( B_\delta(a)\subset U \). Und somit
+  Setze \( A\definedas H_f(a) \). \texists \( \delta>0 \) \sd \( \ball{\delta}{a}\subset U \). Und somit
   \begin{equation*}
-    f(a+h)=f(a)+\scalarproduct{\underbrace{\grad{f}(a)}_{=0}}{h}+\frac{1}{2}\scalarproduct{h}{Ah}+R_2(h)\quad \forall h\in B_\delta(0)
+    f(a+h)=f(a)+\scalarproduct{\underbrace{\grad{f}(a)}_{=0}}{h}+\frac{1}{2}\scalarproduct{h}{Ah}+R_2(h)\quad \forall h\in \ball{\delta}{0}
   \end{equation*}
   mit \( \frac{R_2(h)}{\norm{h}^2}\goesto 0 \) (\( h\goesto 0 \)).
   \begin{equation*}
-    \implies \forall \varepsilon>0 \logicspace \exists \tilde{\delta}>0\logicspace (\tilde{\delta}<\delta) \logicspace \text{\sd} \logicspace \abs{R_2(h)}\leq \varepsilon \norm{h}^2\quad \forall h\in B_{\tilde{\delta}}(0)
+    \implies \forall \varepsilon>0 \logicspace \exists \tilde{\delta}>0\logicspace (\tilde{\delta}<\delta) \logicspace \text{\sd} \logicspace \abs{R_2(h)}\leq \varepsilon \norm{h}^2\quad \forall h\in \ball{\tilde{\delta}}{0}
   \end{equation*}
   \begin{proofdescription}
-    \item[\ref{hinreichende_bedingung_isoliertes_minimum}] Sei \( A \) positiv definit. Betrachte \( S=\set{h\in \reals^n|\euclidiannorm{h}=1} \). \( S \) ist abgeschlossen und beschränkt \( \subset \reals^n \) \timplies \( S \) ist kompakt \timplies \( S\ni h\mapsto \scalarproduct{h}{Ah} \) nimmt Maximum und Minimum an (da stetig).
+    \item[\ref{hinreichende_bedingung_isoliertes_minimum}] Sei \( A \) positiv definit. Betrachte \( S=\set{h\in \reals^n|\euclidiannorm{h}=1} \). \( S \) ist abgeschlossen und beschränkt \tsubset \( \reals^n \) \timplies \( S \) ist kompakt \timplies \( S\ni h\mapsto \scalarproduct{h}{Ah} \) nimmt Maximum und Minimum an (da stetig).
     \begin{equation*}
       \alpha\definedas \inf_{h\in S}\underbrace{\scalarproduct{h}{Ah}}_{\mathclap{>0\logicspace  (\text{VOR})\logicspace (h\neq 0 \text{ wenn }h\in S)}}>0.
     \end{equation*}
@@ -217,7 +217,7 @@ Wir hatten in \ref{extremum_notwendige_bedingung} bereits gesehen: Ist \( a\in U
     \begin{equation*}
       \implies f(a+th)= f(a)+\frac{1}{2}t^2 a+R_2(tv)
     \end{equation*}
-    für \( \abs{t} \) klein genug (\sd \( tv\in B_{\delta}(0) \)). Wähle \( \abs{t}>0 \) so klein, dass zudem \( R_2(tv)\leq \frac{\alpha}{2}t^2 \)
+    für \( \abs{t} \) klein genug (\sd \( tv\in \ball{\delta}{0} \)). Wähle \( \abs{t}>0 \) so klein, dass zudem \( R_2(tv)\leq \frac{\alpha}{2}t^2 \)
     \begin{equation*}
       \implies f(a+sv)\geq f(a)+\frac{1}{2}s^2\alpha-\abs{R_2(sv)}>f(a)
     \end{equation*}
@@ -227,7 +227,7 @@ Wir hatten in \ref{extremum_notwendige_bedingung} bereits gesehen: Ist \( a\in U
     \begin{equation*}
       \implies f(x+tv)=f(x)-\frac{1}{2}t^2\abs{\alpha}+R_2(tv)
     \end{equation*}
-    für \( \abs{t} \) klein genug (\sd \( tv\in B_{\delta}(0) \)). Wähle \( \abs{t}>0 \) so klein, dass zudem \( \abs{R_2(tv)}\leq\frac{\alpha}{4}t^2 \)
+    für \( \abs{t} \) klein genug (\sd \( tv\in \ball{\delta}{0} \)). Wähle \( \abs{t}>0 \) so klein, dass zudem \( \abs{R_2(tv)}\leq\frac{\alpha}{4}t^2 \)
     \begin{equation*}
       \implies f(a+sv)\leq f(a)-\frac{1}{2}s^2\abs{\alpha}+\abs{R_2(sv)}<f(a)\quad \forall 0<s<t\quad (\text{\obda }t>0).
     \end{equation*}

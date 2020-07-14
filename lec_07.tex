@@ -151,7 +151,7 @@ Aber oft ist es \emph{viel} übersichtlicher, die partiellen Ableitungen \emph{n
     \end{equation*} 
 \end{satz}
 \begin{proof}
-    Betrachte \( g_i(t)\definedas f(a+t e_i) \), \( i=1,\dotsc, n \), mit \( t\in \ointerval{-\varepsilon}{\varepsilon} \) \sd \( B_{\varepsilon}^{\norm{\cdot}}(a)\subset U \).
+    Betrachte \( g_i(t)\definedas f(a+t e_i) \), \( i=1,\dotsc, n \), mit \( t\in \ointerval{-\varepsilon}{\varepsilon} \) \sd \( \ball;{\varepsilon}^{\norm{\cdot}}(a)\subset U \).
     \begin{figure}[H]
         \centering
         \includegraphics[width=0.5\linewidth]{figures/extrema_notwendige_bedingung_beweis_umgebung}
@@ -179,7 +179,7 @@ Aber oft ist es \emph{viel} übersichtlicher, die partiellen Ableitungen \emph{n
      Sei \( f\maps U\to \reals \), \( U\subset \reals^n \) offen. Existieren alle partiellen Ableitungen \( \partial_j f(x) \) für alle \( x\in U \), \emph{und} sind sie stetig in \( a\in U \), so ist \( f \) in \( a \) differenzierbar.
 \end{satz}
 \begin{proof}
-    Wir wählen ein Norm \( \norm{\cdot} \) auf \( \reals^n \). \( U \) offen \timplies \texists \( \delta>0 \) \sd  \( B_{\delta}^{\norm{\cdot}}(a)\subset U \). Sei \( h\in B_{\delta}^{\norm{\cdot}}(0) \), also \( a+h\in B_{\delta}^{\norm{\cdot}}(a) \). Setze
+    Wir wählen ein Norm \( \norm{\cdot} \) auf \( \reals^n \). \( U \) offen \timplies \texists \( \delta>0 \) \sd  \( \ball;{\delta}^{\norm{\cdot}}(a)\subset U \). Sei \( h\in \ball;{\delta}^{\norm{\cdot}}(0) \), also \( a+h\in \ball;{\delta}^{\norm{\cdot}}(a) \). Setze
     \begin{equation*}
         x^{(j)}\definedas a+\sum_{i=1}^{j} h_i e_i \in \reals^n\quad j=0,\dotsc,n,
     \end{equation*}

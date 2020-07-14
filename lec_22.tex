@@ -27,9 +27,9 @@
     Dann ist \( \Phi(N) \) Nullmenge in \( \reals^n \).
   \end{lemma}
   \begin{subproof}
-    Wähle \( \norm{\cdot}=\maxnorm{\cdot} \). Dann ist \( B_r(x) \) der in \( x \) zentrierte Würfel der Kantenlänge \( 2r \). Zu \( k, m\in \naturals \) setze
+    Wähle \( \norm{\cdot}=\maxnorm{\cdot} \). Dann ist \( \ball{r}{x} \) der in \( x \) zentrierte Würfel der Kantenlänge \( 2r \). Zu \( k, m\in \naturals \) setze
     \begin{equation*}
-      F_{k,n}\definedas \Set{x\in N|\frac{\norm{\Phi(x)-\Phi(y)}}{\norm{x-y}}\leq k\quad \forall <\in B_{\frac{1}{m}}(x)\cap N}.
+      F_{k,n}\definedas \Set{x\in N|\frac{\norm{\Phi(x)-\Phi(y)}}{\norm{x-y}}\leq k\quad \forall y\in \ball{\frac{1}{m}}{x}\cap N}.
     \end{equation*}
     Sei \( \varphi>0 \). Überdecke \( N \) mit offenen Kugeln \( B_j=U_{r_j}(x_j) \) mit \( x_j\in F_{k,m} \) und \( r_j<\frac{1}{m} \) und \( \sum_{j}\volume{B_j}<\varepsilon \). Dann ist für \( x\in I_{k,m}\cap B_j \).
     \begin{align*}
@@ -123,7 +123,7 @@
     \begin{equation*}
       U_{\tilde{x}}\definedas \Set{x_n\in \reals|(\tilde{x},x_n)\in U}\neq \emptyset,
     \end{equation*}
-    so ist \( \Phi_n \maps x-n\mapsto \varphi(\tilde{x},x_n) \) eine Abbildung auf eine offene Teilmenge \( \subset \reals \).
+    so ist \( \Phi_n \maps x-n\mapsto \varphi(\tilde{x},x_n) \) eine Abbildung auf eine offene Teilmenge \tsubset \( \reals \).
 
     Mit \ref{substitution:eindimensional_char_funktion} folgt daher
     \begin{equation*}

@@ -19,7 +19,7 @@
   Eine direkte Charakterisierung einer wichtigen Klasse von Nullmengen bietet folgender Satz:
 \end{bemerkung}
 \begin{lemma}\label{geringere_dimensionen_sind_nullmengen}
-  Sei \( U\subset \reals^k \), \( f\maps U\to \reals^{n-k} \) stetig. Dann ist \( \Gamma_f \) Nullmenge \( \subset \reals^n \).
+  Sei \( U\subset \reals^k \), \( f\maps U\to \reals^{n-k} \) stetig. Dann ist \( \Gamma_f \) Nullmenge \tsubset \( \reals^n \).
 \end{lemma}
 \begin{proof}[Beweis (für \( n=2 \), \( k=1 \))]
     Sei also \( f\maps I\to \reals \) stetig, \( I\subset \reals \). Betrachte zunächst \( g=\evaluateat{f}{\interval{a}{b}} \), \( \interval{a}{b}\subset I \). \( g \) ist gleichmäßig stetig \timplies \tforall \( \varepsilon>0 \) \texists \( \delta>0 \) \sd \( \abs{g(x)-g(y)}<\varepsilon \) \tforall \( x,y\in \interval{a}{b} \) mit \( \abs{x-y}<\delta \)
@@ -115,7 +115,7 @@ Zum Beweis von \ref{fubini} benötigen wir ein Lemma.
   (zu \( x \) fest gewählt) Nullmenge in \( Y \) für \emph{fast alle} \( x \) (fast alle: gemessen in \( X \)).
 \end{lemma}
 \begin{beispiel*}
-  \( N=\Set{\p*{x,\frac{x}{2}}\in \reals^2} \) (siehe \ref{geringere_dimensionen_sind_nullmengen}) ist Nullmenge \( \subset \reals^2 \).
+  \( N=\Set{\p*{x,\frac{x}{2}}\in \reals^2} \) (siehe \ref{geringere_dimensionen_sind_nullmengen}) ist Nullmenge \tsubset \( \reals^2 \).
   \begin{figure}[H]
     \centering
     \includegraphics[width=0.3\linewidth]{nullmenge_gerade}

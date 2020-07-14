@@ -20,10 +20,10 @@ Wir haben gesehen, dass die Eigenschaften derselben Menge sehr verschieden sein 
         \begin{proofdescription}
             \item[\hin] Sei \( a\in U \) \( \overset{VOR}{\implies} \) \texists \( \varepsilon>0 \) \sd
             \begin{align*}
-                B_{\varepsilon}^{d_\text{E}}(a)\definedas \Set{x\in \reals^2|d_{\text{Eukl}(x,a)}=\sqrt{(x_1-a_1)^2+(x_2-a_2)^2}<\varepsilon}\subset U
+                \ball;{\varepsilon}^{d_\text{E}}(a)\definedas \Set{x\in \reals^2|d_{\text{Eukl}(x,a)}=\sqrt{(x_1-a_1)^2+(x_2-a_2)^2}<\varepsilon}\subset U
             \end{align*} 
         \end{proofdescription}
-        Da \( B_{\rho}^{d_{\max}}(a)\subset B_{\varepsilon}^{d_{\text{E}}}(a) \) für \( \rho=\frac{\varepsilon}{\sqrt{2}} \), ist \( U \) auch offen \( (\reals^2, d_{\max}) \).
+        Da \( \ball;{\rho}^{d_{\max}}(a)\subset \ball;{\varepsilon}^{d_{\text{E}}}(a) \) für \( \rho=\frac{\varepsilon}{\sqrt{2}} \), ist \( U \) auch offen \( (\reals^2, d_{\max}) \).
         \begin{figure}[H]
             \centering
             \includegraphics[width=0.5\linewidth]{figures/max_quadrat_in_eukl_kreis}
@@ -31,9 +31,9 @@ Wir haben gesehen, dass die Eigenschaften derselben Menge sehr verschieden sein 
         \end{figure}
         \item[\rueck] Sei \( a\in U \)\( \overset{VOR}{\implies} \)\texists \( \varepsilon>0 \) \sd
         \begin{align*}
-            B_{\varepsilon}^{d_{\max}}(a)=\Set{x|d_{\max}(x,a)<\varepsilon}\subset U.
+            \ball;{\varepsilon}^{d_{\max}}(a)=\Set{x|d_{\max}(x,a)<\varepsilon}\subset U.
         \end{align*}
-        Es gilt \( B_{\rho}^{d_{\text{E}}}(a)\subset B_{\varepsilon}^{d_{\max}}(a) \) für \( \rho=\varepsilon \), also ist \( U \) offen in \( (\reals^2,d_{\text{Eukl}}) \).
+        Es gilt \( \ball;{\rho}^{d_{\text{E}}}(a)\subset \ball;{\varepsilon}^{d_{\max}}(a) \) für \( \rho=\varepsilon \), also ist \( U \) offen in \( (\reals^2,d_{\text{Eukl}}) \).
         \begin{figure}[H]
             \centering
             \includegraphics[width=0.4\linewidth]{figures/eukl_kreis_in_max_quadrat}
@@ -54,7 +54,7 @@ Wir haben gesehen, dass die Eigenschaften derselben Menge sehr verschieden sein 
     \begin{enumerate}
         \item Konvergiert eine Folge bezüglich der stärkeren Metrik, so auch bezüglich der schwächeren.
         
-        (denn: Konvergiere \( x_n\to a \) (bezüglich \( d \)). Sei \( \varepsilon>0 \). Betrachte \( B_{\varepsilon}^{\tilde{d}}(a)=U \) offen bezüglich \( d \) \timplies \( U \) Umgebung von \( a \) (bezüglich \( d \)) \timplies \( U \) Umgebung von \( a \) (bezüglich \( d \)) \timplies \texists  \( N \) \sd \( x_n\in U\quad \forall n\geq N \).)
+        (denn: Konvergiere \( x_n\to a \) (bezüglich \( d \)). Sei \( \varepsilon>0 \). Betrachte \( \ball;{\varepsilon}^{\tilde{d}}(a)=U \) offen bezüglich \( d \) \timplies \( U \) Umgebung von \( a \) (bezüglich \( d \)) \timplies \( U \) Umgebung von \( a \) (bezüglich \( d \)) \timplies \texists  \( N \) \sd \( x_n\in U\quad \forall n\geq N \).)
         
         \item Ist eine Funktion \( f\maps (X,\tilde{d})\to (Y,d_Y) \) stetig, so auch \( f\maps (X,d)\to (Y,d_Y) \).
         \item Ist eine Funktion \( f\maps (Y,d_Y)\to (X,d) \) stetig, so auch \( f\maps (Y,d_Y)\to (X,\tilde{d}) \).
@@ -131,7 +131,7 @@ Wir haben gesehen, dass die Eigenschaften derselben Menge sehr verschieden sein 
     \end{align*}
 \end{lemma}
 \begin{proof}
-    Bezeichne \( B_{r}^j(0) \), \( r>0 \), die offenen Kugeln bezüglich \( d_j \).
+    Bezeichne \( \ball;{r}^j(0) \), \( r>0 \), die offenen Kugeln bezüglich \( d_j \).
     \begin{description}
         \item[\hin] Nach VOR ist insbesondere \( B_1^1(0) \) offen bezüglich \( d_2 \) \timplies \texists \( \varepsilon>0 \) \sd \( B_\varepsilon^2(0)\subset B_1^1(0) \) \timplies für \( x\in X \), \( x\neq 0 \) gilt
         \begin{align*}
@@ -139,10 +139,10 @@ Wir haben gesehen, dass die Eigenschaften derselben Menge sehr verschieden sein 
             \implies &\norm{\frac{\varepsilon x}{2\norm{x}_2}}_1 <1 \\
             \implies &\norm{x}_1<\frac{2}{\varepsilon}\norm{x}_2.
         \end{align*} 
-        \item[\rueck] Existiere \( C \) wie oben. \( B_r^2(x)\subset B_{cr}^1(x)\quad \forall x\in X \), \( r>0 \). Denn \( r>\norm{x-y}_2\geq \frac{1}{c} \). Sei \( U \) offen bezüglich \( d_1 \)
+        \item[\rueck] Existiere \( C \) wie oben. \( B_r^2(x)\subset \ball;{cr}^1(x)\quad \forall x\in X \), \( r>0 \). Denn \( r>\norm{x-y}_2\geq \frac{1}{c} \). Sei \( U \) offen bezüglich \( d_1 \)
         \begin{align*}
-            \implies &\forall x\in U\logicspace \exists \varepsilon>0\logicspace\text{\sd} \logicspace B_{\varepsilon}^1(x)\subset U\\
-            \implies &B_{\frac{\varepsilon}{C}}^2(x)\subset B_{\varepsilon}^1(x)\subset U.
+            \implies &\forall x\in U\logicspace \exists \varepsilon>0\logicspace\text{\sd} \logicspace \ball;{\varepsilon}^1(x)\subset U\\
+            \implies &\ball;{\frac{\varepsilon}{C}}^2(x)\subset \ball;{\varepsilon}^1(x)\subset U.
         \end{align*} 
     \end{description}
     
@@ -235,7 +235,7 @@ Wir haben gesehen, dass die Eigenschaften derselben Menge sehr verschieden sein 
         \diameter{Q_{m+1}}=\frac{1}{2}\diameter{Q_m}=\frac{1}{2^{m+1}}\diameter{Q}.
     \end{align*}
     
-    Nach dem Schachtelungsprinzip \texists \( a\in Q_m \) \tforall \( m \). Da \( (U_j)_j \) \( Q \) überdeckt \texists \( U_{j_0} \) \sd \( a\in U_{j_0} \). \( U_{j_0} \) offen \timplies \texists \( \varepsilon>0 \) \sd \( B_{\varepsilon}^{\supnorm{\cdot}}(a)\subset U_{j_0} \). Wähle \( m \) so groß, dass \( \diameter{Q_m}<\varepsilon \). \( a\in Q_m \) \timplies \( Q_m\subset B_{\varepsilon}^{\supnorm{\cdot}}(a)\subset U_{j_0} \) \contra Widerspruch Konstruktion der \( Q_m \).
+    Nach dem Schachtelungsprinzip \texists \( a\in Q_m \) \tforall \( m \). Da \( (U_j)_j \) \( Q \) überdeckt \texists \( U_{j_0} \) \sd \( a\in U_{j_0} \). \( U_{j_0} \) offen \timplies \texists \( \varepsilon>0 \) \sd \( \ball;{\varepsilon}^{\supnorm{\cdot}}(a)\subset U_{j_0} \). Wähle \( m \) so groß, dass \( \diameter{Q_m}<\varepsilon \). \( a\in Q_m \) \timplies \( Q_m\subset \ball;{\varepsilon}^{\supnorm{\cdot}}(a)\subset U_{j_0} \) \contra Widerspruch Konstruktion der \( Q_m \).
 \end{proof}
 \begin{bemerkung}
     Aus \ref{r_alle_normen_aequivalent} folgt: \( Q \) ist bezüglich jeder Norm kompakt. Bolzano-Weierstraß (\ref{bolzanoweierstrass}) \timplies In \( (\reals^n,\norm{\cdot}) \) hat jede beschränkte Folge eine konvergente Teilfolge.

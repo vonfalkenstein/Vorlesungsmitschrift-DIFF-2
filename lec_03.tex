@@ -149,7 +149,7 @@
         \end{proof}
         
         \item Es folgt: \( (\reals^n, d_{\max})\) ist \emph{vollständig}.
-        \item \( B_\varepsilon(a)\) bezüglich dieser Metrik:
+        \item \( \ball{\varepsilon}{a}\) bezüglich dieser Metrik:
         \begin{align*}
             \Set{x\in \reals ^n |\max_{i\in \Set{1,\ldots, n}}\abs{x_i-a_i}<\varepsilon},
         \end{align*}
@@ -178,17 +178,17 @@
     \begin{proofdescription}
         \item[\hin] Sei also \( f\maps X\to \reals^n\) stetig in \( a\). Sei \( \varepsilon>0\). Dann \texists \( \delta>0\) \sd
         \begin{align*}
-            &\max_{i\in \underline{n}}\abs{f_i(y)-f_i(a)}<\varepsilon\forall y\in \explain{\text{bezüglich }d}{B_\delta(a)}\\
-            \implies &\abs{f_i(y)-f_i(a)}<\varepsilon\quad \forall y\in B_\delta(a)\logicspace \forall i\in \underline{n}\\
+            &\max_{i\in \underline{n}}\abs{f_i(y)-f_i(a)}<\varepsilon\forall y\in \explain{\text{bezüglich }d}{\ball{\delta}{a}}\\
+            \implies &\abs{f_i(y)-f_i(a)}<\varepsilon\quad \forall y\in \ball{\delta}{a}\logicspace \forall i\in \underline{n}\\
             \implies &f_i\text{ sind stetig in }a.
         \end{align*}  
         \item[\rueck] Seien also die \( f_i\maps X\to \reals \), \( i\in \underline{n}\), stetig in \( a\). Sei \( \varepsilon>0\). Dann \texists \( \delta_i>0\) \sd 
         \begin{align*}
-            \abs{f_i(y)-f_y(a)}<\varepsilon\quad \forall y\in B_{d_i}(a)\subset X. 
+            \abs{f_i(y)-f_y(a)}<\varepsilon\quad \forall y\in \ball{d_i}{a}\subset X. 
         \end{align*}   
         Wähle \( d\definedas \Min{\Set{\delta_1,\ldots,\delta_n}}\). Dann ist
         \begin{align*}
-            \max_{i\in \underline{n}}\abs{f_i(y)-f_i(a)}<\varepsilon\quad \forall y\in B_d(a). 
+            \max_{i\in \underline{n}}\abs{f_i(y)-f_i(a)}<\varepsilon\quad \forall y\in \ball{d}{a}. 
         \end{align*} 
     \end{proofdescription}
 \end{proof}
@@ -306,13 +306,13 @@
             \includegraphics[width=0.5\linewidth]{figures/kompakt_abgeschlossen_beweis}
             \label{fig:kompakt_abgeschlossen_beweis}
         \end{figure}
-        \( U_n\) ist offen (denn \( X\setminus U_n=\overline{B_{1/n}(a)}\)) und \( \bigcup_{n=1}^{\infty}U_n=X\setminus \Set{a}\supset K\).
-        \( K\) kompakt \timplies \texists \( U_{n_1},\ldots, U_{n_L}\) \sd \( K\subset U_{n_1}\cup \cdots \cup U_{n_l}\). Setze \( N\definedas \Max{\Set{n_1,\ldots,n_l}}\). Dann ist \( B_{\frac{1}{N}}(a)\subset X\setminus K\) \timplies \( X\setminus K \) ist offen \timplies \Beh.
+        \( U_n\) ist offen (denn \( X\setminus U_n=\overline{\ball{1/n}{a}}\)) und \( \bigcup_{n=1}^{\infty}U_n=X\setminus \Set{a}\supset K\).
+        \( K\) kompakt \timplies \texists \( U_{n_1},\ldots, U_{n_L}\) \sd \( K\subset U_{n_1}\cup \cdots \cup U_{n_l}\). Setze \( N\definedas \Max{\Set{n_1,\ldots,n_l}}\). Dann ist \( \ball{\frac{1}{N}}{a}\subset X\setminus K\) \timplies \( X\setminus K \) ist offen \timplies \Beh.
         
-        \item[Beschränktheit:] Sei \( a\in X\). Dann ist \( X=\bigcup\limits_{n=1}^{\infty} B_n(a) \) und somit \( (B_n(a))_n\) eine offene Überdeckung von \( K\).
+        \item[Beschränktheit:] Sei \( a\in X\). Dann ist \( X=\bigcup\limits_{n=1}^{\infty} \ball{n}{a} \) und somit \( (\ball{n}{a})_n\) eine offene Überdeckung von \( K\).
         \begin{align*}
-            \implies &\exists n_1,\ldots, n_k\logicspace\text{\sd}\logicspace  K\subset B_{n_1(a)}\cup \cdots B_{n_k}(a)\\
-            \implies &K\subset B_N(a) \text{ für }N=\Max{\Set{n_1,\ldots,n_k}}\\
+            \implies &\exists n_1,\ldots, n_k\logicspace\text{\sd}\logicspace  K\subset \ball{n-1}{a}\cup \cdots \ball{n_k}{a}\\
+            \implies &K\subset \ball{N}{a} \text{ für }N=\Max{\Set{n_1,\ldots,n_k}}\\
             \implies &\diameter{K}\leq 2N.
         \end{align*}     
     \end{proofdescription}    
@@ -402,7 +402,7 @@
         Ist \( M \) abgeschlossen, \( K \) kompakt und ist \( M\cap K=\emptyset \), so gilt \( \distance{M}{K}>0 \).
     \end{behauptung*}
     \begin{proof}
-        \( x\mapsto \distance{x}{M} \) ist stetig auf \( \mathfrak{X} \), somit erst recht auf \( K \). \( K \) ist kompakt \( \overset{\ref{funktion_von_kompaktem_metrischen_raum_zu_r_kriegt_min_max}}{\implies} \) \texists \( a\in K \) \sd \( \distance{a}{M}=\distance{K}{M} \). \( M \) abgeschlossen \timplies \texists \( \varepsilon>0 \) \sd \( B_{\varepsilon}(a)\subset X\setminus M \) \timplies \( \distance{a}{M}\geq \varepsilon \).
+        \( x\mapsto \distance{x}{M} \) ist stetig auf \( \mathfrak{X} \), somit erst recht auf \( K \). \( K \) ist kompakt \( \overset{\ref{funktion_von_kompaktem_metrischen_raum_zu_r_kriegt_min_max}}{\implies} \) \texists \( a\in K \) \sd \( \distance{a}{M}=\distance{K}{M} \). \( M \) abgeschlossen \timplies \texists \( \varepsilon>0 \) \sd \( \ball{\varepsilon}{a}\subset X\setminus M \) \timplies \( \distance{a}{M}\geq \varepsilon \).
         
     \end{proof}
     \begin{achtung*}
@@ -418,7 +418,7 @@
                 \label{fig:achsen_und_eins_durch_x}
             \end{figure}
             
-            \item Betrachte \( B_{1/2}(1) \), \( B_{1/2}(2)\subset \reals^2 \), \( d_{\text{Euklidisch}} \). Distanz ist \( 0 \).
+            \item Betrachte \( \ball{1/2}{1} \), \( \ball{1/2}{2}\subset \reals^2 \), \( d_{\text{Euklidisch}} \). Distanz ist \( 0 \).
             \begin{figure}[H]
                 \centering
                 \includegraphics[width=0.3\linewidth]{figures/beruehrende_kreise}
@@ -437,16 +437,16 @@
 \begin{proof}
     Sei \( \varepsilon>0 \). Dann gibt es zu \( a\in \mathfrak{X} \) ein \( \delta(a)>0 \) \sd
     \begin{align*}
-        d_Y(f(a),f(y))<\varepsilon\quad \forall y\in B_{\delta(a)}(a).
+        d_Y(f(a),f(y))<\varepsilon\quad \forall y\in \ball{\delta(a)}{a}.
     \end{align*}
-    Es gilt \( \bigcup_{a\in X} B_{\frac{\delta(a)}{2}}(a)=\mathfrak{X}\).
+    Es gilt \( \bigcup_{a\in X} \ball{\frac{\delta(a)}{2}}{a}=\mathfrak{X}\).
 
-    \( \mathfrak{X} \) ist kompakt \timplies \texists \( a_1,\ldots,a_N \) \sd \( X=\bigcup\limits_{j=1}^{N}B_{\delta(a_j)/2} (a_j)\). Setze 
+    \( \mathfrak{X} \) ist kompakt \timplies \texists \( a_1,\ldots,a_N \) \sd \( X=\bigcup\limits_{j=1}^{N}\ball{\delta(a_j)/2}{a_j}\). Setze 
     \begin{align*}
         \delta\definedas \frac{1}{2}\Min{\Set{\delta(a_1),\ldots,\delta(a_N)}}.
     \end{align*}
 
-    Seien jetzt \( x,\tilde{x} \) beliebig aus \( \mathfrak{X} \) mit \( d_{\mathfrak{X}}(x,\tilde{x})<\delta \). Dann gibt es ein \( j\in \Set{1,\ldots, N} \) \sd \( x\in B_{\delta(a_j)/2} \) und somit \( \tilde{x}\in B_{\delta(a_j)}(a_j) \)
+    Seien jetzt \( x,\tilde{x} \) beliebig aus \( \mathfrak{X} \) mit \( d_{\mathfrak{X}}(x,\tilde{x})<\delta \). Dann gibt es ein \( j\in \Set{1,\ldots, N} \) \sd \( x\in \ball;{\delta(a_j)/2} \) und somit \( \tilde{x}\in \ball{\delta(a_j)}{a_j} \)
     \begin{align*}
         \implies &d_Y(f(x),f(a_j))<\varepsilon \quad d_Y(f(\tilde{x}),f(a_j))<\varepsilon\\
         \implies &d_Y(f(x),f(\tilde{x}))<2\varepsilon \quad \forall x,\tilde{x},\logicspace d_{\mathfrak{X}}(x,\tilde{x})<\delta.

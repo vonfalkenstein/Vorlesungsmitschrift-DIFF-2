@@ -1,33 +1,33 @@
 % !TEX root = ./Vorlesungsmitschrift DIFF 2.tex  
 \lecture{Do 14.05. 10:15}{}
 \begin{satz}\label{funktion_ableiten_mit_hoeheren_abbildungen}
-  Sei \( f\maps \underrelate{\vertrelation{\supset}}{\reals^k}{B_{r_1}^{\norm{\cdot}}(a)}\times \underrelate{\vertrelation{\supset}}{\reals^m}{B_{r_2}^{\norm{\cdot}}(b)}\to \reals^m \) eine Abbildung mit \( f(a,b)=0 \), die in \( (a,b) \) differenzierbar sei. Sei zudem \( D_2 f(a,b) \), definiert über
+  Sei \( f\maps \underrelate{\vertrelation{\supset}}{\reals^k}{\ball;{r_1}^{\norm{\cdot}}(a)}\times \underrelate{\vertrelation{\supset}}{\reals^m}{\ball;{r_2}^{\norm{\cdot}}(b)}\to \reals^m \) eine Abbildung mit \( f(a,b)=0 \), die in \( (a,b) \) differenzierbar sei. Sei zudem \( D_2 f(a,b) \), definiert über
   \begin{equation*}
     \totalderivative{f}(a,b)=(\underbrace{\partial_1 f(a,b)\, \cdots\,  \partial_k f(a,b)}_{\defines D_1 f(a,b)\in \Mat(m\times k)}\, \underbrace{\partial_{k+1}f(a,b)\, \cdots\, \partial_{k+m}f(a,b)}_{\defines D_2 f(a,b)\in \Mat(m\times m)}),
   \end{equation*}
-  invertierbar. Sei zudem \( g\maps B_{r_1}(a)\to \reals^m \) stetig und gelte \( g(B_{r_1}(a))\subset B_{r_2}(b) \) und \( g(a)=b \) und \( f(x,g(x))=0 \) \tforall \( x\in B_{r_1}(a) \). Dann ist \( g \) in \( a \) differenzierbar und es gilt
+  invertierbar. Sei zudem \( g\maps \ball{r_1}{a}\to \reals^m \) stetig und gelte \( g(\ball{r_1}{a})\subset \ball{r_2}{b} \) und \( g(a)=b \) und \( f(x,g(x))=0 \) \tforall \( x\in \ball{r_1}{a} \). Dann ist \( g \) in \( a \) differenzierbar und es gilt
   \begin{equation*}
     \totalderivative{g}(a)=-\inverse{\p*{ D_2f(a,b) }}D_1 f(a,b)\in \Mat(m\times k, \reals).
   \end{equation*}
 \end{satz}
 \begin{proof}
-  Es gilt für \( h=(h_1,h_2)\in B_{r_1}(0)\times B_{r_2}(0) \)
+  Es gilt für \( h=(h_1,h_2)\in \ball{r_1}{0}\times \ball{r_2}{0} \)
   \begin{equation*}
     f(\underbrace{(a,b)+h}_{=(a+h_1,b+h_2)})=0+D_1f(a,b)\matrixmult h_1+D_2 f(a,b)\matrixmult h_2+\underline{R}_{(a,b)}(h)
   \end{equation*}
-  mit \( \frac{\underline{R}_{(a,b)}(h)}{\norm{h}}\goesto 0 \) \tforall \( x\in B_{r_1}(a) \) folgt
+  mit \( \frac{\underline{R}_{(a,b)}(h)}{\norm{h}}\goesto 0 \) \tforall \( x\in \ball{r_1}{a} \) folgt
   \begin{equation*}
     \begin{split}
-      0=f(\underbrace{a+h_1}_{\in B_{r_1}(a)},g(a+h_1))=&D_1 f(a,b)\matrixmult h_1\\
+      0=f(\underbrace{a+h_1}_{\in \ball{r_1}{a}},g(a+h_1))=&D_1 f(a,b)\matrixmult h_1\\
       &+D_2 f(a,b)\matrixmult (g(a+h_1)-b)\\
-      &+\underline{R}_{(a,b)}(h_1,g(a+h_1)-b)\quad \forall h_1\in B_{r_1}(0).
+      &+\underline{R}_{(a,b)}(h_1,g(a+h_1)-b)\quad \forall h_1\in \ball{r_1}{0}.
     \end{split}
   \end{equation*}
   Also
   \begin{equation*}
     \begin{split}
       g(a+h_1)=&g(a)-\inverse{D_2f(a,b)}\matrixmult D_1 f(a,b)\matrixmult h_1\\
-      &\underbrace{-\inverse{D_2f(a,b)}\matrixmult \underline{R}_{(a,b)}(h_1,g(a+h_1)-b)}_{\defines \tilde{R_{a,b}^g(h_1)}}\quad \forall h_1\in B_{r_1}(0).
+      &\underbrace{-\inverse{D_2f(a,b)}\matrixmult \underline{R}_{(a,b)}(h_1,g(a+h_1)-b)}_{\defines \tilde{R_{a,b}^g(h_1)}}\quad \forall h_1\in \ball{r_1}{0}.
     \end{split}
   \end{equation*}
   Wir sind fertig, wenn wir zeigen können, dass
@@ -36,13 +36,13 @@
   \end{equation*}
   Wegen der Differenzierbarkeit von \( f \) in \( (a,b) \) \texists  \( \tilde{C} \) und \( \delta_1,\delta_2>0 \), \( \delta_i<r_i \), \sd
   \begin{equation*}
-    \norm{\underline{R}_{(a,b)}(h_1,h_2)}\leq \tilde{C}(\norm{h_1}+\norm{h_2})\quad \forall h_1\in B_{\delta_1}(0), h_2\in B_{\delta_2}(0),
+    \norm{\underline{R}_{(a,b)}(h_1,h_2)}\leq \tilde{C}(\norm{h_1}+\norm{h_2})\quad \forall h_1\in \ball{\delta_1}{0}, h_2\in \ball{\delta_2}{0},
   \end{equation*}
   also
   \begin{equation*}
     \norm{\underline{R}_{(a,b)}(h_1,g(a+h_1)-b)}\leq \tilde{C}(\norm{h_1}+\norm{g(a+h_1)-b})
   \end{equation*}
-  für alle \( h_1 \) \sd \( \norm{h_1}<\delta_1 \) und \( \norm{g(a+h_1)-b}<\delta_2 \). Wegen der Stetigkeit von \( g \) in \( a \) gibt es \( \delta>0 \),\( \delta<\delta_1 \), \( \norm{g(a+h_1)-\underbrace{g(a)}_{=b}}<\delta_2 \) für alle \( h_1\in B_{\delta}(0) \).
+  für alle \( h_1 \) \sd \( \norm{h_1}<\delta_1 \) und \( \norm{g(a+h_1)-b}<\delta_2 \). Wegen der Stetigkeit von \( g \) in \( a \) gibt es \( \delta>0 \),\( \delta<\delta_1 \), \( \norm{g(a+h_1)-\underbrace{g(a)}_{=b}}<\delta_2 \) für alle \( h_1\in \ball{\delta}{0} \).
 \end{proof}
 \begin{bemerkungen*}
   \begin{enumerate}
@@ -109,7 +109,7 @@ Umgekehrt kann man eine Funktion \( g \) wie oben durch \enquote{Auflösen der G
     \begin{equation*}
       \varepsilon\definedas \sup_{x\in V_1}\norm{h(x,b)}<\frac{r}{2} \tag{\( ** \)}\label{satz_von_der_impliziten_funktion:beweis:h:norm_beschraenkt}
     \end{equation*}
-    (auf einem Kompaktum \( \subset W_1 \) um \( a \) ist \( x\mapsto h(x,b) \) beschränkt und wird auf einem hinreichend kleinen Kompaktum beliebig klein. Um \( V_1 \) offen zu erhalten, nehmen wir das Innere eines solchen Kompaktums).
+    (auf einem Kompaktum \tsubset \( W_1 \) um \( a \) ist \( x\mapsto h(x,b) \) beschränkt und wird auf einem hinreichend kleinen Kompaktum beliebig klein. Um \( V_1 \) offen zu erhalten, nehmen wir das Innere eines solchen Kompaktums).
     \item Wir zeigen jetzt: Zu jedem \( x\in V_1 \) gibt es höchstens ein \( y\in V_2 \) \sd \( f(x,y)=0 \) also \sd \( h(x,y)=y-b \).
     
     Sei also \( x\in V_1 \) und seien \( y_1 \) und \( y_2 \) \sd \( h(x,y_1)=y_1-b \) und \( h(x,y_2)=y_2-b \).
@@ -117,7 +117,7 @@ Umgekehrt kann man eine Funktion \( g \) wie oben durch \enquote{Auflösen der G
       \implies &y_1-y_2=h(x,y_1)-h(x,y_2)\\
       \underset{\mathclap{\text{MWS und \eqref{satz_von_der_impliziten_funktion:beweis:h:ableitungsnorm_bschraenkt}}}}{\implies}&\norm{y_1-y_2}\begin{aligned}[t]
         &=\norm{h(x,y_1)-h(x,y_2)}\\
-        &\explain{\text{\( \zeta \) auf der Verbindungsstrecke zw.\ \( y_1 \) und \( y_2 \) (liegt in \( V_2=B_r(b) \))}}{=}\norm{D_2 h(x,\zeta)}\matrixmult\norm{y_1-y_2}\\
+        &\explain{\text{\( \zeta \) auf der Verbindungsstrecke zw.\ \( y_1 \) und \( y_2 \) (liegt in \( V_2=\ball{r}{b} \))}}{=}\norm{D_2 h(x,\zeta)}\matrixmult\norm{y_1-y_2}\\
         &\leq \frac{1}{2}\norm{y_1-y_2}
       \end{aligned}\\
       \implies &\norm{y_1-y_2}=0 \implies y_1=y_2.

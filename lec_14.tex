@@ -58,7 +58,7 @@ Es gilt allgemeiner
   \end{figure}
 \end{proof}
 \begin{beispiel*}
-  \( \mathbb{S}^2\subset \reals^2 \), \( a=\transpose-{(0,0,1)} \).
+  \( \sphere{2}\subset \reals^2 \), \( a=\transpose-{(0,0,1)} \).
   \begin{eigenschaftenenumerate}
     \item
     \begin{align*}
@@ -110,7 +110,7 @@ Es gilt allgemeiner
   \end{enumerate}
 \end{bemerkungen}
 \begin{beispiel*}
-  \( M=\mathbb{S}^2\subset \reals^2 \).
+  \( M=\sphere{2}\subset \reals^2 \).
   \begin{figure}[H]
     \centering
     \includegraphics[width=0.5\linewidth]{normalenraum_kugel}
@@ -118,7 +118,7 @@ Es gilt allgemeiner
   \end{figure}
   \begin{eigenschaftenenumerate}
     \item \( \normalenraum{M}=\set{\lambda a|\lambda\in \reals} \).
-    \item \( a\in \mathbb{S}^2 \), \( a_3>0 \).
+    \item \( a\in \sphere{2} \), \( a_3>0 \).
     \begin{align*}
       \normalenraum{M}&=\Set{\varv|\varv_1=\frac{a_1}{\sqrt{1-a_1^2-a_2^2}}\varv_3,\varv_2=\frac{a_1}{\sqrt{1-a_1^2-a_2^2}}\varv_3}\\
       &=\Set{\lambda\frac{1}{\sqrt{1-a_1^2-a_2^2}}\begin{pNiceMatrix} a_1 \\ a_2 \\ \sqrt{\cdots} \end{pNiceMatrix}|\lambda\in\reals}=\Set{\lambda a|\lambda\in \reals}.
@@ -154,7 +154,7 @@ Es gilt allgemeiner
 \end{definition}
 \begin{beispiele*}
   \begin{enumerate}
-  \item \( M=\mathbb{S}^5 \), \( \mathcal{N}(a)=a \) offensichtlich stetig differenzierbar.
+  \item \( M=\sphere{5} \), \( \mathcal{N}(a)=a \) offensichtlich stetig differenzierbar.
   \item \( M= \) Torus \( \Pi^2\subset \reals^3 \), \( r<R \).
   \begin{equation*}
     f(x,y,z)=(x^2+y^2+z^2+R^2-r^2)^2-4R^2(x^2+y^2).
@@ -216,7 +216,7 @@ Es gilt allgemeiner
   Man kann auch \( \reals_{+}^d=\Set{x\in \reals^d|x_1\geq 0} \) oder auch \( \Set{x\in \reals^d|x_d\geq c} \) \bzw \( \Set{x\in \reals^d|x_d\leq c} \) betrachten.
 \end{bemerkung*}
 \begin{beispiel*}
-  \( \overline{\mathbb{D}}=\Set{x\in \reals^2| \euclidiannorm{x}\leq 1} \). \( \overline{\partial \mathbb{D}}=\mathbb{S}^1 \). Wähle zu \( a\in \overline{\mathbb{D}} \), \( a\neq \transpose-{(1,0)} \). Sei \( V=\rinterval{0}{1}\times \ointerval{0}{2\pi} \). Dann ist \( V \) offen in \( \Set{x\in \reals^2|x_1\leq 1} \) und \( V\cap \Set{x|x_1=1}=\mathbb{S}^1\setminus \Set{(1,0)} \).
+  \( \overline{\mathbb{D}}=\Set{x\in \reals^2| \euclidiannorm{x}\leq 1} \). \( \overline{\partial \mathbb{D}}=\sphere{1} \). Wähle zu \( a\in \overline{\mathbb{D}} \), \( a\neq \transpose-{(1,0)} \). Sei \( V=\rinterval{0}{1}\times \ointerval{0}{2\pi} \). Dann ist \( V \) offen in \( \Set{x\in \reals^2|x_1\leq 1} \) und \( V\cap \Set{x|x_1=1}=\sphere{1}\setminus \Set{(1,0)} \).
   \begin{equation*}
     \varphi\maps \braceannotate{=V}{\rinterval{0}{1}\times \ointerval{0}{2\pi}}\to \reals^2\quad \varphi(r,\alpha)=r\transpose-{(\Cos{\alpha},\Sin{\alpha})}.
   \end{equation*}

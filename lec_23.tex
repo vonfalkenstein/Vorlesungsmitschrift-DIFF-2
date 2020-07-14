@@ -14,9 +14,9 @@
   \end{align*}
   \thref{berechnung_gramsche_determinante}: \( \determinant{g}(t_0)=\sum_{\mathclap{i_1<\dotsb<i_d}}\p*{\determinant{\totalderivative{\begin{pNiceMatrix} \varphi_{i_1} \\ \Vdots \\ \varphi_{i_d} \end{pNiceMatrix}}}(t_0)}^2 \).
 
-  \thref{parameterwechsel_metrischer_tensor}: Unter Parameterwechsel (\vgl \ref{parameterwechsel}) verhält sich der metrische Tensor wi folgt
+  \thref{parameterwechsel_metrischer_tensor}: Unter Parameterwechsel (\vgl \ref{parameterwechsel}) verhält sich der metrische Tensor wie folgt
   \begin{equation*}
-    \explain{\text{\bzgl \( \psi\maps \tilde{V}\to M\cap \tilde{U} \) berechnet}}{g_{\psi}}=\transpose+{\totalderivative{\Phi}(s)}\explain{\text{\bzgl \( \varphi\maps V\to M\cap U \) berechnet}}{g_{\varphi}}\totalderivative{\Phi}(s)
+    \explain[big]{\text{\bzgl \( \psi\maps \tilde{V}\to M\cap \tilde{U} \) berechnet}}{g_{\psi}}=\transpose+{\totalderivative{\Phi}(s)}\explain{\text{\bzgl \( \varphi\maps V\to M\cap U \) berechnet}}{g_{\varphi}}\totalderivative{\Phi}(s)
   \end{equation*}
   mit \( \Phi=\inverse{\varphi}\circ \psi\maps \inverse{\psi}(M\cap U\cap \tilde{U})\to \inverse{\varphi}(M\cap U\cap \tilde{U})\).
 \end{erinnerung*}
@@ -42,7 +42,7 @@
   Mit der Transformationsformel und \thref{parameterwechsel_metrischer_tensor} sieht man schnell, das die Definition unabhängig von der gewählten Parametisierung ist.
 \end{bemerkung*}
 \begin{folgerung}\label{berechnung_mannigfaltigkeit_integral_ueber_zerlegung_der_eins}
-  Das Integral ist auf einer Untermannigfaltigkeiten definiert (ohne die Einschränkungen \ref{mannigfaltigkeit_integral:globale_parametisierung} und \ref{mannigfaltigkeit_integral:lokale_parametisierung} in \thref{mannigfaltigkeit_integral}).
+  Das Integral ist auf einer Untermannigfaltigkeit definiert (ohne die Einschränkungen \ref{mannigfaltigkeit_integral:globale_parametisierung} und \ref{mannigfaltigkeit_integral:lokale_parametisierung} in \thref{mannigfaltigkeit_integral}).
   \begin{figure}[H]
     \centering
     \includegraphics[width=0.5\linewidth]{mannigfaltigkeit_integral_unabhaengig_von_parametisierung}
@@ -76,7 +76,7 @@
   \begin{equation*}
     \Integrate{f}{S,M}=\sum_{j\in J} \Integrate{\rho_j f(x)}{S,M}.
   \end{equation*}
-  \timestamp{12:06 --- 16:30 \tto weitere Erklärungen im Audio}
+  \timestamp{12:06--16:30 \tto weitere Erklärungen im Audio}
 \end{folgerung}
 \begin{ergaenzung*}
   \begin{enumerate}[label=\rechtsklammer{\arabic*}]
@@ -148,7 +148,7 @@
   \end{enumerate}
 \end{bemerkungen}
 \begin{satz}
-  Seien \( f,g\maps M\to \reals \), \( M \) \( d \)-dimensionale Untermannigfaltigkeit \( \subset \reals^n \). Gelte \( f(x)=g(x) \) außer auf einer \( d \)-Nullmenge \( N \) und sei \( f \) über \( M \) integrierbar. Dann ist auch \( g \) über \( M \) integrierbar und es gilt
+  Seien \( f,g\maps M\to \reals \), \( M \) \( d \)-dimensionale Untermannigfaltigkeit \tsubset \( \reals^n \). Gelte \( f(x)=g(x) \) außer auf einer \( d \)-Nullmenge \( N \) und sei \( f \) über \( M \) integrierbar. Dann ist auch \( g \) über \( M \) integrierbar und es gilt
   \begin{equation*}
     \Integrate{f}{S,M}=\Integrate{g}{S,N}.
   \end{equation*}
@@ -160,7 +160,7 @@
   übereinstimmt.
 \end{proof}
 \begin{folgerung*}
-  Ist \( N \) \( d \)-Nullmenge \( \subset \reals^n \) und \( M \) \( d \)-dimensionale Untermannigfaltigkeit \( \subset \reals^n \) so ist
+  Ist \( N \) \( d \)-Nullmenge \tsubset \( \reals^n \) und \( M \) \( d \)-dimensionale Untermannigfaltigkeit \tsubset \( \reals^n \) so ist
   \begin{equation*}
     \Integrate{f}{S,M}=\Integrate{f}{S,M\setminus N}.
   \end{equation*}
@@ -227,7 +227,7 @@ wobei \( V \) \zb eine Untermannigfaltigkeit und \( \randpunkte{V}  \) ihr Rand 
   \end{equation*}
   im Punkt \( a \).
   \begin{beispiel*}
-    \( G=\Set{x\in \reals^n|\euclidiannorm{x}\leq 1} \) Vollkugel. \( \randpunkte{G}=\mathbb{S}^{n-1} \), \( h(x)=\euclidiannorm{x}^2-1 \), \( n_a=\frac{a}{\norm{a}} \).
+    \( G=\Set{x\in \reals^n|\euclidiannorm{x}\leq 1} \) Vollkugel. \( \randpunkte{G}=\sphere{n-1} \), \( h(x)=\euclidiannorm{x}^2-1 \), \( n_a=\frac{a}{\norm{a}} \).
   \end{beispiel*}
   Verwende eine lokale Beschreibung von \( \randpunkte{G} \) als Graph einer \( \stetigefunktionen[1] \)-Funktion \( \varphi \)
   \begin{equation*}
@@ -264,7 +264,7 @@ wobei \( V \) \zb eine Untermannigfaltigkeit und \( \randpunkte{V}  \) ihr Rand 
   \item[Eigenwerte positiv] \tto in Richtung des zugehörigen Eigenvektors anwachsend (Quelle)
   \item[Eigenwerte negativ] \tto in Richtung des zugehörigen Eigenvektors schrumpfend (Senke)
 \end{description}
-Summe aller Eigenwerte \( = \) Maß für Quellstärke
+Summe aller Eigenwerte \teq Maß für Quellstärke
 \begin{equation*}
   =\Spur{\totalderivative{X}(x_0)}=\sum_{i=1}^{n}\partial_i X_i(x_0).
 \end{equation*}

@@ -39,7 +39,7 @@
 
       Sei \( t_0 \) eine einfache Nullstelle. Dann ist \( D_2f(x,t_0)\neq 0 \), da \( p_x(t)=(t-t_0)q_x(t) \) und \( q_x(t_0)\neq 0 \) und somit \( D_2f(x,t_0)=q_x(t_0)+\cancel{(t_0-t_0)q_x'(t_0)} \).
 
-      \timplies \texists  Umgebung \( U \) von \( x_0\in \reals^n \) und ein stetig differenzierbare Funktion \( g\maps U\to \reals \) mit \( f(x,g(x))=0 \) und \( g(x_0)=t_0 \) \timplies Die einfachen Nullstellen eines Polynoms hängen in stetig differenzierbarer Art von den Koeffizienten ab, \dh insbesondere hängen si stetig davon ab, \dh zu \( \varepsilon>0 \), \texists \( \delta>0 \) \sd \( \abs{t-t_0}=\abs{g(x)-g(x_0)}<\varepsilon \) für \( x\in B_\phi(x_0)\subset U \). 
+      \timplies \texists  Umgebung \( U \) von \( x_0\in \reals^n \) und ein stetig differenzierbare Funktion \( g\maps U\to \reals \) mit \( f(x,g(x))=0 \) und \( g(x_0)=t_0 \) \timplies Die einfachen Nullstellen eines Polynoms hängen in stetig differenzierbarer Art von den Koeffizienten ab, \dh insbesondere hängen si stetig davon ab, \dh zu \( \varepsilon>0 \), \texists \( \delta>0 \) \sd \( \abs{t-t_0}=\abs{g(x)-g(x_0)}<\varepsilon \) für \( x\in \ball{\phi}{x_0}\subset U \). 
       \begin{beispiel*}
         \begin{description}
           \item[\( 3t^2-t \)] Einfache Nullstelle \( t_0=\frac{1}{3} \).
@@ -184,7 +184,7 @@ Man sagt, wenn \( f \) wie oben ist: \enquote{\( f \) ist bei \( a \) \emph{loka
 \end{beispiele}
 Es folgen einige etwas tiefsinnigere Folgen aus dem Umkehrsatz.
 \begin{satz}\label{offene_abbildungen_satz}
-  Sei \( f\maps U\to \reals^n \) stetig differenzierbar, \( U\subset \reals^n \) offen. Sei \( V\subset U \) offen. Ist \( \totalderivative{f}(x) \) invertierbar für alle \( x\in V \), so ist \( \evaluateat{f}{V} \) eine \emph{offene Abbildung}, \dh offene Teilmengen \( \subset V \) auf offene Mengen abgebildet.
+  Sei \( f\maps U\to \reals^n \) stetig differenzierbar, \( U\subset \reals^n \) offen. Sei \( V\subset U \) offen. Ist \( \totalderivative{f}(x) \) invertierbar für alle \( x\in V \), so ist \( \evaluateat{f}{V} \) eine \emph{offene Abbildung}, \dh offene Teilmengen \tsubset \( V \) auf offene Mengen abgebildet.
 \end{satz}
 \begin{antibeispiel*}
   \( f\maps \ointerval{0}{1}\to \reals \), \( f(x)=1\quad \forall x \). \( f'(x)=0 \) nicht invertierbar. \( \Set{1} \) nicht offen in \( \reals \).
@@ -207,10 +207,10 @@ Es folgen einige etwas tiefsinnigere Folgen aus dem Umkehrsatz.
 \end{beachte*}
 \begin{proof}
   \begin{proofdescription}
-    \item[\ref{extremumprinzip:kein_maximum}] Angenommen \( a \) ist Maximalstelle von \( \norm{f} \). Dann ist \( f(a)\neq 0 \), da sonst \( \norm{f(x)}=0\quad \forall x\in V \) und somit \( \evaluateat{f}{V}=0 \) und \( \totalderivative{f}(x)=0\quad \forall x\in V \). \ref{offene_abbildungen_satz} \timplies \texists  \( \varepsilon>0 \) \sd \( B_{\varepsilon}(f(a))\subset f(V) \). Setze \( b\definedas f(a)+\rho f(a) \) mit\( \rho=\quot{\varepsilon}{2\norm{f(a)}} \) 
+    \item[\ref{extremumprinzip:kein_maximum}] Angenommen \( a \) ist Maximalstelle von \( \norm{f} \). Dann ist \( f(a)\neq 0 \), da sonst \( \norm{f(x)}=0\quad \forall x\in V \) und somit \( \evaluateat{f}{V}=0 \) und \( \totalderivative{f}(x)=0\quad \forall x\in V \). \ref{offene_abbildungen_satz} \timplies \texists  \( \varepsilon>0 \) \sd \( \ball;{\varepsilon}(f(a))\subset f(V) \). Setze \( b\definedas f(a)+\rho f(a) \) mit\( \rho=\quot{\varepsilon}{2\norm{f(a)}} \) 
     \begin{align*}
       \implies &\norm{b-f(a)}=\rho\norm{f(a)}=\quot{\varepsilon}{2}<\varepsilon\\
-      \implies &b\in B_{\varepsilon}\implies \exists x_0\in V  \logicspace \text{\sd}\logicspace b=f(x_0)\\
+      \implies &b\in \ball;{\varepsilon}\implies \exists x_0\in V  \logicspace \text{\sd}\logicspace b=f(x_0)\\
       \implies &\norm{f(x_0)}=\norm{b}=(1+\rho)\norm{f(a)}>\norm{f(a)}.
     \end{align*}
     \item[\ref{extremumprinzip:kein_minimum_wenn_nicht_null}] Analog mit \( b=f(a)-\rho f(a) \).
