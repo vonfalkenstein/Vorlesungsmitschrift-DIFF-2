@@ -1,0 +1,13 @@
+name: Greetings
+
+on: [pull_request, issues]
+
+jobs:
+  greeting:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/first-interaction@v1
+      with:
+        repo-token: ${{ secrets.GITHUB_TOKEN }}
+        issue-message: 'Hello. Thank you for opening an issue. This message is being displayed because it seems that this is your first time opening an issue on this repository. Someone (probably me, Henry/r0uv3n) will soon answer here. Thank you for your contribution.'
+        pr-message: 'Hello. Thank you for issueing a pull request. This message is being displayed because it seems that this is your first time issueing a pull request on this repository. Someone (probably me, Henry/r0uv3n) will soon answer here, and possibly merge this pull request into the repository. Thank you for your contribution.'
