@@ -11,7 +11,7 @@
 \end{erinnerung*}
 Es gilt allgemeiner
 \begin{satz}\label{tangentialraum_durch_parametisierung}
-  Sei \( M \) \( d \)-dimensionale Untermannigfaltigkeit des \( \reals^n \). Sei \( a\in M \), \( U\subset \reals^n  \) offene Umgebung von \( a\) und \( \varphi\maps V\to M\cap U \) eine lokale Parametisierung von \( M \) bei \( a \), also \( \varphi\maps V\to \reals^n \), \( V\subset \reals^d \) offen, ist \( \stetigefunktionen[1]\), \( D\varphi(t) \) von maximalem Rang \( d \) für alle \( t\in V \), \( \varphi\maps V\to M\cap U \) Homöomorphismus. Sei \( t_0\in V \) \sd \( \varphi(t_0)=a \). Dann ist \( \tangentialraum{M}=\Bild-{D\varphi(t_0)} \), also
+  Sei \( M \) \( d \)-dimensionale Untermannigfaltigkeit des \( \reals^n \). Sei \( a\in M \), \( U\subset \reals^n  \) offene Umgebung von \( a\) und \( \varphi\maps V\to M\cap U \) eine lokale Parametrisierung von \( M \) bei \( a \), also \( \varphi\maps V\to \reals^n \), \( V\subset \reals^d \) offen, ist \( \stetigefunktionen[1]\), \( D\varphi(t) \) von maximalem Rang \( d \) für alle \( t\in V \), \( \varphi\maps V\to M\cap U \) Homöomorphismus. Sei \( t_0\in V \) \sd \( \varphi(t_0)=a \). Dann ist \( \tangentialraum{M}=\Bild-{D\varphi(t_0)} \), also
   \begin{equation}
     \tangentialraum{M}=\Span-{\set{\braceannotate{\text{Basis von \( \tangentialraum{M} \)}}{\partial_1\varphi(t_0),\dotsc,\partial_d \varphi(t_0)}}}.
   \end{equation}
@@ -33,7 +33,7 @@ Es gilt allgemeiner
       &=\partial_1 \varphi(t_0)\cdot v_1+\dotsb+\partial_d\varphi(t_0)\matrixmult v_d\\
       &=v.
     \end{align*}
-    \item[\( \tangentialraum{M}\supset \Bild-{D\varphi(t_0)} \)] Sei also \( v\in \tangentialraum{M} \), \( \gamma\maps \ointerval{-\varepsilon}{\varepsilon}\to M\cap U \) stetig differenzierbar mit \( \gamma(0)=a \), \( \gamma'(0)=v \). Dann ist \( c=\inverse{\varphi}\circ \gamma\maps \ointerval{-\varepsilon}{\varepsilon}\to V  \) stetig differenzierbar (das folgt wie im Beweis von \( \ref{parameterwechsel} \) azs der Verknüpfung mit einem Diffeomorphismus \( F\maps \tilde{U}\to W \) mit
+    \item[\( \tangentialraum{M}\supset \Bild-{D\varphi(t_0)} \)] Sei also \( v\in \tangentialraum{M} \), \( \gamma\maps \ointerval{-\varepsilon}{\varepsilon}\to M\cap U \) stetig differenzierbar mit \( \gamma(0)=a \), \( \gamma'(0)=v \). Dann ist \( c=\inverse{\varphi}\circ \gamma\maps \ointerval{-\varepsilon}{\varepsilon}\to V  \) stetig differenzierbar (das folgt wie im Beweis von \( \ref{parameterwechsel} \) aus der Verknüpfung mit einem Diffeomorphismus \( F\maps \tilde{U}\to W \) mit
     \begin{equation*}
       F(M\cap \tilde{U})=\set{a\in W|y_j=0\quad j\geq d+1}.
     \end{equation*} 
@@ -103,7 +103,7 @@ Es gilt allgemeiner
     \begin{equation*}
       \normalenraum{M}=\Span-{\Set{\grad{f_1}(a),\dotsc,\grad{f_{n-d}}(a)}}.
     \end{equation*}
-    \item \( \tangentialraum{M}=\Bild-{D\varphi(t_0)} \) wenn \( \varphi \) lokal bei \( a \) \( M \) parametisiert (\vgl \ref{tangentialraum_durch_parametisierung}) und \( \varphi(t_0)=a \). Die Spalten von \( D\varphi(t_0) \) bilden eine Basis von \( \tangentialraum{M} \)
+    \item \( \tangentialraum{M}=\Bild-{D\varphi(t_0)} \) wenn \( \varphi \) lokal bei \( a \) \( M \) parametrisiert (\vgl \ref{tangentialraum_durch_parametisierung}) und \( \varphi(t_0)=a \). Die Spalten von \( D\varphi(t_0) \) bilden eine Basis von \( \tangentialraum{M} \)
     \begin{equation*}
       \implies \normalenraum{M}=\Set{\varv\in \reals^n|\scalarproduct{\varv}{\partial_j \varphi(t_0)}=0\quad j=1,\dotsc,d}.
     \end{equation*}
@@ -128,10 +128,10 @@ Es gilt allgemeiner
 \end{beispiel*}
 \approxtimestamp{25}
 \begin{definition}\index{Stetig differenzierbare Abbildung von Untermannigfaltigkeiten}
-  Sei \( M \) \( d \)-dimensionale Untermannigfaltigkeit des \( \reals^m \), sei \( N \) \( d' \)-dimensionale Untermannigfaltigkeit des \( \reals^n \). Eine Abbildung \( f\maps M\to N \) heißt \emph{stetig differenzierbar}, falls für alle \( a\in M \) gilt: Wenn \( \varphi\maps M\cap U \) eine lokale Parametisierung bei \( a \) ist, so ist \( f\circ \varphi\maps\reals^d\supset V\to \reals^n \) stetig differenzierbar.
+  Sei \( M \) \( d \)-dimensionale Untermannigfaltigkeit des \( \reals^m \), sei \( N \) \( d' \)-dimensionale Untermannigfaltigkeit des \( \reals^n \). Eine Abbildung \( f\maps M\to N \) heißt \emph{stetig differenzierbar}, falls für alle \( a\in M \) gilt: Wenn \( \varphi\maps M\cap U \) eine lokale Parametrisierung bei \( a \) ist, so ist \( f\circ \varphi\maps\reals^d\supset V\to \reals^n \) stetig differenzierbar.
 \end{definition}
 \begin{bemerkungen*}
-  Ist \( X\circ \varphi \) für eine lokale Parametisierung \( \stetigefunktionen[1] \) und \( \psi\maps \tilde{V}\to M\cap \tilde{U} \) weitere Parametisierung bei \( a \), so ist auch \( \evaluateat{X\circ \psi}{\inverse{\psi}(M\cap U\cap \tilde{U})} \) \( \stetigefunktionen[1] \), denn
+  Ist \( X\circ \varphi \) für eine lokale Parametrisierung \( \stetigefunktionen[1] \) und \( \psi\maps \tilde{V}\to M\cap \tilde{U} \) weitere Parametrisierung bei \( a \), so ist auch \( \evaluateat{X\circ \psi}{\inverse{\psi}(M\cap U\cap \tilde{U})} \) \( \stetigefunktionen[1] \), denn
   \begin{equation*}
     \evaluateat{X\circ \psi}{\inverse{\psi}(M\cap U\cap \tilde{U})}=\evaluateat{X\circ \varphi\circ \braceannotate{\text{Diffeo (\ref{tangentialraum_durch_parametisierung})}}{\inverse{\varphi}\circ\psi}}{\inverse{\psi}(M\cap U\cap \tilde{U})}.
   \end{equation*}
@@ -173,7 +173,7 @@ Es gilt allgemeiner
     \mathcal{N}(a)=\frac{\grad{f(a)}}{\euclidiannorm{\grad{f(a)}}}
   \end{equation*}
   ist stetig differenzierbar.
-  \emph{Tangentialraum} \( \tangentialraum{M}= \) Ebene senkrecht \( \varv_a=\grad{f(a)} \). Parametisierung bei \( a\in \Pi^2 \): Mit geeigneten Intervallen für die Winkel gilt:
+  \emph{Tangentialraum} \( \tangentialraum{M}= \) Ebene senkrecht \( \varv_a=\grad{f(a)} \). Parametrisierung bei \( a\in \Pi^2 \): Mit geeigneten Intervallen für die Winkel gilt:
   \begin{gather*}
     a=\varphi(\alpha,\beta)=R\begin{pNiceMatrix} \Cos{\alpha} \\ \Sin{\alpha} \\ 0 \end{pNiceMatrix}+r\begin{pNiceMatrix} \Cos{\alpha}\Cos{\alpha} \\ \Sin{\alpha}\Cos{\beta} \\ \Sin{\beta} \end{pNiceMatrix}\\
     X(\phi(\alpha,\beta))=\partial_2 \varphi(\alpha,\beta)=\begin{pNiceMatrix} -r\Cos{\alpha}\Sin{\beta} \\ -r\Sin{\alpha}\Sin{\beta} \\ \Cos{\beta} \end{pNiceMatrix}
@@ -206,7 +206,7 @@ Es gilt allgemeiner
   Im nächsten Kapitel (Differenzialgleichungen) wird es um Existenz und Eindeutigkeit solcher Kurven gehen (aber nur im \( \reals^n \)).
 \end{definition}
 \begin{definition}\index{Untermannigfaltigkeit mit Rand}\label{untermannigfaltigkeit_mit_rand}
-  \( M\subset \reals^n \) ist eine \( d \)-dimensionale \emph{Untermannigfaltigkeit mit Rand} falls es zu jedem \( a\in M \) eine lokale Parametisierung gibt \( \varphi\maps V\to \varphi(V)\subset M \) mit \( V\subset \reals^d_{-} \), \( \reals^d_{-}=\Set{x\in \reals^d|x_1\leq 0} \) (\( V \) offen in \( \reals^d_{-} \), falls \texists  \( U \) offen in \( \reals^d \) \sd \( V=\reals^d_{-}\cap U \) (Teilraumtopologie), also \zb ist \( \ointerval{\infty}{0}\times \ointerval{0}{1}^{d-1} \) offen in \( \reals^{d}_{-} \)). \( p \) heißt \emph{Randpunkt von \( M \)}, falls \( p=\varphi(t) \) mit \( t\in V\cap \partial \reals^d_{-} \), wobei
+  \( M\subset \reals^n \) ist eine \( d \)-dimensionale \emph{Untermannigfaltigkeit mit Rand} falls es zu jedem \( a\in M \) eine lokale Parametrisierung gibt \( \varphi\maps V\to \varphi(V)\subset M \) mit \( V\subset \reals^d_{-} \), \( \reals^d_{-}=\Set{x\in \reals^d|x_1\leq 0} \) (\( V \) offen in \( \reals^d_{-} \), falls \texists  \( U \) offen in \( \reals^d \) \sd \( V=\reals^d_{-}\cap U \) (Teilraumtopologie), also \zb ist \( \ointerval{\infty}{0}\times \ointerval{0}{1}^{d-1} \) offen in \( \reals^{d}_{-} \)). \( p \) heißt \emph{Randpunkt von \( M \)}, falls \( p=\varphi(t) \) mit \( t\in V\cap \partial \reals^d_{-} \), wobei
   \begin{equation*}
     \partial \reals^d_{-}=\Set{(0,x_2,\dotsc,x_{d})\in \reals^d_{-}}.
   \end{equation*}
@@ -235,7 +235,7 @@ Es gilt allgemeiner
   heißt \emph{erste Fundamentalnorm}.
 \end{definition*}
 \begin{bemerkung*}
-  \( \tangentialraum{M}=\Span-{\Set{\partial_1 \varphi(t_0),\dotsc,\partial_d \varphi(t_0)}} \), \( \varphi\maps V\to M\cap U \) Parametisierung bei \( a \), \( \varphi(t_0)=a \). Es gilt für \( v=\sum v_i \partial_i \varphi(t_0) \), \( w=\sum w_i \partial_i \varphi(t_0) \)
+  \( \tangentialraum{M}=\Span-{\Set{\partial_1 \varphi(t_0),\dotsc,\partial_d \varphi(t_0)}} \), \( \varphi\maps V\to M\cap U \) Parametrisierung bei \( a \), \( \varphi(t_0)=a \). Es gilt für \( v=\sum v_i \partial_i \varphi(t_0) \), \( w=\sum w_i \partial_i \varphi(t_0) \)
   \begin{align*}
     \scalarproduct{v}{w}_{a}&=\scalarproduct*{\sum v_i \partial_i \varphi(t_0)}{w_j \partial_j \varphi(t_0)}_{a}\\
     &=\sum_{i}\sum_j v_i w_j \braceannotate{\defines g_{ij}(t_0)}{\scalarproduct{\partial_i \varphi(t_0)}{\partial_j \varphi(t_0)}_{\text{E}}}.
@@ -265,7 +265,7 @@ Es gilt allgemeiner
      (\( M=(n-1) \)-dimensional,
       also hier \( d=2 \)) 
       \( M\subset \reals^3\).
-       Sei \( M\cap U\subset \reals^3 \) parametisiert von 
+       Sei \( M\cap U\subset \reals^3 \) parametrisiert von 
        \( \varphi\maps V\to M\cap U \). Dann ist
     \begin{equation*}
       \varphi(t_0+h)=\varphi(t_0)+D\varphi(t_0)\matrixmult h+R_{t_0}(h).
@@ -311,17 +311,17 @@ Es gilt allgemeiner
     \begin{equation*}
       \label{eq:flaecheninhalt_durch_determinante_gegeben}\tag{*} \euclidiannorm{\partial_1 \varphi(t_0)\times\partial_2 \varphi(t_0)}=\sqrt{\determinant{g_{\varphi}(t_0)}}
     \end{equation*}
-    mit \( \determinant{g_{\varphi}}= \) Determinante der Gramschen Matrix. Also ist die GLäche von \( \varphi(R) \) etwa 
+    mit \( \determinant{g_{\varphi}}= \) Determinante der Gramschen Matrix. Also ist die Fläche von \( \varphi(R) \) etwa 
     \begin{equation*}
       \sqrt{g_{\varphi}(t_0)}l_1 l_2=\sqrt{g_{\varphi}(t_0)}\text{Fläche}(\mathcal{R}).
     \end{equation*}
     Die Determinante gibt also an, wie sehr doe Fläche von \( \mathcal{R} \) gestaucht oder gestreckt wird.
 
-    Wir werden uns später überlegen, wie man ausgehend von den hier skizzierten Ideen zu einer Definition des Flächeninhalts kommt, der nicht von der gewählten Parametisierung abhängt.
+    Wir werden uns später überlegen, wie man ausgehend von den hier skizzierten Ideen zu einer Definition des Flächeninhalts kommt, der nicht von der gewählten Parametrisierung abhängt.
   \end{eigenschaftenenumerate}
   Es ist noch \eqref{eq:flaecheninhalt_durch_determinante_gegeben} zu zeigen.
   \begin{lemma}\label{berechnung_gramsche_determinante}
-    Sei \( \varphi\maps V\to M\cap U \) Parametisierung bei \( a \), \( V\subset \reals^d \), \( M\subset \reals^n \). Die Determinante von \( g_{ij} \) berechnet sich wie folgt:
+    Sei \( \varphi\maps V\to M\cap U \) Parametrisierung bei \( a \), \( V\subset \reals^d \), \( M\subset \reals^n \). Die Determinante von \( g_{ij} \) berechnet sich wie folgt:
     \begin{equation*}
       \determinant{g(t_0)}=\sum_{i_1<\dotsb<i_d}\parens*{\determinant{D\begin{pNiceMatrix} \varphi_{i_1} \\ \Vdots \\ \varphi_{i_j} \end{pNiceMatrix}(t_0)}}^2
     \end{equation*}

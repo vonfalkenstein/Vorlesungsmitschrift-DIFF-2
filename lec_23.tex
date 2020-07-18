@@ -23,8 +23,8 @@
 \begin{definition}\label{mannigfaltigkeit_integral}\index{Integration auf Untermannigfaltigkeiten}
   Sei \( M\subset \reals^n \) eine \( d \)-dimensionale Untermannigfaltigkeit. Es sei 
   \begin{enumerate}[label=\rechtsklammer{\alph*}]
-    \item\label{mannigfaltigkeit_integral:globale_parametisierung} \( \varphi\maps V\to \reals^n \) eine globale Parametisierung von \( M=\varphi(V) \) und \( f\maps M\to \reals \) eine Funktion, \emph{oder}
-    \item\label{mannigfaltigkeit_integral:lokale_parametisierung} \( \varphi\maps V\to \reals^n \) eine lokale Parametisierung von \( M\cap U \) und \( f\maps M\to \reals \) eine Funktion mit 
+    \item\label{mannigfaltigkeit_integral:globale_parametisierung} \( \varphi\maps V\to \reals^n \) eine globale Parametrisierung von \( M=\varphi(V) \) und \( f\maps M\to \reals \) eine Funktion, \emph{oder}
+    \item\label{mannigfaltigkeit_integral:lokale_parametisierung} \( \varphi\maps V\to \reals^n \) eine lokale Parametrisierung von \( M\cap U \) und \( f\maps M\to \reals \) eine Funktion mit 
     \begin{equation*}
       \supp f=\abschluss{\set{x\in M|f(x)\neq 0}}\subset \varphi(V).
     \end{equation*}
@@ -39,7 +39,7 @@
   \end{enumerate}
 \end{definition}
 \begin{bemerkung*}
-  Mit der Transformationsformel und \thref{parameterwechsel_metrischer_tensor} sieht man schnell, das die Definition unabhängig von der gewählten Parametisierung ist.
+  Mit der Transformationsformel und \thref{parameterwechsel_metrischer_tensor} sieht man schnell, das die Definition unabhängig von der gewählten Parametrisierung ist.
 \end{bemerkung*}
 \begin{folgerung}\label{berechnung_mannigfaltigkeit_integral_ueber_zerlegung_der_eins}
   Das Integral ist auf einer Untermannigfaltigkeit definiert (ohne die Einschränkungen \ref{mannigfaltigkeit_integral:globale_parametisierung} und \ref{mannigfaltigkeit_integral:lokale_parametisierung} in \thref{mannigfaltigkeit_integral}).
@@ -92,7 +92,7 @@
       \Integrate{f}{x,M}=\sum_{j=1}^{\infty}\Integrate{\rho_j f}{x,M}.
     \end{equation*}
     Das zeigt auch gleich die Unabhängigkeit von der Wahl der Teilung der Eins.
-    \item Ist \( \varphi\maps U\to M \) globale Parametisierung von \( M\) betrachte \( F\definedas f\circ \varphi \sqrt{\determinant{g_{\varphi}}} \). Es ist \( F \) auf \( U \) integrierbar \tiff \( f \) auf \( M \) integrierbar.
+    \item Ist \( \varphi\maps U\to M \) globale Parametrisierung von \( M\) betrachte \( F\definedas f\circ \varphi \sqrt{\determinant{g_{\varphi}}} \). Es ist \( F \) auf \( U \) integrierbar \tiff \( f \) auf \( M \) integrierbar.
     \item Mithilfe von \( \tilde{\rho}_j=\rho_j \circ \phi_{i(j)} \) ziehen wir das oben bewiesene auf die verschiedenen Koordinatenbereiche zurück: \( \rho_j f \) auf \( M \) integrierbar \tiff \( \tilde{\rho}_j F \) auf \( U_{i(j)} \) integrierbar.
   \end{enumerate}
 \end{ergaenzung*}
@@ -154,7 +154,7 @@
   \end{equation*}
 \end{satz}
 \begin{proof}
-  Betrachte zunächst nur \emph{eine} Parametisierung \( \varphi\maps \to M\cap U \). Dann stimmen die Funktionen \( f\circ \varphi \sqrt{\determinant{g_{\varphi}}}  \) und \( g\circ \varphi\sqrt{\determinant{g_{\varphi}}} \) außerhalb von \( \inverse{\varphi}(N)\subset V\subset \reals^d \) miteinander überein. \ref{d_nullmenge_eigenschaften:lipschitz_stetige_funktion_erhaelt_d_nullmenge} \timplies \( \inverse{\varphi}(N) \) ist \( d \)-Nullmenge (denn \( \inverse{\varphi} \)  ist wieder \( \stetigefunktionen[1] \), also lokal Lipschitz-stetig).
+  Betrachte zunächst nur \emph{eine} Parametrisierung \( \varphi\maps \to M\cap U \). Dann stimmen die Funktionen \( f\circ \varphi \sqrt{\determinant{g_{\varphi}}}  \) und \( g\circ \varphi\sqrt{\determinant{g_{\varphi}}} \) außerhalb von \( \inverse{\varphi}(N)\subset V\subset \reals^d \) miteinander überein. \ref{d_nullmenge_eigenschaften:lipschitz_stetige_funktion_erhaelt_d_nullmenge} \timplies \( \inverse{\varphi}(N) \) ist \( d \)-Nullmenge (denn \( \inverse{\varphi} \)  ist wieder \( \stetigefunktionen[1] \), also lokal Lipschitz-stetig).
   
   Mit Hilfe einer Partition der Eins wie in \ref{berechnung_mannigfaltigkeit_integral_ueber_zerlegung_der_eins} folgt die Behauptung, da auch \( \rho_j\cdot f \) außerhalb von \( N \) mit \( \rho_j\cdot g \)
   übereinstimmt.

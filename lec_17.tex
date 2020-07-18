@@ -1,7 +1,7 @@
 % !TEX root = ./Vorlesungsmitschrift DIFF 2.tex  
 \lecture{Do 18.06. 10:15}{}
 \begin{satz}\label{homogene_dgl_loesungsraum}
-  Sei \( I\subset \reals \) Intervall und \( \mathbb{K}=\reals \) oder \( \complexs \). Sei \( A\maps I\to \sqmatrices{n}{K} \) stetig. Berechne \( \homogenreddglloesungsraum{A} \), die MEnge aller Lösungen von \( x'=A(t)\matrixmult x \). Es gilt: \( \homogenreddglloesungsraum; \) ist \( n \)-dimensionaler Unterraum über \( \mathbb{K} \).
+  Sei \( I\subset \reals \) Intervall und \( \mathbb{K}=\reals \) oder \( \complexs \). Sei \( A\maps I\to \sqmatrices{n}{K} \) stetig. Berechne \( \homogenreddglloesungsraum{A} \), die Menge aller Lösungen von \( x'=A(t)\matrixmult x \). Es gilt: \( \homogenreddglloesungsraum; \) ist \( n \)-dimensionaler Unterraum über \( \mathbb{K} \).
 
   Für \( u_1,\ddots,u_k\in \homogenreddglloesungsraum{A} \) sind äquivalent
   \begin{eigenschaftenenumerate}
@@ -59,7 +59,7 @@
   \begin{equation*}
     u_1(t)=\begin{pNiceMatrix} \Cos{\alpha t} \\ \Sin{\alpha t} \end{pNiceMatrix}\qquad u_2(t)=\begin{pNiceMatrix} -\Sin{\alpha t} \\ -\Cos{\alpha t} \end{pNiceMatrix}
   \end{equation*}
-  sind Lösungen. Sie bildenein Fundamentalsystem, denn 
+  sind Lösungen. Sie bilden ein Fundamentalsystem, denn 
   \begin{equation*}
     \determinant{\begin{pNiceMatrix} u_1(t) & u_2(t) \end{pNiceMatrix}}=1\neq 0\quad \forall t.
   \end{equation*}
@@ -347,7 +347,7 @@ auf \( I=\reals_{>0} \). \( u(t)=t \) und bestimmen \( v \) wie oben:
 Ein Fundamentalsystem für diese Gleichungen (zu gegebenen \( n \)) findet man \zb wieder mit \thref{zweier_dgl_zweite_loesung}.
 
 \begin{beispiel*}
-  Für \( n=1 \) und die Legendre-GLeichung
+  Für \( n=1 \) und die Legendre-Gleichung
   \begin{align*}
     w'(x)&=\exponential*{-\Integrate{\frac{2}{s}}{s}+\Integrate{\frac{2s}{1-s^2}}{s}}\\
     &=\frac{1}{x^2}\frac{1}{(1-x^2)}\\

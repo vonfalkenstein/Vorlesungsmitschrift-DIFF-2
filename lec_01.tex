@@ -2,7 +2,7 @@
 \chapter{Metrische Räume}
 \lecture{Mo 20.04. 10:15}{}
 \begin{ziel*}
-    Konvergenz, Stetigkeit \ldots sollten in einem allgmeineren Rahme konzeptualisiert werden.
+    Konvergenz, Stetigkeit \ldots sollten in einem allgemeineren Rahmen konzeptualisiert werden.
 \end{ziel*}
 \begin{erinnerung*}[\diffcourse{1}]
     Eine Folge \( (a_n)_{n\in \naturals}\subset \reals \) konvergiert gegen den Grenzwert \( a \)
@@ -117,14 +117,14 @@ Diesen Begriff möchten wir nun verallgemeinern.
     \end{enumerate}
 \end{beispiele*}
 \begin{lemma}\label{hausdorff_alle_grenzwerte_eindeutig}
-    Sei \( (X,\mathcal{T}) \) toplogischer Raum. 
+    Sei \( (X,\mathcal{T}) \) topologischer Raum. 
     Ist \( (X, \mathcal{T}) \) ein \emph{Hausdorff-Raum}, gibt es also zu je zwei Punkten \( x,y\in X \) mit \( x\neq y \) Umgebungen \( U \) von \( x \) und \( V \) von \( y \) mit \( U \cap V=\emptyset \), so ist der Grenzwert einer konvergenten Folge eindeutig.
 \end{lemma}
 \begin{proof}
     Seien \( x \) und \( y \) Grenzwert einer Folge \( (x_n)_n \).
     Angenommen \( x\neq y \), so wähle \( U \) Umgebung von \( x \), \( V \) Umgebung von \( y \) mit \( U\cap V=\emptyset \). 
     Dann gibt es (wegen der Konvergenz) \( N \in \naturals \) \sd \( x_n \in U \logicspace\forall n \geq N \) und \( M\in \naturals \) \sd \( x_n \in V \logicspace \forall n \geq M \). 
-    Wiederspruch zu \( U\cap V = \emptyset \). 
+    Widerspruch zu \( U\cap V = \emptyset \). 
 \end{proof}
 \begin{definition}\label{stetigkeit_in_topologischen_raeumen}\index{Stetigkeit}
     Seien \( (X, \mathcal{T}) \) und \( (Y,\tilde{\mathcal{T}}) \) topologische Räume. 

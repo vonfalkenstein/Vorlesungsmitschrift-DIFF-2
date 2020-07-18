@@ -2,7 +2,7 @@
 \lecture{Do 04.06. 10:15}{}
 Letztes Mal: Untermannigfaltigkeiten \emph{lokal} als Nullstellengebilde (Definition), als Graph und als diffeomorph zu Teilmengen des des \( \reals^d\times\zeroset \).
 
-Eine weitere äquivalente lokale Beschreibung mit Hilfe einer Parametisierung:
+Eine weitere äquivalente lokale Beschreibung mit Hilfe einer Parametrisierung:
 \begin{definition}\index{Immersion}
   Eine Abbildung \( \varphi\maps V\to \reals^n \), \( V\subset \reals^d \) offen, \( d\leq n \), heißt \emph{Immersion}, falls sie stetig differenzierbar ist und der Rang von \( D\varphi(t) \) für alle \( t\in V \) maximal, also gleich \( d \) ist. Man nennt \( \varphi(V) \) die \emph{Spur} von \( \varphi \). Ist \( \varphi\maps V\to \varphi(V) \) ein Homöomorphismus (also stetig, bijektiv, mit stetigem Inversen), so heißt \( \varphi \) \emph{Einbettung}. 
 \end{definition}
@@ -21,7 +21,7 @@ Eine weitere äquivalente lokale Beschreibung mit Hilfe einer Parametisierung:
       \varphi(-t)&=(\phi_1(t),-\phi_2(t))\\[1ex]
       \varphi'(t)&=(2t,\braceannotate{\neq 0 \text{ für }t\neq \frac{1}{\sqrt{3}}}{3t^2-1})\neq 0\implies \text{maximaler Rang}.
     \end{align*}
-    Eine Immersion \( \varphi\maps I\subset \reals\to \reals^n \) heißt auch \emph{reguläre (parametisierte) Kurve}.
+    Eine Immersion \( \varphi\maps I\subset \reals\to \reals^n \) heißt auch \emph{reguläre (parametrisierte) Kurve}.
     
     \begin{bemerkung*}
       \( 1 \)-dimensional \tto \( I \) kann auch nicht offen gewählt werden, wenn man nur an Differenzierbarkeit interessiert ist. Hier \emph{nicht}.
@@ -127,7 +127,7 @@ Tatsächlich gilt:
 \end{proof}
 \begin{bemerkungen*}
   \item Man nennt \( \varphi \) wie oben eine \emph{lokale Parametrisierung} von \( M \) bei \( a \). \( V \) heißt \emph{Parameterbereich} und \( M\cap U \) \emph{Koordinatenumgebung von \( a \)}.
-  \item Globale Parametisierungen \( \varphi\maps V\to\reals^n \) mit \( \varphi\maps V\to M \). Homöomorphismus existieren \ia nicht.
+  \item Globale Parametrisierung \( \varphi\maps V\to\reals^n \) mit \( \varphi\maps V\to M \). Homöomorphismus existieren \ia nicht.
   \begin{beispiel*}
     \( M=\sphere{n-1}\subset \reals^n \). Es kann keine stetige Abbildung \( \inv{\varphi}\maps \sphere{n-1}\to V \) gebe, da \( \inv{\varphi}(\sphere{n-1}) \) kompakt wäre, aber \( V \) ist offen.
     
@@ -143,7 +143,7 @@ Tatsächlich gilt:
     \end{figure}
     oder (\( V=\reals^2 \)) es liegt kein Homöomorphismus vor.
 
-    Für \( a\in \Set{(\Sin{\beta},0,\Cos{\beta})|\beta\in \ointerval{0}{\pi}} \) wählt man als lokale Parametisierung einfach \( V=\ointerval{0}{\pi}\times \ointerval{-\pi}{\pi} \) (dann fehlt ein anderer Halbkreis).
+    Für \( a\in \Set{(\Sin{\beta},0,\Cos{\beta})|\beta\in \ointerval{0}{\pi}} \) wählt man als lokale Parametrisierung einfach \( V=\ointerval{0}{\pi}\times \ointerval{-\pi}{\pi} \) (dann fehlt ein anderer Halbkreis).
 
     Oder man wählt \( D\ni (y,z)\mapsto (\sqrt{1-y^2-z^2},y,z) \) mit
     \begin{equation*}
@@ -152,7 +152,7 @@ Tatsächlich gilt:
   \end{beispiel*}
 \end{bemerkungen*}
 \begin{satz}[Parameterwechsel]\label{parameterwechsel}\approxtimestamp{29}\index{Parameterwechsel}
-  Sei \( M\subset \reals^n \) eine \( d \)-dimensionale Untermannigfaltigkeit. Seien \( \varphi\maps V\to M\cap U \) und \( \psi\maps \tilde{V}\to M\cap \tilde{U} \) zwei lokale Parametisierungen mit \( M\cap U\cap \tilde{U}\neq \emptyset \). Dann ist der \emph{Parameterwechsel}   
+  Sei \( M\subset \reals^n \) eine \( d \)-dimensionale Untermannigfaltigkeit. Seien \( \varphi\maps V\to M\cap U \) und \( \psi\maps \tilde{V}\to M\cap \tilde{U} \) zwei lokale Parametrisierung mit \( M\cap U\cap \tilde{U}\neq \emptyset \). Dann ist der \emph{Parameterwechsel}   
   \begin{equation*}
     \inverse{\psi}\circ \varphi\maps \inv{\varphi}(M\cap U\cap \tilde{U})\to \inverse{\psi}(M\cap U\cap \tilde{U})
   \end{equation*}
