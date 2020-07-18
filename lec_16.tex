@@ -72,7 +72,7 @@ Die Forderung an \( F \), lokal einer Lipschitz-Bedingung zu genügen, ist wicht
     \frac{\differential x}{G(x)}&=H(t)\differential t.\\
     \Integrate{\frac{1}{G(x)}}{x}=\Integrate{H(t)}{t}.
   \end{align*}
-  Dem kann man tatsächlich einen Sinn geben --- Stichword Differenzialformen.
+  Dem kann man tatsächlich einen Sinn geben --- Stichwort Differenzialformen.
 \end{merkregel}
 \begin{bemerkung*}
   Wir haben im Beweis gesehen: Jede Lösung einer DGL mit getrennten Variablen erfüllt
@@ -103,7 +103,7 @@ Die Forderung an \( F \), lokal einer Lipschitz-Bedingung zu genügen, ist wicht
   \end{description}
 \end{beispiel*}
 \begin{beispiel*}
-  Logistisches Wachstum \( x'=\alpha x(1-x) \), \( \alpha>0 \) auf \( \reals\times \ointerval{0}{1} \) (\( G(x)=x(1-x)\neq 0 \quad \forall x\in \ointerval{0}{1}\)). Seperation der Variablen:
+  Logistisches Wachstum \( x'=\alpha x(1-x) \), \( \alpha>0 \) auf \( \reals\times \ointerval{0}{1} \) (\( G(x)=x(1-x)\neq 0 \quad \forall x\in \ointerval{0}{1}\)). Separation der Variablen:
   \begin{equation*}
     \equalto{\evaluatebetween{\Ln{\abs*{\frac{y}{y-1}}}}{x_0}{u(t)}\ \parens*{\text{Partialbruchzerlegung: } \frac{1}{y(1-y)}=\frac{1}{y}-\frac{1}{y-1}}}{\Integrate{\frac{1}{y(1-y)}}{y,x_0,u(t)}}\needed{=}\Integrate{\alpha}{s,t_0,t}=\alpha(t-t_0).
   \end{equation*}
@@ -138,7 +138,7 @@ Die Forderung an \( F \), lokal einer Lipschitz-Bedingung zu genügen, ist wicht
 \end{bemerkung*}
 \begin{proof}[Beweis von \ref{homogene_DGL}]
   \begin{proofdescription}
-    \item[\hin] Sei \( u \) Lösung der \ordinalnum{1} GLeichung und \( u(t_0)=x_0 \). Dann ist 
+    \item[\hin] Sei \( u \) Lösung der \ordinalnum{1} Gleichung und \( u(t_0)=x_0 \). Dann ist 
     \begin{align*}
       v'(t)&=\frac{u'(t)}{t}-\frac{u(t)}{t^2}\\
       &=\frac{1}{t}f\parens*{\frac{u(t)}{t}}-\frac{u(t)}{t^2}
@@ -316,7 +316,7 @@ Oft sind DGL'n auch \emph{implizit} gegeben, also von der Form
   Wir werden sehen, dass eine lineare DGL immer eine Lösung besitzt mit \( J=I \).
 \end{bemerkung*}
 \begin{bemerkung*}
-  Es ist zweckmäßig, auch komplexe lineare DGL'n zuzulassen, also \( A\maps I\to \sqmatrices{n}{\complexs} \), \( b\maps I\to \complexs^n \). Um Stetigkeit von \( A \) un \( b \) in diesem Fall zu definieren, identifiziert man \( \complexs=\reals^2 \), betrachtet also \( A \) als ABbildung mit Werten in \( \reals^{(2n)^2} \), \( b \) als Abbildung mit Werten in \( \reals^{2n} \). Dito für die Differenzierbarkeit von \( u \).
+  Es ist zweckmäßig, auch komplexe lineare DGL'n zuzulassen, also \( A\maps I\to \sqmatrices{n}{\complexs} \), \( b\maps I\to \complexs^n \). Um Stetigkeit von \( A \) un \( b \) in diesem Fall zu definieren, identifiziert man \( \complexs=\reals^2 \), betrachtet also \( A \) als Abbildung mit Werten in \( \reals^{(2n)^2} \), \( b \) als Abbildung mit Werten in \( \reals^{2n} \). Dito für die Differenzierbarkeit von \( u \).
 \end{bemerkung*}
 Bevor wir den allgemeinen Fall studieren, betrachten wir \( n=1 \).
 \begin{beispiel}
@@ -330,7 +330,7 @@ Bevor wir den allgemeinen Fall studieren, betrachten wir \( n=1 \).
   \end{equation*}
 \end{beispiel}
 \begin{lemma}[\enquote{Variation der Konstanten}]\label{variation_der_konstanten}
-  Betrachte \( x'=a(t)x+b(t) \), \( a,b\maps I\to \reals \) stetig, \( x(t_0)=x_0 \). Sei \( v\maps I\to \reals \) Lösung der zugehörigen homogenen GLeichung \( x'=a(t)x \). Sei \( v(t_0)\neq 0 \). Dann ist \( v(t)\neq 0\quad \forall t \) und wir erhalten die eindeutige Lösung \( u \) in der inhomogenen Gleichung vermöge
+  Betrachte \( x'=a(t)x+b(t) \), \( a,b\maps I\to \reals \) stetig, \( x(t_0)=x_0 \). Sei \( v\maps I\to \reals \) Lösung der zugehörigen homogenen Gleichung \( x'=a(t)x \). Sei \( v(t_0)\neq 0 \). Dann ist \( v(t)\neq 0\quad \forall t \) und wir erhalten die eindeutige Lösung \( u \) in der inhomogenen Gleichung vermöge
   \begin{equation*}
     u(t)\definedas v(t)\cdot w(t)
   \end{equation*}
