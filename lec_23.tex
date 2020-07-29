@@ -1,16 +1,16 @@
 % !TEX root = ./Vorlesungsmitschrift DIFF 2.tex  
-\lecture{Do 09.07. 10:15}{}
 \chapter{Integration auf Untermannigfaltigkeiten}
+\lecture{Do 09.07. 10:15}{}
 \begin{erinnerung*}[\ordinalnum{14} Vorlesung]
   \begin{figure}[H]
     \centering
     \includegraphics[width=\linewidth]{flaeche_unter_mannigfaltigkeit}
     \label{fig:flaeche_unter_mannigfaltigkeit}
   \end{figure}
-  Flächeninhalt von \( \varphi(\mathcal{R})\approx \sqrt{\det-{g_{\varphi}(t_0)}}\text{Fläche}(\mathcal{R}) \). (\( \det-{g_{\varphi}(t_0)} \) heißt Gramsche Determinante) mit dem metrischen Tensor \( g_{\varphi} \)
+  Flächeninhalt von \( \varphi(\mathcal{R})\approx \sqrt{\determinant{g_{\varphi}(t_0)}}\text{Fläche}(\mathcal{R}) \). (\( \determinant{g_{\varphi}(t_0)} \) heißt Gramsche Determinante) mit dem metrischen Tensor \( g_{\varphi} \)
   \begin{align*}
     \scalarproduct{v}{v}_a=\sum_{i}\sum_{j}v_i w_j\braceannotate{\definedas \p*{g_\varphi}_{ij}(t_0)}{\scalarproduct{\partial_i \varphi(t_0)}{\partial_j \varphi(t_0)}_\text{E}}\\
-    \scalarproduct{v}{w}_a=\scalarproduct{v}{w}_{\text{E}}\quad \text{für}\logicspace a\in M\cap U,\logicspace v,w\in \tangentialraum{M}.
+    \scalarproduct{v}{w}_a=\scalarproduct{v}{w}_{\text{E}}\quad \text{für}\logicspace a\in M\cap U,\logicspace v,w\in \tangentialraum{a}{M}.
   \end{align*}
   \thref{berechnung_gramsche_determinante}: \( \determinant{g}(t_0)=\sum_{\mathclap{i_1<\dotsb<i_d}}\p*{\determinant{\totalderivative{\begin{pNiceMatrix} \varphi_{i_1} \\ \Vdots \\ \varphi_{i_d} \end{pNiceMatrix}}}(t_0)}^2 \).
 
@@ -101,9 +101,9 @@
 
   \( f(a)=1\quad \forall a\in M \) \timplies Wir berechnen die Oberfläche.
   \begin{gather*}
-    g_{\varphi}(a)=\begin{pNiceMatrix} 1-x^2 & xy \\ xy & 1-y^2 \end{pNiceMatrix}\frac{1}{1-x^2-y^2},\logicspace \determinant{g_{\varphi}}=1,\\
+    g_{\varphi}(a)=\begin{pNiceMatrix} 1-x^2 & xy \\ xy & 1-y^2 \end{pNiceMatrix}\frac{1}{1-x^2-y^2},\logicspace \determinant{g_{\varphi}}=\frac{1}{1-x^2-y^2},\\
     \partial_1 \varphi=\p*{1,0,\frac{-x}{\sqrt{1-x^2-y^2}}},\quad \partial_2\varphi=\p*{0,1,\frac{-y}{\sqrt{1-x^2-y^2}}},\\
-    \Integrate{}{S,M}=\Integrate{}{{(x,y)},D}\explain{\text{Schule}}{=}2\pi\explain{\text{\s unten}}{=}\Integrate{}{{(x,y)},\text{\includegraphics[height=0.3\baselineskip]{kreis_ohne_durchmesser}}}=2\Integrate{\Integrate{}{x,-\sqrt{1-y^2},\sqrt{1-y^2}}}{y,0,1}.
+    \Integrate{}{S,M}=\Integrate{\sqrt{\determinant{g_{\varphi}}}}{{(x,y)},D}\explain{\text{Schule}}{=}2\pi\explain{\text{\s unten}}{=}\Integrate{\sqrt{\determinant{g_{\varphi}}}}{{(x,y)},\text{\includegraphics[height=0.3\baselineskip]{kreis_ohne_durchmesser}}}=2\Integrate[big]{\explain{\lim_{b \goesto \infty}\p*{\ArcTan{b}-\ArcTan{-b}}=\pi\quad \text{(als uneigentliches Regelintegral weil Integrand \( >0 \))}}{\underbrace{\Integrate{\frac{1}{\sqrt{1-x^2-y^2}}}{x,-\sqrt{1-y^2},\sqrt{1-y^2}}}}}{y,0,1}.
   \end{gather*}
   \begin{figure}[H]
     \centering

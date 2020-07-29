@@ -2,18 +2,18 @@
 \lecture{Mo 08.06. 10:15}{}
 \section{Tangential- und Normalraum}
 \begin{erinnerung*}
-  \( \tangentialraum{M}=\Kern-{Df(a)} \), wo \( f \) eine lokale Beschreibung von \( M \) bei \( a \) als Nullstellengebilde ist.
+  \( \tangentialraum{a}{M}=\Kern-{Df(a)} \), wo \( f \) eine lokale Beschreibung von \( M \) bei \( a \) als Nullstellengebilde ist.
 
   \begin{equation*}
-    \tangentialraum{M}=\Bild{D\varphi(x_0)}=\Span-{\Set{\begin{pNiceMatrix} 1 \\ 0 \\ \Vdots \\ 0 \\ \partial_1 g(x_0) \end{pNiceMatrix},\dotsc,\begin{pNiceMatrix} 0 \\ 0 \\ \Vdots \\ 1 \\ \partial_d g(x_0) \end{pNiceMatrix}}},
+    \tangentialraum{a}{M}=\Bild{D\varphi(x_0)}=\Span-{\Set{\begin{pNiceMatrix} 1 \\ 0 \\ \Vdots \\ 0 \\ \partial_1 g(x_0) \end{pNiceMatrix},\dotsc,\begin{pNiceMatrix} 0 \\ 0 \\ \Vdots \\ 1 \\ \partial_d g(x_0) \end{pNiceMatrix}}},
   \end{equation*} 
   wo \( \varphi(x)=(x,g(x)) \) die zu einer lokalen Beschreibung von \( M \) bei \( a \) als Graph gehörige Graphenabbildung ist und \( a=(x_0,g(x_0)) \).
 \end{erinnerung*}
 Es gilt allgemeiner
 \begin{satz}\label{tangentialraum_durch_parametisierung}
-  Sei \( M \) \( d \)-dimensionale Untermannigfaltigkeit des \( \reals^n \). Sei \( a\in M \), \( U\subset \reals^n  \) offene Umgebung von \( a\) und \( \varphi\maps V\to M\cap U \) eine lokale Parametisierung von \( M \) bei \( a \), also \( \varphi\maps V\to \reals^n \), \( V\subset \reals^d \) offen, ist \( \stetigefunktionen[1]\), \( D\varphi(t) \) von maximalem Rang \( d \) für alle \( t\in V \), \( \varphi\maps V\to M\cap U \) Homöomorphismus. Sei \( t_0\in V \) \sd \( \varphi(t_0)=a \). Dann ist \( \tangentialraum{M}=\Bild-{D\varphi(t_0)} \), also
+  Sei \( M \) \( d \)-dimensionale Untermannigfaltigkeit des \( \reals^n \). Sei \( a\in M \), \( U\subset \reals^n  \) offene Umgebung von \( a\) und \( \varphi\maps V\to M\cap U \) eine lokale Parametisierung von \( M \) bei \( a \), also \( \varphi\maps V\to \reals^n \), \( V\subset \reals^d \) offen, ist \( \stetigefunktionen[1]\), \( D\varphi(t) \) von maximalem Rang \( d \) für alle \( t\in V \), \( \varphi\maps V\to M\cap U \) Homöomorphismus. Sei \( t_0\in V \) \sd \( \varphi(t_0)=a \). Dann ist \( \tangentialraum{a}{M}=\Bild-{D\varphi(t_0)} \), also
   \begin{equation}
-    \tangentialraum{M}=\Span-{\set{\braceannotate{\text{Basis von \( \tangentialraum{M} \)}}{\partial_1\varphi(t_0),\dotsc,\partial_d \varphi(t_0)}}}.
+    \tangentialraum{a}{M}=\Span-{\set{\braceannotate{\text{Basis von \( \tangentialraum{a}{M} \)}}{\partial_1\varphi(t_0),\dotsc,\partial_d \varphi(t_0)}}}.
   \end{equation}
 \end{satz}
 \begin{proof}
@@ -21,7 +21,7 @@ Es gilt allgemeiner
     \rang-{D\varphi(t_0)=d\implies \dim-{\Bild-{D\varphi(t_0)}}}=d\quad \checkmark.
   \end{equation*}
   \begin{proofdescription}
-    \item[\( \tangentialraum{M}\subset \Bild-{D\varphi(t_0)} \)]
+    \item[\( \tangentialraum{a}{M}\subset \Bild-{D\varphi(t_0)} \)]
     Sei \( v=v_1\partial_1 \varphi(t_0)+\dotsb+v_d\partial_d \varphi(t_0) \), \( v_j\in \reals \). Betrachte 
     \begin{gather*}
       \gamma\maps \ointerval{-\varepsilon}{\varepsilon}\to M\cap U\\
@@ -33,7 +33,7 @@ Es gilt allgemeiner
       &=\partial_1 \varphi(t_0)\cdot v_1+\dotsb+\partial_d\varphi(t_0)\matrixmult v_d\\
       &=v.
     \end{align*}
-    \item[\( \tangentialraum{M}\supset \Bild-{D\varphi(t_0)} \)] Sei also \( v\in \tangentialraum{M} \), \( \gamma\maps \ointerval{-\varepsilon}{\varepsilon}\to M\cap U \) stetig differenzierbar mit \( \gamma(0)=a \), \( \gamma'(0)=v \). Dann ist \( c=\inverse{\varphi}\circ \gamma\maps \ointerval{-\varepsilon}{\varepsilon}\to V  \) stetig differenzierbar (das folgt wie im Beweis von \( \ref{parameterwechsel} \) azs der Verknüpfung mit einem Diffeomorphismus \( F\maps \tilde{U}\to W \) mit
+    \item[\( \tangentialraum{a}{M}\supset \Bild-{D\varphi(t_0)} \)] Sei also \( v\in \tangentialraum{a}{M} \), \( \gamma\maps \ointerval{-\varepsilon}{\varepsilon}\to M\cap U \) stetig differenzierbar mit \( \gamma(0)=a \), \( \gamma'(0)=v \). Dann ist \( c=\inverse{\varphi}\circ \gamma\maps \ointerval{-\varepsilon}{\varepsilon}\to V  \) stetig differenzierbar (das folgt wie im Beweis von \( \ref{parameterwechsel} \) azs der Verknüpfung mit einem Diffeomorphismus \( F\maps \tilde{U}\to W \) mit
     \begin{equation*}
       F(M\cap \tilde{U})=\set{a\in W|y_j=0\quad j\geq d+1}.
     \end{equation*} 
@@ -64,7 +64,7 @@ Es gilt allgemeiner
     \begin{align*}
       f(x)&=1-x_1^2-x_2^2-x_3^2\\
       Df(x)&=-2(x_1,x_2,x_3)\\
-      \tangentialraum{M}&=\Kern-{D(a)}=\Kern{-2\transpose-{e_3}}\\
+      \tangentialraum{a}{M}&=\Kern-{D(a)}=\Kern{-2\transpose-{e_3}}\\
       &=\perpspace-{\Set{e_3}}=\Span-{\set{e_1,e_2}}.
     \end{align*}
     \item \( \varphi\maps D=\Set{x\in \reals^2|\euclidiannorm{x}<1} \to \reals^3\), \( \varphi(x)=\transpose-{(x,\sqrt{1-x_1^2-x_2^2})} \),
@@ -72,7 +72,7 @@ Es gilt allgemeiner
       \partial_1 \varphi(x)&=\begin{pNiceMatrix} 1 \\ 0 \\ \frac{-x_1}{\sqrt{\cdots}} \end{pNiceMatrix}\\
       \partial_2 \varphi(x)&=\begin{pNiceMatrix} 0 \\ 1 \\ \frac{-x_2}{\sqrt{\cdots}} \end{pNiceMatrix}\\
       a&= \varphi(0)\\
-      \implies \tangentialraum{M}&=\Span-{\Set{\begin{pNiceMatrix} 1 \\ 0 \\ 0 \end{pNiceMatrix},\begin{pNiceMatrix} 0 \\ 1 \\ 0 \end{pNiceMatrix}}}.
+      \implies \tangentialraum{a}{M}&=\Span-{\Set{\begin{pNiceMatrix} 1 \\ 0 \\ 0 \end{pNiceMatrix},\begin{pNiceMatrix} 0 \\ 1 \\ 0 \end{pNiceMatrix}}}.
     \end{align*}
     \item \( \varphi\maps \ointerval{0}{\pi}\times\ointerval{0}{2\pi} \to \reals^3\), \( \varphi(\beta,\alpha)=\transpose-{(\Cos{\beta},\Cos{\alpha}\Sin{\beta},\Sin{\alpha}\Sin{\beta})} \). \approxtimestamp{15}
     \begin{figure}[H]
@@ -84,28 +84,28 @@ Es gilt allgemeiner
       \partial_1\varphi(\beta,\alpha)&=\transpose-{(-\Sin{\beta},\Cos{\alpha}\Cos{\beta},\Sin{\alpha}\Cos{\beta})}\\
       \partial_2 \varphi(\beta,\alpha)&=\transpose-{(0,-\Sin{\alpha}\Sin{\beta},\Cos{\alpha}\Sin{\beta})}\\
       \varphi\p*{ \frac{\pi}{2},\frac{\pi}{2} }=\transpose-{(0,0,1)}=a\\
-      \implies \tangentialraum{M}&=\Span-{\Set{\begin{pNiceMatrix} -1 & 0 & 0 \end{pNiceMatrix},\begin{pNiceMatrix} 0 \\ -1 \\ 0 \end{pNiceMatrix}}}=\Span-{\set{e_1,e_2}}.
+      \implies \tangentialraum{a}{M}&=\Span-{\Set{\begin{pNiceMatrix} -1 & 0 & 0 \end{pNiceMatrix},\begin{pNiceMatrix} 0 \\ -1 \\ 0 \end{pNiceMatrix}}}=\Span-{\set{e_1,e_2}}.
     \end{align*}
   \end{eigenschaftenenumerate}
 \end{beispiel*}
 \begin{definition*}\index{Normalenvektor}
-  Sei \( M\subset \reals^n \) \( d \)-dimensionale Untermannigfaltigkeit. \( \varv\in \reals^n \) heißt \emph{Normalenvektor} ab \( M \) im Punkt \( a\in M \), falls \( \scalarproduct{\varv}{v}=0\) \tforall \( v\in \tangentialraum{M} \), also \( \varv\in \perpspace{\tangentialraum{M}}\defines \normalenraum{M} \) \enquote{\emph{Normalen-Raum}}.
+  Sei \( M\subset \reals^n \) \( d \)-dimensionale Untermannigfaltigkeit. \( \nu\in \reals^n \) heißt \emph{Normalenvektor} ab \( M \) im Punkt \( a\in M \), falls \( \scalarproduct{\nu}{v}=0\) \tforall \( v\in \tangentialraum{a}{M} \), also \( \nu\in \perpspace{\tangentialraum{a}{M}}\defines \normalenraum{a}{M} \) \enquote{\emph{Normalen-Raum}}.
 \end{definition*}
 \begin{bemerkungen}
   \begin{enumerate}
-    \item Da \( \tangentialraum{M} \) ein Vektorraum ist, so ist auch \( \normalenraum{M} \) ein Vektorraum.
-    \item \( \dim-{\normalenraum}{M}=n-d \), denn \( \tangentialraum{M}\oplus \perpspace-{\tangentialraum{M}}=\reals^n \).
-    \item \( \tangentialraum{M}=\Kern-{Df(a)} \), wenn \( f \) \( M \) lokal bei \( a \) als Nullstellengebilde beschreibt (also \texists  \( U\subset \reals^n \) offen, \( a\in U \), \sd \( M\cap U=\Set{x\in U|f(x)=0} \), \( f\maps U\to \reals^{n-d} \) ist \( \stetigefunktionen[1] \) und \( Df(x) \) hat maximalen Rang \( n-d \) für alle \( x\in U \).) Anders gesagt: 
+    \item Da \( \tangentialraum{a}{M} \) ein Vektorraum ist, so ist auch \( \normalenraum{a}{M} \) ein Vektorraum.
+    \item \( \dim-{\normalenraum{a}}{M}=n-d \), denn \( \tangentialraum{a}{M}\oplus \perpspace-{\tangentialraum{a}{M}}=\reals^n \).
+    \item \( \tangentialraum{a}{M}=\Kern-{Df(a)} \), wenn \( f \) \( M \) lokal bei \( a \) als Nullstellengebilde beschreibt (also \texists  \( U\subset \reals^n \) offen, \( a\in U \), \sd \( M\cap U=\Set{x\in U|f(x)=0} \), \( f\maps U\to \reals^{n-d} \) ist \( \stetigefunktionen[1] \) und \( Df(x) \) hat maximalen Rang \( n-d \) für alle \( x\in U \).) Anders gesagt: 
     \begin{equation*}
-      \tangentialraum{M}=\set{v\in \reals^n|\scalarproduct{v}{\grad{f_j}(a)}}=0\quad j=1,\dotsc,n-d.
+      \tangentialraum{a}{M}=\set{v\in \reals^n|\scalarproduct{v}{\grad{f_j}(a)}}=0\quad j=1,\dotsc,n-d.
     \end{equation*}
     Wegen der linearen Unabhängigkeit der Gradienten folgt hieraus:
     \begin{equation*}
-      \normalenraum{M}=\Span-{\Set{\grad{f_1}(a),\dotsc,\grad{f_{n-d}}(a)}}.
+      \normalenraum{a}{M}=\Span-{\Set{\grad{f_1}(a),\dotsc,\grad{f_{n-d}}(a)}}.
     \end{equation*}
-    \item \( \tangentialraum{M}=\Bild-{D\varphi(t_0)} \) wenn \( \varphi \) lokal bei \( a \) \( M \) parametisiert (\vgl \ref{tangentialraum_durch_parametisierung}) und \( \varphi(t_0)=a \). Die Spalten von \( D\varphi(t_0) \) bilden eine Basis von \( \tangentialraum{M} \)
+    \item \( \tangentialraum{a}{M}=\Bild-{D\varphi(t_0)} \) wenn \( \varphi \) lokal bei \( a \) \( M \) parametisiert (\vgl \ref{tangentialraum_durch_parametisierung}) und \( \varphi(t_0)=a \). Die Spalten von \( D\varphi(t_0) \) bilden eine Basis von \( \tangentialraum{a}{M} \)
     \begin{equation*}
-      \implies \normalenraum{M}=\Set{\varv\in \reals^n|\scalarproduct{\varv}{\partial_j \varphi(t_0)}=0\quad j=1,\dotsc,d}.
+      \implies \normalenraum{a}{M}=\Set{\nu\in \reals^n|\scalarproduct{\nu}{\partial_j \varphi(t_0)}=0\quad j=1,\dotsc,d}.
     \end{equation*}
   \end{enumerate}
 \end{bemerkungen}
@@ -117,10 +117,10 @@ Es gilt allgemeiner
     \label{fig:normalenraum_kugel}
   \end{figure}
   \begin{eigenschaftenenumerate}
-    \item \( \normalenraum{M}=\set{\lambda a|\lambda\in \reals} \).
+    \item \( \normalenraum{a}{M}=\set{\lambda a|\lambda\in \reals} \).
     \item \( a\in \sphere{2} \), \( a_3>0 \).
     \begin{align*}
-      \normalenraum{M}&=\Set{\varv|\varv_1=\frac{a_1}{\sqrt{1-a_1^2-a_2^2}}\varv_3,\varv_2=\frac{a_1}{\sqrt{1-a_1^2-a_2^2}}\varv_3}\\
+      \normalenraum{a}{M}&=\Set{\nu|\nu_1=\frac{a_1}{\sqrt{1-a_1^2-a_2^2}}\nu_3,\nu_2=\frac{a_1}{\sqrt{1-a_1^2-a_2^2}}\nu_3}\\
       &=\Set{\lambda\frac{1}{\sqrt{1-a_1^2-a_2^2}}\begin{pNiceMatrix} a_1 \\ a_2 \\ \sqrt{\cdots} \end{pNiceMatrix}|\lambda\in\reals}=\Set{\lambda a|\lambda\in \reals}.
     \end{align*}
     \item Für allgemeinere Punkte als den Nordpol wäre dies mit Rechenaufwand verbunden.
@@ -146,10 +146,10 @@ Es gilt allgemeiner
 \begin{definition}\index{Vektorfeld}
   Sei \( M \) \( d \)-dimensionale Untermannigfaltigkeit des \( \reals^n \). Ein \emph{Vektorfeld} auf \( M \) ist eine stetig differenzierbare Abbildung 
   \begin{equation*}
-    X\maps M\to \reals^n \logicspace \text{\sd}\logicspace  X(a)\in \tangentialraum{M}\quad \forall a\in M.
+    X\maps M\to \reals^n \logicspace \text{\sd}\logicspace  X(a)\in \tangentialraum{a}{M}\quad \forall a\in M.
   \end{equation*}. Ein \emph{Normalenfeld} ist eine stetig differenzierbare Abbildung 
   \begin{equation*}
-    \mathcal{N}\maps M\to \reals^n \logicspace \text{\sd}\logicspace  \mathcal{N}(a)\in \normalenraum{M}\quad \forall a\in M.
+    \mathcal{N}\maps M\to \reals^n \logicspace \text{\sd}\logicspace  \mathcal{N}(a)\in \normalenraum{a}{M}\quad \forall a\in M.
   \end{equation*}
 \end{definition}
 \begin{beispiele*}
@@ -173,7 +173,7 @@ Es gilt allgemeiner
     \mathcal{N}(a)=\frac{\grad{f(a)}}{\euclidiannorm{\grad{f(a)}}}
   \end{equation*}
   ist stetig differenzierbar.
-  \emph{Tangentialraum} \( \tangentialraum{M}= \) Ebene senkrecht \( \varv_a=\grad{f(a)} \). Parametisierung bei \( a\in \Pi^2 \): Mit geeigneten Intervallen für die Winkel gilt:
+  \emph{Tangentialraum} \( \tangentialraum{a}{M}= \) Ebene senkrecht \( \nu_a=\grad{f(a)} \). Parametisierung bei \( a\in \Pi^2 \): Mit geeigneten Intervallen für die Winkel gilt:
   \begin{gather*}
     a=\varphi(\alpha,\beta)=R\begin{pNiceMatrix} \Cos{\alpha} \\ \Sin{\alpha} \\ 0 \end{pNiceMatrix}+r\begin{pNiceMatrix} \Cos{\alpha}\Cos{\alpha} \\ \Sin{\alpha}\Cos{\beta} \\ \Sin{\beta} \end{pNiceMatrix}\\
     X(\phi(\alpha,\beta))=\partial_2 \varphi(\alpha,\beta)=\begin{pNiceMatrix} -r\Cos{\alpha}\Sin{\beta} \\ -r\Sin{\alpha}\Sin{\beta} \\ \Cos{\beta} \end{pNiceMatrix}
@@ -195,7 +195,7 @@ Es gilt allgemeiner
     \includegraphics[width=0.5\linewidth]{moebius_band}
     \label{fig:moebius_band}
   \end{figure}
-  Langer Streifen Papier, einmal verdrehen, zusammenkleben. Mittellinie einzeichnen. Normalenvektor auf einem Punkt der Mittellinie bestimmen, auf \( 1 \) normieren (\( \euclidiannorm{\varv}=1 \)). Führt man diesen stetig entlang der Mittellinie und verändert dabei seine Länge nicht, sieht man, dass es kein stetiges normiertes Normalenfeld auf dem Möbius-Band geben kann. Eine solche Fläche nennt man nicht orientierbar. 
+  Langer Streifen Papier, einmal verdrehen, zusammenkleben. Mittellinie einzeichnen. Normalenvektor auf einem Punkt der Mittellinie bestimmen, auf \( 1 \) normieren (\( \euclidiannorm{\nu}=1 \)). Führt man diesen stetig entlang der Mittellinie und verändert dabei seine Länge nicht, sieht man, dass es kein stetiges normiertes Normalenfeld auf dem Möbius-Band geben kann. Eine solche Fläche nennt man nicht orientierbar. 
   \end{enumerate}
 \end{beispiele*}
 \begin{definition}\index{Integralkurve}
@@ -229,13 +229,13 @@ Es gilt allgemeiner
 \section{Flächenbemessung auf Untermannigfaltigkeiten}
 \begin{definition*}\index{Erste Fundamentalform}
   \begin{gather*}
-    I_a\definedas \scalarproduct{\cdot}{\cdot}_a\maps \tangentialraum{M}\times\tangentialraum{M}\to \reals\\
-    I_a(v,w)=\scalarproduct{v}{w}_{a}=\scalarproduct{v}{w}_{\text{E}}\quad \forall v,w\in \tangentialraum{M}
+    I_a\definedas \scalarproduct{\cdot}{\cdot}_a\maps \tangentialraum{a}{M}\times\tangentialraum{a}{M}\to \reals\\
+    I_a(v,w)=\scalarproduct{v}{w}_{a}=\scalarproduct{v}{w}_{\text{E}}\quad \forall v,w\in \tangentialraum{a}{M}
   \end{gather*}
   heißt \emph{erste Fundamentalnorm}.
 \end{definition*}
 \begin{bemerkung*}
-  \( \tangentialraum{M}=\Span-{\Set{\partial_1 \varphi(t_0),\dotsc,\partial_d \varphi(t_0)}} \), \( \varphi\maps V\to M\cap U \) Parametisierung bei \( a \), \( \varphi(t_0)=a \). Es gilt für \( v=\sum v_i \partial_i \varphi(t_0) \), \( w=\sum w_i \partial_i \varphi(t_0) \)
+  \( \tangentialraum{a}{M}=\Span-{\Set{\partial_1 \varphi(t_0),\dotsc,\partial_d \varphi(t_0)}} \), \( \varphi\maps V\to M\cap U \) Parametisierung bei \( a \), \( \varphi(t_0)=a \). Es gilt für \( v=\sum v_i \partial_i \varphi(t_0) \), \( w=\sum w_i \partial_i \varphi(t_0) \)
   \begin{align*}
     \scalarproduct{v}{w}_{a}&=\scalarproduct*{\sum v_i \partial_i \varphi(t_0)}{w_j \partial_j \varphi(t_0)}_{a}\\
     &=\sum_{i}\sum_j v_i w_j \braceannotate{\defines g_{ij}(t_0)}{\scalarproduct{\partial_i \varphi(t_0)}{\partial_j \varphi(t_0)}_{\text{E}}}.

@@ -1,11 +1,11 @@
 % !TEX root = ./Vorlesungsmitschrift DIFF 2.tex  
 \lecture{Mo 15.06. 10:15}{}
 Letztes Mal: Legendre, Hermite und Laguerre DGL'n. Lösungen waren explizite Funktionen (Polynome, \( \Ln; \), \dots). Das nicht immer so:
-\minisec{Besselsche DGL:} \( \varv\in \reals \).
+\minisec{Besselsche DGL:} \( \nu\in \reals \).
 \begin{equation*}
-  y''+\frac{1}{x}y'+\parens*{1-\frac{\varv^2}{x^2}}y=0\quad \text{auf }\reals_{>0}.
+  y''+\frac{1}{x}y'+\parens*{1-\frac{\nu^2}{x^2}}y=0\quad \text{auf }\reals_{>0}.
 \end{equation*}
-Lösungen heißen \emph{Zylinder-Funktionen} der Ordnung \( \varv \). Wir machen folgenden Ansatz (absolute Konvergenz voraussetzend)
+Lösungen heißen \emph{Zylinder-Funktionen} der Ordnung \( \nu \). Wir machen folgenden Ansatz (absolute Konvergenz voraussetzend)
 \begin{equation*}
   u(x)=x^{\rho}\sum_{k=0}^{\infty}a_k x^k.
 \end{equation*}
@@ -15,38 +15,38 @@ Dann ist
   &=x^{\rho-1}\sum_{k=0}^{\infty}(k+\rho)a_k x^k\\
   u''(x)&=x^{\rho-2}\sum_{k=0}^{\infty}(k+\rho)(k+\rho-1)a_k x^k.
 \end{align*}
-Einsetzen (und mal \( x^{-\rho+2} \) nehmen) liefert für \( x^m \) (unter Verwendung von \( 1-\frac{\varv^2}{x^2}=\frac{x^2-\varv^2}{x^2} \))
+Einsetzen (und mal \( x^{-\rho+2} \) nehmen) liefert für \( x^m \) (unter Verwendung von \( 1-\frac{\nu^2}{x^2}=\frac{x^2-\nu^2}{x^2} \))
 \begin{gather*}
-  (\rho+m-1)(\rho+m)a_m+(\rho+m)a_m+a_m(-\varv^2)+a_{m-2}=0\\
-  a_m((\rho+m)^2-\varv^2)+a_{m-2}=0.
+  (\rho+m-1)(\rho+m)a_m+(\rho+m)a_m+a_m(-\nu^2)+a_{m-2}=0\\
+  a_m((\rho+m)^2-\nu^2)+a_{m-2}=0.
 \end{gather*}
 Rekursion! \\
-\( a_0(\rho^2-\varv^2)=0 \). Wähle \( \rho=\varv \), und setze \( a_0=1 \). \\
-\( a_1=(2\varv+1)=0 \). Setze \( a_1=0 \).\\
+\( a_0(\rho^2-\nu^2)=0 \). Wähle \( \rho=\nu \), und setze \( a_0=1 \). \\
+\( a_1=(2\nu+1)=0 \). Setze \( a_1=0 \).\\
 Es muss gelten
 \begin{equation*}
-  a_m(2\varv m+m^2)+a_{m-2}=0.
+  a_m(2\nu m+m^2)+a_{m-2}=0.
 \end{equation*}
 
 Sei \( m=2n+1 \), dann ist \( a_m=0 \), denn \( a_1=0 \) und
 \begin{equation*}
-  a_{2n+1}(\braceannotate{\text{Ist \( \varv\in\wholes \): gerade}{2\varv(2n+1)}}{\braceannotate{\text{ungerade}}{(2n+1)^2}})\needed{=}0.
+  a_{2n+1}(\braceannotate{\text{Ist \( \nu\in\wholes \): gerade}{2\nu(2n+1)}}{\braceannotate{\text{ungerade}}{(2n+1)^2}})\needed{=}0.
 \end{equation*}
 Wähle also \( a_{2n+1}=0 \).
 
 Ist \( m=2n \), so ist (per Induktion beweisen!) (\( \Gamma \) ist die Gammafunktion).
 \begin{equation*}
-  a_{2n}=\frac{(-1)^n}{4^n\factorial{n}\braceannotate{=\frac{\Gamma(v+n+1)}{\Gamma(v+1)}}{(\varv+n)\dotsm (v+1)}}
+  a_{2n}=\frac{(-1)^n}{4^n\factorial{n}\braceannotate{=\frac{\Gamma(v+n+1)}{\Gamma(v+1)}}{(\nu+n)\dotsm (v+1)}}
 \end{equation*}
 \timplies Lösung:
 \begin{equation*}
-  \besselfirstkind{\varv}{x}=\parens*{\frac{x}{2}}^{\varv}\sum_{n=0}^{\infty}\frac{(-1)^n}{\factorial{n}\Gamma(v+n+1)}\parens*{\frac{x}{2}}^{2n}
+  \besselfirstkind{\nu}{x}=\parens*{\frac{x}{2}}^{\nu}\sum_{n=0}^{\infty}\frac{(-1)^n}{\factorial{n}\Gamma(v+n+1)}\parens*{\frac{x}{2}}^{2n}
 \end{equation*}
-\enquote{Besselfunktion \ordinalnum{1} Art der Ordnung \( \varv \)}.
+\enquote{Besselfunktion \ordinalnum{1} Art der Ordnung \( \nu \)}.
 
 Reihe konvergiert absolut, unsere Manipulationen sind also a posteriori gerechtfertigt!
 
-Ist \( \varv\not\in \wholes \), so bilden \( \besselfirstkind;{\varv} \) und \( \besselfirstkind;{v} \) ein Fundamentalsystem. Ist \( \gamma\in \wholes \), kann man \zb die Besselfunktion \ordinalnum{2} Art hinzuziehen, die wir hier aber nicht betrachten.
+Ist \( \nu\not\in \wholes \), so bilden \( \besselfirstkind;{\nu} \) und \( \besselfirstkind;{v} \) ein Fundamentalsystem. Ist \( \gamma\in \wholes \), kann man \zb die Besselfunktion \ordinalnum{2} Art hinzuziehen, die wir hier aber nicht betrachten.
 \begin{figure}[H]
   \centering
   \includegraphics[width=0.5\linewidth]{bessel_funktionen}

@@ -128,7 +128,7 @@ Ziel (\ua) Geometrische Interpretation der Ableitung.
   \end{enumerate}
 \end{beispiele*}
 \begin{definition}\label{tangentialraum}\index{Tangentialvektor}
-  Ein Vektor \( v\in \reals^n \) heißt \emph{Tangentialvektor} der Untermannigfaltigkeit \( M\subset \reals^n \) im Punkt \( a \), falls \texists differenzierbare Kurve \( \gamma \), \( \gamma\maps \ointerval{-\varepsilon}{\varepsilon} \to M\), \sd \( \gamma(0)=a \) und \( v=\gamma'(0) \). Die Menge der Tangentialvektoren im Punkt \( a \) bezeichnet man mit \( \tangentialraum{M} \). 
+  Ein Vektor \( v\in \reals^n \) heißt \emph{Tangentialvektor} der Untermannigfaltigkeit \( M\subset \reals^n \) im Punkt \( a \), falls \texists differenzierbare Kurve \( \gamma \), \( \gamma\maps \ointerval{-\varepsilon}{\varepsilon} \to M\), \sd \( \gamma(0)=a \) und \( v=\gamma'(0) \). Die Menge der Tangentialvektoren im Punkt \( a \) bezeichnet man mit \( \tangentialraum{a}{M} \). 
   \begin{figure}[H]
     \centering
     \includegraphics[width=0.5\linewidth]{tangentenvektoren_intuition}
@@ -144,7 +144,7 @@ Ziel (\ua) Geometrische Interpretation der Ableitung.
     \end{equation*}
     \( p\in \reals^4 \), \( a\in E \).
     \begin{equation*}
-      \tangentialraum{M}=\Set{v\in \reals^4|v=v_1e_2+v_2e_2},
+      \tangentialraum{a}{M}=\Set{v\in \reals^4|v=v_1e_2+v_2e_2},
     \end{equation*}
     denn jedes \( \gamma\maps \ointerval{-\varepsilon}{\varepsilon}\to M \) mit \( \gamma(0) \) ist von der Form
     \begin{equation*}
@@ -173,7 +173,7 @@ Ziel (\ua) Geometrische Interpretation der Ableitung.
   \begin{equation*}
     a\in M\cap U =\set{x\in U |f(x)=0}
   \end{equation*}
-  für eine Funktion \( f\maps U\to \reals^{n-d} \) wie in \thref{untermannigfaltigkeit}, also \( Df(a) \) von maximalem Rang (\( n-d \)). Dann ist \( \tangentialraum{M}=\ker-{Df(a)} \). Insbesondere ist \( \tangentialraum{M} \) Untervektorraum von \( \reals^n \).
+  für eine Funktion \( f\maps U\to \reals^{n-d} \) wie in \thref{untermannigfaltigkeit}, also \( Df(a) \) von maximalem Rang (\( n-d \)). Dann ist \( \tangentialraum{a}{M}=\ker-{Df(a)} \). Insbesondere ist \( \tangentialraum{a}{M} \) Untervektorraum von \( \reals^n \).
 \end{satz}
 \begin{proof}
   \begin{proofdescription}
@@ -300,7 +300,7 @@ Ziel (\ua) Geometrische Interpretation der Ableitung.
   \end{description}
 \end{bemerkung*}\approxtimestamp{40}
 \begin{proof}[Fortsetzung Beweis \thref{tangentialraum_ist_tangential}]
-  Wir beweisen nun die zweite Inklusion von \thref{tangentialraum_ist_tangential}, also \( \tangentialraum{M}\supset \ker-{Df(a)} \). Sei \( g\maps V_1\to \reals^{n-d} \) stetig differenzierbar \sd \( g(V_1)\subset V_2 \) und \( a\in V_1\times V_2\subset \reals^d \times \reals^{n-d} \) und
+  Wir beweisen nun die zweite Inklusion von \thref{tangentialraum_ist_tangential}, also \( \tangentialraum{a}{M}\supset \ker-{Df(a)} \). Sei \( g\maps V_1\to \reals^{n-d} \) stetig differenzierbar \sd \( g(V_1)\subset V_2 \) und \( a\in V_1\times V_2\subset \reals^d \times \reals^{n-d} \) und
 \begin{equation*}
   M\cap (V_1\times V_2)=\Gamma_g=\Set{(x,g(x))|x\in V_1}.
 \end{equation*}
@@ -310,17 +310,17 @@ Sei \( x_0\in V_1  \) \sd \( (x_0,g(x_0))=a \). Betrachte \( \varphi\maps V_1\to
 \end{equation*}
 \timplies \( a=\varphi(x-0) \) und 
 \begin{equation*}
-  w\definedas \evaluateat{\frac{\differential}{\differential t} \varphi(x_0+tv)}{t=0}\in \tangentialraum{M},
+  w\definedas \evaluateat{\frac{\differential}{\differential t} \varphi(x_0+tv)}{t=0}\in \tangentialraum{a}{M},
 \end{equation*}
-also \( \image{D\varphi(x_0)}\subset \tangentialraum{M} \). Zudem wissen wir schon: \( \tangentialraum{M}\subset \ker-{Df(a)} \). Es ist \( D\varphi(x_0)\maps \reals^d\to \reals^n \), \( D\varphi(x_0)=\begin{pNiceMatrix} \mathds{1}_{d\times d} \\ Dg(x_0) \end{pNiceMatrix} \), also injektiv \timplies (Dimensionsformel)
+also \( \image{D\varphi(x_0)}\subset \tangentialraum{a}{M} \). Zudem wissen wir schon: \( \tangentialraum{a}{M}\subset \ker-{Df(a)} \). Es ist \( D\varphi(x_0)\maps \reals^d\to \reals^n \), \( D\varphi(x_0)=\begin{pNiceMatrix} \mathds{1}_{d\times d} \\ Dg(x_0) \end{pNiceMatrix} \), also injektiv \timplies (Dimensionsformel)
 \begin{equation*}
   \dim-{\image{D\varphi(x_0)}}=d=n-\underbrace{\rang-{Df(a)}}_{=n-d}=\dim-{\ker-{Df(a)}}
 \end{equation*}
-\timplies \( \tangentialraum{M}=\ker-{Df(a)} \).
+\timplies \( \tangentialraum{a}{M}=\ker-{Df(a)} \).
 \end{proof}
 Wir haben im Beweis auch gesehen:
 \begin{equation*}
-  \tangentialraum{M}=\image-{D\varphi(x_0)},
+  \tangentialraum{a}{M}=\image-{D\varphi(x_0)},
 \end{equation*}
 wo \( \phi(x)=\transpose-{(x,g(x))} \) die Graphenabbildung einer lokalen Auflösung \( g \) ist it \( a=\transpose-{(x_0,g(x_0))}=\phi(x_0) \).
 

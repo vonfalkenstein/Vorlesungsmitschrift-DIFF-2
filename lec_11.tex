@@ -268,12 +268,12 @@ Wir hatten in \ref{extremum_notwendige_bedingung} bereits gesehen: Ist \( a\in U
 \begin{lemma}[aus der AGLA\@: Kriterium von Hurwitz]
   Sei \( A\in \sqmatrices{n}{\reals} \) symmetrisch. Dann ist \( A \) genau dann positiv definit, wenn
   \begin{equation*}
-    \Det \explain{\text{Haupt-Minoren von \( A \)}}{\begin{pNiceMatrix} A_{11} & \Cdots & A_{1k} \\ \Vdots &  & \Vdots \\ A_{k1} & \Cdots & A_{kk} \end{pNiceMatrix}}>0\quad \forall k\in \set{1,\dotsc,n}
+    \determinant{\explain{\text{Haupt-Minoren von \( A \)}}{\begin{pNiceMatrix} a_{11} & \Cdots & a_{1k} \\ \Vdots &  & \Vdots \\ a_{k1} & \Cdots & a_{kk} \end{pNiceMatrix}}}>0\quad \forall k\in \set{1,\dotsc,n}
   \end{equation*}
   und genau dann negativ definit, wenn
   \begin{align*}
-    \Det(A_{11})=A_{11}&<0\\
-    \Det \begin{pNiceMatrix} A_{11} & A_{12} \\ A_{21} & A_{22} \end{pNiceMatrix}&>0
+    \determinant+{a_{11}}=a_{11}&<0\\
+    \determinant{\begin{pNiceMatrix} a_{11} & a_{12} \\ a_{21} & a_{22} \end{pNiceMatrix}}&>0
   \end{align*}
   und dann immer abwechselnd.
 \end{lemma}
