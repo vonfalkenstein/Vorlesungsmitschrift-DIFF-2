@@ -3,12 +3,12 @@
 Letztes Mal: Satz von Gauß
 \begin{bemerkungen*}
   \begin{enumerate}[label=\rechtsklammer{\arabic*}, ref=Bemerkung \rechtsklammer{\arabic*}]
-    \item \label{komponentenweiser_satz_von_gauss}Tatsächlich gilt die Gleichung sogar komponentenweise, also für \( f\in \stetigefunktionen[1](G,\reals) \) gilt
+    \item \label{komponentenweiser_integralsatz_von_gauss}Tatsächlich gilt die Gleichung sogar komponentenweise, also für \( f\in \stetigefunktionen[1](G,\reals) \) gilt
     \begin{equation*}
       \Integrate{\partial_i f(x)}{x,G}=\Integrate{f(x) \nu_i(x)}{S(x),\randpunkte{G}}.
     \end{equation*}
     \item Der Satz gilt immer noch, wenn \( \randpunkte{G} \) höchstens \( (n-2) \)-dimensionale \enquote{Kanten} und \enquote{Ecken} hat, in denen glatte Stücke von \( randpunkte{G} \) zusammentreffen, also insbesondere auch für Quader.
-    \item Aus \ref{komponentenweiser_satz_von_gauss} folgt sofort: Ist \( \supp X\subset \inneres{G} \) so ist \( \Integrate{\div X}{x,C}=0 \).
+    \item Aus \ref{komponentenweiser_integralsatz_von_gauss} folgt sofort: Ist \( \traeger{X}\subset \inneres{G} \) so ist \( \Integrate{\div X}{x,C}=0 \).
   \end{enumerate}
 \end{bemerkungen*}
 Physikalische Interpretation \tto Vorlesung 23: Quellstärke im Inneren \teq Fluss durch die Oberfläche. Physikalische und mathematische Anwendung:
@@ -24,7 +24,7 @@ Physikalische Interpretation \tto Vorlesung 23: Quellstärke im Inneren \teq Flu
   \end{enumerate}
 \end{beispiele}
 \begin{proof}[Beweis des Satzes (\vgl Forster. Analysis 3, Vieweg)]
-  Wir beweisen die Behauptung aus \ref{komponentenweiser_satz_von_gauss}, aus der der Satz folgt.
+  Wir beweisen die Behauptung aus \ref{komponentenweiser_integralsatz_von_gauss}, aus der der Satz folgt.
 
   Sei \( U\subset \reals^n \) offen mit \( G \). Wähle zu \( x\in G \) eine offene Umgebung \( U_x\subset U \). Ist \( x\in \randpunkte{G} \) wähle \( U_x=\braceannotate{\mathclap{\text{\( (n-1) \)-dimensionaler Qauder}}}{U_x'}\times \overbrace{U_x''}^{\mathclap{\text{Intervall}}} \) \sd \texists \( \varphi\maps U_x'\to U_x'' \) \( \stetigefunktionen[1] \) (als Abbildung nach \( \reals \)) mit 
   \begin{align*}
@@ -47,7 +47,7 @@ Physikalische Interpretation \tto Vorlesung 23: Quellstärke im Inneren \teq Flu
     U_j\cap \randpunkte{G}\neq \emptyset\quad 1\leq L\\
     U_j\subset G \quad L+1\leq j\leq K.
   \end{gather*}
-  Wähle eine Partition der Eins \( \set{\rho_j}_{j\in \set{1,\dotsc,K}} \) mit \( \supp \rho_j\subset U_j \), \( \sum_{j=1}^{K}\rho_j(x)=1\quad \forall x\in G \).
+  Wähle eine Partition der Eins \( \set{\rho_j}_{j\in \set{1,\dotsc,K}} \) mit \( \traeger{\rho_j}\subset U_j \), \( \sum_{j=1}^{K}\rho_j(x)=1\quad \forall x\in G \).
   \begin{equation*}
     \implies \Integrate{\partial_i X_i(x)}{x,G}=\sum_{j=1}^{K}\Integrate{\partial_i\p*{\rho_j X_i}(x)}{x,G\cap U_j}
   \end{equation*}
@@ -66,7 +66,7 @@ Physikalische Interpretation \tto Vorlesung 23: Quellstärke im Inneren \teq Flu
   \end{equation}
 
   Zu \eqref{eq:satz_von_gauss_beweis_gesamtteil}: Wähle \( A>0 \) so, dass \( \interval{-A}{A}^n\supset U_j \).
-  \( \supp F\subsetneq U_j\Rightarrow \) kann durch 0 stetig differenzierbar zu \( \bar{F} \) auf \( \interval{-A}{A}^n \) fortgesetzt werden.
+  \( \traeger{F}\subsetneq U_j\Rightarrow \) kann durch 0 stetig differenzierbar zu \( \bar{F} \) auf \( \interval{-A}{A}^n \) fortgesetzt werden.
   \begin{equation*}
       \implies \Integrate{\partial_i F}{x,G\cap U_j}
       \explain[big]{\text{{\hyperref[fubini]{Fubini}}}}{=}
@@ -145,7 +145,7 @@ Dann gilt für \( f,-g\in \stetigefunktionen[1](U) \), \(  U\supset G \):
 \begin{equation*}
    \int_{G}\p*{ \partial_1g-\partial_2f }\differential{x}=\int_{\partial G}f\differential{x_1}+g\differential{x_2}
 \end{equation*}
-\enquote{Satz von Gauss} (einer der vielen)
+\enquote{Satz von Gauss} (einer der vielen) \index{Satz von Gauss}\label{satz_von_gauss}
 
 rechte Seite: \begin{align*}
     \gamma(t)&= \begin{pmatrix} x(t)\\y(t) \end{pmatrix} \\
@@ -207,11 +207,11 @@ Ein \( r \)-fach kovarianter, \( s \)-fach kontravarianter \define{Tensor} ist e
     \underbrace{\dualspace{V}\times \dotsb \times \dualspace{V}}_{\text{\( s \)-fach}}
     \to\reals.
 \end{equation*}
-\( T_r^s(V) \) bezeichnet den Vektorraum der \( r \)-fach ko- und \( s \)-fach kontravarianten Tensoren.
+\( \tensors{r}{s}{V} \) bezeichnet den Vektorraum der \( r \)-fach ko- und \( s \)-fach kontravarianten Tensoren.
 \end{definition}
 
 \begin{definition}
-Sei \( \alpha\in T_r^s(V),\quad \beta\in T_{\tilde{r}}^{\tilde{s}}(V) \).
+Sei \( \alpha\in \tensors{r}{s}{V},\quad \beta\in T_{\tilde{r}}^{\tilde{s}}(V) \).
 Dann ist \( \alpha\otimes\beta \) erklärt durch \( (v_i\in V,w^j\in \dualspace{V}) \)
 \begin{gather*}
     \alpha\otimes\beta(v_1,\ldots ,v_r,v_{r+1},\ldots ,v_{r+\tilde{r}},
@@ -255,7 +255,7 @@ Es gilt:
 \end{gather*}
 so sind alle \( c_{j_1\cdots j_r}=0 \).
 
-ist \( \alpha\in T_r(V) \), setze für alle Kombinationen \( (k_1,\ldots ,k_r)\in\set{1,\ldots ,n}^r \)
+ist \( \alpha\in \covarianttensors{r}{V} \), setze für alle Kombinationen \( (k_1,\ldots ,k_r)\in\set{1,\ldots ,n}^r \)
 \begin{equation*}
     \alpha_{k_1\cdots k_r}\definedas \alpha(e_{k_1},\ldots ,e_{k_r}).
 \end{equation*}
@@ -271,14 +271,14 @@ Die Koeffizienten
 \begin{equation*}
 \alpha_{k_1\cdots k_r}^{l_1\cdots l_s}=\alpha\p*{ e_{k_1},\ldots ,e_{k_r},e^{l_1},\ldots ,e^{l_s} }
 \end{equation*}
-heißen die \emph{Koordinaten} von \( \alpha\in T_r^s(V) \) bezüglich der Basis \( (e_i)_{i\in\set{1,\ldots ,n}} \), d.h.
+heißen die \emph{Koordinaten} von \( \alpha\in \tensors{r}{s}{V} \) bezüglich der Basis \( (e_i)_{i\in\set{1,\ldots ,n}} \), d.h.
 \begin{equation*}
 \alpha=\sum \alpha_{k_1\cdots k_r}^{l_1\cdots l_s} e^{k_1}\otimes\ldots \otimes e^{k_r}\otimes e_{l_1}\otimes\ldots \otimes e_{l_s}.
 \end{equation*}
 
 
 \begin{definition}
-\( \alpha\in T_r(V) \) heißt
+\( \alpha\in \covarianttensors{r}{V} \) heißt
 \begin{description}
     \item[\emph{symmetrisch}]\index{symmetrischer Tensor} von Grad \( r \), falls \( \alpha^\pi=\alpha\quad  \forall \pi\in \explain{symmetrische Gruppe}{\permutations{r}} \)\\
     \item[\emph{alternierend}]\index{alternierender Tensor} von Grad \( r \), falls \( \alpha^\pi=\signature-{\pi} \cdot \alpha\quad  \forall \pi\in \permutations{r}\)
@@ -289,7 +289,7 @@ Einen alternierenden Tensor vom Grad \( r \) nennt man auch \define{\( r \)-Form
 \end{definition}
 
 \begin{lemma}
-Für \( \alpha\in T_r(V) \) sind äquivalent \begin{eigenschaftenenumerate}
+Für \( \alpha\in \covarianttensors{r}{V} \) sind äquivalent \begin{eigenschaftenenumerate}
     \item \( \alpha \) ist alternierend
     \item \( \alpha(v_1,\ldots ,v_r) =0 \) falls \( v_i=v_j \) für ein paar \( i \neq j \)
     \item \( \alpha(v_1,\ldots ,v_r)=0 \) falls die \( v_i \) linear abhängig sind.
@@ -301,7 +301,7 @@ Lineare Algebra.
 \end{proof}
 
 \begin{bemerkung*}
-Ist \( \alpha\in T^r(V) \) so erhält man eine \( r \)-Form vermöge 
+Ist \( \alpha\in \contravarianttensors{r}{V} \) so erhält man eine \( r \)-Form vermöge 
 \begin{equation*}
     \Lambda\alpha\definedas \frac{1}{r!} \sum_{r\in \permutations{r}}\sgn\pi\alpha^\pi.
 \end{equation*}

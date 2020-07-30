@@ -56,7 +56,7 @@
     \( k \)-Tupel \( (i_1,\dotsc,i_k) \) von Zahlen \( 1\leq i_j\leq n \), in denen \( 1 \) genau \( \alpha_1 \)-mal, \( 2 \) genau \( \alpha_2 \)-mal, \dots, \( n \) genau \( \alpha_n \)-mal vorkommt (ohne Beweis). \timplies \Beh.
   \end{proofenumerate}
 \end{proof}
-\begin{satz}[Taylorsche Formel]\index{Taylorsche Formel}
+\begin{satz}[Taylorsche Formel]\index[theorems]{Taylorsche Formel}
   Sei \( f\maps U\to \reals \), \( U\subset \reals^n \) offen, \( (k+1) \)-mal stetig differenzierbar. Sei \( a\in U \) und \( h\in \reals^n \) \sd \( \set{a+tht|t\in \interval{0}{1}}\subset U \). Dann existiert \( \theta\in \interval{0}{1} \) \sd
   \begin{equation*}
     f(a+h)=\sum_{\substack{\abs{\alpha}\leq k\\ \alpha\in \naturals_0^n}}\frac{1}{\factorial{\alpha}} \partial^{\alpha} f(a) h^{\alpha} +\sum_{\substack{\abs{\alpha}=k+1\\ \alpha\in \naturals_0^{n}}} \frac{1}{\factorial{\alpha}} \partial^{\alpha} f(a+\theta h) h^{\alpha}.
@@ -263,7 +263,7 @@ Wir hatten in \ref{extremum_notwendige_bedingung} bereits gesehen: Ist \( a\in U
   \end{enumerate}
 \end{beispiele*}
 \begin{bemerkung*}
-  Wie untersucht man in komplizierten Fällen \( H_f(a) \) auf Definitheit? Kennt man die Eigenwerte (\texists wegen Symmetrie!) ist klar: Sind all positiv (negativ), so ist \( H_f(a) \) positiv (negativ) definit, gibt es positive und negative Eigenwerte, so ist sie indefinit. Aber Eigenwerte großer Matrizen sind schwer zu bestimen. Besser geeignet ist
+  Wie untersucht man in komplizierten Fällen \( H_f(a) \) auf Definitheit? Kennt man die Eigenwerte (\texists wegen Symmetrie!) ist klar: Sind all positiv (negativ), so ist \( H_f(a) \) positiv (negativ) definit, gibt es positive und negative Eigenwerte, so ist sie indefinit. Aber Eigenwerte großer Matrizen sind schwer zu bestimmen. Besser geeignet ist
 \end{bemerkung*}
 \begin{lemma}[aus der AGLA\@: Kriterium von Hurwitz]
   Sei \( A\in \sqmatrices{n}{\reals} \) symmetrisch. Dann ist \( A \) genau dann positiv definit, wenn

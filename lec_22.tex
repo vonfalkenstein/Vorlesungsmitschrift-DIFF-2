@@ -8,7 +8,7 @@
   \end{equation*}
   für \( f\maps U\to \reals \), \( U\subset \reals^n \).
 \end{ziel*}
-\begin{satz}[Transformationssatz]\label{transformationssatz}\index{Transformationssatz}
+\begin{satz}[Transformationssatz]\label{transformationssatz}\index[theorems]{Transformationssatz}
   Seien \( U,V\subset \reals^n \) offen und \( \Phi\maps U\to \reals^n \) ein Diffeomorphismus auf \( \Phi(U)=V \) (\dh \( \Phi \) ist \( \stetigefunktionen[1] \), invertierbar mit \( \inverse{\Phi}\in \stetigefunktionen[1] \)). Sei \( f\in \lebesgueintegrablefunctions[1](\reals^n) \). Dann gilt
   \begin{enumerate}
     \item \( U\ni x\mapsto (f\circ \Phi)(x)\abs{\determinant{{\totalderivative{\Phi(x)}}}}\in \lebesgueintegrablefunctions(\reals^n) \) (fortgesetzt mit \( 0 \) auf \( \reals^n\setminus U \)).
@@ -162,7 +162,7 @@ Hier tritt der Betrag der Ableitung auf! Warum? Sei \zb \( \Phi(x)=-x \), \( U=\
 \begin{align*}
   \Integrate{f(y)}{y,\Phi(u)}&=\Integrate{f(y)}{y,\ointerval{-b}{-a}}\\
   &=\Integrate{f(y)}{y,-a,-b}\\
-  &\explain[Big]{\text{übgliche Substitutionsregel, \enquote{\( \Integrate{f(-x)(-1)}{x,a,b} \)}}}{=}\Integrate{f(-x)}{x,a,b}\\
+  &\explain[Big]{\text{übliche Substitutionsregel, \enquote{\( \Integrate{f(-x)(-1)}{x,a,b} \)}}}{=}\Integrate{f(-x)}{x,a,b}\\
   &=\Integrate{f(-x)\cdot 1}{x,\ointerval{a}{b}}.
 \end{align*}
 \begin{beispiel*}[Polarkoordinaten]

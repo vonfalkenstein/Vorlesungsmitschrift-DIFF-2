@@ -5,7 +5,7 @@ Wir betrachten folgende Situation:\\
 Wir suchen Extremstellen einer Funktion \( f \) unter gewissen Nebenbedingungen \zb 
 \begin{enumerate}[label=\rechtsklammer{\alph*}]
   \item\label{nebenbedingung_extremum:beispiel:mikro} (Mikro-Ökonomie) Es soll das Maximum einer Nutzenfunktion \( f(x,y)=\sqrt{xy} \), \( x>0 \), \( y>0 \), unter der Budgetbedingung \( 64=2x+8y \) bestimmt werden.
-  \item\label{nebenbedingung_extremum:beispiel:geometrie} (Geometrie) Welches Dreieck kopfüber im Halbkreis hat den größten Flächeinhalt? Also \( f(b,h)=\frac{1}{2}bh \) unter dr Nebenbedingung \( \frac{1}{4}b^2+h^2=r^2 \) (Pythagoras).
+  \item\label{nebenbedingung_extremum:beispiel:geometrie} (Geometrie) Welches Dreieck kopfüber im Halbkreis hat den größten Flächeninhalt? Also \( f(b,h)=\frac{1}{2}bh \) unter der Nebenbedingung \( \frac{1}{4}b^2+h^2=r^2 \) (Pythagoras).
   \begin{figure}[H]
     \centering
     \includegraphics[width=0.4\linewidth]{figures/dreiecksmaximierung}
@@ -24,7 +24,7 @@ In einfachen Fällen kann man die Nebenbedingung direkt auflösen und die (\ref{
 Allgemeiner: Sei \( f \), \( h \) wie in \ref{nebenbedingung_extremum} und zudem \( f \) differenzierbar und \( h\maps U\to \reals^m \), \( U\subset \reals^{n-m}\times \reals^m \), erfülle in \( a=(a_1,a_2)\in N_h(0) \) die Bedingungen des Satzes über implizite Funktionen. Also gibt es Umgebungen \( V_1 \) von \( a_1 \) und \( V_2 \) von \( a_2 \) und eine stetig differenzierbare Funktion \( g\maps V_1\to V_2 \) \sd \( N_h(0)\cap V_1\times V_2=\Set{(u,g(u))|u\in V_1} \). Also besitzt in diesem Fall \( f \) eine lokales Extremum in \( a \) unter der Nebenbedingung \( h=0 \) genau dann, wenn \( u\mapsto f(u,g(u)) \) ein lokales Extremum in \( a_1 \) besitzt.
 
 Dies führt zur sogenannten 
-\begin{satz}[Lagrange-Multiplikator-Regel]
+\begin{satz}[Lagrange-Multiplikator-Regel]\index[theorems]{Lagrange-Multiplikator-Regel}
   Sei \( f\maps U\to \reals \), \( U\subset \reals^n \) offen, in \( a\in U \) differenzierbar. Sei \( h\maps U\to \reals^m \) stetig differenzierbar, \( m<n \). Es sei \( \rang-{\totalderivative{h}(a)}=m \).
 
   Es besitze \( f \) in \( a \) unter der Nebenbedingung \( h(x)=0 \) ein lokales Extremum. Dann gibt es \( \lambda_1,\dotsc,\lambda_m\in \reals \) (\emph{Lagrange-Multiplikatoren}), \sd 
