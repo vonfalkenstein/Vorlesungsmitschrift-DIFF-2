@@ -5,7 +5,7 @@ Wir betrachten folgende Situation:\\
 Wir suchen Extremstellen einer Funktion \( f \) unter gewissen Nebenbedingungen \zb 
 \begin{enumerate}[label=\rechtsklammer{\alph*}]
   \item\label{nebenbedingung_extremum:beispiel:mikro} (Mikro-Ökonomie) Es soll das Maximum einer Nutzenfunktion \( f(x,y)=\sqrt{xy} \), \( x>0 \), \( y>0 \), unter der Budgetbedingung \( 64=2x+8y \) bestimmt werden.
-  \item\label{nebenbedingung_extremum:beispiel:geometrie} (Geometrie) Welches Dreieck kopfüber im Halbkreis hat den größten Flächeinhalt? Also \( f(b,h)=\frac{1}{2}bh \) unter dr Nebenbedingung \( \frac{1}{4}b^2+h^2=r^2 \) (Pythagoras).
+  \item\label{nebenbedingung_extremum:beispiel:geometrie} (Geometrie) Welches Dreieck kopfüber im Halbkreis hat den größten Flächeninhalt? Also \( f(b,h)=\frac{1}{2}bh \) unter der Nebenbedingung \( \frac{1}{4}b^2+h^2=r^2 \) (Pythagoras).
   \begin{figure}[H]
     \centering
     \includegraphics[width=0.4\linewidth]{figures/dreiecksmaximierung}
@@ -24,12 +24,12 @@ In einfachen Fällen kann man die Nebenbedingung direkt auflösen und die (\ref{
 Allgemeiner: Sei \( f \), \( h \) wie in \ref{nebenbedingung_extremum} und zudem \( f \) differenzierbar und \( h\maps U\to \reals^m \), \( U\subset \reals^{n-m}\times \reals^m \), erfülle in \( a=(a_1,a_2)\in N_h(0) \) die Bedingungen des Satzes über implizite Funktionen. Also gibt es Umgebungen \( V_1 \) von \( a_1 \) und \( V_2 \) von \( a_2 \) und eine stetig differenzierbare Funktion \( g\maps V_1\to V_2 \) \sd \( N_h(0)\cap V_1\times V_2=\Set{(u,g(u))|u\in V_1} \). Also besitzt in diesem Fall \( f \) eine lokales Extremum in \( a \) unter der Nebenbedingung \( h=0 \) genau dann, wenn \( u\mapsto f(u,g(u)) \) ein lokales Extremum in \( a_1 \) besitzt.
 
 Dies führt zur sogenannten 
-\begin{satz}[Lagrange-Multiplikator-Regel]
+\begin{satz}[Lagrange-Multiplikator-Regel]\index[theorems]{Lagrange-Multiplikator-Regel}
   Sei \( f\maps U\to \reals \), \( U\subset \reals^n \) offen, in \( a\in U \) differenzierbar. Sei \( h\maps U\to \reals^m \) stetig differenzierbar, \( m<n \). Es sei \( \rang-{\totalderivative{h}(a)}=m \).
 
   Es besitze \( f \) in \( a \) unter der Nebenbedingung \( h(x)=0 \) ein lokales Extremum. Dann gibt es \( \lambda_1,\dotsc,\lambda_m\in \reals \) (\emph{Lagrange-Multiplikatoren}), \sd 
   \begin{equation*}
-    \grad-{f(a)}=\lambda_1 \grad-{h_1(a)}+\dotsb+\lambda_m \grad-{h_m(a)}.
+    \grad{f(a)}=\lambda_1 \grad{h_1(a)}+\dotsb+\lambda_m \grad{h_m(a)}.
   \end{equation*}
 \end{satz}
 \begin{proof}
@@ -104,7 +104,6 @@ Wir nutzt man diesen Satz zur Lösung von Problemen wie oben?
     \begin{figure}[H]
       \centering
       \includegraphics[width=0.5\linewidth]{figures/dreiecksmaximierung_antwort}
-      \caption*{}
       \label{fig:dreiecksmaximierung_antwort}
     \end{figure}
     Der Flächeninhalt wird maximal \( \quot{1}{2}r^2 \), denn für \( b\goesto 0 \) (spitzerwerdendes Dreieck), strebt \( f\goesto 0 \), ebenso für \( h\goesto 0 \) (breiterwerdendes Dreieck).
@@ -135,9 +134,9 @@ Ist \( f\maps U\to \reals^m \), \( U\subset \reals^n \) offen, stetig differenzi
 \begin{equation*}
   \totalderivative{f}(a+h)=\totalderivative{f}(a)+A(h)*\underline{R}_a^{\totalderivative{f}}(h)
 \end{equation*}
-mit \( \frac{\underline{R}_a^{\totalderivative{f}}(h)}{\norm{h}}\goesto 0 \) wenn \( h\goesto 0 \). Hier ist \( \underline{R}_a^{\totalderivative{f}}\maps B_{\delta}(0)\to \matrices{m}{n}{\reals} \). 
+mit \( \frac{\underline{R}_a^{\totalderivative{f}}(h)}{\norm{h}}\goesto 0 \) wenn \( h\goesto 0 \). Hier ist \( \underline{R}_a^{\totalderivative{f}}\maps \ball{\delta}{0}\to \matrices{m}{n}{\reals} \). 
 
-Benennt man \( \totalderivative{f}\defines g \) sieht man schnell, dass alle Sätze über differenzierbare Abbildungen natürlich auf für \( g \) gelten, insbesondere die Eindeutigkeit der Abbildung, wenn sie existiert, Kettenregel \etc. Nur kann man, wenn man nicht den Raum \( \matrices{m}{n}{\reals} \) mit \( \reals^{m\cdot n} \), die Ausdrücke im Allgem  einen mehr so leicht hinschreiben, etwa \( A(h) \) als Produkt einer Matrix mit dem Vektor \( h \).
+Benennt man \( \totalderivative{f}\defines g \) sieht man schnell, dass alle Sätze über differenzierbare Abbildungen natürlich auf für \( g \) gelten, insbesondere die Eindeutigkeit der Abbildung, wenn sie existiert, Kettenregel \etc. Nur kann man, wenn man nicht den Raum \( \matrices{m}{n}{\reals} \) mit \( \reals^{m\cdot n} \), die Ausdrücke im Allgemeinen nicht mehr so leicht hinschreiben, etwa \( A(h) \) als Produkt einer Matrix mit dem Vektor \( h \).
 
 Ist \( m=1 \) oder betrachtet man nur die Komponentenfunktionen einer \( \reals^m \)-wertigen Funktion, sieht man jedoch:
 \begin{equation*}
@@ -192,22 +191,22 @@ Wenn nein, muss man prüfen, ob \( \underline{R}_a^g \) das richtige Verhalten b
   \end{equation*}
   Dass die beiden letzt genannten Ableitungen gleich sind, ist kein Zufall:
 \end{beispiel*}
-\begin{satz}[Satz von Schwarz]\label{schwarzscher_satz}\index{Satz von Schwarz}
+\begin{satz}[Satz von Schwarz]\label{schwarzscher_satz}\index[theorems]{Satz von Schwarz}
   Sei \( f\maps U\to \reals \), \( U\subset \reals^n \), zweimal stetig partiell differenzierbar. Dann gilt für alle \( a\in U \) und alle \( i,j\in \Set{1,\dotsc,n} \)
   \begin{equation*}
     \partial_j \partial_i f(a)=\partial_i \partial_j f(a).
   \end{equation*}
 \end{satz}
 \begin{proof}
-  Sei \obda \( n=2 \), \( a=(a_1,a_2) \). \texists \( \delta>0 \) \sd \( B_{\delta}(a_1)\times \explain{\text{Intervall!}}{B_{\delta}(a_2)}\subset U \). Setze zu \( y\in B_\delta(a_2) \)
+  Sei \obda \( n=2 \), \( a=(a_1,a_2) \). \texists \( \delta>0 \) \sd \( \ball{\delta}{a_1}\times \explain{\text{Intervall!}}{\ball{\delta}{a_2}}\subset U \). Setze zu \( y\in \ball{\delta}{a_2} \)
   \begin{equation*}
-    F_y\maps B_\delta(a_1)\to \reals\qquad F_y(x)=f(x,y)-f(x,a_2).
+    F_y\maps \ball{\delta}{a_1}\to \reals\qquad F_y(x)=f(x,y)-f(x,a_2).
   \end{equation*}
-  MWS \timplies \texists  \( \zeta\in B_\delta(a_1)=\ointerval{a_1-\delta}{a_1+\delta} \) und zwar zwischen \( a_1 \) und \( x \) \sd 
+  MWS \timplies \texists  \( \zeta\in \ball{\delta}{a_1}=\ointerval{a_1-\delta}{a_1+\delta} \) und zwar zwischen \( a_1 \) und \( x \) \sd 
   \begin{equation*}
     F_y(x)-F_y(a_1)=F_y'(\zeta)(x-a_1).
   \end{equation*}
-  Es ist \( F_y'(\zeta)=\partial_1 f(\zeta,y)-\partial_1 f(\zeta,a_2) \). Betrachte die Funktion \( B_\delta(a_2)\ni y\mapsto \partial_1 f(\zeta,y) \). MWS \timplies \texists \( \eta\in B_\delta(a_2)=\ointerval{a_2-\delta}{a_2+\delta} \) und zwar zwischen \( a_2 \) und \( y \) \sd
+  Es ist \( F_y'(\zeta)=\partial_1 f(\zeta,y)-\partial_1 f(\zeta,a_2) \). Betrachte die Funktion \( \ball{\delta}{a_2}\ni y\mapsto \partial_1 f(\zeta,y) \). MWS \timplies \texists \( \eta\in \ball{\delta}{a_2}=\ointerval{a_2-\delta}{a_2+\delta} \) und zwar zwischen \( a_2 \) und \( y \) \sd
   \begin{equation*}
     \partial_1 f(\zeta,y)-\partial_1 f(\zeta,a_2)=\partial_2 (\partial_1 f)(\zeta,\eta)(y-a_2).
   \end{equation*}
@@ -215,7 +214,7 @@ Wenn nein, muss man prüfen, ob \( \underline{R}_a^g \) das richtige Verhalten b
   \begin{equation*}
     f(x,y)-f(x,a_2)-f(a_1,y)+f(a)=\partial_2\partial_1 f(\zeta,\eta)(y-a_2)\matrixmult(x-a_1)\tag{\(*\)}.\label{eq:schwarzscher_satz:beweis:mws_1}
   \end{equation*}
-  Dieselbe Konstruktion nehmen wir nun zu festen \( x\in B_\delta(a_1) \) für \( G_x(y)=f(x,y)-f(a_1,y) \) vor.
+  Dieselbe Konstruktion nehmen wir nun zu festen \( x\in \ball{\delta}{a_1} \) für \( G_x(y)=f(x,y)-f(a_1,y) \) vor.
 
   \minisec{MWS:}
   \texists \( \tilde{\eta}\in \ointerval{a_2-\delta}{a_2+\delta} \) zwischen \( a_2 \) und \( y \) \sd \( G_x(y)-G_x(a_2)=G'x(\eta)(y-a_2) \). Es ist \( G_x'(\tilde{\eta})=\partial_2 f(x,\tilde{\eta})-\partial_2 f(a_1,\tilde{\eta}) \).
@@ -268,16 +267,16 @@ und nennt \( \laplaceoperator=\partial_1^2+\dotsb+\partial_n^2 \) den \emph{Lapl
   \begin{enumerate}
     \item \( h\maps \reals^n\setminus\zeroset\to \reals \), \( h(x)=f(\norm{x}_E) \) mit einer auf \( \reals\setminus \zeroset \) zweimal stetig partiell differenzierbaren Funktion \( f \).
     \begin{equation*}
-      \grad-{f(\norm{x}_E)}=f'(\norm{x}_E)\frac{1}{\norm{x}_E}x
+      \grad{f(\norm{x}_E)}=f'(\norm{x}_E)\frac{1}{\norm{x}_E}x
     \end{equation*}
     und
     \begin{align*}
-      &\partial_i\p*{f'(\norm{x}_E)\frac{1}{\norm{x}_E}x_i }=f''(\norm{x}_E)\frac{x_i}{\norm{x_i}}\cdot\frac{x_i}{\norm{x}_E}+f'(\norm{x}_E)\p*{ -\frac{1}{2}\frac{2x_i}{\sqrt{\sum x_j^2}^3}\cdot x_i +\frac{1}{x_E} }\\
+      &\partial_i\p*{f'(\norm{x}_E)\frac{1}{\norm{x}_E}x_i }=f''(\norm{x}_E)\frac{x_i}{\norm{x_i}}\cdot\frac{x_i}{\norm{x}_E}+f'(\norm{x}_E)\p*{ -\frac{1}{2}\frac{2x_i}{\sqrt{\sum x_j^2}^3}\cdot x_i +\frac{1}{\norm{x}_E} }\\
       \implies &\laplaceoperator h(x)=f''(\norm{x}_E)+f'(\norm{x}_E)\frac{1}{\norm{x}_E}(n-1)
     \end{align*}
     \item In Kugelkoordinaten: Sei \( g\maps \reals_{>0}\times \reals\times\reals\to \reals^3 \)
     \begin{equation*}
-      g(r,\tau,\phi)=\begin{pNiceMatrix} r\Cos{\phi} \Sin{\theta}\\ r\Sin{\phi}\Sin{\theta}\\ r\Cos{\theta} \end{pNiceMatrix}.
+      g(r,\theta,\phi)=\begin{pNiceMatrix} r\Cos{\phi} \Sin{\theta}\\ r\Sin{\phi}\Sin{\theta}\\ r\Cos{\theta} \end{pNiceMatrix}.
     \end{equation*}
     \begin{figure}[H]
       \centering
@@ -295,12 +294,12 @@ und nennt \( \laplaceoperator=\partial_1^2+\dotsb+\partial_n^2 \) den \emph{Lapl
       Sodann:
       \begin{equation*}
         \totalderivative{g}(r,\theta,\phi)=\begin{pNiceMatrix}
-          \Cos{\phi}\Sin{\theta}& r\Cos{\phi}\Cos{\theta} & -r\in \phi\Sin{\theta}\\
+          \Cos{\phi}\Sin{\theta}& r\Cos{\phi}\Cos{\theta} & -r\Sin \phi\Sin{\theta}\\
           \Sin{\phi}\Sin{\theta}& r\Sin{\phi}\Cos{\theta} & r\Cos{\phi}\Sin{\theta}\\
           \Cos{\theta} & -r\Sin{\theta}& 0
         \end{pNiceMatrix}
       \end{equation*}
-      \( \Det \totalderivative{g}(r,\theta,\phi)=r^2\Sin{\theta}\) \timplies Ist \( v\neq k\pi \), \( k\in \wholes \), so ist \( g \) lokal umkehrbar mit stetig differenzierbarer Umkehrfunktion \( h\maps W\to V \) und in \( (x,y,z)\in W \) gilt
+      \( \determinant{\totalderivative{g}(r,\theta,\phi)}=r^2\Sin{\theta}\) \timplies Ist \( \theta\neq k\pi \), \( k\in \wholes \), so ist \( g \) lokal umkehrbar mit stetig differenzierbarer Umkehrfunktion \( h\maps W\to V \) und in \( (x,y,z)\in W \) gilt
       \begin{align*}
         &f(\underbrace{x,y,z}_{=g(r,\theta,\phi)})=f\circ g\circ h(x,y,z)\defines F\circ h(x,y,z)\\
         \implies &\totalderivative{f}(x,y,z)=\explain{DF(r,\theta,\phi)}{\text{\( 1\times 3 \)-Matrix}}\matrixmult \overset{\underset{\downarrow}{\text{\( 3\times 3 \)-Matrix}}}{\underbrace{\totalderivative{h}(x,y,z)}_{=\inverse{\totalderivative{g}(r,\theta,\phi)}}}\defines \explain{\text{\( 1\times 3 \)-Matrix}}{\tilde{F}(r,\phi,\theta)}=\tilde{F}\circ h(x,y,z)\\
@@ -334,18 +333,18 @@ und nennt \( \laplaceoperator=\partial_1^2+\dotsb+\partial_n^2 \) den \emph{Lapl
     \includegraphics[width=0.9\linewidth]{lagrange_multiplikatoren_intuition}
     \label{fig:lagrange_multiplikatoren_intuition}
   \end{figure}
-  Tatsache: \( \grad-{h}(x,y) \) steht senkrecht auf \( h(x,y)=c \). (Der Gradient zeigt in die Richtung des stärksten Anstiegs der Funktion).
+  Tatsache: \( \grad{h}(x,y) \) steht senkrecht auf \( h(x,y)=c \). (Der Gradient zeigt in die Richtung des stärksten Anstiegs der Funktion).
   \begin{figure}[H]
     \centering
     \includegraphics[width=0.9\linewidth]{lagrange_multiplikatoren_weitere_intuition}
     \label{fig:lagrange_multiplikatoren_weitere_intuition}
   \end{figure}
-  Tatsache 2: Liegt in \( (x_0,y_0)\in \set{(x,y)|g(x,y)=0} \) ein Extremum von \( f \), so \texists \( \lambda\in \reals \) \sd \(\boxed{ \grad-{f}(x_0,y_0)\lambda\grad-{g}(x_0,y_0) }\). Tatsache 1 + 2 gleichbedeutend \( f(x,y)=c \) schmiegt sich in \( (x_0,y_0,) \) tangential an \( \set{g(x,y)=0} \) an.
+  Tatsache 2: Liegt in \( (x_0,y_0)\in \set{(x,y)|g(x,y)=0} \) ein Extremum von \( f \), so \texists \( \lambda\in \reals \) \sd \(\boxed{ \grad{f}(x_0,y_0)\lambda\grad{g}(x_0,y_0) }\). Tatsache 1 + 2 gleichbedeutend \( f(x,y)=c \) schmiegt sich in \( (x_0,y_0,) \) tangential an \( \set{g(x,y)=0} \) an.
 
   Das heißt, wenn wir das Gleichungssystem
   \begin{equation*}
     \left.\begin{aligned}
-      \grad-{f}(x,y)-\lambda\grad-{g}(x,y&)=0\\
+      \grad{f}(x,y)-\lambda\grad{g}(x,y&)=0\\
       g(x,y)&=0
     \end{aligned}\right\}\tag{\( * \)}\label{eq:lagrange_multiplikatoren_intuition}
   \end{equation*}

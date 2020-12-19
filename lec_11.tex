@@ -17,7 +17,7 @@
   \end{equation*}
 \end{notation}
 \begin{lemma}\label{funktion_entlang_gerade_ableitung}
-  Sei \( f\maps U\to \reals \), \( U\subset \reals^n \) offen, ine \( k \)-fach stetig differenzierbare Funktion. Sei \( a\in U \) und sei \( h\in \reals^n \) so, dass \( \set{a+th|tt\in \interval{0}{1}} \) ganz in \( U \) liegt.
+  Sei \( f\maps U\to \reals \), \( U\subset \reals^n \) offen, eine \( k \)-fach stetig differenzierbare Funktion. Sei \( a\in U \) und sei \( h\in \reals^n \) so, dass \( \set{a+th|t\in \interval{0}{1}} \) ganz in \( U \) liegt.
   \begin{figure}[H]
     \centering
     \includegraphics[width=0.5\linewidth]{verbindungsstrecke_in_umgebung}
@@ -56,7 +56,7 @@
     \( k \)-Tupel \( (i_1,\dotsc,i_k) \) von Zahlen \( 1\leq i_j\leq n \), in denen \( 1 \) genau \( \alpha_1 \)-mal, \( 2 \) genau \( \alpha_2 \)-mal, \dots, \( n \) genau \( \alpha_n \)-mal vorkommt (ohne Beweis). \timplies \Beh.
   \end{proofenumerate}
 \end{proof}
-\begin{satz}[Taylorsche Formel]\index{Taylorsche Formel}
+\begin{satz}[Taylorsche Formel]\index[theorems]{Taylorsche Formel}
   Sei \( f\maps U\to \reals \), \( U\subset \reals^n \) offen, \( (k+1) \)-mal stetig differenzierbar. Sei \( a\in U \) und \( h\in \reals^n \) \sd \( \set{a+tht|t\in \interval{0}{1}}\subset U \). Dann existiert \( \theta\in \interval{0}{1} \) \sd
   \begin{equation*}
     f(a+h)=\sum_{\substack{\abs{\alpha}\leq k\\ \alpha\in \naturals_0^n}}\frac{1}{\factorial{\alpha}} \partial^{\alpha} f(a) h^{\alpha} +\sum_{\substack{\abs{\alpha}=k+1\\ \alpha\in \naturals_0^{n}}} \frac{1}{\factorial{\alpha}} \partial^{\alpha} f(a+\theta h) h^{\alpha}.
@@ -69,7 +69,7 @@
   \end{equation*}
 \end{proof}
 \begin{folgerung}
-  Sei \( f\maps U\to \reals \), \( U\subset \reals^n \) offen, \( k \)-mal stetig differenzierbar. Sei \( a\in U \) und \( \delta>0 \) \sd \( B_{\delta}(a)\subset U \). Dann gilt für alle \( h\in B_{\delta}(0) \):
+  Sei \( f\maps U\to \reals \), \( U\subset \reals^n \) offen, \( k \)-mal stetig differenzierbar. Sei \( a\in U \) und \( \delta>0 \) \sd \( \ball{\delta}{a}\subset U \). Dann gilt für alle \( h\in \ball{\delta}{0} \):
   \begin{equation*}
     f(a+h)=\sum_{\alpha\leq k}\frac{1}{\factorial{\alpha}} \partial^{\alpha} f(a) h^{\alpha}+ R_{k,a}(h)
   \end{equation*}
@@ -79,7 +79,7 @@
   \begin{equation*}
     f(x)=\sum_{\alpha\leq k}\frac{1}{\factorial{\alpha}} \partial^{\alpha} f(a) (x-a)^{\alpha}+ R_{k,a}(x-a)
   \end{equation*}
-  für \( x\in B_{\delta}(a)\). \emph{\enquote{Taylor-Entwicklung bis zur Ordnung \( k \) mit Entwicklungspunkt \( a \)}}.
+  für \( x\in \ball{\delta}{a}\). \emph{\enquote{Taylor-Entwicklung bis zur Ordnung \( k \) mit Entwicklungspunkt \( a \)}}.
 \end{folgerung}
 \begin{proof}
   \texists \( \theta=\alpha_{a,h}\in \interval{0}{1} \) \sd
@@ -136,14 +136,14 @@
   \end{equation*}
   und schreibt
   \begin{equation*}
-    \boxed{f(a+h)=f(a)+\scalarproduct{\grad-{f}(a)}{h}+\frac{1}{2}\scalarproduct{h}{H_f(a) h}}+R_{z,a}(h)
+    \boxed{f(a+h)=f(a)+\scalarproduct{\grad{f}(a)}{h}+\frac{1}{2}\scalarproduct{h}{H_f(a) h}}+R_{z,a}(h)
   \end{equation*}
-  für \( f\maps U\to \reals \) zweimal stetig differenzierbar und \( h\in B_{\delta}(0) \), \( \delta>0 \) \sd \( B_{\delta}(a)\subset U \).
+  für \( f\maps U\to \reals \) zweimal stetig differenzierbar und \( h\in \ball{\delta}{0} \), \( \delta>0 \) \sd \( \ball{\delta}{a}\subset U \).
 \end{description}
 \section{Lokale Extrema}
-Wir hatten in \ref{extremum_notwendige_bedingung} bereits gesehen: Ist \( a\in U \) lokale Extremstell von \( f\maps U\to \reals \), \( U\subset \reals^n \) offen, differenzierbar, so ist \( \grad-{f}(a)=0 \).
+Wir hatten in \ref{extremum_notwendige_bedingung} bereits gesehen: Ist \( a\in U \) lokale Extremstelle von \( f\maps U\to \reals \), \( U\subset \reals^n \) offen, differenzierbar, so ist \( \grad{f}(a)=0 \).
 \begin{satz}\label{hinreichende_bedingung_isoliertes_extremum}
-  Sei \( f\maps U\to \reals \) zweimal stetig differenzierbar, \( U\subset \reals^n \) offen. Sei \( a\in U \) \sd \( \grad-{f}(a)=0 \). Dann gilt:
+  Sei \( f\maps U\to \reals \) zweimal stetig differenzierbar, \( U\subset \reals^n \) offen. Sei \( a\in U \) \sd \( \grad{f}(a)=0 \). Dann gilt:
   \begin{eigenschaftenenumerate}
     \item\label{hinreichende_bedingung_isoliertes_minimum} Ist \( H_f(a) \) positiv definit (\dh \( \scalarproduct{h}{H_f(a)h}>0 \) \tforall \( h\in \reals^n \), \( h\neq 0 \)), so hat \( f \) in \( a \) ein lokales (isoliertes) Minimum.
     \item\label{hinreichende_bedingung_isoliertes_maximum} Ist \( H_f(a) \) negativ definit (\dh \( \scalarproduct{h}{H_f(a)}<0 \) \tforall \( h\neq 0 \)), so hat \( f \) in \( a \) ein lokales (isoliertes) Maximum.
@@ -154,7 +154,7 @@ Wir hatten in \ref{extremum_notwendige_bedingung} bereits gesehen: Ist \( a\in U
   Ist \( H_f(a) \) positiv oder negativ \emph{semi}definit \sd \tforall \( h\neq 0 \) ist \( \scalarproduct{h}{H_f(a)h}\geq 0 \) (\bzw \( \leq 0 \)), so ist keine allgemeine Aussage möglich.
 \end{bemerkung*}
 \begin{beispiel*}
-  \( f_1(x,y)=x^2+y^4 \), \( f_2(x,y)=x^2 \), \( f_3(x,y)=x^2+y^3 \), \( H_{f_j}(0)=\begin{pNiceMatrix} 2 & 0 \\ 0 & 0 \end{pNiceMatrix} \) \tforall \( j \) ist positiv semidefinit (\( \scalarproduct{h}{H_{f_j}(0)h}=2h_1^2\geq 0 \), \( =0 \) für \( h_1=0 \)).
+  \( f_1(x,y)=x^2+y^4 \), \( f_2(x,y)=x^2 \), \( f_3(x,y)=x^2+y^3 \), \( H_{f_j}(0)=\begin{pNiceMatrix} 2 & 0 \\ 0 & 0 \end{pNiceMatrix} \) \tforall \( j \) ist positiv semidefinit (\( \scalarproduct{h}{H_{f_j}(0)h}=2h_1^2\geq 0 \), \teq \(0 \) für \( h_1=0 \)).
   \begin{figure}[H]
     \centering
     \begin{subfigure}[b]{0.3\textwidth}
@@ -176,16 +176,16 @@ Wir hatten in \ref{extremum_notwendige_bedingung} bereits gesehen: Ist \( a\in U
   \end{figure}
 \end{beispiel*}
 \begin{proof}[Beweis von \ref{hinreichende_bedingung_isoliertes_extremum}]
-  Setze \( A\definedas H_f(a) \). \texists \( \delta>0 \) \sd \( B_\delta(a)\subset U \). Und somit
+  Setze \( A\definedas H_f(a) \). \texists \( \delta>0 \) \sd \( \ball{\delta}{a}\subset U \). Und somit
   \begin{equation*}
-    f(a+h)=f(a)+\scalarproduct{\underbrace{\grad-{f}(a)}_{=0}}{h}+\frac{1}{2}\scalarproduct{h}{Ah}+R_2(h)\quad \forall h\in B_\delta(0)
+    f(a+h)=f(a)+\scalarproduct{\underbrace{\grad{f}(a)}_{=0}}{h}+\frac{1}{2}\scalarproduct{h}{Ah}+R_2(h)\quad \forall h\in \ball{\delta}{0}
   \end{equation*}
   mit \( \frac{R_2(h)}{\norm{h}^2}\goesto 0 \) (\( h\goesto 0 \)).
   \begin{equation*}
-    \implies \forall \varepsilon>0 \logicspace \exists \tilde{\delta}>0\logicspace (\tilde{\delta}<\delta) \logicspace \text{\sd} \logicspace \abs{R_2(h)}\leq \varepsilon \norm{h}^2\quad \forall h\in B_{\tilde{\delta}}(0)
+    \implies \forall \varepsilon>0 \logicspace \exists \tilde{\delta}>0\logicspace (\tilde{\delta}<\delta) \logicspace \text{\sd} \logicspace \abs{R_2(h)}\leq \varepsilon \norm{h}^2\quad \forall h\in \ball{\tilde{\delta}}{0}
   \end{equation*}
   \begin{proofdescription}
-    \item[\ref{hinreichende_bedingung_isoliertes_minimum}] Sei \( A \) positiv definit. Betrachte \( S=\set{h\in \reals^n|\euclidiannorm{h}=1} \). \( S \) ist abgeschlossen und beschränkt \( \subset \reals^n \) \timplies \( S \) ist kompakt \timplies \( S\ni h\mapsto \scalarproduct{h}{Ah} \) nimmt Maximum und Minimum an (da stetig).
+    \item[\ref{hinreichende_bedingung_isoliertes_minimum}] Sei \( A \) positiv definit. Betrachte \( S=\set{h\in \reals^n|\euclidiannorm{h}=1} \). \( S \) ist abgeschlossen und beschränkt \tsubset \( \reals^n \) \timplies \( S \) ist kompakt \timplies \( S\ni h\mapsto \scalarproduct{h}{Ah} \) nimmt Maximum und Minimum an (da stetig).
     \begin{equation*}
       \alpha\definedas \inf_{h\in S}\underbrace{\scalarproduct{h}{Ah}}_{\mathclap{>0\logicspace  (\text{VOR})\logicspace (h\neq 0 \text{ wenn }h\in S)}}>0.
     \end{equation*}
@@ -217,7 +217,7 @@ Wir hatten in \ref{extremum_notwendige_bedingung} bereits gesehen: Ist \( a\in U
     \begin{equation*}
       \implies f(a+th)= f(a)+\frac{1}{2}t^2 a+R_2(tv)
     \end{equation*}
-    für \( \abs{t} \) klein genug (\sd \( tv\in B_{\delta}(0) \)). Wähle \( \abs{t}>0 \) so klein, dass zudem \( R_2(tv)\leq \frac{\alpha}{2}t^2 \)
+    für \( \abs{t} \) klein genug (\sd \( tv\in \ball{\delta}{0} \)). Wähle \( \abs{t}>0 \) so klein, dass zudem \( R_2(tv)\leq \frac{\alpha}{2}t^2 \)
     \begin{equation*}
       \implies f(a+sv)\geq f(a)+\frac{1}{2}s^2\alpha-\abs{R_2(sv)}>f(a)
     \end{equation*}
@@ -227,7 +227,7 @@ Wir hatten in \ref{extremum_notwendige_bedingung} bereits gesehen: Ist \( a\in U
     \begin{equation*}
       \implies f(x+tv)=f(x)-\frac{1}{2}t^2\abs{\alpha}+R_2(tv)
     \end{equation*}
-    für \( \abs{t} \) klein genug (\sd \( tv\in B_{\delta}(0) \)). Wähle \( \abs{t}>0 \) so klein, dass zudem \( \abs{R_2(tv)}\leq\frac{\alpha}{4}t^2 \)
+    für \( \abs{t} \) klein genug (\sd \( tv\in \ball{\delta}{0} \)). Wähle \( \abs{t}>0 \) so klein, dass zudem \( \abs{R_2(tv)}\leq\frac{\alpha}{4}t^2 \)
     \begin{equation*}
       \implies f(a+sv)\leq f(a)-\frac{1}{2}s^2\abs{\alpha}+\abs{R_2(sv)}<f(a)\quad \forall 0<s<t\quad (\text{\obda }t>0).
     \end{equation*}
@@ -235,16 +235,16 @@ Wir hatten in \ref{extremum_notwendige_bedingung} bereits gesehen: Ist \( a\in U
 \end{proof}
 \begin{beispiele*}
   \begin{enumerate}
-    \item \( f\maps \reals^2\to \reals \), \( f(x)=x_1^2+x_2^2+2 \), \(\grad-{f}(a)=(2a_1,2a_2)=0\) nur für \( a=0 \).
+    \item \( f\maps \reals^2\to \reals \), \( f(x)=x_1^2+x_2^2+2 \), \(\grad{f}(a)=(2a_1,2a_2)=0\) nur für \( a=0 \).
     \begin{equation*}
       H_f(0)=\begin{pNiceMatrix} 2 & 0 \\ 0 & 2 \end{pNiceMatrix}
     \end{equation*} positiv definit \timplies isoliertes Minimum in \( 0 \).  
-    \item \( f\maps \reals^2\to \reals \), \( f(x)=2-x_1^2-x_2^2 \), \( \grad-{f}(a)=-2a=0 \) nur für \( a=0 \). 
+    \item \( f\maps \reals^2\to \reals \), \( f(x)=2-x_1^2-x_2^2 \), \( \grad{f}(a)=-2a=0 \) nur für \( a=0 \). 
     \begin{equation*}
       H_f(0)=\begin{pNiceMatrix} -2 & 0 \\ 0 & -2 \end{pNiceMatrix}
     \end{equation*}
     negativ definit \timplies isoliertes Maximum in \( 0 \).
-    \item \( f\maps \reals^2\to \reals \), \( f(x)=2+x_1^2-x_2^2 \), \( \grad-{f}(a)=2a_1-2a_2=0 \) nur für \( a=0 \).
+    \item \( f\maps \reals^2\to \reals \), \( f(x)=2+x_1^2-x_2^2 \), \( \grad{f}(a)=2a_1-2a_2=0 \) nur für \( a=0 \).
     \begin{equation*}
       H_f(0)=\begin{pNiceMatrix} 2 & 0 \\ 0 & -2 \end{pNiceMatrix}
     \end{equation*}
@@ -263,17 +263,17 @@ Wir hatten in \ref{extremum_notwendige_bedingung} bereits gesehen: Ist \( a\in U
   \end{enumerate}
 \end{beispiele*}
 \begin{bemerkung*}
-  Wie untersucht man in komplizierten Fällen \( H_f(a) \) auf Definitheit? Kennt man die Eigenwerte (\texists wegen Symmetrie!) ist klar: Sind all positiv (negativ), so ist \( H_f(a) \) positiv (negativ) definit, gibt es positive und negative Eigenwerte, so ist sie indefinit. Aber Eigenwerte großer Matrizen sind schwer zu bestimen. Besser geeignet ist
+  Wie untersucht man in komplizierten Fällen \( H_f(a) \) auf Definitheit? Kennt man die Eigenwerte (\texists wegen Symmetrie!) ist klar: Sind all positiv (negativ), so ist \( H_f(a) \) positiv (negativ) definit, gibt es positive und negative Eigenwerte, so ist sie indefinit. Aber Eigenwerte großer Matrizen sind schwer zu bestimmen. Besser geeignet ist
 \end{bemerkung*}
 \begin{lemma}[aus der AGLA\@: Kriterium von Hurwitz]
   Sei \( A\in \sqmatrices{n}{\reals} \) symmetrisch. Dann ist \( A \) genau dann positiv definit, wenn
   \begin{equation*}
-    \Det \explain{\text{Haupt-Minoren von \( A \)}}{\begin{pNiceMatrix} A_{11} & \Cdots & A_{1k} \\ \Vdots &  & \Vdots \\ A_{k1} & \Cdots & A_{kk} \end{pNiceMatrix}}>0\quad \forall k\in \set{1,\dotsc,n}
+    \determinant{\explain{\text{Haupt-Minoren von \( A \)}}{\begin{pNiceMatrix} a_{11} & \Cdots & a_{1k} \\ \Vdots &  & \Vdots \\ a_{k1} & \Cdots & a_{kk} \end{pNiceMatrix}}}>0\quad \forall k\in \set{1,\dotsc,n}
   \end{equation*}
   und genau dann negativ definit, wenn
   \begin{align*}
-    \Det(A_{11})=A_{11}&<0\\
-    \Det \begin{pNiceMatrix} A_{11} & A_{12} \\ A_{21} & A_{22} \end{pNiceMatrix}&>0
+    \determinant+{a_{11}}=a_{11}&<0\\
+    \determinant{\begin{pNiceMatrix} a_{11} & a_{12} \\ a_{21} & a_{22} \end{pNiceMatrix}}&>0
   \end{align*}
   und dann immer abwechselnd.
 \end{lemma}

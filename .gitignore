@@ -19,6 +19,7 @@ diff2_*.pdf
 *.cb
 *.cb2
 .*.lb
+*.listoflectures
 
 ## Intermediate documents:
 *.dvi

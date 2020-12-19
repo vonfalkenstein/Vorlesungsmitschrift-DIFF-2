@@ -2,7 +2,7 @@
 \chapter{Metrische Räume}
 \lecture{Mo 20.04. 10:15}{}
 \begin{ziel*}
-    Konvergenz, Stetigkeit \ldots sollten in einem allgmeineren Rahme konzeptualisiert werden.
+    Konvergenz, Stetigkeit \ldots sollten in einem allgemeineren Rahmen konzeptualisiert werden.
 \end{ziel*}
 \begin{erinnerung*}[\diffcourse{1}]
     Eine Folge \( (a_n)_{n\in \naturals}\subset \reals \) konvergiert gegen den Grenzwert \( a \)
@@ -117,14 +117,14 @@ Diesen Begriff möchten wir nun verallgemeinern.
     \end{enumerate}
 \end{beispiele*}
 \begin{lemma}\label{hausdorff_alle_grenzwerte_eindeutig}
-    Sei \( (X,\mathcal{T}) \) toplogischer Raum. 
+    Sei \( (X,\mathcal{T}) \) topologischer Raum. 
     Ist \( (X, \mathcal{T}) \) ein \emph{Hausdorff-Raum}, gibt es also zu je zwei Punkten \( x,y\in X \) mit \( x\neq y \) Umgebungen \( U \) von \( x \) und \( V \) von \( y \) mit \( U \cap V=\emptyset \), so ist der Grenzwert einer konvergenten Folge eindeutig.
 \end{lemma}
 \begin{proof}
     Seien \( x \) und \( y \) Grenzwert einer Folge \( (x_n)_n \).
     Angenommen \( x\neq y \), so wähle \( U \) Umgebung von \( x \), \( V \) Umgebung von \( y \) mit \( U\cap V=\emptyset \). 
     Dann gibt es (wegen der Konvergenz) \( N \in \naturals \) \sd \( x_n \in U \logicspace\forall n \geq N \) und \( M\in \naturals \) \sd \( x_n \in V \logicspace \forall n \geq M \). 
-    Wiederspruch zu \( U\cap V = \emptyset \). 
+    Widerspruch zu \( U\cap V = \emptyset \). 
 \end{proof}
 \begin{definition}\label{stetigkeit_in_topologischen_raeumen}\index{Stetigkeit}
     Seien \( (X, \mathcal{T}) \) und \( (Y,\tilde{\mathcal{T}}) \) topologische Räume. 
@@ -275,27 +275,27 @@ Mit \ref{metrik:beispiele:r_n} wird auch der Name der Dreiecksungleichung klar:
 \begin{definition}\index{$\varepsilon$-Ball}
     Sei \( (X,d) \) ein metrischer Raum. Seien \( x\in X \), \( \varepsilon>0 \). Dann nennt man
     \begin{align*}
-        B_\epsilon(x)\definedas\Set{y\in X| \distance{x}{y}<\varepsilon}
+        \ball{\epsilon}{x}\definedas\Set{y\in X| \distance{x}{y}<\varepsilon}
     \end{align*}
     den (offenen) \( \varepsilon \)-Ball um \( x \).
 \end{definition}
 \begin{beispiele*}
     \begin{enumerate}
-        \item \( B_\varepsilon(x)=\ointerval{x-\varepsilon}{x+\varepsilon} \).
-        \item \( B_\varepsilon(x)=\begin{cases}
+        \item \( \ball{\varepsilon}{x}=\ointerval{x-\varepsilon}{x+\varepsilon} \).
+        \item \( \ball{\varepsilon}{x}=\begin{cases}
             x & \varepsilon\leq 1 \\
             X & \varepsilon>1
         \end{cases}
          \)
          
-        \item \( B_\varepsilon(x)= \) \raisebox{-2em}{\includegraphics[width=0.1\linewidth]{figures/offener_ball_r_n}}
+        \item \( \ball{\varepsilon}{x}= \) \raisebox{-2em}{\includegraphics[width=0.1\linewidth]{figures/offener_ball_r_n}}
         
     \end{enumerate}
 \end{beispiele*}
 \begin{satz}\label{metrische_topologie}
     Sei \( (X,d) \) ein metrischer Raum. Dann wird durch
     \begin{align*}
-        \mathcal{T}_d\definedas \Set{U\subset X|\forall x\in U\logicspace\exists\varepsilon>0\logicspace\text{\sd}\logicspace B_\varepsilon(x)\subset U}
+        \mathcal{T}_d\definedas \Set{U\subset X|\forall x\in U\logicspace\exists\varepsilon>0\logicspace\text{\sd}\logicspace \ball{\varepsilon}{x}\subset U}
     \end{align*}
     eine Topologie definiert.
 \end{satz}
@@ -305,13 +305,13 @@ Mit \ref{metrik:beispiele:r_n} wird auch der Name der Dreiecksungleichung klar:
 \begin{bemerkungen}
     \begin{enumerate}
         \item \ref{standard-topologie} ist ein Spezialfall dieser Aussage
-        \item Die \enquote{offenen} \( \varepsilon \)-Bälle sind tatsächlich offen: Zu \( y\in B_\varepsilon(x) \) wähl \( \tilde{\varepsilon}\definedas \varepsilon-\distance{x}{y}>0 \).
+        \item Die \enquote{offenen} \( \varepsilon \)-Bälle sind tatsächlich offen: Zu \( y\in \ball{\varepsilon}{x} \) wähl \( \tilde{\varepsilon}\definedas \varepsilon-\distance{x}{y}>0 \).
         \begin{figure}[H]
             \centering
             \includegraphics[width=0.3\linewidth]{figures/offene_baelle_sind_offen}
             \label{fig:offene_baelle_sind_offen}
         \end{figure}
-        Dann ist \( B_{\tilde{\varepsilon}}(y)=\Set{z|\distance{y}{z}<\tilde{\varepsilon}} \subset B_\varepsilon(x)\). Denn für alle \( z\in B_{\tilde{\varepsilon}}(y) \) ist
+        Dann ist \( \ball{\tilde{\varepsilon}}{y}=\Set{z|\distance{y}{z}<\tilde{\varepsilon}} \subset \ball{\varepsilon}{x}\). Denn für alle \( z\in \ball{\tilde{\varepsilon}}{y} \) ist
         \begin{align*}
             \distance{x}{z}\begin{aligned}[t] 
                 &\leq \distance{x}{y}+\distance{y}{z}<\distance{x}{y}+\tilde{\varepsilon}\\
@@ -325,11 +325,11 @@ Mit \ref{metrik:beispiele:r_n} wird auch der Name der Dreiecksungleichung klar:
             Seien \( x,y\in X \), \( x\neq y \). Angenommen \texists Metrik \( d \).
             \begin{align*}
                 \implies &\distance{x}{y}\neq 0\implies \distance{x}{y}=c>0\\
-                \implies &B_c(x)\text{ ist offen.}\\
-                \underset{\text{\scshape{VOR}}}{\implies} &B_c(x)=\emptyset \text{ oder } =X\\
-                \implies &B_c(x)=X
+                \implies &\ball{c}{x}\text{ ist offen.}\\
+                \underset{\text{\scshape{VOR}}}{\implies} &\ball{c}{x}=\emptyset \text{ oder } =X\\
+                \implies &\ball{c}{x}=X
             \end{align*}
-            \contra, da \( y\notin B_c(x) \).
+            \contra, da \( y\notin \ball{c}{x} \).
             
         \end{proof}
         
@@ -341,11 +341,11 @@ Wir formulieren nun Konvergenz und Stetigkeit für metrische Räume:
 \begin{bemerkungen}
     Sei \( (X,d) \) metrischer Raum.
     \begin{enumerate}
-        \item {}[\thref{umgebung_in_topologischen_raeumen}]\label{umgebung_in_metrischen_raeumen} \( V\subset X \) heißt Umgebung von \( x\in X \), falls es \( \varepsilon >0 \) gibt \sd \( B_\varepsilon(x)\subset U \).
-        \item {}[\thref{konvergenz_in_topologischen_raeumen}]\label{konvergenz_in_metrischen_raeumen} \( (x_n)_n \) konvergiert mit Grenzwert \( x \), falls es zu jedem \( \varepsilon>0 \) ein \( N\in \naturals \) gibt \sd \( x_n\in B_\varepsilon(x)\logicspace\forall n\geq N \).
-        \item {}[\thref{stetigkeit_in_topologischen_raeumen}]\label{stetigkeit_in_metrischen_raeumen} Sei \( (Y,\tilde{d}) \) weiterer metrischer Raum, \( f\maps X \to Y \) eine Abbildung. Dann ist \( f \) stetig \( a \) \gdw:
+        \item[\thref{umgebung_in_topologischen_raeumen}]\label{umgebung_in_metrischen_raeumen} \( V\subset X \) heißt Umgebung von \( x\in X \), falls es \( \varepsilon >0 \) gibt \sd \( \ball{\varepsilon}{x}\subset U \).
+        \item[\thref{konvergenz_in_topologischen_raeumen}]\label{konvergenz_in_metrischen_raeumen} \( (x_n)_n \) konvergiert mit Grenzwert \( x \), falls es zu jedem \( \varepsilon>0 \) ein \( N\in \naturals \) gibt \sd \( x_n\in \ball{\varepsilon}{x}\logicspace\forall n\geq N \).
+        \item[\thref{stetigkeit_in_topologischen_raeumen}]\label{stetigkeit_in_metrischen_raeumen} Sei \( (Y,\tilde{d}) \) weiterer metrischer Raum, \( f\maps X \to Y \) eine Abbildung. Dann ist \( f \) stetig \( a \) \gdw:
         \begin{align*}
-            \forall\varepsilon>0\logicspace\exists \delta>0\logicspace\text{\sd} f(B_\delta(a))\subset B_\varepsilon(f(a)).
+            \forall\varepsilon>0\logicspace\exists \delta>0\logicspace\text{\sd} f(\ball{\delta}{a})\subset B_\varepsilon(f(a)).
         \end{align*}
     \end{enumerate}
 \end{bemerkungen}
@@ -354,7 +354,7 @@ Wir formulieren nun Konvergenz und Stetigkeit für metrische Räume:
         \item \ref{stetigkeit_in_metrischen_raeumen} ist das \( \varepsilon \)-\( \delta \)-Kriterium.
         \item Die Einschränkung auf \( \varepsilon \)-Bälle in \ref{konvergenz_in_metrischen_raeumen} und \ref{stetigkeit_in_metrischen_raeumen} (statt allgemeiner Umgebungen) ist keine echte Einschränkung: Gilt etwas für all Umgebungen, so speziell auch für \( \varepsilon \)-Bälle.
         
-        Und gilt eine Inklusion für alle \( \varepsilon \)-Bälle (etwa \( x_n\in B_\varepsilon(x)\logicspace\forall n \geq N(\varepsilon) \)), so auch für beliebige Umgebungen \( U \) von \( x \), da es immer einen \( \varepsilon \)-Ball \( B_\varepsilon(x) \) gibt, der ganz in \( U \) enthalten ist.
+        Und gilt eine Inklusion für alle \( \varepsilon \)-Bälle (etwa \( x_n\in \ball{\varepsilon}{x}\logicspace\forall n \geq N(\varepsilon) \)), so auch für beliebige Umgebungen \( U \) von \( x \), da es immer einen \( \varepsilon \)-Ball \( \ball{\varepsilon}{x} \) gibt, der ganz in \( U \) enthalten ist.
     \end{enumerate}
 \end{bemerkungen*}
 \begin{beispiele}
@@ -374,7 +374,7 @@ Wir formulieren nun Konvergenz und Stetigkeit für metrische Räume:
                 \end{aligned}\\
                 \implies &\distance{x_n}{x}=\frac{1}{n}\\
                 \implies &\distance{x_n}{x}<\varepsilon\logicspace\forall n\geq N\text{ mit } N>\frac{1}{\varepsilon}\\
-                \implies &x_n \in B_\varepsilon(x) \logicspace\forall n \geq N.
+                \implies &x_n \in \ball{\varepsilon}{x} \logicspace\forall n \geq N.
             \end{align*}            
         \end{proof}
         

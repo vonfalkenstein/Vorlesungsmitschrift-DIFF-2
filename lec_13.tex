@@ -2,7 +2,7 @@
 \lecture{Do 04.06. 10:15}{}
 Letztes Mal: Untermannigfaltigkeiten \emph{lokal} als Nullstellengebilde (Definition), als Graph und als diffeomorph zu Teilmengen des des \( \reals^d\times\zeroset \).
 
-Eine weitere äquivalente lokale Beschreibung mit Hilfe einer Parametisierung:
+Eine weitere äquivalente lokale Beschreibung mit Hilfe einer Parametrisierung:
 \begin{definition}\index{Immersion}
   Eine Abbildung \( \varphi\maps V\to \reals^n \), \( V\subset \reals^d \) offen, \( d\leq n \), heißt \emph{Immersion}, falls sie stetig differenzierbar ist und der Rang von \( D\varphi(t) \) für alle \( t\in V \) maximal, also gleich \( d \) ist. Man nennt \( \varphi(V) \) die \emph{Spur} von \( \varphi \). Ist \( \varphi\maps V\to \varphi(V) \) ein Homöomorphismus (also stetig, bijektiv, mit stetigem Inversen), so heißt \( \varphi \) \emph{Einbettung}. 
 \end{definition}
@@ -19,16 +19,16 @@ Eine weitere äquivalente lokale Beschreibung mit Hilfe einer Parametisierung:
       \varphi(0)&=(-1,0)\\
       \varphi(\sqrt{2})&=(1,\sqrt{2})\\
       \varphi(-t)&=(\phi_1(t),-\phi_2(t))\\[1ex]
-      \varphi'(t)&=(\explain{\neq 0 \text{ für } t=\frac{1}{\sqrt{3}}},\braceannotate{\neq 0 \text{ für }t\neq \frac{1}{\sqrt{3}}}{3t^2-1})\neq 0\implies \text{maximaler Rang}.
+      \varphi'(t)&=(2t,\braceannotate{\neq 0 \text{ für }t\neq \frac{1}{\sqrt{3}}}{3t^2-1})\neq 0\implies \text{maximaler Rang}.
     \end{align*}
-    Eine Immersion \( \varphi\maps I\subset \reals\to \reals^n \) \emph{reguläre (parametisierte) Kurve}.
+    Eine Immersion \( \varphi\maps I\subset \reals\to \reals^n \) heißt auch \emph{reguläre (parametrisierte) Kurve}.
     
     \begin{bemerkung*}
       \( 1 \)-dimensional \tto \( I \) kann auch nicht offen gewählt werden, wenn man nur an Differenzierbarkeit interessiert ist. Hier \emph{nicht}.
     \end{bemerkung*}
     \item \( V=\Set{t\in \reals^2|\euclidiannorm{t}<1} \), \( \varphi(t_1,t_2)=\transpose-{(t_1,t_2,\sqrt{1-t_1^2-t_2^2})} \),  
     \begin{equation*}
-      D\varphi(t_1,t_2)=\begin{pNiceMatrix} \Block{1-2}{\mathds{1}_{2\times 2}} \\ \frac{-t_1}{\sqrt{\cdots}} & \frac{-t_2}{\sqrt{\cdots}}  \end{pNiceMatrix}\qquad \rang-{}=2\quad \forall t\in V.
+      D\varphi(t_1,t_2)=\begin{pNiceMatrix} \Block{1-2}{\mathds{1}_{2\times 2}} \\ \frac{-t_1}{\sqrt{\cdots}} & \frac{-t_2}{\sqrt{\cdots}}  \end{pNiceMatrix}\qquad \rang;=2\quad \forall t\in V.
     \end{equation*}
     \begin{figure}[H]
       \centering
@@ -46,17 +46,17 @@ Eine weitere äquivalente lokale Beschreibung mit Hilfe einer Parametisierung:
       \caption*{Spur von \( \varphi \)}
       \label{fig:immersion_kugel}
     \end{figure}
-    \( V=\reals^2 \), \( \varphi \) wie oben: \( \varphi \) schneidet sich \( \infty \) oft, da \( \varphi(\beta+2\pi \wholes,\alpha+2\pi\wholes)=\phi(\beta,\alpha ) \) gilt. \( \varphi(\reals^2)=\mathbb{S}^2 \).
+    \( V=\reals^2 \), \( \varphi \) wie oben: \( \varphi \) schneidet sich \( \infty \) oft, da \( \varphi(\beta+2\pi \wholes,\alpha+2\pi\wholes)=\phi(\beta,\alpha ) \) gilt. \( \varphi(\reals^2)=\sphere{2} \).
   \end{enumerate}
 \end{beispiele*}
 \begin{satz}\label{immersion_ist_lokal_einbettung_und_mannigfaltigkeit}
   Sei \( \varphi\maps V\to \reals^n \), \( V\subset \reals^d \), eine Immersion. Dann gibt es zu jede, \( t_0\in V \) eine offene Umgebung \( V_0\subset V \) \sd \( \evaluateat{\varphi}{V_0} \) eine Einbettung des \( \reals^n \) ist und \( \varphi(V_0) \) eine \( d \)-dimensionale Untermannigfaltigkeit des \( \reals^n \).
 \end{satz}
 \begin{proof}
-  Nach eventueller Umnummerierung der Komponenten von \( \varphi \). Si
+  Nach eventueller Umnummerierung der Komponenten von \( \varphi \). Sei
   \begin{equation*}
     \begin{pNiceMatrix}
-      \partial_1 \varphi_1 & \Cdots & \partial_d \varphi_d(t_0) \\
+      \partial_1 \varphi_1 & \Cdots & \partial_d \varphi_1(t_0) \\
       \Vdots &  & \Vdots \\
       \partial_1 \varphi_d(t_0) & \Cdots & \partial_d \varphi_d(t_0)
     \end{pNiceMatrix}
@@ -75,8 +75,8 @@ Eine weitere äquivalente lokale Beschreibung mit Hilfe einer Parametisierung:
     \end{equation*}
     Dann ist \( G(V_0\times\reals^{n-d})=W\times\reals^{n-d} \), denn
     \begin{proofdescription}
-      \item[\enquote{\( \subset \)}] ist klar, da \( \tilde{\varphi}\maps V_0\to W \) Diffeomorphismus ist.
-      \item[\enquote{\( \supset  \)}] Sei \( (y,y'')\in W\times\reals^{n-d} \). Setze \( t'=\inverse{\tilde{\varphi}}(y') \) (\( \tilde{\varphi}\maps V_0\to W \) Diffeomorphismus), \( t''=y''-\tilde{\tilde{\varphi}}(t') \). Dann gilt \( G(t',t'')=\begin{pNiceMatrix} y' \\ y'' \end{pNiceMatrix} \).
+      \item[\sethin] ist klar, da \( \tilde{\varphi}\maps V_0\to W \) Diffeomorphismus ist.
+      \item[\setrueck] Sei \( (y,y'')\in W\times\reals^{n-d} \). Setze \( t'=\inverse{\tilde{\varphi}}(y') \) (\( \tilde{\varphi}\maps V_0\to W \) Diffeomorphismus), \( t''=y''-\tilde{\tilde{\varphi}}(t') \). Dann gilt \( G(t',t'')=\begin{pNiceMatrix} y' \\ y'' \end{pNiceMatrix} \).
     \end{proofdescription}
     Man sieht:  \( G\maps V_0\times\reals^{n-d}\to W\times\reals^{n-d} \) ist bijektiv. Man sieht auch sofort: \( G \) ist Diffeomorphismus, da \( \tilde{\varphi} \) Diffeomorphismus ist und \( \tilde{\tilde{\varphi}} \) stetig differenzierbar und somit auch die Umkehrfunktion
     \begin{equation*}
@@ -117,7 +117,7 @@ Tatsächlich gilt:
     \begin{equation*}
       M\cap U=\Set{(x',g(x'))|x'\in U_1}.
     \end{equation*}
-    Setze \( V\definedas U_1 \) und \( \varphi\maps V\to \reals^n \), \( \varphi(t)=\transpose-{t,g(t)} \). Dann ist \( \varphi \) eine Immersion (denn \( D\varphi(t)=\begin{pNiceMatrix} \mathds{1}_{d\times d} \\ Dg(t) \end{pNiceMatrix} \) hat maximalen Rang) mit \( \varphi(V)=M\cap U \) (da \( g(V)=U_2 \)). \( \varphi \) ist injektiv und die Umkehrfunktion
+    Setze \( V\definedas U_1 \) und \( \varphi\maps V\to \reals^n \), \( \varphi(t)=\transpose-{(t,g(t))} \). Dann ist \( \varphi \) eine Immersion (denn \( D\varphi(t)=\begin{pNiceMatrix} \mathds{1}_{d\times d} \\ Dg(t) \end{pNiceMatrix} \) hat maximalen Rang) mit \( \varphi(V)=M\cap U \) (da \( g(V)=U_2 \)). \( \varphi \) ist injektiv und die Umkehrfunktion
       \begin{equation*}
         \inverse{\varphi}\maps \equalto{U_1\times U_2}{\varphi(V)}\to \reals^d,\quad (y',y'')\mapsto y'
       \end{equation*}
@@ -126,12 +126,12 @@ Tatsächlich gilt:
   
 \end{proof}
 \begin{bemerkungen*}
-  \item Man nennt \( \varphi \) wie oben eine \emph{lokale Parametisierung} von \( M \) bei \( a \). \( V \) heißt \emph{Parameterbereich} und \( M\cap U \) \emph{Koordinatenumgebung von \( a \)}.
-  \item Globale Parametisierungen \( \varphi\maps V\to\reals^n \) mit \( \varphi\maps V\to M \). Homöomorphismus existieren \ia nicht.
+  \item Man nennt \( \varphi \) wie oben eine \emph{lokale Parametrisierung} von \( M \) bei \( a \). \( V \) heißt \emph{Parameterbereich} und \( M\cap U \) \emph{Koordinatenumgebung von \( a \)}.
+  \item Globale Parametrisierung \( \varphi\maps V\to\reals^n \) mit \( \varphi\maps V\to M \). Homöomorphismus existieren \ia nicht.
   \begin{beispiel*}
-    \( M=\mathbb{S}^{n-1}\subset \reals^n \). Es kann keine stetige Abbildung \( \inv{\varphi}\maps \mathbb{S}^{n-1}\to V \) gebe, da \( \inv{\varphi}(\mathbb{S}^{n-1}) \) kompakt wäre, aber \( V \) ist offen.
+    \( M=\sphere{n-1}\subset \reals^n \). Es kann keine stetige Abbildung \( \inv{\varphi}\maps \sphere{n-1}\to V \) gebe, da \( \inv{\varphi}(\sphere{n-1}) \) kompakt wäre, aber \( V \) ist offen.
     
-    Im Beispiel~\ref{immersion_beispiel:kugel} oben, erreicht man daher nicht die ganze \( \mathbb{S}^n \). \( V=\ointerval{0}{\pi}\times \ointerval{0}{2\pi} \),
+    Im Beispiel~\ref{immersion_beispiel:kugel} oben, erreicht man daher nicht die ganze \( \sphere{n} \). \( V=\ointerval{0}{\pi}\times \ointerval{0}{2\pi} \),
     \begin{equation*}
       \varphi(\beta,\alpha)=(\Cos{\alpha}\Sin{\beta},\Sin{\alpha}\Sin{\beta},\Cos{\beta}).
     \end{equation*}
@@ -143,7 +143,7 @@ Tatsächlich gilt:
     \end{figure}
     oder (\( V=\reals^2 \)) es liegt kein Homöomorphismus vor.
 
-    Für \( a\in \Set{(\Sin{\beta},0,\Cos{\beta})|b\in \ointerval{0}{\pi}} \) wählt man als lokale Parametisierung einfach \( V=\ointerval{0}{\pi}\times \ointerval{-\pi}{\pi} \) (dann fehlt ein anderer Halbkreis).
+    Für \( a\in \Set{(\Sin{\beta},0,\Cos{\beta})|\beta\in \ointerval{0}{\pi}} \) wählt man als lokale Parametrisierung einfach \( V=\ointerval{0}{\pi}\times \ointerval{-\pi}{\pi} \) (dann fehlt ein anderer Halbkreis).
 
     Oder man wählt \( D\ni (y,z)\mapsto (\sqrt{1-y^2-z^2},y,z) \) mit
     \begin{equation*}
@@ -151,7 +151,7 @@ Tatsächlich gilt:
     \end{equation*}
   \end{beispiel*}
 \end{bemerkungen*}
-\begin{satz}[Parameterwechsel]\label{parameterwechsel}\approxtimestamp{29}\index{Parameterwechsel}
+\begin{satz}[Parameterwechsel]\label{parameterwechsel}\approxtimestamp{29}\index[theorems]{Parameterwechsel}
   Sei \( M\subset \reals^n \) eine \( d \)-dimensionale Untermannigfaltigkeit. Seien \( \varphi\maps V\to M\cap U \) und \( \psi\maps \tilde{V}\to M\cap \tilde{U} \) zwei lokale Parametisierungen mit \( M\cap U\cap \tilde{U}\neq \emptyset \). Dann ist der \emph{Parameterwechsel}   
   \begin{equation*}
     \inverse{\psi}\circ \varphi\maps \inv{\varphi}(M\cap U\cap \tilde{U})\to \inverse{\psi}(M\cap U\cap \tilde{U})

@@ -8,8 +8,8 @@ Integralbegriff, \sd \( \Integrate{f_n}{x} \) \tto \( \Integrate{f}{x} \), wenn 
 \end{definition}
 \begin{beispiele*}
   \begin{itemize}
-    \item \( N=\bigcup_{i=1}^{\infty}\Set{x_i} \) ist Nullmenge \( \subset \reals \).
-    \item \( \rationals \) ist Nullmenge \( \subset \reals \).
+    \item \( N=\bigcup_{i=1}^{\infty}\Set{x_i} \) ist Nullmenge \tsubset \( \reals \).
+    \item \( \rationals \) ist Nullmenge \tsubset \( \reals \).
     \item \( f(x)=1 \), \( g(x)=\begin{cases}
       1 & c\neq 0 \\ 0 & x=0
     \end{cases} \), \( f=g \) \fue.
@@ -20,7 +20,7 @@ Im Folgenden wollen wir Funktionen, die \fue gleich sind, miteinander identifizi
   \equivclass{f}=\Set{g|f=g \text{ \fue}}.
 \end{equation*}
 \begin{notation*}
-  Wir schreiben dennoch \( f \) (nicht \( \equivclass{f} \)) und \( f=g \), \( \subseteq g \), \( f_n\to f \), \dots, wenn dies nur \fue gilt.
+  Wir schreiben dennoch \( f \) (nicht \( \equivclass{f} \)) und \( f=g \), \tsubset \(eq g \), \( f_n\to f \), \dots, wenn dies nur \fue gilt.
 \end{notation*}
 \begin{definition}\label{stufen_mit_integral}\index{Stufenfunktion}\index{Charakteristische Funktion}
   Eine Stufenfunktion ist eine Funktion der Form
@@ -61,7 +61,7 @@ Im Folgenden wollen wir Funktionen, die \fue gleich sind, miteinander identifizi
   
 \end{proof}
 \begin{notation*}
-  \( f_k(x)\goesupto f(x) \) oder \( f_k\goesupto f \) wenn \( f_k\goesto f \) punktweise (\fue)  und \( f_k\leq f_{k+1} \) (\fue).  \( f_k(x)\goesdownto f(x) \) oder \( f_k\goesdownto f \) wenn \( f_k\goesto f \) punkteweise (\fue)  und \( f_k\geq f_{k+1} \) (\fue).
+  \( f_k(x)\goesupto f(x) \) oder \( f_k\goesupto f \) wenn \( f_k\goesto f \) punktweise (\fue)  und \( f_k\leq f_{k+1} \) (\fue).  \( f_k(x)\goesdownto f(x) \) oder \( f_k\goesdownto f \) wenn \( f_k\goesto f \) punktweise (\fue)  und \( f_k\geq f_{k+1} \) (\fue).
 \end{notation*}
 \begin{lemma}
   \begin{enumerate}
@@ -239,7 +239,7 @@ und für jedes feste \( k \) gilt
   \end{proofdescription}
   
 \end{proof}
-\begin{satz}[Verallgemeinerter Satz von Beppo-Levi] \label{beppo-levi}\index{Verallgemeinerter Satz von Beppo Levi}
+\begin{satz}[Verallgemeinerter Satz von Beppo-Levi] \label{beppo-levi}\index[theorems]{Verallgemeinerter Satz von Beppo Levi}
   Sei \( \p*{f_k}_k\subset \stufenfunktionen[2] \), \( f_k\goesupto f \). Ist \( \Integrate{f_k}{x}>-\infty \) für ein \( k \), so ist \( f\in \stufenfunktionen[2] \) und 
   \begin{equation*}
     \label{eq:beppo-levi} \Integrate{f_k}{x}\goesupto \Integrate{f}{x}\tag{\( * \)}.
@@ -247,10 +247,10 @@ und für jedes feste \( k \) gilt
 \end{satz}
 \begin{bemerkung*}
   Die Voraussetzung ist wichtig:\\
-  Betrachte \( f_k=-\characteristicfunction.{\ointerval{-\infty}{0}}{}+\characteristicfunction.{\ointerval{0}{k}}{} \). Dann ist \( f=\sgn;\not\in \stufenfunktionen[2] \), \( \sgn{x}=\begin{cases}
+  Betrachte \( f_k=-\characteristicfunction;{\ointerval{-\infty}{0}}+\characteristicfunction;{\ointerval{0}{k}} \). Dann ist \( f=\sgn;\not\in \stufenfunktionen[2] \), \( \sgn{x}=\begin{cases}
     1&x>0\\ 0&x=0\\ -1&x<0.
   \end{cases} \)
-  Betrachte \( f_k=-\characteristicfunction-{\ointerval{k}{\infty}}{} \). Dann ist \( f=0\in \stufenfunktionen[2] \) aber \eqref{eq:beppo-levi} trifft nicht zu.
+  Betrachte \( f_k=-\characteristicfunction;{\ointerval{k}{\infty}} \). Dann ist \( f=0\in \stufenfunktionen[2] \) aber \eqref{eq:beppo-levi} trifft nicht zu.
 \end{bemerkung*}
 \begin{proof}[Beweis von \ref{beppo-levi}]
   Für \( k\geq k_0 \) gilt \( \int f_k>-\infty \) (wegen der Monotonie). Sei \( k\geq k_0 \). Schreibe \( f_k=g_k-h_k \), \( g_k,h_k\in \stufenfunktionen[1] \). Dann ist \( \int h_k<\infty \) \timplies \texists \( \varphi_k\in \stufenfunktionen[0] \) \sd \( \varphi_k\leq h_k \) und \( \Integrate{h_k-\varphi_k}{x}<2^{-k} \)

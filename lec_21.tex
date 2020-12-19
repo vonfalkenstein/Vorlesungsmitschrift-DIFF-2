@@ -19,7 +19,7 @@
   Eine direkte Charakterisierung einer wichtigen Klasse von Nullmengen bietet folgender Satz:
 \end{bemerkung}
 \begin{lemma}\label{geringere_dimensionen_sind_nullmengen}
-  Sei \( U\subset \reals^k \), \( f\maps U\to \reals^{n-k} \) stetig. Dann ist \( \Gamma_f \) Nullmenge \( \subset \reals^n \).
+  Sei \( U\subset \reals^k \), \( f\maps U\to \reals^{n-k} \) stetig. Dann ist \( \Gamma_f \) Nullmenge \tsubset \( \reals^n \).
 \end{lemma}
 \begin{proof}[Beweis (für \( n=2 \), \( k=1 \))]
     Sei also \( f\maps I\to \reals \) stetig, \( I\subset \reals \). Betrachte zunächst \( g=\evaluateat{f}{\interval{a}{b}} \), \( \interval{a}{b}\subset I \). \( g \) ist gleichmäßig stetig \timplies \tforall \( \varepsilon>0 \) \texists \( \delta>0 \) \sd \( \abs{g(x)-g(y)}<\varepsilon \) \tforall \( x,y\in \interval{a}{b} \) mit \( \abs{x-y}<\delta \)
@@ -39,7 +39,7 @@
 \end{proof}
 
 \section{Produkt-Maße}
-Seien \( (X,\Sigma_X,\mu) \), \( (Y,\Sigma_Y,\varv) \) Maßräume. Dann ist \( \Sigma_X \times \Sigma_Y \) eine \( \sigma \)-Algebra in \( X\times Y \) und \( (\mu\times \varv)(E\times A)\definedas \mu(E)\cdot \mu(A) \) definiert ein Maß auf \( X\times Y \).
+Seien \( (X,\Sigma_X,\mu) \), \( (Y,\Sigma_Y,\nu) \) Maßräume. Dann ist \( \Sigma_X \times \Sigma_Y \) eine \( \sigma \)-Algebra in \( X\times Y \) und \( (\mu\times \nu)(E\times A)\definedas \mu(E)\cdot \mu(A) \) definiert ein Maß auf \( X\times Y \).
 
 Wir zeigen nun den sehr wichtigen Satz von Fubini + Tonelli in einer sehr allgemeinen Version.
 \begin{satz}[Fubini]\label{fubini}
@@ -49,7 +49,7 @@ Wir zeigen nun den sehr wichtigen Satz von Fubini + Tonelli in einer sehr allgem
   \end{equation*}
 \end{satz}
 \begin{bemerkung*}
-  Tatsächlich gilt der Satz noch allgemeiner, wannimmer die linke Seite definiert ist.
+  Tatsächlich gilt der Satz noch allgemeiner, wann immer die linke Seite definiert ist.
 \end{bemerkung*}
 \begin{bemerkung*}
   Da die Rollen von \( X \) und \( Y \) auf der linken Seite vertauscht werden können (Umnummerierung) gilt dann auch
@@ -115,7 +115,7 @@ Zum Beweis von \ref{fubini} benötigen wir ein Lemma.
   (zu \( x \) fest gewählt) Nullmenge in \( Y \) für \emph{fast alle} \( x \) (fast alle: gemessen in \( X \)).
 \end{lemma}
 \begin{beispiel*}
-  \( N=\Set{\p*{x,\frac{x}{2}}\in \reals^2} \) (siehe \ref{geringere_dimensionen_sind_nullmengen}) ist Nullmenge \( \subset \reals^2 \).
+  \( N=\Set{\p*{x,\frac{x}{2}}\in \reals^2} \) (siehe \ref{geringere_dimensionen_sind_nullmengen}) ist Nullmenge \tsubset \( \reals^2 \).
   \begin{figure}[H]
     \centering
     \includegraphics[width=0.3\linewidth]{nullmenge_gerade}
@@ -130,7 +130,7 @@ Zum Beweis von \ref{fubini} benötigen wir ein Lemma.
 \begin{proof}[Beweis von \ref{nullmenge_mal_punkt_ist_nullmenge}]
   Zu \( n\in \naturals \) wählen wir eine Überdeckung von \( N \) der Form \( \bigcup_{i\in \explain{\text{abzählbar}}{I_n}}Q_i^{(n)}\times P_i^{(n)} \) durch Quader \( Q_i^{(i)}\subset X \), \( P_i^{(i)}\subset Y \),
   \begin{equation*}
-    \volume*{\bigcup_{i\in I_n Q_i^{(n)}\times P_i^{(n)}}}<2^{-n}\quad (\volume;=\mu\times \varv).
+    \volume*{\bigcup_{i\in I_n Q_i^{(n)}\times P_i^{(n)}}}<2^{-n}\quad (\volume;=\mu\times \nu).
   \end{equation*}
   Dies liefert eine Überdeckung \( \bigcup_{k\in I}Q_k\times P_k \), \( I =  \) disjunkte Vereinigung aller \( I_n \) (wieder abzählbar) mit 
   \begin{equation*}
@@ -144,7 +144,7 @@ Zum Beweis von \ref{fubini} benötigen wir ein Lemma.
   \end{equation*}
   Also
   \begin{align*}
-    \mu\times \varv(R_k)&=\Integrate{\characteristicfunction{R_k}{x,y}}{{(x,y)}}\\
+    \mu\times \nu(R_k)&=\Integrate{\characteristicfunction{R_k}{x,y}}{{(x,y)}}\\
     &=\Integrate{\p*{\Integrate{\characteristicfunction{R_k}{x,y}}{y,Y}}}{x,X}\\
     \implies \span \sum_{k=1}^{\infty}\Integrate{\p*{\Integrate{\characteristicfunction{R_k}{x,y}}{y,Y}}}{x,X}<\infty.
   \end{align*}
@@ -207,7 +207,7 @@ Zum Beweis von \ref{fubini} benötigen wir ein Lemma.
   Sei nun \( f\in \stufenfunktionen[2](X\times Y) \). Schreibe \( f=f_1-f_2 \), \( f_0\in \stufenfunktionen[1](X\times Y) \), \( f_j\in \stufenfunktionen[1](X\times Y) \). Dann gilt \ref{fubini:funktion_in_stufenfunktionen_Y} und \ref{fubini:integral_in_stufenfunktionen_X} (mit \( \stufenfunktionen[1] \) statt \( \stufenfunktionen[2] \)) für \( f_1 \) und \( f_2 \) separat und somit\ref{fubini:funktion_in_stufenfunktionen_Y} und \ref{fubini:integral_in_stufenfunktionen_X} für \( f \). Auch \ref{fubini:funktion_integral_richtig} gilt für \( f_1 \) und \( f_2 \) separat und da \( \Integrate{f_1(x,y)}{{(x,y)},X\times Y} \) oder \( \Integrate{f_2(x,y)}{{(x,y)},X\times Y} \) endlich ist, erfüllt auch \( f \) \ref{fubini:funktion_integral_richtig}.
 \end{proof}
 \timestamp{39:15}
-\begin{beispiel}[und geometriche Interpretation des Integrals]
+\begin{beispiel}[und geometrische Interpretation des Integrals]
   \begin{equation*}
     \Integrate{2x+3y}{{(x,y)},\interval{a}{b}\times \interval{c}{d}}.
   \end{equation*}

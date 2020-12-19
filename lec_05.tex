@@ -77,7 +77,7 @@
     \end{align*}
 \end{definition*}
     Auf dem VR der stetigen linearen Funktionen \( V\to W \) ist \( \norm{\cdot}_{\text{op}} \) eine Norm.
-    \( \norm{A}_{\text{op}} \) ist die kleinste Konstante für die noch die Abschätzunge aus \ref{lineare_abbildung:stetigkeitssatz} gilt und es folgt
+    \( \norm{A}_{\text{op}} \) ist die kleinste Konstante für die noch die Abschätzung aus \ref{lineare_abbildung:stetigkeitssatz} gilt und es folgt
 \begin{bemerkung}
     Ein linearer Operator ist genau dann stetig, wenn gilt \( \norm{A}_{\text{op}}<\infty \).
 \end{bemerkung}
@@ -151,7 +151,7 @@
                 \end{cases}
             \end{align*}
             \( f \) ist stetig auf \( \reals^2\setminus \zeroset \) (siehe oben).
-            \( f \) ist nicht stetig in \( 0 \): Betrachte etwa \( (x_n,y-n)=\p*{ \frac{1}{n}, \frac{1}{n^2} } \), \( n\geq 1 \).
+            \( f \) ist nicht stetig in \( 0 \): Betrachte etwa \( (x_n,y_n)=\p*{ \frac{1}{n}, \frac{1}{n^2} } \), \( n\geq 1 \).
             Dann gilt
             \begin{align*}
                 f(x_n,y_n)=\frac{1}{n^2n^2}\p*{ \frac{n^4}{2} }=\frac{1}{2}\cancel{\goesto}0.
@@ -210,14 +210,14 @@ Eine spezielle Klasse von Normen sind solche, die von einem sogenannten Skalarpr
         \end{figure}
         \( Y \) geht durch Drehstreckung aus \( x\neq 0 \) hervor:
         \begin{align*}
-            y=\norm{y}_{\text{E}} \begin{pNiceMatrix} \Cos{\alpha} & -\Sin{\alpha}\\ \Sin{\alpha}& \Cos{\alpha} \end{pNiceMatrix} \frac{x}{\norm{x}_{\text{E}}}.
+            y=\euclidiannorm{y} \begin{pNiceMatrix} \Cos{\alpha} & -\Sin{\alpha}\\ \Sin{\alpha}& \Cos{\alpha} \end{pNiceMatrix} \frac{x}{\euclidiannorm{x}}.
         \end{align*}
         Dann gilt:
         \begin{align*}
             \scalarproduct{x}{y}\begin{aligned}[t]
-                &=\frac{\norm{y}_{\text{E}}}{\norm{x}_{\text{E}}}\scalarproduct{x}{\begin{pNiceMatrix} \Cos{\alpha} x_1-\Sin{\alpha}x_2 \\ \Sin{\alpha}x_1+\Cos{\alpha} x_2 \end{pNiceMatrix}}\\
-                &=\frac{\norm{y}_{\text{E}}}{\norm{x}_{\text{E}}}(x_1^2\Cos{\alpha}-\cancel{x_1 x_2\Sin{\alpha}}+\cancel{x_1 x_2\Sin{\alpha}+x_2^2\Cos{\alpha}})\\
-                &=\norm{y}_{\text{E}}\cdot\norm{x}_{\text{E}}\cdot \Cos{\alpha}.
+                &=\frac{\euclidiannorm{y}}{\euclidiannorm{x}}\scalarproduct{x}{\begin{pNiceMatrix} \Cos{\alpha} x_1-\Sin{\alpha}x_2 \\ \Sin{\alpha}x_1+\Cos{\alpha} x_2 \end{pNiceMatrix}}\\
+                &=\frac{\euclidiannorm{y}}{\euclidiannorm{x}}(x_1^2\Cos{\alpha}-\cancel{x_1 x_2\Sin{\alpha}}+\cancel{x_1 x_2\Sin{\alpha}+x_2^2\Cos{\alpha}})\\
+                &=\euclidiannorm{y}\cdot\euclidiannorm{x}\cdot \Cos{\alpha}.
             \end{aligned}            
         \end{align*}
         Das Skalarprodukt misst die Projektion von \( y \) auf \( x \)
@@ -236,7 +236,7 @@ Eine spezielle Klasse von Normen sind solche, die von einem sogenannten Skalarpr
         \item \( \reals^2 \) mit \( \scalarproduct{x}{y}\definedas 2x_1y_1-x_1y_2-x_2y_1+2x_2y_2 \) (zu überprüfen ist die Positive Definitheit).
         \item \emph{Kein} Skalarprodukt ist das Minkowski-Produkt: \( \reals^{n+1} \) mit \( ((x,y))\definedas x_0y_0-\sum_{i=1}^{n}x_i y_i \).
 
-        Denn \( ((x,x))=0\iff x_0=\pm \norm{\underline{x}}_{\text{E}} \), \( x=(x_1,\dotsc,x_n) \).
+        Denn \( ((x,x))=0\iff x_0=\pm \euclidiannorm{\underline{x}} \), \( x=(x_1,\dotsc,x_n) \).
         \item \( \stetigefunktionen(\interval{a}{b}) \) mit \( \scalarproduct{f}{g}=\Integrate{f(t)g(t)}{t,a,b} \).
     \end{itemize}
 \end{beispiele*}
@@ -285,7 +285,7 @@ Nicht jede Norm wird von einem Skalarprodukt induziert. Es gilt
     \begin{figure}[H]
         \centering
         \includegraphics[width=0.5\linewidth]{figures/parallelogramm_gleichung_namenserklaerung}
-        \caption*{Erklärung für den Namen. \( \reals^2 \), \( \norm{\cdot}=\norm{\cdot}_{\text{E}} \).}
+        \caption*{Erklärung für den Namen. \( \reals^2 \), \( \norm{\cdot}=\euclidiannorm{\cdot} \).}
         \label{fig:parallelogramm_gleichung_namenserklaerung}
     \end{figure}    
 \end{lemma}

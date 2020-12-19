@@ -7,10 +7,9 @@ Ziel (\ua) Geometrische Interpretation der Ableitung.
   \begin{figure}[H]
     \centering
     \includegraphics[width=0.8\linewidth]{erinnerung_gradient_intuition}
-    \caption*{}
     \label{fig:erinnerung_gradient_intuition}
   \end{figure}
-  In einem Beispiel hatten wir gesehen: Richtungsableitung in Richtung einer Niveaufläche steht \( \perp \) auf \( \grad-{f} \).
+  In einem Beispiel hatten wir gesehen: Richtungsableitung in Richtung einer Niveaufläche steht \( \perp \) auf \( \grad{f} \).
   \begin{figure}[H]
     \centering
     \includegraphics[width=0.8\linewidth]{erinnerung_niveauflaeche_intuition}
@@ -46,7 +45,7 @@ Ziel (\ua) Geometrische Interpretation der Ableitung.
     \item \label{untermannigfaltigkeit:ist_niveaumenge}\( M\cap U=\set{x\in U|f(x)=0} \) und 
     \item \label{untermannigfaltigkeit:maximaler_rang_gibt_dimension} \( \rang-{Df(a)}=n-d \) (maximal).
   \end{eigenschaftenenumerate}
-  Das heißt \( M \) lässt sic lokal als Nullstellengebilde von \( n-d \) \( \reals \)-wertigen \( \stetigefunktionen[1] \) Funktionen \( f_j \) schreiben, deren Gradienten linear unabhängig sind.
+  Das heißt \( M \) lässt sich lokal als Nullstellengebilde von \( n-d \) \( \reals \)-wertigen \( \stetigefunktionen[1] \) Funktionen \( f_j \) schreiben, deren Gradienten linear unabhängig sind.
   \begin{figure}[H]
     \centering
     \includegraphics[width=0.5\linewidth]{untermannigfaltigkeit_intuition}
@@ -73,17 +72,17 @@ Ziel (\ua) Geometrische Interpretation der Ableitung.
     Zu \( a\in E \) wähle \( U=\reals^4 \) und setze
     \begin{align*}
       f_1&\maps U\to \reals & f_1(x)&=\scalarproduct{x-p}{e_3}=x_3-p_3\\
-      f_1&\maps U\to \reals & f_1(x)&=\scalarproduct{x-p}{e_4}=x_4-p_4.
+      f_2&\maps U\to \reals & f_2(x)&=\scalarproduct{x-p}{e_4}=x_4-p_4.
     \end{align*}
     Es gilt \( x\in E \) \tiff \( f(x)=\begin{pNiceMatrix} f_1(x) \\ f_2(x) \end{pNiceMatrix}=0 \) und \( Df(a)=\begin{pNiceMatrix}
       0 & 0 & 1 & 0 \\ 0 & 0 & 0 & 1
-    \end{pNiceMatrix} \), \( \rang-{}=2 \).
+    \end{pNiceMatrix} \), \( \rang;=2 \).
     \begin{figure}[H]
       \centering
       \includegraphics[width=0.5\linewidth]{normalenvektor_auf_langweiliger_ebene_als_untermannigfaltigkeit}
       \label{fig:normalenvektor_auf_langweiliger_ebene_als_untermannigfaltigkeit}
       \begin{equation*}
-        \grad-{f_1}(a)=\begin{pNiceMatrix} 0 \\ 0 \\ 1 \\ 0 \end{pNiceMatrix}\qquad \grad-{f_2}(a)=\begin{pNiceMatrix} 0 \\ 0 \\ 0 \\ 1 \end{pNiceMatrix}.
+        \grad{f_1}(a)=\begin{pNiceMatrix} 0 \\ 0 \\ 1 \\ 0 \end{pNiceMatrix}\qquad \grad{f_2}(a)=\begin{pNiceMatrix} 0 \\ 0 \\ 0 \\ 1 \end{pNiceMatrix}.
       \end{equation*}
     \end{figure}
     Niveau-Mengen von \( f \):
@@ -96,11 +95,11 @@ Ziel (\ua) Geometrische Interpretation der Ableitung.
       \caption*{\( N_f(0)=E \), Gradient steht senkrecht.}
       \label{fig:normalenvektor_auf_langweiliger_ebene_als_niveaumengen}
     \end{figure}
-    \item \label{untermannigfaltigkeit:beispiele:sphaere}\( \mathbb{S}^{n-1}\definedas \Set{x\in \reals^n|\euclidiannorm{x}=1} \). Einheits-Sphäre. Zu \( a\in \mathbb{S}^{n-1} \) wähle \( U=\reals^n \) und \( f(x)=\euclidiannorm{x}^2-1 \). 
+    \item \label{untermannigfaltigkeit:beispiele:sphaere}\( \sphere{n-1}\definedas \Set{x\in \reals^n|\euclidiannorm{x}=1} \). Einheits-Sphäre. Zu \( a\in \sphere{n-1} \) wähle \( U=\reals^n \) und \( f(x)=\euclidiannorm{x}^2-1 \). 
     \begin{equation*}
       Df(a)=(2a_1,\dotsc,2a_n)\neq 0.,
     \end{equation*}
-    also \( \rang-{}=1 \forall a\in \mathbb{S}^{n-1}\).
+    also \( \rang;=1 \forall a\in \sphere{n-1}\).
     \item Eine \( 1 \)-dimensionale differenzierbare Untermannigfaltigkeit wird auch unparametisierte differenzierbare Kurve genannt. 
     \begin{beispiel*}
       \( f\maps \reals^3\to \reals^2 \).
@@ -129,7 +128,7 @@ Ziel (\ua) Geometrische Interpretation der Ableitung.
   \end{enumerate}
 \end{beispiele*}
 \begin{definition}\label{tangentialraum}\index{Tangentialvektor}
-  Ein Vektor \( v\in \reals^n \) heißt \emph{Tangentialvektor} der Untermannigfaltigkeit \( M\subset \reals^n \) im Punkt \( a \), falls \texists differenzierbare Kurve \( \gamma \), \( \gamma\maps \ointerval{-\varepsilon}{\varepsilon} \to M\), \sd \( \gamma(0)=a \) und \( v=\gamma'(0) \). Die Menge der Tangentialvektoren im Punkt \( a \) bezeichnet man mit \( \tangentialraum-{M} \). 
+  Ein Vektor \( v\in \reals^n \) heißt \emph{Tangentialvektor} der Untermannigfaltigkeit \( M\subset \reals^n \) im Punkt \( a \), falls \texists differenzierbare Kurve \( \gamma \), \( \gamma\maps \ointerval{-\varepsilon}{\varepsilon} \to M\), \sd \( \gamma(0)=a \) und \( v=\gamma'(0) \). Die Menge der Tangentialvektoren im Punkt \( a \) bezeichnet man mit \( \tangentialraum{a}{M} \). 
   \begin{figure}[H]
     \centering
     \includegraphics[width=0.5\linewidth]{tangentenvektoren_intuition}
@@ -145,9 +144,9 @@ Ziel (\ua) Geometrische Interpretation der Ableitung.
     \end{equation*}
     \( p\in \reals^4 \), \( a\in E \).
     \begin{equation*}
-      \tangentialraum-{M}=\Set{v\in \reals^4|v=v_1e_2+v_2e_2},
+      \tangentialraum{a}{M}=\Set{v\in \reals^4|v=v_1e_2+v_2e_2},
     \end{equation*}
-    denn jedes \( \gamma\maps \ointerval{-\varepsilon}{\varepsilon}\to M \) mit \( \gamma(0) \) ist von der FOrm
+    denn jedes \( \gamma\maps \ointerval{-\varepsilon}{\varepsilon}\to M \) mit \( \gamma(0) \) ist von der Form
     \begin{equation*}
       \gamma(t)=a+(\tilde{\gamma}_1(t),\tilde{\gamma}_2(t),0,0).
     \end{equation*}
@@ -174,26 +173,26 @@ Ziel (\ua) Geometrische Interpretation der Ableitung.
   \begin{equation*}
     a\in M\cap U =\set{x\in U |f(x)=0}
   \end{equation*}
-  für eine Funktion \( f\maps U\to \reals^{n-d} \) wie in \thref{untermannigfaltigkeit}, also \( Df(a) \) von maximalem Rang (\( n-d \)). Dann ist \( \tangentialraum-{M}=\ker-{Df(a)} \). Insbesondere ist \( \tangentialraum-{M} \) Untervektorraum von \( \reals^n \).
+  für eine Funktion \( f\maps U\to \reals^{n-d} \) wie in \thref{untermannigfaltigkeit}, also \( Df(a) \) von maximalem Rang (\( n-d \)). Dann ist \( \tangentialraum{a}{M}=\ker-{Df(a)} \). Insbesondere ist \( \tangentialraum{a}{M} \) Untervektorraum von \( \reals^n \).
 \end{satz}
 \begin{proof}
   \begin{proofdescription}
-    \item[\enquote{\( \subset \)}] Sei \( \gamma\maps \ointerval{-\varepsilon}{\varepsilon}\to M\cap U \) mit \( \gamma(0)=a \), \( \gamma'(0)=v \). Dann ist 
+    \item[\sethin] Sei \( \gamma\maps \ointerval{-\varepsilon}{\varepsilon}\to M\cap U \) mit \( \gamma(0)=a \), \( \gamma'(0)=v \). Dann ist 
     \begin{equation*}
       0=\evaluateat{\frac{\differential}{\differential t} f\circ \gamma(t)}{t=0}=Df(\gamma(0))\matrixmult \gamma'(0)=Df(a)\matrixmult v\implies v\in \ker-{Df(a)}.
     \end{equation*}
-    \item[\enquote{\( \supset \)}] Beweisen wir später mit Hilfe des folgenden Satzes~\ref{untermannigfaltigkeit_kriterium}.
+    \item[\setrueck] Beweisen wir später mit Hilfe des folgenden Satzes~\ref{untermannigfaltigkeit_kriterium}.
   \end{proofdescription}  
 \end{proof}
 \begin{interpretation*}[für \( n-d=1 \)]
-  Der Gradient zeigt in die Richtung des stärksten Anstiegs von \( f \). Eine Kurve \( \gamma \) wi in \ref{tangentialraum} (und \ref{tangentialraum_ist_tangential}) verläuft in einer Niveaumenge von \( f \) (und zwar hier zu \( c=0 \)). In Richtung \( v=\gamma'(0) \) ändert sich \( f \) also nicht und die Richtungsableitung in Richtung \( v \) ist \( 0 \):
+  Der Gradient zeigt in die Richtung des stärksten Anstiegs von \( f \). Eine Kurve \( \gamma \) wie in \ref{tangentialraum} (und \ref{tangentialraum_ist_tangential}) verläuft in einer Niveaumenge von \( f \) (und zwar hier zu \( c=0 \)). In Richtung \( v=\gamma'(0) \) ändert sich \( f \) also nicht und die Richtungsableitung in Richtung \( v \) ist \( 0 \):
   \begin{equation*}
-    \partial_v f(a)=\scalarproduct{v}{\grad-{f}(a)}=Df(a)\matrixmult v=0\qquad (\text{\thref{tangentialraum_ist_tangential}}),
+    \partial_v f(a)=\scalarproduct{v}{\grad{f}(a)}=Df(a)\matrixmult v=0\qquad (\text{\thref{tangentialraum_ist_tangential}}),
   \end{equation*}
-  also \( v\perp \grad-{f}(a) \). \enquote{Der Gradient steht auf Niveaumengen senkrecht}.
+  also \( v\perp \grad{f}(a) \). \enquote{Der Gradient steht auf Niveaumengen senkrecht}.
 \end{interpretation*}
 \begin{beispiel*}
-  \( f(x,y)=x^2+y^2-2 \). \( M= \) Niveaumenge \( N_f(0)=\set{x^2+y^2=2} \). \( \grad-{f}(a)=2(a_1,a_2) \).
+  \( f(x,y)=x^2+y^2-2 \). \( M= \) Niveaumenge \( N_f(0)=\set{x^2+y^2=2} \). \( \grad{f}(a)=2(a_1,a_2) \).
   \begin{figure}[H]
     \centering
     \includegraphics[width=0.5\linewidth]{tangentialraum_an_kreis_ist_tangential}
@@ -209,7 +208,7 @@ Ziel (\ua) Geometrische Interpretation der Ableitung.
   \end{equation*}
   Es ist dann
   \begin{equation*}
-    \gamma'(0)=\sqrt{2}\begin{pNiceMatrix} 0 \\ 1 \end{pNiceMatrix}\perp \grad-{f}\begin{pNiceMatrix} \sqrt{2} \\ 0 \end{pNiceMatrix}=\begin{pNiceMatrix} 2\sqrt{2} \\ 0 \end{pNiceMatrix}.
+    \gamma'(0)=\sqrt{2}\begin{pNiceMatrix} 0 \\ 1 \end{pNiceMatrix}\perp \grad{f}\begin{pNiceMatrix} \sqrt{2} \\ 0 \end{pNiceMatrix}=\begin{pNiceMatrix} 2\sqrt{2} \\ 0 \end{pNiceMatrix}.
   \end{equation*}
   \minisec{Höher-dimensionale Sphären:}
   \( N_f(0) \), \( f(x)=\euclidiannorm{x}^2-1 \). \( Df(a)=2(a_1,\dotsc,a_n) \). \( \ker-{Df}(a)= \) Ebene senkrecht zu \( a \).
@@ -218,7 +217,7 @@ Ziel (\ua) Geometrische Interpretation der Ableitung.
     \includegraphics[width=0.5\linewidth]{tangentialraum_an_sphaere_ist_tangential}
     \label{fig:tangentialraum_an_sphaere_ist_tangential}
   \end{figure}
-  Um di Rückrichtung von \thref{tangentialraum_ist_tangential} beweisen zu können, benötigen wir eine weitere (äquivalente) Charakterisierung differenzierbarer Untermannigfaltigkeiten.
+  Um die Rückrichtung von \thref{tangentialraum_ist_tangential} beweisen zu können, benötigen wir eine weitere (äquivalente) Charakterisierung differenzierbarer Untermannigfaltigkeiten.
 \end{beispiel*}
 \begin{satz}\label{untermannigfaltigkeit_kriterium}
   Eine Teilmenge \( M\subset \reals^n \) ist genau dann \( d \)-dimensionale differenzierbare Untermannigfaltigkeit des \( \reals^n \), wenn es zu jedem Punkt \( a\in M \) (nach eventueller Umnummerierung) Umgebungen \( V_1\subset \reals^d \) von \( a'=(a_1,\dotsc,a_d) \) un \( V_2\subset \reals^{n-d} \) von \( a''=(a_{d+1},\dotsc,a_n) \) und eine stetig differenzierbare Abbildung \( g\maps V_1\to \reals^{n-d} \), \( g(V_1)\subset V_2 \) gibt, \sd
@@ -265,7 +264,7 @@ Ziel (\ua) Geometrische Interpretation der Ableitung.
    hat maimalen Rang (\( n-d \)).
 \end{proof}
 \begin{bemerkung*}
-  Man kann also eine \( d \)-dimensionale differenzierbare Untermannigfaltigkeit lokal stets als Graphen einer \( \stetigefunktionen[1] \)-FUnktion schreiben.
+  Man kann also eine \( d \)-dimensionale differenzierbare Untermannigfaltigkeit lokal stets als Graphen einer \( \stetigefunktionen[1] \)-Funktion schreiben.
 
   Für die Beispiele oben gilt
   \begin{description}
@@ -301,7 +300,7 @@ Ziel (\ua) Geometrische Interpretation der Ableitung.
   \end{description}
 \end{bemerkung*}\approxtimestamp{40}
 \begin{proof}[Fortsetzung Beweis \thref{tangentialraum_ist_tangential}]
-  Wir beweisen nun die zweite Inklusion von \thref{tangentialraum_ist_tangential}, also \( \tangentialraum-{M}\supset \ker-{Df(a)} \). Sei \( g\maps V_1\to \reals^{n-d} \) stetig differenzierbar \sd \( g(V_1)\subset V_2 \) und \( a\in V_1\times V_2\subset \reals^d \times \reals^{n-d} \) und
+  Wir beweisen nun die zweite Inklusion von \thref{tangentialraum_ist_tangential}, also \( \tangentialraum{a}{M}\supset \ker-{Df(a)} \). Sei \( g\maps V_1\to \reals^{n-d} \) stetig differenzierbar \sd \( g(V_1)\subset V_2 \) und \( a\in V_1\times V_2\subset \reals^d \times \reals^{n-d} \) und
 \begin{equation*}
   M\cap (V_1\times V_2)=\Gamma_g=\Set{(x,g(x))|x\in V_1}.
 \end{equation*}
@@ -311,17 +310,17 @@ Sei \( x_0\in V_1  \) \sd \( (x_0,g(x_0))=a \). Betrachte \( \varphi\maps V_1\to
 \end{equation*}
 \timplies \( a=\varphi(x-0) \) und 
 \begin{equation*}
-  w\definedas \evaluateat{\frac{\differential}{\differential t} \varphi(x_0+tv)}{t=0}\in \tangentialraum-{M},
+  w\definedas \evaluateat{\frac{\differential}{\differential t} \varphi(x_0+tv)}{t=0}\in \tangentialraum{a}{M},
 \end{equation*}
-also \( \image{D\varphi(x_0)}\subset \tangentialraum-{M} \). Zudem wissen wir schon: \( \tangentialraum-{M}\subset \ker-{Df(a)} \). Es ist \( D\varphi(x_0)\maps \reals^d\to \reals^n \), \( D\varphi(x_0)=\begin{pNiceMatrix} \mathds{1}_{d\times d} \\ Dg(x_0) \end{pNiceMatrix} \), also injektiv \timplies (Dimensionsformel)
+also \( \image{D\varphi(x_0)}\subset \tangentialraum{a}{M} \). Zudem wissen wir schon: \( \tangentialraum{a}{M}\subset \ker-{Df(a)} \). Es ist \( D\varphi(x_0)\maps \reals^d\to \reals^n \), \( D\varphi(x_0)=\begin{pNiceMatrix} \mathds{1}_{d\times d} \\ Dg(x_0) \end{pNiceMatrix} \), also injektiv \timplies (Dimensionsformel)
 \begin{equation*}
   \dim-{\image{D\varphi(x_0)}}=d=n-\underbrace{\rang-{Df(a)}}_{=n-d}=\dim-{\ker-{Df(a)}}
 \end{equation*}
-\timplies \( \tangentialraum-{M}=\ker-{Df(a)} \).
+\timplies \( \tangentialraum{a}{M}=\ker-{Df(a)} \).
 \end{proof}
 Wir haben im Beweis auch gesehen:
 \begin{equation*}
-  \tangentialraum-{M}=\image-{D\varphi(x_0)},
+  \tangentialraum{a}{M}=\image-{D\varphi(x_0)},
 \end{equation*}
 wo \( \phi(x)=\transpose-{(x,g(x))} \) die Graphenabbildung einer lokalen Auflösung \( g \) ist it \( a=\transpose-{(x_0,g(x_0))}=\phi(x_0) \).
 
@@ -336,12 +335,12 @@ Die geometrische Interpretation ist:
 \end{equation*}
 Die Spalten von \( D\phi(x_0) \) 
 \begin{equation*}
-  \explain[Big]{\text{Veränderug von \( g \) in \( 1 \)-Richtung}}{\begin{pNiceMatrix} 1 \\ 0 \\ \partial_1 g(x_0) \end{pNiceMatrix}}\logicspace \text{und}\logicspace \explain{\text{Veränderung in \( 2 \)-Richtung}}{\begin{pNiceMatrix} 0 \\ 1 \\ \partial_2 g(x_0) \end{pNiceMatrix}}
+  \explain[Big]{\text{Veränderung von \( g \) in \( 1 \)-Richtung}}{\begin{pNiceMatrix} 1 \\ 0 \\ \partial_1 g(x_0) \end{pNiceMatrix}}\logicspace \text{und}\logicspace \explain{\text{Veränderung in \( 2 \)-Richtung}}{\begin{pNiceMatrix} 0 \\ 1 \\ \partial_2 g(x_0) \end{pNiceMatrix}}
 \end{equation*}
 \begin{figure}[H]
   \centering
   \includegraphics[width=0.5\linewidth]{interpretation_bild_ableitung_implizite_funktion}
-  \caption*{\textcolor{green}{Ebene parallel zur \( 2 \)-\( 3 \)-Ebene durch \( a \)\( =\set{x_1=x_{0,1} \text{ konstant}} \)}. \includegraphics[height=\baselineskip]{little_line}\( =\Set{(x_{0,1},x_{0,2}+t,g(x_{0,1},x_{0,2}+t))|t\in I\subset \reals} \) ist Kurve in \( M \).}
+  \caption*{\textcolor{green}{Ebene parallel zur \( 2 \)-\( 3 \)-Ebene durch \( a \)\teq \(\set{x_1=x_{0,1} \text{ konstant}} \)}. \includegraphics[height=\baselineskip]{little_line}\teq \(\Set{(x_{0,1},x_{0,2}+t,g(x_{0,1},x_{0,2}+t))|t\in I\subset \reals} \) ist Kurve in \( M \).}
   \label{fig:interpretation_bild_ableitung_implizite_funktion}
 \end{figure}
 Ableitung
@@ -405,7 +404,7 @@ Es gilt \( \evaluateat{\phi(x_{0,1},x_{0,2}+t)}{t} \) und \( (0,1,\partial_2g(x_
   
 \end{proof}
 \begin{beispiel*}
-  \( \mathbb{S}^{n-1} \), \( a\in \mathbb{S}^{n-1} \), \( a_n>0 \). \( g\maps D\to \reals  \) mit \( D=\set{x\in \reals^{n-1}|\euclidiannorm{x}<1} \),
+  \( \sphere{n-1} \), \( a\in \sphere{n-1} \), \( a_n>0 \). \( g\maps D\to \reals  \) mit \( D=\set{x\in \reals^{n-1}|\euclidiannorm{x}<1} \),
   \begin{equation*}
     g(x_1,\dotsc,x_{n-1})=\sqrt{1-\sum_{i=1}^{n-1}x_i^2}.
   \end{equation*}
@@ -413,7 +412,7 @@ Es gilt \( \evaluateat{\phi(x_{0,1},x_{0,2}+t)}{t} \) und \( (0,1,\partial_2g(x_
   \begin{equation*}
     F(x,t)=\parens*{x,t-\sqrt{1-\sum_{i=1}^{m_1}x_i^2}}.
   \end{equation*}
-  \( \mathbb{S}^{n-1}\cap D\times \ointerval{0}{\infty}=\includegraphics[height=\baselineskip]{kleine_offene_halbsphaere} \) (ohne den Rand \includegraphics[height=\baselineskip]{kleiner_fehlender_rand}) und % ChkTeX 25
+  \( \sphere{n-1}\cap D\times \ointerval{0}{\infty}=\includegraphics[height=\baselineskip]{kleine_offene_halbsphaere} \) (ohne den Rand \includegraphics[height=\baselineskip]{kleiner_fehlender_rand}) und % ChkTeX 25
   \begin{equation*}
     F(M\cap D\times \ointerval{0}{\infty})=\includegraphics[height=\baselineskip]{kleine_geplaettete_offene_halbkugel}=D. % ChkTeX 25
   \end{equation*}

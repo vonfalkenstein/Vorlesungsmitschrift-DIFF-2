@@ -16,7 +16,7 @@ Sei zunächst \( F \) nicht von \( t \) abhängig, \( F\maps \reals*U\to \reals^
 \begin{equation*}
   x'=G(x)\tag{\(**\)}\label{eq:zeitunabhaengige_diffgleichung}.
 \end{equation*}
-Dann kann man \( G \) als Vektorfeld auf \( U \) ansehen (denn \( \tangentialraum-{U}=\Span-{\set{e_1,\dotsc,d_n}} \)), in diesem Fall ein \emph{stetiges Vektorfeld}, also eine stetige Abbildung \( G\maps  U \to \tangentialraum-{U}=\reals^n \). Eine Lösung der DGL \eqref{eq:zeitunabhaengige_diffgleichung} ist dann eine differenzierbare Integralkurve (nicht unbedingt stetig differenzierbar).
+Dann kann man \( G \) als Vektorfeld auf \( U \) ansehen (denn \( \tangentialraum{a}{U}=\Span-{\set{e_1,\dotsc,d_n}} \)), in diesem Fall ein \emph{stetiges Vektorfeld}, also eine stetige Abbildung \( G\maps  U \to \tangentialraum{a}{U}=\reals^n \). Eine Lösung der DGL \eqref{eq:zeitunabhaengige_diffgleichung} ist dann eine differenzierbare Integralkurve (nicht unbedingt stetig differenzierbar).
 \begin{figure}[H]
   \centering
   \includegraphics[width=0.7\linewidth]{dgl_loesung_als_integralkurve}
@@ -98,7 +98,7 @@ und löst \( u \) das AWP \eqref{eq:awp}, so ist \( u(t_0)=u_0 \). \( u \) ist a
 \begin{equation*}
   u\mapsto Tu,\quad Tu(t)=u_0+\Integrate{F(s,u(s))}{s,t_0,t}.
 \end{equation*}
-\begin{definition}\index{lipschitz-Bedingung}
+\begin{definition}\index{Lipschitz-Bedingung}
   Sei \( V\subset \reals\times \reals^n \) und \( F\maps V\to \reals^n  \) eine Funktion. Man sagt
   \begin{itemize}
     \item \( F \) erfüllt auf \( V \) eine \emph{Lipschitz-Bedingung} mit Lipschitz-Konstante \( L \), falls es \( L\geq 0 \) gibt \sd 
@@ -126,7 +126,7 @@ und löst \( u \) das AWP \eqref{eq:awp}, so ist \( u(t_0)=u_0 \). \( u \) ist a
 \begin{bemerkung*}
   Stetige Differenzierbarkeit bezüglich der hinteren \( n \) Variablen bedeutet, dass \( D_2 F \) auch bezüglich der ersten Variablen stetig ist.
 \end{bemerkung*}
-\begin{satz}[Picard-Lindelöf]\label{picard-lindeloef}\index{Satz von Picard-lindelöf}
+\begin{satz}[Picard-Lindelöf]\label{picard-lindeloef}\index[theorems]{Satz von Picard-lindelöf}
   Sei \( V\subset \reals\times \reals^n  \). Sei \( mF\maps V\to \reals^n \) stetig und erfülle lokal auf \( V \) eine Lipschitz-Bedingung. Dann hat das Anfangswertproblem
   \begin{align*}
     x'&=F(t,x)\\
@@ -139,7 +139,7 @@ und löst \( u \) das AWP \eqref{eq:awp}, so ist \( u(t_0)=u_0 \). \( u \) ist a
   \begin{equation*}
     \norm{F(t,x)-F(t,\tilde{x})}< L\norm{x-\tilde{x}}\quad \forall (t,x),(t,\tilde{x})\in \tilde{V}\cap V.
   \end{equation*}
-  Sei \( J\times K\subset \tilde{V}\cap V \) mit \( J \) kompaktes Intervall \( t_0\in J \), \( K\subset \reals^n \) kompakt, \( x_0\in K \), \obda \( K=\abschluss{B_r(x_0)} \), \( r>0 \). 
+  Sei \( J\times K\subset \tilde{V}\cap V \) mit \( J \) kompaktes Intervall \( t_0\in J \), \( K\subset \reals^n \) kompakt, \( x_0\in K \), \obda \( K=\abschluss{\ball{r}{x_0}} \), \( r>0 \). 
   
   Wähle \( \delta>0 \) \sd
   \begin{equation*}
@@ -232,7 +232,7 @@ und löst \( u \) das AWP \eqref{eq:awp}, so ist \( u(t_0)=u_0 \). \( u \) ist a
 \begin{bemerkung*}
   Wir können in Beweisen \obda \( k=1 \) setzen und alle Sätze, die wir für diesen Fall beweisen, auf den Fall \( k\geq 2 \) übertragen. Es gilt nämlich:
 \end{bemerkung*}
-\begin{satz}[Reduktion der Ordnung]\label{reduktion_der_ordnung}\index{Reduktion der Ordnung}
+\begin{satz}[Reduktion der Ordnung]\label{reduktion_der_ordnung}\index[theorems]{Reduktion der Ordnung}
   Sei
   \begin{equation*}
     x^{(k)}=F(t,x,,x',\dotsc,x^{(k-1)})\tag{\(*\)}\label{eq:dglsyskter}
